@@ -9,19 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.368.0",
+    "next": "15.2.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.2.5"
+    "tailwind-merge": "^2.3.0",
+    "tw-animate-css": "^1.2.5"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.2.5",
-    "@eslint/eslintrc": "^3"
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
