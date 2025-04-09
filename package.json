@@ -1,5 +1,5 @@
 {
-  "name": "rapidlaunch-turbo",
+  "name": "launchmvpfast",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -9,17 +9,12 @@
     "start:www": "turbo --filter=www start",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "clean": "turbo clean && rm -rf node_modules",
-    "db:push": "pnpm -F db push",
-    "db:studio": "pnpm -F db studio"
+    "clean": "turbo clean && rm -rf node_modules"
   },
   "devDependencies": {
-    "@rapidlaunch/eslint-config": "workspace:*",
-    "@rapidlaunch/typescript-config": "workspace:*",
-    "prettier": "^3.2.5",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@8.9.0",
+  "packageManager": "pnpm@9.2.0",
   "engines": {
     "node": ">=18"
   }
