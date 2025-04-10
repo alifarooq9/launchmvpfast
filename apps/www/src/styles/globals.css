@@ -118,4 +118,16 @@
     body {
         @apply bg-background text-foreground;
     }
+
+    .border-grid {
+        @apply border-border/50 dark:border-border;
+    }
+
+    .container-wrapper {
+        @apply border-border/70 dark:border-border mx-auto w-full max-w-[1400px] min-[1400px]:border-x min-[1800px]:max-w-screen-2xl;
+    }
+
+    .container {
+        @apply mx-auto max-w-screen-2xl px-4 xl:px-6;
+    }
 }

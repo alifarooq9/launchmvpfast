@@ -16,7 +16,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${fontsVariables} dark font-sans antialiased`}>
-                {children}
+                <div className="relative flex min-h-svh flex-col">
+                    {children}
+                </div>
             </body>
         </html>
     )

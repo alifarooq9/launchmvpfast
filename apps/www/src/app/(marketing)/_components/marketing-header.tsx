@@ -6,54 +6,55 @@ import Link from 'next/link'
 
 export function MarketingHeader() {
     return (
-        <div className="border-border border-b uppercase">
-            <header className="mx-auto flex h-12 w-full max-w-screen-2xl items-center justify-between">
-                <Link
-                    href="/"
-                    className={cn(
-                        buttonVariants({
-                            variant: 'ghost',
-                        }),
-                        'border-border h-full rounded-none border-x px-6 text-base font-semibold'
-                    )}
-                >
-                    {siteConfig.name}
-                </Link>
-                <nav className="h-full">
-                    <ul className="flex h-full items-center">
-                        {navConfig.headerNav.map((navItem, index) => (
-                            <li
-                                key={navItem.label}
-                                className={cn(
-                                    buttonVariants({
-                                        variant: 'ghost',
-                                    }),
-                                    'h-full rounded-none p-0',
-                                    index === 0 ? 'border-x' : 'border-r',
-                                    navItem.iconOnly && 'aspect-square',
-                                    navItem.disabled &&
-                                        'pointer-events-none cursor-default opacity-60'
-                                )}
-                            >
-                                {navItem.disabled ? (
-                                    <span className="h-full w-full content-center px-4">
-                                        {navItem.label}
-                                    </span>
-                                ) : (
-                                    <Link
-                                        href={navItem.href}
-                                        aria-disabled={navItem.disabled}
-                                        className="h-full w-full content-center px-4"
-                                    >
-                                        {navItem.icon && <navItem.icon />}
-                                        {!navItem.iconOnly && navItem.label}
-                                    </Link>
-                                )}
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-            </header>
-        </div>
+        <header className="border-grid bg-background sticky top-0 z-50 w-full border-b">
+            <div className="container-wrapper border-grid uppercase">
+                <div className="container mx-auto flex h-12 w-full max-w-screen-2xl items-center justify-between px-0 xl:px-0">
+                    <Link
+                        href="/"
+                        className={cn(
+                            buttonVariants({
+                                variant: 'ghost',
+                            }),
+                            'border-border h-full rounded-none border-r px-6 text-base font-black'
+                        )}
+                    >
+                        {siteConfig.name}
+                    </Link>
+                    <nav className="h-full">
+                        <ul className="flex h-full items-center">
+                            {navConfig.headerNav.map((navItem, index) => (
+                                <li
+                                    key={navItem.label}
+                                    className={cn(
+                                        buttonVariants({
+                                            variant: 'ghost',
+                                        }),
+                                        'h-full rounded-none border-r p-0 first:border-l last:border-0',
+                                        navItem.iconOnly && 'aspect-square',
+                                        navItem.disabled &&
+                                            'pointer-events-none cursor-default opacity-60'
+                                    )}
+                                >
+                                    {navItem.disabled ? (
+                                        <span className="flex h-full w-full items-center justify-center px-4">
+                                            {navItem.label}
+                                        </span>
+                                    ) : (
+                                        <Link
+                                            href={navItem.href}
+                                            aria-disabled={navItem.disabled}
+                                            className="flex h-full w-full items-center justify-center px-4"
+                                        >
+                                            {navItem.icon && <navItem.icon />}
+                                            {!navItem.iconOnly && navItem.label}
+                                        </Link>
+                                    )}
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
     )
 }

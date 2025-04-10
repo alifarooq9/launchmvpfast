@@ -7,9 +7,11 @@ export default function MarketingLayout({
     children: React.ReactNode
 }>) {
     return (
-        <React.Fragment>
+        <div className="flex flex-1 flex-col">
             <MarketingHeader />
-            {children}
-        </React.Fragment>
+            <div className="container-wrapper flex flex-1 flex-col">
+                {children}
+            </div>
+        </div>
     )
 }
