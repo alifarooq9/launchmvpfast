@@ -1,6 +1,6 @@
 ## Roadmap
 
-### Rapidlaunch.xyz
+### launchmvpfast.com
 - [x] Landing Page
 - [x] Waitlist
 - [ ] Documentation - (Using Next-Remote-mdx)

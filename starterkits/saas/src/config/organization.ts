@@ -1,5 +1,5 @@
 // export all organization related config here
 
 export const orgConfig = {
-    cookieName: "rapidlaunch:current-organization",
+    cookieName: "launchmvpfast:current-organization",
 } as const;

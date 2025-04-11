@@ -25,7 +25,7 @@ export function WebFooter() {
                                     className: "w-6 h-6 fill-primary",
                                 }}
                             />
-                            <span className="sr-only">Rapidlaunch logo</span>
+                            <span className="sr-only">launchmvpfast logo</span>
                         </Link>
                         <Balancer as="p" className="text-muted-foreground">
                             {siteConfig.description}
@@ -53,7 +53,9 @@ export function WebFooter() {
                             rel="noreferrer"
                         >
                             <Icons.gitHub className="h-4 w-4" />
-                            <span className="sr-only">Rapidlaunch github</span>
+                            <span className="sr-only">
+                                launchmvpfast github
+                            </span>
                         </Link>
                         <ThemeToggle />
                     </div>

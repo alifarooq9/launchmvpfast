@@ -9,9 +9,7 @@ export default function MarketingLayout({
     return (
         <div className="flex flex-1 flex-col">
             <MarketingHeader />
-            <div className="container-wrapper flex flex-1 flex-col">
-                {children}
-            </div>
+            <main className="flex flex-1 flex-col">{children}</main>
         </div>
     )
 }

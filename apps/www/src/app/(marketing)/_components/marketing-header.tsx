@@ -25,25 +25,37 @@ export function MarketingHeader() {
                             {navConfig.headerNav.map((navItem, index) => (
                                 <li
                                     key={navItem.label}
-                                    className={cn(
-                                        buttonVariants({
-                                            variant: 'ghost',
-                                        }),
-                                        'h-full rounded-none border-r p-0 first:border-l last:border-0',
-                                        navItem.iconOnly && 'aspect-square',
-                                        navItem.disabled &&
-                                            'pointer-events-none cursor-default opacity-60'
-                                    )}
+                                    className="h-full border-r first:border-l last:border-0"
                                 >
                                     {navItem.disabled ? (
-                                        <span className="flex h-full w-full items-center justify-center px-4">
+                                        <span
+                                            className={cn(
+                                                buttonVariants({
+                                                    variant: 'ghost',
+                                                }),
+                                                'h-full rounded-none',
+                                                navItem.iconOnly &&
+                                                    'aspect-square',
+                                                navItem.disabled &&
+                                                    'pointer-events-none cursor-default opacity-60'
+                                            )}
+                                        >
                                             {navItem.label}
                                         </span>
                                     ) : (
                                         <Link
                                             href={navItem.href}
                                             aria-disabled={navItem.disabled}
-                                            className="flex h-full w-full items-center justify-center px-4"
+                                            className={cn(
+                                                buttonVariants({
+                                                    variant: 'ghost',
+                                                }),
+                                                'h-full rounded-none',
+                                                navItem.iconOnly &&
+                                                    'aspect-square',
+                                                navItem.disabled &&
+                                                    'pointer-events-none cursor-default opacity-60'
+                                            )}
                                         >
                                             {navItem.icon && <navItem.icon />}
                                             {!navItem.iconOnly && navItem.label}

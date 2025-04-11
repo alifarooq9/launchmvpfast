@@ -74,7 +74,7 @@ export const pricingFeatures: PricingFeature[] = [
     },
     {
         id: "7",
-        title: "Rapidlaunch Branding",
+        title: "launchmvpfast Branding",
         inludedIn: [pricingIds.pro, pricingIds.premium],
     },
     {
@@ -89,7 +89,7 @@ export const pricingFeatures: PricingFeature[] = [
     },
     {
         id: "10",
-        title: "Rapidlaunch Branding",
+        title: "launchmvpfast Branding",
         inludedIn: [pricingIds.premium],
     },
     {
@@ -104,7 +104,7 @@ export const pricingFeatures: PricingFeature[] = [
     },
     {
         id: "13",
-        title: "Rapidlaunch Branding",
+        title: "launchmvpfast Branding",
         inludedIn: [pricingIds.premium],
     },
 ];

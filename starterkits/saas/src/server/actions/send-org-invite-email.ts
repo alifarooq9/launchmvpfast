@@ -38,7 +38,7 @@ export async function sendOrgInviteEmail({
             subject: `You have been Inited to a Team | ${siteConfig.name}`,
             html: `
                 <div>
-                    <a href="${siteUrls.rapidlaunch}">${siteConfig.name}</a>
+                    <a href="${siteUrls.launchmvpfast}">${siteConfig.name}</a>
                     <h1>🪄 Your Invite to ${orgName}</h1>
                     <p>
                         You have been invited to join ${orgName}

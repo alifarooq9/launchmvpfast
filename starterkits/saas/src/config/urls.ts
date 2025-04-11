@@ -8,8 +8,8 @@
  */
 
 export const siteUrls = {
-    publicUrl: "https://saasdemo.rapidlaunch.xyz",
-    github: "https://github.com/alifarooq9/rapidlaunch",
+    publicUrl: "https://saasdemo.launchmvpfast.com",
+    github: "https://github.com/alifarooq9/launchmvpfast",
     home: "/",
     pricing: "/pricing",
     features: "/features",
@@ -19,7 +19,7 @@ export const siteUrls = {
     changelogs: "/changelogs",
     maintenance: "/maintenance",
     waitlist: "/waitlist",
-    rapidlaunch: "https://www.rapidlaunch.xyz",
+    launchmvpfast: "https://www.launchmvpfast.com",
 
     dashboard: {
         home: "/dashboard",
@@ -63,7 +63,7 @@ export const publicRoutes: string[] = [
     siteUrls.changelogs,
     siteUrls.maintenance,
     siteUrls.waitlist,
-    siteUrls.rapidlaunch,
+    siteUrls.launchmvpfast,
 ];
 
 export const protectedRoutes: string[] = [

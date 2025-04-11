@@ -27,6 +27,7 @@ export const navConfig: NavConfig = {
         {
             label: 'Blocks',
             href: urls.app.blocks,
+            disabled: true,
         },
         {
             label: 'GitHub',
