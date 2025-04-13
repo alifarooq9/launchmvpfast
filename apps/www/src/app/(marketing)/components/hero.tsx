@@ -17,7 +17,7 @@ export function Hero() {
                 <div className="flex h-full flex-col justify-center gap-3">
                     <Link
                         href={urls.app.pricing}
-                        className="max-w-10/12 relative mt-2 hidden w-full items-center gap-2 border border-white/5 md:flex"
+                        className="max-w-10/12 focus-ring border-border relative mt-2 hidden w-full items-center gap-2 border md:flex"
                     >
                         <div className="bg-accent/30 m-0.5 flex w-full items-center justify-between px-4 py-2">
                             <p className="text-sm font-medium">
@@ -107,52 +107,52 @@ export function TerminalHero() {
                 <span>Cloning repo...</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={2000} className="text-[#F07178]">
+            <AnimatedSpan delay={1700} className="text-[#F07178]">
                 <span>✔ Next.js ready. [Saved: 1m]</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={2500} className="text-[#F07178]">
+            <AnimatedSpan delay={1900} className="text-[#F07178]">
                 <span>✔ Auth flows ready. [Saved: 4h]</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={3000} className="text-[#F07178]">
+            <AnimatedSpan delay={2100} className="text-[#F07178]">
                 <span>✔ Organizations set. [Saved: 5h]</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={3500} className="text-[#F07178]">
+            <AnimatedSpan delay={2300} className="text-[#F07178]">
                 <span>✔ Landing pages built. [Saved: 8h]</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={4000} className="text-[#F07178]">
+            <AnimatedSpan delay={2500} className="text-[#F07178]">
                 <span>✔ Stripe integrated. [Saved: 5h]</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={4500} className="text-[#F07178]">
+            <AnimatedSpan delay={2700} className="text-[#F07178]">
                 <span>✔ Drizzle DB configured. [Saved: 2.5h]</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={5000} className="text-[#F07178]">
+            <AnimatedSpan delay={2900} className="text-[#F07178]">
                 <span>✔ Uploadthing active. [Saved: 2h]</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={5500} className="text-[#F07178]">
+            <AnimatedSpan delay={3100} className="text-[#F07178]">
                 <span>✔ shadcn UI installed. [Saved: 1m]</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={6000} className="text-[#F07178]">
+            <AnimatedSpan delay={3300} className="text-[#F07178]">
                 <span>✔ Dashboard ready. [Saved: 10h]</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={6500} className="text-[#F07178]">
+            <AnimatedSpan delay={3500} className="text-[#F07178]">
                 <span>✔ Waitlist enabled. [Saved: 3h]</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={7000} className="text-[#F07178]">
+            <AnimatedSpan delay={3700} className="text-[#F07178]">
                 <span>✔ Email templates ready. [Saved: 3h]</span>
             </AnimatedSpan>
 
             <TypingAnimation
-                delay={7500}
+                delay={3900}
                 duration={40}
                 className="text-muted-foreground"
             >
@@ -160,7 +160,7 @@ export function TerminalHero() {
             </TypingAnimation>
 
             <TypingAnimation
-                delay={8000}
+                delay={4100}
                 duration={40}
                 className="text-muted-foreground"
             >

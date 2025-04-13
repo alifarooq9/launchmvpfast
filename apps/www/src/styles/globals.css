@@ -126,6 +126,12 @@
     --sidebar-ring: oklch(0.556 0 0);
 }
 
+@layer utilities {
+    .container {
+        @apply mx-auto max-w-screen-2xl px-4 xl:px-6;
+    }
+}
+
 @layer base {
     * {
         @apply border-border outline-ring/50;
@@ -138,15 +144,11 @@
         @apply border-border/50 dark:border-border;
     }
 
-    .container-wrapper {
-        @apply border-border/70 dark:border-border mx-auto w-full max-w-[1400px] min-[1400px]:border-x min-[1800px]:max-w-screen-2xl;
-    }
-
-    .container {
-        @apply mx-auto max-w-screen-2xl px-4 xl:px-6;
-    }
-
     .focus-ring {
         @apply focus-visible:border-ring focus-visible:ring-ring/50 outline-none transition-all focus-visible:ring-[3px];
+    }
+
+    .container-wrapper {
+        @apply border-border/70 dark:border-border mx-auto w-full max-w-[1400px] min-[1400px]:border-x min-[1800px]:max-w-screen-2xl;
     }
 }

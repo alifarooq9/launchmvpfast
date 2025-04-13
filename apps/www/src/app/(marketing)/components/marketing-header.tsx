@@ -8,7 +8,7 @@ export function MarketingHeader() {
     return (
         <header className="border-grid bg-background sticky top-0 z-50 w-full border-b">
             <div className="container-wrapper border-grid uppercase">
-                <div className="container mx-auto flex h-12 w-full max-w-screen-2xl items-center justify-between px-0 xl:px-0">
+                <div className="mx-auto flex h-12 w-full max-w-screen-2xl items-center justify-between px-0 xl:px-0">
                     <Link
                         href="/"
                         className={cn(
