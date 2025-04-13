@@ -98,7 +98,7 @@ export function GradientBG({
 
 export function TerminalHero() {
     return (
-        <Terminal title="SaaS-Starterkit">
+        <Terminal copyText="Cloning repo...">
             <TypingAnimation duration={30}>
                 &gt; Clone Launch MVP Fast SaaS Starterkit
             </TypingAnimation>

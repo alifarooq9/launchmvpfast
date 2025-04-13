@@ -1,6 +1,8 @@
 'use client'
 
+import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { CheckIcon, CopyIcon } from 'lucide-react'
 import { motion, MotionProps } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 
@@ -94,27 +96,47 @@ export const TypingAnimation = ({
 interface TerminalProps {
     children: React.ReactNode
     className?: string
-    title?: string
+    copyText?: string
 }
 
-export const Terminal = ({ children, className, title }: TerminalProps) => {
+export const Terminal = ({ children, className, copyText }: TerminalProps) => {
+    const [copied, setCopied] = useState(false)
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(copyText ?? '')
+        setCopied(true)
+    }
+
+    useEffect(() => {
+        if (copied) {
+            setTimeout(() => {
+                setCopied(false)
+            }, 2000)
+        }
+    }, [copied])
+
     return (
         <div
             className={cn(
-                'border-border bg-background z-0 h-full max-h-[430px] w-full rounded-md border',
+                'border-border bg-accent/20 z-0 h-full max-h-[430px] w-full rounded-md border',
                 className
             )}
         >
-            <div className="border-border flex items-center justify-between gap-2 border-b px-4 py-3">
+            <div className="border-border flex items-center justify-between gap-2 px-4 pt-3">
                 <div className="flex flex-row gap-x-2">
                     <div className="h-2 w-2 rounded-full bg-red-500"></div>
                     <div className="h-2 w-2 rounded-full bg-yellow-500"></div>
                     <div className="h-2 w-2 rounded-full bg-green-500"></div>
                 </div>
 
-                <p className="text-muted-foreground font-mono text-xs tracking-wider">
-                    {title}
-                </p>
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={handleCopy}
+                    className="size-7"
+                >
+                    {copied ? <CheckIcon /> : <CopyIcon />}
+                </Button>
             </div>
             <pre className="p-4">
                 <code className="grid gap-y-1 overflow-auto">{children}</code>
