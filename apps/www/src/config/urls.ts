@@ -5,6 +5,10 @@ export const urls = {
         starterkits: '/starter-kits',
         components: '/components',
         blocks: '/blocks',
+        pricing: '/pricing',
+    },
+    docs: {
+        base: '/docs',
     },
     socials: {
         gh: '/gh',

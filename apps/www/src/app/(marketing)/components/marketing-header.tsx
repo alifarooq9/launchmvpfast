@@ -15,7 +15,7 @@ export function MarketingHeader() {
                             buttonVariants({
                                 variant: 'ghost',
                             }),
-                            'border-border h-full rounded-none border-r px-6 text-base font-black'
+                            'border-border h-full rounded-none border-r px-6 text-base font-bold'
                         )}
                     >
                         {siteConfig.name}

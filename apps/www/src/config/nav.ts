@@ -30,6 +30,11 @@ export const navConfig: NavConfig = {
             disabled: true,
         },
         {
+            label: 'Docs',
+            href: urls.docs.base,
+            disabled: true,
+        },
+        {
             label: 'GitHub',
             href: urls.socials.gh,
             icon: Icons.gitHub,
