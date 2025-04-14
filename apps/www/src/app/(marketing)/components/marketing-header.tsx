@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export function MarketingHeader() {
     return (
-        <header className="border-grid bg-background sticky top-0 z-50 w-full border-b">
+        <header className="border-grid bg-background sticky top-0 z-50 hidden w-full border-b md:flex">
             <div className="container-wrapper border-grid uppercase">
                 <div className="mx-auto flex h-12 w-full max-w-screen-2xl items-center justify-between px-0 xl:px-0">
                     <Link
@@ -15,7 +15,7 @@ export function MarketingHeader() {
                             buttonVariants({
                                 variant: 'ghost',
                             }),
-                            'border-border h-full rounded-none border-r px-6 text-base font-bold'
+                            'border-border h-full rounded-none border-r px-4 text-base font-bold xl:px-6'
                         )}
                     >
                         {siteConfig.name}

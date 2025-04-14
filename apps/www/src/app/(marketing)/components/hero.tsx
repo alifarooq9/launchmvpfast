@@ -11,15 +11,15 @@ import { cn } from '@/lib/utils'
 
 export function Hero() {
     return (
-        <div className="container-wrapper">
-            <div className="container grid min-h-[30rem] grid-cols-2 items-center justify-center gap-6">
+        <section className="container-wrapper">
+            <div className="container grid min-h-[30rem] grid-cols-1 items-center justify-center gap-6 py-14 lg:grid-cols-2 lg:py-0">
                 {/* Main Section */}
                 <div className="flex h-full flex-col justify-center gap-3">
                     <Link
                         href={urls.app.pricing}
-                        className="max-w-10/12 focus-ring border-border relative mt-2 hidden w-full items-center gap-2 border md:flex"
+                        className="focus-ring border-border relative hidden w-full max-w-[30rem] items-center gap-2 border sm:flex"
                     >
-                        <div className="bg-accent/30 m-0.5 flex w-full items-center justify-between px-4 py-2">
+                        <div className="bg-accent/30 m-0.5 flex w-full items-center justify-between gap-3 px-4 py-2">
                             <p className="text-sm font-medium">
                                 Want us to build your idea for you?
                             </p>
@@ -27,20 +27,20 @@ export function Hero() {
                         </div>
                     </Link>
 
-                    <h1 className="font-heading text-balance text-5xl font-normal leading-tight tracking-tighter">
+                    <h1 className="font-heading text text-balance text-3xl font-normal leading-tight tracking-tighter sm:text-4xl md:text-5xl">
                         Launch Your <span>Idea Fast</span> with{' '}
-                        <span className="bg-foreground text-primary-foreground px-2">
+                        <span className="bg-foreground text-primary-foreground whitespace-nowrap px-2">
                             Open Source
                         </span>{' '}
                         Starterkits & More
                     </h1>
-                    <p className="text-muted-foreground text-balance text-xl font-light leading-tight">
+                    <p className="text-muted-foreground text-balance text-base font-light leading-tight sm:text-lg">
                         Launch your idea faster with Open Source Starterkits,
                         Re-usable components, and more. Build your next idea in
                         days.
                     </p>
 
-                    <div className="flex items-center gap-4">
+                    <div className="flex w-full flex-col items-start gap-2 sm:w-fit sm:flex-row sm:items-center sm:gap-4">
                         <Link
                             href={urls.app.starterkits}
                             className={buttonVariants({
@@ -61,38 +61,11 @@ export function Hero() {
                     </div>
                 </div>
 
-                <div className="flex h-full w-full items-center justify-center">
+                <div className="hidden h-full w-full items-center justify-center sm:flex">
                     <TerminalHero />
                 </div>
             </div>
-        </div>
-    )
-}
-
-export function GradientBG({
-    children,
-    className,
-    ...props
-}: React.PropsWithChildren<
-    {
-        className?: string
-    } & React.HTMLAttributes<HTMLElement>
->) {
-    return (
-        <div
-            className={cn(
-                'relative flex   h-min  w-full flex-col  flex-nowrap content-center items-center justify-center gap-10 overflow-visible decoration-clone p-px transition duration-500'
-            )}
-            {...props}
-        >
-            <div
-                className={cn('z-10 w-auto  rounded-none px-4 py-2', className)}
-            >
-                {children}
-            </div>
-
-            <div className="z-1 absolute inset-[2px] flex-none bg-zinc-100 dark:bg-zinc-950 " />
-        </div>
+        </section>
     )
 }
 
