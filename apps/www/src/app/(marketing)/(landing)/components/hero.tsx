@@ -69,6 +69,20 @@ export function Hero() {
     )
 }
 
+const savedCommands = [
+    'Next.js ready. [Saved: 1m]',
+    'Auth flows ready. [Saved: 4h]',
+    'Organizations set. [Saved: 5h]',
+    'Landing pages built. [Saved: 8h]',
+    'Stripe integrated. [Saved: 3h]',
+    'Drizzle DB configured. [Saved: 2.5h]',
+    'Uploadthing active. [Saved: 2h]',
+    'shadcn UI installed. [Saved: 1m]',
+    'Dashboard ready. [Saved: 10h]',
+    'Waitlist enabled. [Saved: 3h]',
+    'Email templates ready. [Saved: 3h]',
+]
+
 export function TerminalHero() {
     return (
         <Terminal copyText="Cloning repo...">
@@ -76,58 +90,23 @@ export function TerminalHero() {
                 &gt; Clone Launch MVP Fast SaaS Starterkit
             </TypingAnimation>
 
-            <AnimatedSpan delay={1500} className="text-[#0069be]">
+            <AnimatedSpan delay={1500} className="text-green-500">
                 <span>Cloning repo...</span>
             </AnimatedSpan>
-
-            <AnimatedSpan delay={1700} className="text-[#F07178]">
-                <span>✔ Next.js ready. [Saved: 1m]</span>
-            </AnimatedSpan>
-
-            <AnimatedSpan delay={1900} className="text-[#F07178]">
-                <span>✔ Auth flows ready. [Saved: 4h]</span>
-            </AnimatedSpan>
-
-            <AnimatedSpan delay={2100} className="text-[#F07178]">
-                <span>✔ Organizations set. [Saved: 5h]</span>
-            </AnimatedSpan>
-
-            <AnimatedSpan delay={2300} className="text-[#F07178]">
-                <span>✔ Landing pages built. [Saved: 8h]</span>
-            </AnimatedSpan>
-
-            <AnimatedSpan delay={2500} className="text-[#F07178]">
-                <span>✔ Stripe integrated. [Saved: 5h]</span>
-            </AnimatedSpan>
-
-            <AnimatedSpan delay={2700} className="text-[#F07178]">
-                <span>✔ Drizzle DB configured. [Saved: 2.5h]</span>
-            </AnimatedSpan>
-
-            <AnimatedSpan delay={2900} className="text-[#F07178]">
-                <span>✔ Uploadthing active. [Saved: 2h]</span>
-            </AnimatedSpan>
-
-            <AnimatedSpan delay={3100} className="text-[#F07178]">
-                <span>✔ shadcn UI installed. [Saved: 1m]</span>
-            </AnimatedSpan>
-
-            <AnimatedSpan delay={3300} className="text-[#F07178]">
-                <span>✔ Dashboard ready. [Saved: 10h]</span>
-            </AnimatedSpan>
-
-            <AnimatedSpan delay={3500} className="text-[#F07178]">
-                <span>✔ Waitlist enabled. [Saved: 3h]</span>
-            </AnimatedSpan>
-
-            <AnimatedSpan delay={3700} className="text-[#F07178]">
-                <span>✔ Email templates ready. [Saved: 3h]</span>
-            </AnimatedSpan>
+            {savedCommands.map((command, index) => (
+                <AnimatedSpan
+                    key={`${command}+${index}`}
+                    delay={1500 + index * 200}
+                    className="text-blue-500"
+                >
+                    <span>✔ {command}</span>
+                </AnimatedSpan>
+            ))}
 
             <TypingAnimation
                 delay={3900}
                 duration={40}
-                className="text-muted-foreground"
+                className="text-green-500"
             >
                 Success! Starterkit is live.
             </TypingAnimation>
@@ -135,7 +114,7 @@ export function TerminalHero() {
             <TypingAnimation
                 delay={4100}
                 duration={40}
-                className="text-muted-foreground"
+                className="text-green-500"
             >
                 Time saved: Days to minutes!
             </TypingAnimation>
