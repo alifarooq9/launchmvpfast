@@ -1,3 +1,4 @@
+import { GridGap } from '@/app/(marketing)/components/grid-gap'
 import { ThreeDMarquee } from '@/components/ui/3d-marquee'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -73,14 +74,14 @@ export function Showcase() {
     return (
         <section>
             <Tabs defaultValue={tabTriggerKeys.starterkits} className="gap-0">
-                <div className="border-grid border-y">
+                <div className="border-grid border-t">
                     <div className="container-wrapper">
                         <TabsList className="bg-background grid h-auto w-full grid-cols-3 p-0">
                             {tabTriggers.map((trigger) => (
                                 <TabsTrigger
                                     key={trigger.key}
                                     value={trigger.key}
-                                    className="flex h-fit flex-col items-start gap-2 whitespace-normal border-0 px-4 py-6 text-left"
+                                    className="flex h-fit flex-col items-start gap-2 border-0 px-4 py-6 text-left whitespace-normal"
                                     disabled={trigger.disabled}
                                 >
                                     <div className="flex items-center gap-2">
@@ -105,9 +106,7 @@ export function Showcase() {
                     </div>
                 </div>
 
-                <div className="border-grid  w-full border-b">
-                    <div className="container-wrapper h-4" />
-                </div>
+                <GridGap height={4} />
 
                 <div className="container-wrapper">
                     <TabsContent value={tabTriggerKeys.starterkits}>
