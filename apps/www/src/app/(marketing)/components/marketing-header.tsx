@@ -1,8 +1,10 @@
-import { buttonVariants } from '@/components/ui/button'
+import { ThemeSwitcher } from '@/components/theme-switcher'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { navConfig } from '@/config/nav'
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
+import { Moon, Sun } from 'lucide-react'
 
 export function MarketingHeader() {
     return (
@@ -63,6 +65,23 @@ export function MarketingHeader() {
                                     )}
                                 </li>
                             ))}
+
+                            <li className="aspect-square h-full border-r first:border-l last:border-0">
+                                <ThemeSwitcher
+                                    Trigger={
+                                        <Button
+                                            variant="ghost"
+                                            className="aspect-sqaure [&_svg:not([class*='size-'])]:size-4.5 h-full w-full rounded-none"
+                                        >
+                                            <Sun className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                                            <Moon className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                                            <span className="sr-only">
+                                                Toggle theme
+                                            </span>
+                                        </Button>
+                                    }
+                                />
+                            </li>
                         </ul>
                     </nav>
                 </div>

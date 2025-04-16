@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import '../styles/globals.css'
 import { MarketingHeader } from '@/app/(marketing)/components/marketing-header'
 import { fontsVariables } from '@/lib/fonts'
+import { Providers } from '@/components/providers/providers'
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -14,10 +15,10 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en">
-            <body className={`${fontsVariables} dark font-sans antialiased`}>
+        <html lang="en" suppressHydrationWarning>
+            <body className={`${fontsVariables} font-sans antialiased`}>
                 <div className="relative flex min-h-svh flex-col">
-                    {children}
+                    <Providers>{children}</Providers>
                 </div>
             </body>
         </html>

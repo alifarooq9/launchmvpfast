@@ -130,7 +130,7 @@ export function Showcase() {
 
 function ShowcaseContentWrapper({ children }: { children: React.ReactNode }) {
     return (
-        <div className="bg-accent/40 p-2">
+        <div className="bg-accent dark:bg-accent/40 p-2">
             <div className="bg-background border-input rounded-[0.8rem] border">
                 {children}
             </div>
