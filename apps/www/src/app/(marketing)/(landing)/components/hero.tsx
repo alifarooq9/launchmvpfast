@@ -27,7 +27,7 @@ export function Hero() {
                         </div>
                     </Link>
 
-                    <h1 className="font-heading text text-balance text-3xl font-normal leading-tight tracking-tighter sm:text-4xl md:text-5xl">
+                    <h1 className="font-heading text text-balance text-3xl font-medium leading-tight tracking-tighter sm:text-4xl md:text-5xl">
                         Launch Your <span>MVP Fast</span> with{' '}
                         <span className="bg-foreground text-primary-foreground whitespace-nowrap px-2">
                             Open Source

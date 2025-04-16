@@ -71,11 +71,8 @@ const starterkitImags = [
 
 export function Showcase() {
     return (
-        <section className="flex flex-1 flex-col">
-            <Tabs
-                defaultValue={tabTriggerKeys.starterkits}
-                className="flex-1 gap-0"
-            >
+        <section>
+            <Tabs defaultValue={tabTriggerKeys.starterkits} className="gap-0">
                 <div className="border-grid border-y">
                     <div className="container-wrapper">
                         <TabsList className="bg-background grid h-auto w-full grid-cols-3 p-0">
@@ -87,8 +84,10 @@ export function Showcase() {
                                     disabled={trigger.disabled}
                                 >
                                     <div className="flex items-center gap-2">
-                                        <h2 className="font-heading text-foreground text-lg font-semibold">
-                                            {trigger.label}
+                                        <h2 className="font-heading text-foreground text-lg">
+                                            <strong className="font-semibold">
+                                                {trigger.label}
+                                            </strong>
                                         </h2>
                                         <Badge
                                             variant="secondary"
@@ -110,7 +109,7 @@ export function Showcase() {
                     <div className="container-wrapper h-4" />
                 </div>
 
-                <div className="container-wrapper flex-1">
+                <div className="container-wrapper">
                     <TabsContent value={tabTriggerKeys.starterkits}>
                         <ShowcaseContentWrapper>
                             <ThreeDMarquee images={starterkitImags} />
