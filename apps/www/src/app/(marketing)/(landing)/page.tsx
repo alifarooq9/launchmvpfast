@@ -1,6 +1,6 @@
 import { Features } from '@/app/(marketing)/(landing)/components/features'
 import { Hero } from '@/app/(marketing)/(landing)/components/hero'
-import { Showcase } from '@/app/(marketing)/(landing)/components/showcase'
+import { Demos } from '@/app/(marketing)/(landing)/components/demos'
 import { Testimonials } from '@/app/(marketing)/(landing)/components/testimonials'
 import { GridGap } from '@/app/(marketing)/components/grid-gap'
 
@@ -9,7 +9,7 @@ export default function MarketingPage() {
         <>
             <Hero />
 
-            <Showcase />
+            <Demos />
 
             <GridGap height={20} />
 

@@ -70,7 +70,7 @@ const starterkitImags = [
     'https://assets.aceternity.com/world-map.webp',
 ]
 
-export function Showcase() {
+export function Demos() {
     return (
         <section>
             <Tabs defaultValue={tabTriggerKeys.starterkits} className="gap-0">
@@ -110,9 +110,9 @@ export function Showcase() {
 
                 <div className="container-wrapper">
                     <TabsContent value={tabTriggerKeys.starterkits}>
-                        <ShowcaseContentWrapper>
+                        <DemoContentWrapper>
                             <ThreeDMarquee images={starterkitImags} />
-                        </ShowcaseContentWrapper>
+                        </DemoContentWrapper>
                     </TabsContent>
                     <TabsContent value={tabTriggerKeys.components}>
                         {/* TODO: Add components showcase */}
@@ -126,7 +126,7 @@ export function Showcase() {
     )
 }
 
-function ShowcaseContentWrapper({ children }: { children: React.ReactNode }) {
+function DemoContentWrapper({ children }: { children: React.ReactNode }) {
     return (
         <div className="bg-accent dark:bg-accent/40 p-2">
             <div className="bg-background border-input rounded-[0.8rem] border">
