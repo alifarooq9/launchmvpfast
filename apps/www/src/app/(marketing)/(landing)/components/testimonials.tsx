@@ -2,6 +2,7 @@ import { IconProps, Icons } from '@/components/icons'
 import { JSX } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import Link from 'next/link'
+import { siteConfig } from '@/config/site'
 
 type Testimonial = {
     name: string
@@ -47,15 +48,10 @@ export function Testimonials() {
                         <TestimonialCard key={idx} {...testimonial} />
                     ))}
 
-                    <div className="col-span-2 p-4">
-                        <p>
-                            <strong className="font-heading text-lg font-semibold">
-                                Tell Us About Your Experience
-                            </strong>
-                        </p>
-                        <p className="text-muted-foreground text-lg font-light">
-                            Tell us about your experience with us. We'd love to
-                            hear from you! 🙌
+                    <div className="col-span-2 flex flex-col items-center justify-center p-4">
+                        <p className="text-muted-foreground text-base font-light">
+                            Tell us about your experience with {siteConfig.name}
+                            . We'd love to hear from you! 🙌
                         </p>
                     </div>
                 </div>
