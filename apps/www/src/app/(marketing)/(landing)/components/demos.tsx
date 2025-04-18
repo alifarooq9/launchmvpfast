@@ -106,7 +106,7 @@ export function Demos() {
                     </div>
                 </div>
 
-                <GridGap height={4} />
+                <GridGap className="h-4" />
 
                 <div className="container-wrapper">
                     <TabsContent value={tabTriggerKeys.starterkits}>

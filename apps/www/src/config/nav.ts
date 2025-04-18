@@ -9,8 +9,18 @@ type NavItem = {
     iconOnly?: boolean
 }
 
+type SocialItem = {
+    name: string
+    href: string
+    icon: React.ComponentType<IconProps>
+}
+
 type NavConfig = {
     headerNav: NavItem[]
+    footerNav: {
+        main: NavItem[]
+        socials: SocialItem[]
+    }
 }
 
 export const navConfig: NavConfig = {
@@ -30,6 +40,10 @@ export const navConfig: NavConfig = {
             disabled: true,
         },
         {
+            label: 'Pricing',
+            href: urls.app.pricing,
+        },
+        {
             label: 'Docs',
             href: urls.docs.base,
             disabled: true,
@@ -47,4 +61,40 @@ export const navConfig: NavConfig = {
             iconOnly: true,
         },
     ],
+    footerNav: {
+        main: [
+            {
+                label: 'Starter kits',
+                href: urls.app.starterkits,
+            },
+            {
+                label: 'Components',
+                href: urls.app.components,
+            },
+            {
+                label: 'Blocks',
+                href: urls.app.blocks,
+            },
+            {
+                label: 'Pricing',
+                href: urls.app.pricing,
+            },
+            {
+                label: 'Docs',
+                href: urls.docs.base,
+            },
+        ],
+        socials: [
+            {
+                name: 'Github',
+                href: urls.socials.gh,
+                icon: Icons.gitHub,
+            },
+            {
+                name: 'X',
+                href: urls.socials.x,
+                icon: Icons.x,
+            },
+        ],
+    },
 }

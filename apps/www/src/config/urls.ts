@@ -13,5 +13,6 @@ export const urls = {
     socials: {
         gh: '/gh',
         x: '/x',
+        ali: '/ali',
     },
 } as const

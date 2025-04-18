@@ -20,15 +20,15 @@ export default function MarketingPage() {
 
             <Demos />
 
-            <GridGap height={20} />
+            <GridGap className="h-20" />
 
             <Showcase />
 
-            <GridGap height={20} />
+            <GridGap className="h-20" />
 
             <Testimonials />
 
-            <GridGap height={20} />
+            <GridGap className="h-20" />
 
             <Features />
         </>
