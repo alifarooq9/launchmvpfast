@@ -85,8 +85,8 @@ export function Demos() {
                                     disabled={trigger.disabled}
                                 >
                                     <div className="flex items-center gap-2">
-                                        <h2 className="font-heading text-foreground text-lg">
-                                            <strong className="font-semibold">
+                                        <h2 className="text-foreground text-lg">
+                                            <strong className="font-heading">
                                                 {trigger.label}
                                             </strong>
                                         </h2>

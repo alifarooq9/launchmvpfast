@@ -33,7 +33,7 @@ export function Testimonials() {
             <div className="border-grid border-b">
                 <div className="container-wrapper">
                     <div className="container py-4">
-                        <h2 className="font-heading text-2xl font-medium">
+                        <h2 className="font-heading text-2xl">
                             Testimonials: Hear from Our Community
                         </h2>
                         <p className="text-muted-foreground">

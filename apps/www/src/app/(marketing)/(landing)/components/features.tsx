@@ -42,7 +42,7 @@ export async function Features() {
             <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                 <p className="text-muted-foreground">Launch in days with</p>
                 <p className="font-heading mx-auto mt-4 max-w-md text-center text-4xl tracking-tighter text-balance">
-                    <strong className="font-semibold">
+                    <strong className="font-medium">
                         Starter kits, Reusable Components, and Modular Blocks
                     </strong>
                 </p>
@@ -73,7 +73,7 @@ export async function Features() {
                         <Icons.gitHub className="size-4" />
                         <span>Star on GitHub</span>{' '}
                         <div className="ml-2 flex items-center gap-1 text-sm md:flex">
-                            <StarIcon className="text-muted-foreground size-4 fill-none transition-all duration-300 group-hover:fill-yellow-300 group-hover:text-yellow-300" />
+                            <StarIcon className="text-muted-foreground fill-muted-foreground size-4 transition-all duration-300 group-hover:fill-yellow-300 group-hover:text-yellow-300" />
                             <NumberTicker
                                 value={stars as number}
                                 className="font-medium"

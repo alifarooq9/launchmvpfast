@@ -8,25 +8,25 @@ export function MarketingFooter() {
             <div className="container-wrapper overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
                 <nav
                     aria-label="Footer"
-                    className="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6"
+                    className="-mb-6 flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm/6"
                 >
                     {navConfig.footerNav.main.map((item) => (
                         <Link
                             key={item.href}
                             href={item.href}
-                            className="text-muted-foreground"
+                            className="text-muted-foreground focus-ring px-2"
                         >
                             {item.label}
                         </Link>
                     ))}
                 </nav>
-                <div className="mt-16 flex justify-center gap-x-10">
+                <div className="mt-16 flex justify-center gap-x-8">
                     {navConfig.footerNav.socials.map((item) => (
                         <Link
                             target="_blank"
                             key={item.name}
                             href={item.href}
-                            className="text-muted-foreground"
+                            className="text-muted-foreground focus-ring p-1"
                         >
                             <span className="sr-only">{item.name}</span>
                             <item.icon aria-hidden="true" className="size-6" />
@@ -34,7 +34,7 @@ export function MarketingFooter() {
                     ))}
                 </div>
                 <div className="mt-10 flex items-center justify-center">
-                    <p className="font-heading text-7xl font-medium">
+                    <p className="font-heading text-5xl">
                         Built by developers for developers.
                     </p>
                 </div>
@@ -42,14 +42,16 @@ export function MarketingFooter() {
                     Built by{' '}
                     <Link
                         href={urls.socials.ali}
-                        className="underline underline-offset-2"
+                        target="_blank"
+                        className="focus-ring underline underline-offset-2"
                     >
                         Ali Farooq
                     </Link>
                     . The source code is available on{' '}
                     <Link
                         href={urls.socials.gh}
-                        className="underline underline-offset-2"
+                        target="_blank"
+                        className="focus-ring underline underline-offset-2"
                     >
                         Github
                     </Link>

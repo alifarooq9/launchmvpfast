@@ -27,14 +27,14 @@ export function Hero() {
                         </div>
                     </Link>
 
-                    <h1 className="font-heading text text-balance text-3xl font-medium leading-tight tracking-tighter sm:text-4xl md:text-5xl">
+                    <h1 className="font-heading text text-3xl leading-tight tracking-tighter text-balance sm:text-4xl md:text-5xl">
                         Launch Your <span>MVP Fast</span> with{' '}
-                        <span className="bg-foreground text-primary-foreground whitespace-nowrap px-2">
+                        <span className="bg-foreground text-primary-foreground px-2 whitespace-nowrap">
                             Open Source
                         </span>{' '}
                         Starterkits & More
                     </h1>
-                    <p className="text-muted-foreground text-balance text-base font-light leading-tight sm:text-lg">
+                    <p className="text-muted-foreground text-base leading-tight font-light text-balance sm:text-lg">
                         Launch your MVP faster with Open Source Starterkits,
                         Re-usable components, and more. Build your next MVP in
                         days.
