@@ -27,6 +27,9 @@ out/
 build
 dist
 
+# lock files
+pnpm-lock.yaml
+
 
 # Debug
 npm-debug.log*
