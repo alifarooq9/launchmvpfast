@@ -1,0 +1,16 @@
+{
+    "redirects": [
+        {
+            "source": "/github",
+            "destination": "https://github.com/alifarooq9/launchmvpfast"
+        },
+        {
+            "source": "/gh",
+            "destination": "https://github.com/alifarooq9/launchmvpfast"
+        },
+        {
+            "source": "/ali",
+            "destination": "https://x.com/AliFarooqDev"
+        }
+    ]
+}
