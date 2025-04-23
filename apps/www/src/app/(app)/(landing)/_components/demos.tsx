@@ -1,4 +1,4 @@
-import { GridGap } from '@/app/(marketing)/components/grid-gap'
+import { GridGap } from '@/app/(app)/_components/grid-gap'
 import { ThreeDMarquee } from '@/components/ui/3d-marquee'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'

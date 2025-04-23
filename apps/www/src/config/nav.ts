@@ -32,12 +32,10 @@ export const navConfig: NavConfig = {
         {
             label: 'Components',
             href: urls.app.components,
-            disabled: true,
         },
         {
             label: 'Blocks',
             href: urls.app.blocks,
-            disabled: true,
         },
         {
             label: 'Pricing',
@@ -46,7 +44,6 @@ export const navConfig: NavConfig = {
         {
             label: 'Docs',
             href: urls.docs.base,
-            disabled: true,
         },
         {
             label: 'GitHub',

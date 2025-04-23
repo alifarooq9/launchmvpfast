@@ -1,5 +1,5 @@
-import { MarketingFooter } from '@/app/(marketing)/components/marketing-footer'
-import { MarketingHeader } from '@/app/(marketing)/components/marketing-header'
+import { MarketingFooter } from '@/app/(app)/_components/marketing-footer'
+import { MarketingHeader } from '@/app/(app)/_components/marketing-header'
 import React from 'react'
 
 export default function MarketingLayout({

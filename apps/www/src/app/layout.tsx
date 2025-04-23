@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import '../styles/globals.css'
-import { MarketingHeader } from '@/app/(marketing)/components/marketing-header'
+import { MarketingHeader } from '@/app/(app)/_components/marketing-header'
 import { fontsVariables } from '@/lib/fonts'
 import { Providers } from '@/components/providers/providers'
 import { siteConfig } from '@/config/site'
