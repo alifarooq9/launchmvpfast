@@ -66,24 +66,30 @@
             transform: translate(-50%, -50%) scale(0.9);
         }
     }
-    --animate-aurora: aurora 8s ease-in-out infinite alternate
-;
-  @keyframes aurora {
-  0% {
-    backgroundPosition: 0% 50%;
-    transform: rotate(-5deg) scale(0.9);}
-  25% {
-    backgroundPosition: 50% 100%;
-    transform: rotate(5deg) scale(1.1);}
-  50% {
-    backgroundPosition: 100% 50%;
-    transform: rotate(-3deg) scale(0.95);}
-  75% {
-    backgroundPosition: 50% 0%;
-    transform: rotate(3deg) scale(1.05);}
-  100% {
-    backgroundPosition: 0% 50%;
-    transform: rotate(-5deg) scale(0.9);}}}
+    --animate-aurora: aurora 8s ease-in-out infinite alternate;
+    @keyframes aurora {
+        0% {
+            backgroundposition: 0% 50%;
+            transform: rotate(-5deg) scale(0.9);
+        }
+        25% {
+            backgroundposition: 50% 100%;
+            transform: rotate(5deg) scale(1.1);
+        }
+        50% {
+            backgroundposition: 100% 50%;
+            transform: rotate(-3deg) scale(0.95);
+        }
+        75% {
+            backgroundposition: 50% 0%;
+            transform: rotate(3deg) scale(1.05);
+        }
+        100% {
+            backgroundposition: 0% 50%;
+            transform: rotate(-5deg) scale(0.9);
+        }
+    }
+}
 
 :root {
     --radius: 0rem;
@@ -137,7 +143,7 @@
     --accent-foreground: oklch(1 0 0);
     --destructive: oklch(0.704 0.191 22.216);
     --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
+    --input: oklch(1 0 0 / 10%);
     --ring: oklch(0.556 0 0);
     --chart-1: oklch(0.488 0.243 264.376);
     --chart-2: oklch(0.696 0.17 162.48);

@@ -7,13 +7,18 @@ import {
     Terminal,
     TypingAnimation,
 } from '@/components/ui/terminal'
-import { cn } from '@/lib/utils'
+import {
+    PageActions,
+    PageHeader,
+    PageHeaderWrapper,
+    PageHeading,
+    PageDescription,
+} from '@/app/(app)/_components/page-header'
 
 export function Hero() {
     return (
-        <section className="container-wrapper">
-            <div className="container grid min-h-[30rem] grid-cols-1 items-center justify-center gap-6 py-14 lg:grid-cols-2 lg:py-0">
-                {/* Main Section */}
+        <PageHeaderWrapper>
+            <PageHeader className="grid min-h-[30rem] grid-cols-1 lg:grid-cols-2 lg:py-0">
                 <div className="flex h-full flex-col justify-center gap-3">
                     <Link
                         href={urls.app.pricing}
@@ -27,20 +32,20 @@ export function Hero() {
                         </div>
                     </Link>
 
-                    <h1 className="font-heading text text-3xl leading-tight tracking-tighter text-balance sm:text-4xl md:text-5xl">
+                    <PageHeading>
                         Launch Your <span>MVP Fast</span> with{' '}
                         <span className="bg-foreground text-primary-foreground px-2 whitespace-nowrap">
                             Open Source
                         </span>{' '}
                         Starterkits & More
-                    </h1>
-                    <p className="text-muted-foreground text-base leading-tight font-light text-balance sm:text-lg">
+                    </PageHeading>
+                    <PageDescription>
                         Launch your MVP faster with Open Source Starterkits,
                         Re-usable components, and more. Build your next MVP in
                         days.
-                    </p>
+                    </PageDescription>
 
-                    <div className="flex w-full flex-col items-start gap-2 sm:w-fit sm:flex-row sm:items-center sm:gap-4">
+                    <PageActions>
                         <Link
                             href={urls.app.starterkits}
                             className={buttonVariants({
@@ -58,14 +63,14 @@ export function Hero() {
                         >
                             Want Us To Build?
                         </Link>
-                    </div>
+                    </PageActions>
                 </div>
 
                 <div className="hidden h-full w-full items-center justify-center sm:flex">
                     <TerminalHero />
                 </div>
-            </div>
-        </section>
+            </PageHeader>
+        </PageHeaderWrapper>
     )
 }
 
