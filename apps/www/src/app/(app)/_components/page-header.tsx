@@ -1,12 +1,24 @@
 import { cn } from '@/lib/utils'
 
+type PageHeaderWrapperProps = {
+    fullHeight?: boolean
+} & React.HTMLAttributes<HTMLDivElement>
+
 export function PageHeaderWrapper({
     className,
     children,
+    fullHeight,
     ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+}: PageHeaderWrapperProps) {
     return (
-        <section className={cn('container-wrapper', className)} {...props}>
+        <section
+            className={cn(
+                'container-wrapper flex',
+                fullHeight && 'min-h-[calc(100svh-3rem)]',
+                className
+            )}
+            {...props}
+        >
             {children}
         </section>
     )

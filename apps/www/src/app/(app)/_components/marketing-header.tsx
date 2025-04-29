@@ -5,6 +5,7 @@ import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { Moon, Sun } from 'lucide-react'
+import { Icons } from '@/components/icons'
 
 export function MarketingHeader() {
     return (
@@ -17,14 +18,15 @@ export function MarketingHeader() {
                             buttonVariants({
                                 variant: 'ghost',
                             }),
-                            'border-border h-full rounded-none border-r px-4 text-base font-bold xl:px-6'
+                            "border-border h-full rounded-none border-r px-4 text-base font-bold xl:px-6 [&_svg:not([class*='size-'])]:size-5"
                         )}
                     >
+                        <Icons.logo />
                         {siteConfig.name}
                     </Link>
                     <nav className="h-full">
                         <ul className="flex h-full items-center">
-                            {navConfig.headerNav.map((navItem, index) => (
+                            {navConfig.headerNav.map((navItem) => (
                                 <li
                                     key={navItem.label}
                                     className="h-full border-r first:border-l last:border-0"
