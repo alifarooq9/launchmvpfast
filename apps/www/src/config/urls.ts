@@ -2,8 +2,12 @@ export const urls = {
     base: '/',
     public: 'https://www.launchmvpfast.com',
     app: {
-        starterkits: '/starter-kits',
         components: '/components',
+        starterkits: {
+            base: '/opensource-starterkits',
+            saasNextjs:
+                '/opensource-starterkits/open-source-nextjs-saas-starterkit',
+        },
         blocks: '/blocks',
         pricing: '/pricing',
     },

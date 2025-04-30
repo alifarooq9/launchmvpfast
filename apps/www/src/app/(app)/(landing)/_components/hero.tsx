@@ -42,7 +42,7 @@ export function Hero() {
 
                     <PageActions>
                         <Link
-                            href={urls.app.starterkits}
+                            href={urls.app.starterkits.base}
                             className={buttonVariants({
                                 variant: 'secondary',
                                 size: 'lg',

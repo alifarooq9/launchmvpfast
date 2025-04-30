@@ -8,9 +8,9 @@ import { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
 
 export const metadata: Metadata = {
-    title: `${siteConfig.noSpacesName}: Open Source Starter Kits & UI Components`,
+    title: `${siteConfig.name} | Open Source Starter Kits & UI Components`,
     description:
-        'Build faster with free, open-source starter kits, UI components & blocks from LaunchMVPFast. Accelerate your MVP launch today.',
+        'Build and launch your SaaS MVP faster with our open-source starter kits, reusable components, and expert developer services. Get started today!',
 }
 
 export default function MarketingPage() {

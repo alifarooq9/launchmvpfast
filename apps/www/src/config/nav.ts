@@ -27,7 +27,7 @@ export const navConfig: NavConfig = {
     headerNav: [
         {
             label: 'Starter kits',
-            href: urls.app.starterkits,
+            href: urls.app.starterkits.base,
         },
         {
             label: 'Components',
@@ -62,7 +62,7 @@ export const navConfig: NavConfig = {
         main: [
             {
                 label: 'Starter kits',
-                href: urls.app.starterkits,
+                href: urls.app.starterkits.base,
             },
             {
                 label: 'Components',

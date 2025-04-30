@@ -32,7 +32,7 @@ const plans: PricingPlan[] = [
         price: 'Free Forever',
         badge: 'Open Source',
         buttonText: 'Explore Starter Kits',
-        buttonUrl: urls.app.starterkits,
+        buttonUrl: urls.app.starterkits.base,
     },
     {
         id: 'mvp-sprint',
