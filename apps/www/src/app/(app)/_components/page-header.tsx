@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 type PageHeaderWrapperProps = {
     fullHeight?: boolean
@@ -80,12 +81,41 @@ export function PageActions({
     return (
         <div
             className={cn(
-                'flex w-full flex-col items-start gap-2 sm:w-fit sm:flex-row sm:items-center sm:gap-4',
+                'mt-4 flex w-full flex-col items-start gap-2 sm:w-fit sm:flex-row sm:items-center sm:gap-4',
                 className
             )}
             {...props}
         >
             {children}
         </div>
+    )
+}
+
+type AnnouncementProps = {
+    className?: string
+    url: string
+    text: string
+    actionText: string
+}
+
+export function Announcement({
+    className,
+    url,
+    text,
+    actionText,
+}: AnnouncementProps) {
+    return (
+        <Link
+            href={url}
+            className={cn(
+                'focus-ring border-border relative mb-4 hidden w-full max-w-[30rem] items-center gap-2 border sm:flex',
+                className
+            )}
+        >
+            <div className="bg-accent/30 m-0.5 flex w-full items-center justify-between gap-3 px-4 py-2">
+                <p className="text-sm font-medium">{text}</p>
+                <p className="text-sm font-semibold">{actionText}</p>
+            </div>
+        </Link>
     )
 }

@@ -13,6 +13,7 @@ import {
     PageHeaderWrapper,
     PageHeading,
     PageDescription,
+    Announcement,
 } from '@/app/(app)/_components/page-header'
 
 export function Hero() {
@@ -20,17 +21,11 @@ export function Hero() {
         <PageHeaderWrapper>
             <PageHeader className="grid min-h-[30rem] grid-cols-1 lg:grid-cols-2 lg:py-0">
                 <div className="flex h-full flex-col justify-center gap-3">
-                    <Link
-                        href={urls.app.pricing}
-                        className="focus-ring border-border relative hidden w-full max-w-[30rem] items-center gap-2 border sm:flex"
-                    >
-                        <div className="bg-accent/30 m-0.5 flex w-full items-center justify-between gap-3 px-4 py-2">
-                            <p className="text-sm font-medium">
-                                Want us to build your MVP for you?
-                            </p>
-                            <p className="text-sm font-semibold">Contact Us</p>
-                        </div>
-                    </Link>
+                    <Announcement
+                        actionText="Contact Us"
+                        url={urls.app.pricing}
+                        text="Want us to build your MVP for you?"
+                    />
 
                     <PageHeading>
                         Launch Your <span>MVP Fast</span> with{' '}
