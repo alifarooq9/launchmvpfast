@@ -26,7 +26,7 @@ type NavConfig = {
 export const navConfig: NavConfig = {
     headerNav: [
         {
-            label: 'Starter kits',
+            label: 'Starterkits',
             href: urls.app.starterkits.base,
         },
         {

@@ -139,7 +139,10 @@ export function PricingTableItem({
                 ))}
             </ul>
 
-            <Link href={plan.buttonUrl} className={buttonVariants()}>
+            <Link
+                href={plan.buttonUrl}
+                className={buttonVariants({ size: 'lg' })}
+            >
                 {plan.buttonText}
             </Link>
         </div>

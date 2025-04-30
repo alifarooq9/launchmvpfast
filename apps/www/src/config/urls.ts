@@ -4,9 +4,9 @@ export const urls = {
     app: {
         components: '/components',
         starterkits: {
-            base: '/opensource-starterkits',
+            base: '/open-source-starterkits',
             saasNextjs:
-                '/opensource-starterkits/open-source-nextjs-saas-starterkit',
+                '/open-source-starterkits/open-source-nextjs-saas-starterkit',
         },
         blocks: '/blocks',
         pricing: '/pricing',
