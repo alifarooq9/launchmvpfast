@@ -15,6 +15,7 @@ import {
     PageDescription,
     Announcement,
 } from '@/app/(app)/_components/page-header'
+import { cloneCmd } from '@/config/clone-cmd'
 
 export function Hero() {
     return (
@@ -85,7 +86,7 @@ const savedCommands = [
 
 export function TerminalHero() {
     return (
-        <Terminal copyText="Cloning repo...">
+        <Terminal copyText={`pnpx ${cloneCmd.starterkits.saasNextjs.base}`}>
             <TypingAnimation duration={30}>
                 &gt; Clone Launch MVP Fast SaaS Starterkit
             </TypingAnimation>

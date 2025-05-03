@@ -13,7 +13,7 @@ export function StarterkitsHero() {
             <PageHeader>
                 <Announcement
                     actionText="Get Early Access"
-                    url={urls.app.starterkits.base}
+                    url={urls.app.earlyAccess}
                     text="SaaS V2 Starterkit is coming soon!"
                 />
                 <PageHeading>

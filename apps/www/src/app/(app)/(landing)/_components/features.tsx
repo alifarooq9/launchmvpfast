@@ -12,6 +12,7 @@ import { buttonVariants } from '@/components/ui/button'
 import { urls } from '@/config/urls'
 import { StarIcon } from 'lucide-react'
 import { NumberTicker } from '@/components/ui/number-ticker'
+import { techStackIcons } from '@/components/tech-stack-icons'
 
 async function getGitHubStars() {
     try {
@@ -50,11 +51,13 @@ export async function Features() {
                     skills={[
                         'nextJs',
                         'shadcnui',
-                        'uploading',
+                        'uploadthing',
+                        'nextauth',
                         'stripe',
                         'tailwindcss',
                         'typescript',
                         'drizzle',
+                        'lemon',
                     ]}
                 />
 
@@ -92,43 +95,6 @@ export async function Features() {
     )
 }
 
-type TechStackIconType = {
-    [key: string]: {
-        name: string
-        icon: any
-    }
-}
-export const techStackIcons: TechStackIconType = {
-    nextJs: {
-        name: 'Nextjs',
-        icon: <Icons.nextJS className="h-10 w-10" />,
-    },
-    shadcnui: {
-        name: 'ShadcnUI',
-        icon: <Icons.shadcnui className="h-10 w-10" />,
-    },
-    uploading: {
-        name: 'Uploading',
-        icon: <Icons.uploadthing className="h-10 w-10" />,
-    },
-    stripe: {
-        name: 'Stripe',
-        icon: <Icons.stripe className="h-10 w-10" />,
-    },
-    tailwindcss: {
-        name: 'Tailwindcss',
-        icon: <Icons.tailwindcss className="h-10 w-10" />,
-    },
-    typescript: {
-        name: 'Typescript',
-        icon: <Icons.typescript className="h-10 w-10" />,
-    },
-    drizzle: {
-        name: 'Drizzle',
-        icon: <Icons.drizzle className="h-10 w-10" />,
-    },
-}
-
 export const TechStackDisplay = ({
     skills,
     className,
@@ -137,7 +103,7 @@ export const TechStackDisplay = ({
     className?: string
 }) => {
     return (
-        <div
+        <section
             className={cn(
                 'mt-3 flex max-w-4xl flex-wrap items-center justify-center gap-7',
                 className
@@ -148,7 +114,7 @@ export const TechStackDisplay = ({
                     <TooltipProvider delayDuration={50} key={icon}>
                         <Tooltip>
                             <TooltipTrigger asChild>
-                                <span className="transform transition-transform duration-300 hover:rotate-12">
+                                <span className="transform transition-transform duration-300 hover:rotate-12 [&_svg:not([class*='size-'])]:size-9">
                                     {techStackIcons[icon].icon}
                                 </span>
                             </TooltipTrigger>
@@ -159,6 +125,6 @@ export const TechStackDisplay = ({
                     </TooltipProvider>
                 )
             })}
-        </div>
+        </section>
     )
 }

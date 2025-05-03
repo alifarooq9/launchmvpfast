@@ -96,11 +96,11 @@ const plans: PricingPlan[] = [
 
 export default function PricingTable() {
     return (
-        <div className="container-wrapper grid flex-1 grid-cols-4 grid-rows-[auto_auto]">
+        <section className="container-wrapper grid flex-1 grid-cols-4 grid-rows-[auto_auto]">
             {plans.map((plan, index) => (
                 <PricingTableItem key={plan.id} plan={plan} index={index} />
             ))}
-        </div>
+        </section>
     )
 }
 

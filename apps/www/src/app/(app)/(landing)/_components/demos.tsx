@@ -1,4 +1,5 @@
 import { GridGap } from '@/app/(app)/_components/grid-gap'
+import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
 import { ThreeDMarquee } from '@/components/ui/3d-marquee'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -51,7 +52,7 @@ const starterkitImags = [
     'https://assets.aceternity.com/shooting-stars-and-stars-background.png',
     'https://assets.aceternity.com/signup-form.png',
     'https://assets.aceternity.com/cloudinary_bkp/stars_sxle3d.png',
-    'https://assets.aceternity.com/spotlight-new.webp',
+    '/starterkits/saas-v1/landing.png',
     'https://assets.aceternity.com/cloudinary_bkp/Spotlight_ar5jpr.png',
     'https://assets.aceternity.com/cloudinary_bkp/Parallax_Scroll_pzlatw_anfkh7.png',
     'https://assets.aceternity.com/tabs.png',
@@ -110,9 +111,9 @@ export function Demos() {
 
                 <div className="container-wrapper">
                     <TabsContent value={tabTriggerKeys.starterkits}>
-                        <DemoContentWrapper>
+                        <ImageContentWrapper>
                             <ThreeDMarquee images={starterkitImags} />
-                        </DemoContentWrapper>
+                        </ImageContentWrapper>
                     </TabsContent>
                     <TabsContent value={tabTriggerKeys.components}>
                         {/* TODO: Add components showcase */}
@@ -123,15 +124,5 @@ export function Demos() {
                 </div>
             </Tabs>
         </section>
-    )
-}
-
-function DemoContentWrapper({ children }: { children: React.ReactNode }) {
-    return (
-        <div className="bg-accent dark:bg-accent/40 p-2">
-            <div className="bg-background border-input rounded-[0.8rem] border">
-                {children}
-            </div>
-        </div>
     )
 }

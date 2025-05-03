@@ -1,7 +1,7 @@
-import { Icons } from '@/components/icons'
-import { buttonVariants } from '@/components/ui/button'
+import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
+import { techStackIcons } from '@/components/tech-stack-icons'
 import { urls } from '@/config/urls'
-import { ArrowRightIcon } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 type Starterkit = {
@@ -23,68 +23,48 @@ const starterkits: Starterkit[] = [
         techStack: [
             'nextJs',
             'shadcnui',
-            'uploading',
-            'stripe',
+            'nextauth',
+            'uploadthing',
+            'lemon',
             'drizzle',
             'tailwindcss',
             'typescript',
         ],
-        imageUrl: '/images/starterkits/saas-v1-nextjs.png',
+        imageUrl: '/starterkits/saas-v1/landing.png',
         buttonText: 'Clone',
-        buttonUrl: urls.app.starterkits.saasNextjs,
+        buttonUrl: urls.app.starterkits.saasNextjs.base,
     },
 ]
 
 export default function StarterkitsTable() {
     return (
-        <div className="container-wrapper grid flex-1 grid-cols-3">
-            {starterkits.map((starterkit, index) => (
-                <StarterkitsTableItem
-                    key={starterkit.id}
-                    starterkit={starterkit}
-                    index={index}
-                />
-            ))}
-            <div />
-        </div>
-    )
-}
+        <section>
+            <div className="border-grid border-b">
+                <div className="container-wrapper">
+                    <div className="container py-4">
+                        <h2 className="font-heading text-2xl">
+                            SaaS Starter Kits
+                        </h2>
+                        <p className="text-muted-foreground">
+                            SaaS starter kits to help you build your SaaS MVP
+                            faster.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-type TechStackIconType = {
-    [key: string]: {
-        name: string
-        icon: any
-    }
-}
-export const techStackIcons: TechStackIconType = {
-    nextJs: {
-        name: 'Nextjs',
-        icon: <Icons.nextJS className="h-10 w-10" />,
-    },
-    shadcnui: {
-        name: 'ShadcnUI',
-        icon: <Icons.shadcnui className="h-10 w-10" />,
-    },
-    uploading: {
-        name: 'Uploading',
-        icon: <Icons.uploadthing className="h-10 w-10" />,
-    },
-    stripe: {
-        name: 'Stripe',
-        icon: <Icons.stripe className="h-10 w-10" />,
-    },
-    tailwindcss: {
-        name: 'Tailwindcss',
-        icon: <Icons.tailwindcss className="h-10 w-10" />,
-    },
-    typescript: {
-        name: 'Typescript',
-        icon: <Icons.typescript className="h-10 w-10" />,
-    },
-    drizzle: {
-        name: 'Drizzle',
-        icon: <Icons.drizzle className="h-10 w-10" />,
-    },
+            <div className="container-wrapper grid flex-1 grid-cols-3">
+                {starterkits.map((starterkit, index) => (
+                    <StarterkitsTableItem
+                        key={starterkit.id}
+                        starterkit={starterkit}
+                        index={index}
+                    />
+                ))}
+                <div />
+            </div>
+        </section>
+    )
 }
 
 export function StarterkitsTableItem({
@@ -99,13 +79,26 @@ export function StarterkitsTableItem({
             href={starterkit.buttonUrl}
             className="border-grid hover:bg-accent/40 dark:hover:bg-accent/15 focus-ring border-r transition-all last:border-r-0 focus:border-transparent"
         >
+            <ImageContentWrapper>
+                <div className="relative aspect-video w-full overflow-hidden">
+                    <Image
+                        src={starterkit.imageUrl}
+                        fill
+                        alt={starterkit.name}
+                        sizes="(min-width: 768px) 50vw, 100vw"
+                        placeholder="blur"
+                        blurDataURL="/starterkits/saas-v1/landing.png"
+                    />
+                </div>
+            </ImageContentWrapper>
+
             <div className="col-span-1 flex flex-col gap-2 p-4 md:px-6">
-                <div className="bg-foreground/10 aspect-video w-full" />
                 <h2 className="font-heading text-xl">{starterkit.name}</h2>
                 <p className="text-muted-foreground font-light">
                     {starterkit.description}
                 </p>
             </div>
+
             <ul className="border-grid flex flex-wrap gap-x-4 gap-y-2 border-t p-4 md:px-6">
                 {starterkit.techStack.map((tech, index) => (
                     <li

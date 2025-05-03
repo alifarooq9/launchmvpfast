@@ -5,17 +5,20 @@ export const urls = {
         components: '/components',
         starterkits: {
             base: '/open-source-starterkits',
-            saasNextjs:
-                '/open-source-starterkits/open-source-nextjs-saas-starterkit',
+            saasNextjs: {
+                base: '/open-source-starterkits/open-source-nextjs-saas-starterkit',
+                preview: 'https://saas.launchmvpfast.com',
+            },
         },
         blocks: '/blocks',
         pricing: '/pricing',
+        earlyAccess: '/early-access',
     },
     docs: {
         base: '/docs',
     },
     socials: {
-        gh: '/gh',
+        gh: 'https://git.new/launchmvpfast',
         x: '/x',
         ali: '/ali',
     },

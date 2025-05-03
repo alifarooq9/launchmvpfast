@@ -36,6 +36,40 @@ export const Icons = {
             ></path>
         </svg>
     ),
+    fumadocs: (props: IconProps) => (
+        <svg viewBox="0 0 180 180" filter="url(#logo-shadow)" {...props}>
+            <circle
+                cx="90"
+                cy="90"
+                r="86"
+                className="fill-[url(#logo-iconGradient)]"
+            />
+            <defs>
+                <filter id="logo-shadow" colorInterpolationFilters="sRGB">
+                    <feDropShadow
+                        dx="0"
+                        dy="0"
+                        stdDeviation="2"
+                        className="dark:flood-black flood-white"
+                        floodOpacity="1"
+                    />
+                </filter>
+                <linearGradient
+                    id="logo-iconGradient"
+                    gradientTransform="rotate(45)"
+                >
+                    <stop
+                        offset="45%"
+                        className="text-black [stop-color:currentColor] dark:text-white"
+                    />
+                    <stop
+                        offset="100%"
+                        className="text-white [stop-color:currentColor] dark:text-black"
+                    />
+                </linearGradient>
+            </defs>
+        </svg>
+    ),
     nextJS: (props: IconProps) => (
         <svg
             className={props?.className}
@@ -89,6 +123,39 @@ export const Icons = {
             {...props}
         >
             <path d="M5 10.1c0-.6.6-.9 1.4-.9 1.2 0 2.8.4 4 1.1V6.5c-1.3-.5-2.7-.8-4-.8C3.2 5.7 1 7.4 1 10.3c0 4.4 6 3.6 6 5.6 0 .7-.6 1-1.5 1-1.3 0-3-.6-4.3-1.3v3.8c1.5.6 2.9.9 4.3.9 3.3 0 5.5-1.6 5.5-4.5.1-4.8-6-3.9-6-5.7zM29.9 20h4V6h-4v14zM16.3 2.7l-3.9.8v12.6c0 2.4 1.8 4.1 4.1 4.1 1.3 0 2.3-.2 2.8-.5v-3.2c-.5.2-3 .9-3-1.4V9.4h3V6h-3V2.7zm8.4 4.5L24.6 6H21v14h4v-9.5c1-1.2 2.7-1 3.2-.8V6c-.5-.2-2.5-.5-3.5 1.2zm5.2-2.3l4-.8V.8l-4 .8v3.3zM61.1 13c0-4.1-2-7.3-5.8-7.3s-6.1 3.2-6.1 7.3c0 4.8 2.7 7.2 6.6 7.2 1.9 0 3.3-.4 4.4-1.1V16c-1.1.6-2.3.9-3.9.9s-2.9-.6-3.1-2.5H61c.1-.2.1-1 .1-1.4zm-7.9-1.5c0-1.8 1.1-2.5 2.1-2.5s2 .7 2 2.5h-4.1zM42.7 5.7c-1.6 0-2.5.7-3.1 1.3l-.1-1h-3.6v18.5l4-.7v-4.5c.6.4 1.4 1 2.8 1 2.9 0 5.5-2.3 5.5-7.4-.1-4.6-2.7-7.2-5.5-7.2zm-1 11c-.9 0-1.5-.3-1.9-.8V10c.4-.5 1-.8 1.9-.8 1.5 0 2.5 1.6 2.5 3.7 0 2.2-1 3.8-2.5 3.8z" />
+        </svg>
+    ),
+    lemon: (props: IconProps) => (
+        <svg
+            viewBox="-20 0 140 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M38.4024 61.254L64.8482 73.6957C68.1257 75.2385 70.4395 77.8277 71.689 80.7978C74.8493 88.319 70.53 96.0111 63.7493 98.7776C56.9679 101.543 49.7401 99.7632 46.4539 91.9418L34.9448 64.4821C34.0529 62.3536 36.2934 60.262 38.4024 61.254Z"
+                fill="currentColor"
+            />
+            <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M39.4088 53.3461L67.4084 42.9374C76.7141 39.4782 86.8792 46.0234 86.7423 55.5336C86.7402 55.6579 86.738 55.7819 86.7347 55.9072C86.5336 65.1681 76.6512 71.3927 67.5499 68.1163L39.4353 57.9971C37.1926 57.1903 37.176 54.176 39.4088 53.3461Z"
+                fill="currentColor"
+            />
+            <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M38.3541 49.7798L65.3801 38.1544C74.3608 34.2908 76.64 22.6951 69.6063 15.9952C69.5141 15.907 69.4219 15.8198 69.3287 15.7326C62.4325 9.25278 51.033 11.5343 47.1071 20.0692L34.9794 46.4383C34.0117 48.541 36.1987 50.7066 38.3541 49.7798Z"
+                fill="currentColor"
+            />
+            <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M31.226 45.3222L40.9474 18.0828C42.1527 14.7053 41.9294 11.261 40.6834 8.2891C37.5281 0.766541 28.983 -1.6617 22.228 1.11055C15.4742 3.88387 11.6577 10.1822 14.9386 18.0053L26.4813 45.4516C27.3763 47.5785 30.4512 47.4946 31.226 45.3222Z"
+                fill="currentColor"
+            />
         </svg>
     ),
     tailwindcss: (props: IconProps) => (

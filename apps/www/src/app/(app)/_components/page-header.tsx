@@ -112,7 +112,7 @@ export function Announcement({
                 className
             )}
         >
-            <div className="bg-accent/30 m-0.5 flex w-full items-center justify-between gap-3 px-4 py-2">
+            <div className="bg-accent dark:bg-accent/30 m-0.5 flex w-full items-center justify-between gap-3 px-4 py-2">
                 <p className="text-sm font-medium">{text}</p>
                 <p className="text-sm font-semibold">{actionText}</p>
             </div>

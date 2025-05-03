@@ -17,7 +17,7 @@ type ComingSoonProps = {
 export function ComingSoon({ title, description }: ComingSoonProps) {
     return (
         <PageHeaderWrapper
-            className="from-background to-foreground/5 relative h-full bg-gradient-to-b py-20"
+            className="from-foreground/10 to-background relative h-full bg-gradient-to-b py-20"
             fullHeight
         >
             <PageHeader className="flex flex-col items-center justify-center overflow-hidden pt-0 pb-28">
@@ -38,7 +38,7 @@ export function ComingSoon({ title, description }: ComingSoonProps) {
             <Ripple
                 mainCircleSize={400}
                 mainCircleOpacity={0.2}
-                className="opacity-40"
+                className="opacity-60"
             />
         </PageHeaderWrapper>
     )

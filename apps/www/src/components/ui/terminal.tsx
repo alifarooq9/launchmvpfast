@@ -129,14 +129,16 @@ export const Terminal = ({ children, className, copyText }: TerminalProps) => {
                     <div className="h-2 w-2 rounded-full bg-green-500"></div>
                 </div>
 
-                <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={handleCopy}
-                    className="size-7"
-                >
-                    {copied ? <CheckIcon /> : <CopyIcon />}
-                </Button>
+                {copyText && (
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={handleCopy}
+                        className="size-7"
+                    >
+                        {copied ? <CheckIcon /> : <CopyIcon />}
+                    </Button>
+                )}
             </div>
             <pre className="p-4">
                 <code className="grid gap-y-1 overflow-auto">{children}</code>
