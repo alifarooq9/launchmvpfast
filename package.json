@@ -14,6 +14,7 @@
   "devDependencies": {
     "turbo": "latest"
   },
+  "packageManager": "pnpm@10.8.0",
   "engines": {
     "node": ">=18"
   }
