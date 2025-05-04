@@ -52,7 +52,7 @@ export function Hero() {
                             Explore Starterkits <ArrowRightIcon />
                         </Link>
                         <Link
-                            href={urls.app.components}
+                            href={urls.app.pricing}
                             className={buttonVariants({
                                 size: 'lg',
                             })}
