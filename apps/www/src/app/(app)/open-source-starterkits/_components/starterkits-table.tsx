@@ -38,31 +38,29 @@ const starterkits: Starterkit[] = [
 
 export default function StarterkitsTable() {
     return (
-        <section>
-            <div className="border-grid border-b">
+        <section className="container-wrapper grid flex-1 grid-cols-[1fr_2.5rem_1fr]">
+            {/* <div className="border-grid border-b">
                 <div className="container-wrapper">
-                    <div className="container py-4">
-                        <h2 className="font-heading text-2xl">
-                            SaaS Starter Kits
-                        </h2>
-                        <p className="text-muted-foreground">
-                            SaaS starter kits to help you build your SaaS MVP
-                            faster.
-                        </p>
-                    </div>
+                   
                 </div>
+            </div> */}
+
+            <div className="container py-4">
+                <h2 className="font-heading text-2xl">SaaS Starter Kits</h2>
+                <p className="text-muted-foreground">
+                    SaaS starter kits to help you build your SaaS MVP faster.
+                </p>
             </div>
 
-            <div className="container-wrapper grid flex-1 grid-cols-3">
-                {starterkits.map((starterkit, index) => (
-                    <StarterkitsTableItem
-                        key={starterkit.id}
-                        starterkit={starterkit}
-                        index={index}
-                    />
-                ))}
-                <div />
-            </div>
+            <div className="h-full border-x" />
+
+            {starterkits.map((starterkit, index) => (
+                <StarterkitsTableItem
+                    key={starterkit.id}
+                    starterkit={starterkit}
+                    index={index}
+                />
+            ))}
         </section>
     )
 }

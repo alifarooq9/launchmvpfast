@@ -141,7 +141,9 @@ export const Terminal = ({ children, className, copyText }: TerminalProps) => {
                 )}
             </div>
             <pre className="p-4">
-                <code className="grid gap-y-1 overflow-auto">{children}</code>
+                <code className="grid gap-y-1 overflow-auto font-mono">
+                    {children}
+                </code>
             </pre>
         </div>
     )

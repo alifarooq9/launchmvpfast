@@ -19,7 +19,7 @@ export const urls = {
     },
     socials: {
         gh: 'https://git.new/launchmvpfast',
-        x: '/x',
-        ali: '/ali',
+        x: 'https://x.com/AliFarooqDev',
+        ali: 'https://x.com/AliFarooqDev',
     },
 } as const
