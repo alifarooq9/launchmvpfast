@@ -1,6 +1,15 @@
+import { cn } from '@/lib/utils'
+import { Loader2Icon } from 'lucide-react'
+
 export type IconProps = React.HTMLAttributes<SVGElement>
 
 export const Icons = {
+    loader: (props: IconProps) => (
+        <Loader2Icon
+            className={cn('animate-spin', props.className)}
+            {...props}
+        />
+    ),
     logo: (props: IconProps) => (
         <svg
             viewBox="0 0 40 40"
