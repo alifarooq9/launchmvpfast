@@ -1,6 +1,7 @@
 'use client'
 
 import { ThemeProvider } from '@/components/providers/theme-provider'
+import { TRPCReactProvider } from '@/trpc/react'
 
 export function Providers({ children }: { children: React.ReactNode }) {
     return (
@@ -10,7 +11,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
             enableSystem
             disableTransitionOnChange
         >
-            {children}
+            <TRPCReactProvider>{children}</TRPCReactProvider>
         </ThemeProvider>
     )
 }
