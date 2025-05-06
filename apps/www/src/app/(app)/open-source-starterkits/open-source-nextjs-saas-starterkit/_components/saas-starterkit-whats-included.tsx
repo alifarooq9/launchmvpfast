@@ -96,7 +96,8 @@ export function SaasStarterkitWhatsIncluded() {
                 <div className="container-wrapper">
                     <div className="container py-4">
                         <h2 className="font-heading text-2xl">
-                            What's Included: Your Production-Ready Foundation
+                            What&apos;s Included: Your Production-Ready
+                            Foundation
                         </h2>
                         <p className="text-muted-foreground">
                             This Next.js SaaS starter kit is packed with

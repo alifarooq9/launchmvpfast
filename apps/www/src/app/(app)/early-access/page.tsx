@@ -31,10 +31,10 @@ export default function EarlyAccess() {
                         <span>
                             <AuroraText>Early Access</AuroraText>
                         </span>
-                        <span> to What's Next</span>
+                        <span> to What&apos;s Next</span>
                     </PageHeading>
                     <PageDescription className="max-w-3xl text-center">
-                        We're working on a set of powerful, re-usable
+                        We&apos;re working on a set of powerful, re-usable
                         components, Starterkits, blocks and more. Join the early
                         access list to get notified
                     </PageDescription>

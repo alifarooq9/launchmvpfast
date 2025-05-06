@@ -51,7 +51,7 @@ export function Testimonials() {
                     <div className="col-span-2 flex flex-col items-center justify-center p-4">
                         <p className="text-muted-foreground text-base font-light">
                             Tell us about your experience with {siteConfig.name}
-                            . We'd love to hear from you! 🙌
+                            . We&apos;d love to hear from you! 🙌
                         </p>
                     </div>
                 </div>

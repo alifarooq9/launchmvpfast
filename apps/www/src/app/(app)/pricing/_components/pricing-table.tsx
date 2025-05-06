@@ -1,5 +1,5 @@
 import { Badge } from '@/components/ui/badge'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { urls } from '@/config/urls'
 import { CheckIcon } from 'lucide-react'
 import Link from 'next/link'
@@ -97,20 +97,14 @@ const plans: PricingPlan[] = [
 export default function PricingTable() {
     return (
         <section className="container-wrapper grid flex-1 grid-cols-4 grid-rows-[auto_auto]">
-            {plans.map((plan, index) => (
-                <PricingTableItem key={plan.id} plan={plan} index={index} />
+            {plans.map((plan) => (
+                <PricingTableItem key={plan.id} plan={plan} />
             ))}
         </section>
     )
 }
 
-export function PricingTableItem({
-    plan,
-    index,
-}: {
-    plan: PricingPlan
-    index: number
-}) {
+export function PricingTableItem({ plan }: { plan: PricingPlan }) {
     return (
         <div className="border-grid row-span-6 grid grid-rows-subgrid gap-2 border-r p-4 last:border-r-0 md:px-6">
             <div className="row-span-1">
@@ -128,7 +122,7 @@ export function PricingTableItem({
             </p>
 
             <ul className="row-span-1 flex flex-col gap-1 py-3">
-                <p className="text-sm">What's included in {plan.name}:</p>
+                <p className="text-sm">What&apos;s included in {plan.name}:</p>
                 {plan.features.map((feature, index) => (
                     <li
                         key={index}

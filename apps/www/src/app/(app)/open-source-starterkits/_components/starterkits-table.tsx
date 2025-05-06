@@ -39,12 +39,6 @@ const starterkits: Starterkit[] = [
 export default function StarterkitsTable() {
     return (
         <section className="container-wrapper grid flex-1 grid-cols-[1fr_2.5rem_1fr]">
-            {/* <div className="border-grid border-b">
-                <div className="container-wrapper">
-                   
-                </div>
-            </div> */}
-
             <div className="container py-4">
                 <h2 className="font-heading text-2xl">SaaS Starter Kits</h2>
                 <p className="text-muted-foreground">
@@ -54,11 +48,10 @@ export default function StarterkitsTable() {
 
             <div className="h-full border-x" />
 
-            {starterkits.map((starterkit, index) => (
+            {starterkits.map((starterkit) => (
                 <StarterkitsTableItem
                     key={starterkit.id}
                     starterkit={starterkit}
-                    index={index}
                 />
             ))}
         </section>
@@ -67,10 +60,8 @@ export default function StarterkitsTable() {
 
 export function StarterkitsTableItem({
     starterkit,
-    index,
 }: {
     starterkit: Starterkit
-    index: number
 }) {
     return (
         <Link

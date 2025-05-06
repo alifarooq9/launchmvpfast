@@ -2,7 +2,6 @@
 // https://orm.drizzle.team/docs/sql-schema-declaration
 
 import { siteConfig } from '@/config/site'
-import { env } from '@/env'
 import { sql } from 'drizzle-orm'
 import { pgTableCreator, timestamp, varchar } from 'drizzle-orm/pg-core'
 import { createInsertSchema } from 'drizzle-zod'

@@ -48,9 +48,6 @@ export function SaasStarterkitScreenShots() {
             <div className="container-wrapper">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     {displayedScreenshots.map((screenshot, index) => {
-                        // Calculate if this is the last item in the current view
-                        const isLastInCurrentView =
-                            index === displayedScreenshots.length - 1
                         // Calculate if this is in the last row based on grid columns
                         const isInLastRowMd =
                             index >=

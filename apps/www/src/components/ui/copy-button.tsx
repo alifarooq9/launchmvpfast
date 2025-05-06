@@ -3,7 +3,6 @@
 import * as React from 'react'
 import { Button, buttonVariants } from './button'
 import { type VariantProps } from 'class-variance-authority'
-import { Check, Copy } from 'lucide-react'
 
 interface CopyButtonProps
     extends React.ComponentProps<'button'>,
