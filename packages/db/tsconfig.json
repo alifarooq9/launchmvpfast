@@ -1,8 +1,0 @@
-{
-    "extends": "@rapidlaunch/typescript-config/base",
-    "compilerOptions": {
-        "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
-    },
-    "include": ["src", "drizzle.config.ts"],
-    "exclude": ["node_modules"]
-}

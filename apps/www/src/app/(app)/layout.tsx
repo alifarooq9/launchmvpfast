@@ -1,16 +1,17 @@
-import { SiteHeader } from "@/app/(app)/_components/side-header";
-import { SiteFooter } from "@/app/(app)/_components/site-footer";
+import { MarketingFooter } from '@/app/(app)/_components/marketing-footer'
+import { MarketingHeader } from '@/app/(app)/_components/marketing-header'
+import React from 'react'
 
-interface AppLayoutProps {
-    children: React.ReactNode;
-}
-
-export default function AppLayout({ children }: AppLayoutProps) {
+export default function MarketingLayout({
+    children,
+}: Readonly<{
+    children: React.ReactNode
+}>) {
     return (
-        <>
-            <SiteHeader />
-            <main className="flex-1">{children}</main>
-            <SiteFooter />
-        </>
-    );
+        <div className="flex flex-1 flex-col">
+            <MarketingHeader />
+            <main className="flex flex-1 flex-col">{children}</main>
+            <MarketingFooter />
+        </div>
+    )
 }

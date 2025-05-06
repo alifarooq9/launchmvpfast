@@ -22,7 +22,7 @@ import { z } from "zod";
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
 export const createTable = pgTableCreator(
-    (name) => `rapidlaunch-saas-starterkit_${name}`,
+    (name) => `launchmvpfast-saas-starterkit_${name}`,
 );
 
 export const usersRoleEnum = pgEnum("role", ["User", "Admin", "Super Admin"]);

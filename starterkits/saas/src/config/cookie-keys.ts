@@ -1,1 +1,1 @@
-export const new_user_setup_step_cookie = "rapidlaunch:new_user_setup_step";
+export const new_user_setup_step_cookie = "launchmvpfast:new_user_setup_step";

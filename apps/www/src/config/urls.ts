@@ -1,24 +1,25 @@
-export const siteUrls = {
-    marketing: {
-        base: "/",
-        pricing: "/pricing",
-        blog: "/blog",
-        earlyAccess: "/#early-access",
-    },
-    saasStarterkit: {
-        base: "/saas-starterkit",
+export const urls = {
+    base: '/',
+    public: 'https://www.launchmvpfast.com',
+    app: {
+        components: '/components',
+        starterkits: {
+            base: '/open-source-starterkits',
+            saasNextjs: {
+                base: '/open-source-starterkits/open-source-nextjs-saas-starterkit',
+                preview: 'https://saas.launchmvpfast.com',
+            },
+        },
+        blocks: '/blocks',
+        pricing: '/pricing',
+        earlyAccess: '/early-access',
     },
     docs: {
-        base: "/docs",
-    },
-    blocks: {
-        base: "/blocks",
+        base: '/docs',
     },
     socials: {
-        twitter: "https://twitter.com/AliFarooqDev",
-        github: "/gh",
+        gh: 'https://git.new/launchmvpfast',
+        x: 'https://x.com/AliFarooqDev',
+        ali: 'https://x.com/AliFarooqDev',
     },
-    demo: {
-        saas: "https://saas.launchmvpfast.com",
-    },
-} as const;
+} as const

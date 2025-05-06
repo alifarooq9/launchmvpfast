@@ -1,11 +1,29 @@
-import { Inter, Bricolage_Grotesque } from "next/font/google";
+import { cn } from '@/lib/utils'
+import {
+    Bricolage_Grotesque,
+    Bungee_Shade,
+    Geist,
+    Geist_Mono,
+    Oswald,
+} from 'next/font/google'
 
-export const fontSans = Inter({
-    subsets: ["latin"],
-    variable: "--font-sans",
-});
+const fontSans = Geist({
+    variable: '--font-geist-sans',
+    subsets: ['latin'],
+})
 
-export const fontHeading = Bricolage_Grotesque({
-    subsets: ["latin"],
-    variable: "--font-heading",
-});
+const fontMono = Geist_Mono({
+    variable: '--font-geist-mono',
+    subsets: ['latin'],
+})
+
+const fontHeading = Bricolage_Grotesque({
+    variable: '--font-heading',
+    subsets: ['latin'],
+})
+
+export const fontsVariables = cn(
+    fontSans.variable,
+    fontHeading.variable,
+    fontMono.variable
+)

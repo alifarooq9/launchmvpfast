@@ -30,9 +30,9 @@ export default async function HomePage() {
                     as="p"
                     className="text-center text-base text-muted-foreground sm:text-lg"
                 >
-                    Elevate your development game with Rapidlaunch! Launch your
-                    apps faster with our SaaS starterkits, components, building
-                    guides, and more. Customizable. Open Source.
+                    Elevate your development game with launchmvpfast! Launch
+                    your apps faster with our SaaS starterkits, components,
+                    building guides, and more. Customizable. Open Source.
                 </Balancer>
 
                 <div className="flex items-center gap-3">

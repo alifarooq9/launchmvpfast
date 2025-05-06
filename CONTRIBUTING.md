@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for your interest in contributing to rapidlaunch.xyz. We're happy to have you here.
+Thanks for your interest in contributing to launchmvpfast.com. We're happy to have you here.
 
 Please take a moment to review this document before submitting your first pull request. We also strongly recommend that you check for open issues and pull requests to see if someone else is working on something similar.
 
@@ -69,13 +69,13 @@ You can fork this repo by clicking the fork button in the top right corner of th
 ### Clone on your local machine
 
 ```bash
-git clone https://github.com/your-username/rapidlaunch.git
+git clone https://github.com/your-username/launchmvpfast.git
 ```
 
 ### Navigate to project directory
 
 ```bash
-cd rapidlaunch
+cd launchmvpfast
 ```
 
 ### Create a new Branch
@@ -96,7 +96,7 @@ You can use the `pnpm --filter=[WORKSPACE]` command to start the development pro
 
 #### Examples
 
-1. To run the `rapidlaunch.xyz` website:
+1. To run the `launchmvpfast.com` website:
 
 ```bash
 pnpm --filter=www dev

@@ -1,63 +1,92 @@
-import Providers from "@/components/providers";
-import { Toaster } from "@/components/ui/sonner";
-import "@/styles/globals.css";
-
-import type { Metadata } from "next";
-import { siteConfig } from "@/config/site";
-import { Analytics } from "@vercel/analytics/react";
-import { fontSans, fontHeading } from "@/lib/fonts";
-
-const TITLE =
-    "Rapidlaunch | Open Source Nextjs SaaS Starterkits and Components";
-const DESCRIPTION =
-    "Launch your apps faster with our SaaS starterkits, components, building blocks. Customizable. Open Source";
+import type { Metadata } from 'next'
+import '../styles/globals.css'
+import { fontsVariables } from '@/lib/fonts'
+import { Providers } from '@/components/providers/providers'
+import { siteConfig } from '@/config/site'
+import { Toaster } from '@/components/ui/sonner'
+import { urls } from '@/config/urls'
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://www.rapidlaunch.xyz"),
-    title: TITLE,
-    description: DESCRIPTION,
-    icons: [{ rel: "icon", url: "/favicon.ico" }],
-    twitter: {
-        card: "summary_large_image",
-        title: TITLE,
-        description: DESCRIPTION,
-        creator: "@AliFarooqDev",
-        images: [
-            "https://utfs.io/f/4ae0ddb1-4260-46f5-aa7c-70408cc192b9-aadavt.png",
-        ],
-    },
+    title: `${siteConfig.noSpacesName}: Open Source Starter Kits & UI Components`,
+    description:
+        'Build faster with free, open-source starter kits, UI components & blocks from LaunchMVPFast. Accelerate your MVP launch today.',
+    metadataBase: new URL(urls.public),
+    keywords: [
+        'Launch MVP Fast', // Brand
+        'Next.js Starter Kit', // Primary Offering & Tech
+        'Open Source Starter Kit', // Key USP & Offering Type
+        'SaaS MVP', // Target Use Case
+        'Reusable UI Components', // Secondary Offering
+        'Tailwind CSS Components', // Specific Tech for UI
+        'Next.js', // Core Technology
+        'React', // Underlying Technology
+        'Tailwind CSS', // Core Styling Technology
+        'Drizzle ORM', // Key Backend Technology
+        'NextAuth.js', // Key Authentication Technology
+        'MVP Development', // Core Service/Benefit
+        'Open Source', // Key Value Proposition
+        'Better Auth',
+        'Shadcn',
+    ],
+    authors: [
+        {
+            name: 'alifarooq',
+            url: urls.socials.ali,
+        },
+    ],
+    creator: 'alifarooq',
     openGraph: {
-        type: "website",
-        title: TITLE,
-        description: DESCRIPTION,
+        type: 'website',
+        locale: 'en_US',
+        url: urls.public,
+        title: siteConfig.name,
+        description:
+            'Build faster with free, open-source starter kits, UI components & blocks from LaunchMVPFast. Accelerate your MVP launch today.',
+        siteName: siteConfig.name,
         images: [
             {
-                url: "https://utfs.io/f/4ae0ddb1-4260-46f5-aa7c-70408cc192b9-aadavt.png",
-                width: 1280,
-                height: 760,
-                alt: "Rapidlaunch | Open Source Nextjs SaaS Starterkits and Components",
+                url: siteConfig.ogImages.base,
+                width: 1200,
+                height: 630,
+                alt: siteConfig.name,
             },
         ],
-        siteName: siteConfig.name,
     },
-};
+    twitter: {
+        card: 'summary_large_image',
+        title: siteConfig.name,
+        description:
+            'Build faster with free, open-source starter kits, UI components & blocks from LaunchMVPFast. Accelerate your MVP launch today.',
+        images: [siteConfig.ogImages.base],
+        creator: '@AliFarooqDev',
+    },
+    icons: {
+        icon: '/favicon.ico',
+        shortcut: '/favicon-16x16.png',
+        apple: '/apple-touch-icon.png',
+    },
+    manifest: `${urls.public}/site.webmanifest`,
+}
 
 export default function RootLayout({
     children,
-}: {
-    children: React.ReactNode;
-}) {
+}: Readonly<{
+    children: React.ReactNode
+}>) {
     return (
-        <html lang="en">
-            <body
-                className={`${fontSans.variable} ${fontHeading.variable} font-sans`}
-            >
-                <Providers>
-                    {children}
-                    <Toaster position="top-center" />
-                </Providers>
-                <Analytics />
+        <html lang="en" suppressHydrationWarning>
+            <head>
+                <meta
+                    name="apple-mobile-web-app-title"
+                    content="Launch MVP Fast"
+                />
+            </head>
+            <body className={`${fontsVariables} font-sans antialiased`}>
+                <div className="relative flex min-h-svh flex-col">
+                    <Providers>{children}</Providers>
+                </div>
+                <Toaster />
             </body>
         </html>
-    );
+    )
 }

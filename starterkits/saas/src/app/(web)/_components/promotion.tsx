@@ -13,7 +13,7 @@ export function Promotion() {
                 as="p"
                 className="text-center text-base leading-relaxed text-background/70 sm:text-xl"
             >
-                Because Rapidlaunch comes with a SaaS starter kit, Blocks and
+                Because launchmvpfast comes with a SaaS starter kit, Blocks and
                 guides, and more, you can launch your SaaS in just a few days.
                 Get started with our starter kits, components, building guides,
                 and more. Customizable.{" "}
