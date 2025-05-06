@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
+    "build:www": "turbo --filter=www build",
     "dev": "turbo dev",
     "dev:www": "turbo --filter=www dev",
     "start": "turbo start",
