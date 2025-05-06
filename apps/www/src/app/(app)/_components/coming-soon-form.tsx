@@ -36,6 +36,7 @@ export function ComingSoonForm({ className }: ComingSoonFormProps) {
     const createEarlyAccess = api.earlyAccess.create.useMutation({
         onSuccess: () => {
             toast.success("You're in the early access list!")
+            form.reset()
         },
         onError: (e) => {
             toast.error('Something went wrong, please try again')
