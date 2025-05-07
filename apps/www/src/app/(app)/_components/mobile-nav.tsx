@@ -1,7 +1,7 @@
 'use client'
 
 import { ThemeSwitcher } from '@/components/theme-switcher'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { Moon, Sun } from 'lucide-react'
 import {
     Drawer,
@@ -14,12 +14,24 @@ import { navConfig } from '@/config/nav'
 import Link from 'next/link'
 import { siteConfig } from '@/config/site'
 import React from 'react'
+import { urls } from '@/config/urls'
+import { Icons } from '@/components/icons'
 
 export function MobileNav() {
     const [open, setOpen] = React.useState(false)
 
     return (
-        <div className="flex items-center md:hidden">
+        <nav className="flex h-full items-center md:hidden">
+            <Link
+                href={urls.socials.gh}
+                target="_blank"
+                className={buttonVariants({
+                    variant: 'ghost',
+                    className: 'aspect-square h-full border-x',
+                })}
+            >
+                <Icons.gitHub className="size-4" />
+            </Link>
             <div className="aspect-square h-full border-r first:border-l last:border-0">
                 <ThemeSwitcher
                     Trigger={
@@ -58,7 +70,7 @@ export function MobileNav() {
                     <DrawerHeader>
                         <DrawerTitle>{siteConfig.name}</DrawerTitle>
                     </DrawerHeader>
-                    <nav>
+                    <div>
                         {navConfig.headerNav
                             .filter((n) => n.iconOnly !== true)
                             .map((navItem) => (
@@ -91,9 +103,9 @@ export function MobileNav() {
                                     </Link>
                                 ))}
                         </div>
-                    </nav>
+                    </div>
                 </DrawerContent>
             </Drawer>
-        </div>
+        </nav>
     )
 }

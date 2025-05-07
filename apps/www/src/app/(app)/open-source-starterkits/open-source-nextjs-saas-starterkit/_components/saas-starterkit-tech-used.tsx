@@ -1,3 +1,8 @@
+import {
+    SectionDescription,
+    SectionHeader,
+    SectionHeading,
+} from '@/app/(app)/_components/section-header'
 import { techStackIcons } from '@/components/tech-stack-icons'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
@@ -79,21 +84,16 @@ const technologiesSelected = [
 export function SaasStarterkitTechUsed() {
     return (
         <section>
-            <div className="border-grid border-b">
-                <div className="container-wrapper">
-                    <div className="container py-4">
-                        <h2 className="font-heading text-2xl">
-                            Built with a Modern Technology Stack
-                        </h2>
-                        <p className="text-muted-foreground">
-                            Leveraging the best of the modern web development
-                            ecosystem for performance, developer experience, and
-                            scalability.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div className="container-wrapper grid grid-cols-4">
+            <SectionHeader>
+                <SectionHeading>
+                    Built with a Modern Technology Stack
+                </SectionHeading>
+                <SectionDescription>
+                    Leveraging the best of the modern web development ecosystem
+                    for performance, developer experience, and scalability.
+                </SectionDescription>
+            </SectionHeader>
+            <div className="container-wrapper grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
                 {technologiesSelected.map((technology, index) => {
                     const isInLastRowLg =
                         index >=
@@ -108,7 +108,7 @@ export function SaasStarterkitTechUsed() {
                             aria-label={`Learn more about ${technology.name}`}
                             key={index}
                             className={cn(
-                                "border-grid focus-ring hover:bg-accent/40 dark:hover:bg-accent/15 border-r border-b p-4 transition-all md:px-6 [&_svg:not([class*='size-'])]:size-7 [&:nth-child(4n)]:border-r-0",
+                                "border-grid focus-ring hover:bg-accent/40 dark:hover:bg-accent/15 border-b p-4 transition-all md:border-r md:px-6 [&_svg:not([class*='size-'])]:size-7 md:[&:nth-child(4n)]:border-r-0",
                                 isInLastRowLg && 'border-b-0'
                             )}
                         >
