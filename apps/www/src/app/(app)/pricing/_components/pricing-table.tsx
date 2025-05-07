@@ -96,7 +96,7 @@ const plans: PricingPlan[] = [
 
 export default function PricingTable() {
     return (
-        <section className="container-wrapper grid flex-1 grid-cols-4 grid-rows-[auto_auto]">
+        <section className="container-wrapper grid flex-1 grid-cols-1 grid-rows-[auto_auto] md:grid-cols-2 lg:grid-cols-4">
             {plans.map((plan) => (
                 <PricingTableItem key={plan.id} plan={plan} />
             ))}
@@ -106,7 +106,7 @@ export default function PricingTable() {
 
 export function PricingTableItem({ plan }: { plan: PricingPlan }) {
     return (
-        <div className="border-grid row-span-6 grid grid-rows-subgrid gap-2 border-r p-4 last:border-r-0 md:px-6">
+        <div className="border-grid row-span-6 grid grid-rows-subgrid gap-2 border-b p-4 md:border-r md:px-6 md:last:border-r-0 lg:border-b-0">
             <div className="row-span-1">
                 {plan.badge && <Badge>{plan.badge}</Badge>}
             </div>
