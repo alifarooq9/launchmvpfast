@@ -26,7 +26,7 @@ export default function EarlyAccess() {
             >
                 <PageHeader className="flex flex-col items-center justify-center overflow-hidden pt-0 pb-28">
                     <Icons.logo className="mb-8 size-14" />
-                    <PageHeading>
+                    <PageHeading className="text-center">
                         <span>Get</span>{' '}
                         <span>
                             <AuroraText>Early Access</AuroraText>
