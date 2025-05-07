@@ -1,12 +1,11 @@
+'use client'
+
 import { ThemeSwitcher } from '@/components/theme-switcher'
 import { Button } from '@/components/ui/button'
 import { Moon, Sun } from 'lucide-react'
 import {
     Drawer,
-    DrawerClose,
     DrawerContent,
-    DrawerDescription,
-    DrawerFooter,
     DrawerHeader,
     DrawerTitle,
     DrawerTrigger,
@@ -14,8 +13,11 @@ import {
 import { navConfig } from '@/config/nav'
 import Link from 'next/link'
 import { siteConfig } from '@/config/site'
+import React from 'react'
 
 export function MobileNav() {
+    const [open, setOpen] = React.useState(false)
+
     return (
         <div className="flex items-center md:hidden">
             <div className="aspect-square h-full border-r first:border-l last:border-0">
@@ -32,7 +34,7 @@ export function MobileNav() {
                     }
                 />
             </div>
-            <Drawer>
+            <Drawer open={open} onOpenChange={setOpen}>
                 <DrawerTrigger asChild>
                     <Button className="aspect-square h-full" variant="ghost">
                         <svg
@@ -64,6 +66,7 @@ export function MobileNav() {
                                     key={navItem.label}
                                     href={navItem.href}
                                     className="border-grid flex h-full items-center gap-2 border-b p-4 first:border-t"
+                                    onClick={() => setOpen(false)}
                                 >
                                     <span>{navItem.label}</span>
                                 </Link>
