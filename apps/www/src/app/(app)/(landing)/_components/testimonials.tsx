@@ -3,6 +3,11 @@ import { JSX } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import Link from 'next/link'
 import { siteConfig } from '@/config/site'
+import {
+    SectionDescription,
+    SectionHeader,
+    SectionHeading,
+} from '@/app/(app)/_components/section-header'
 
 type Testimonial = {
     name: string
@@ -30,20 +35,19 @@ const testimonials: Testimonial[] = [
 export function Testimonials() {
     return (
         <section>
-            <div className="border-grid border-b">
-                <div className="container-wrapper">
-                    <div className="container py-4">
-                        <h2 className="font-heading text-2xl">
-                            Testimonials: Hear from Our Community
-                        </h2>
-                        <p className="text-muted-foreground">
-                            This is what our users say about us
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <SectionHeader>
+                <SectionHeading>
+                    Testimonials:{' '}
+                    <span className="hidden sm:block">
+                        Hear from Our Community
+                    </span>
+                </SectionHeading>
+                <SectionDescription>
+                    This is what our users say about us
+                </SectionDescription>
+            </SectionHeader>
             <div className="container-wrapper">
-                <div className="grid w-full grid-cols-3">
+                <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     {testimonials.map((testimonial, idx) => (
                         <TestimonialCard key={idx} {...testimonial} />
                     ))}
@@ -51,7 +55,7 @@ export function Testimonials() {
                     <div className="col-span-2 flex flex-col items-center justify-center p-4">
                         <p className="text-muted-foreground text-base font-light">
                             Tell us about your experience with {siteConfig.name}
-                            . We'd love to hear from you! 🙌
+                            . We&apos;d love to hear from you! 🙌
                         </p>
                     </div>
                 </div>
@@ -70,7 +74,7 @@ function TestimonialCard({
     socialLink,
 }: Testimonial) {
     return (
-        <div className="flex flex-col items-center gap-2 border-r last:border-r-0">
+        <div className="flex flex-col items-center gap-2 border-b md:border-r md:border-b-0 md:last:border-r-0">
             <p className="p-4 text-lg font-extralight">{text}</p>
 
             <div className="flex w-full items-center justify-between divide-x border-t">

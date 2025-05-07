@@ -5,6 +5,11 @@ import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapp
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ChevronDown, ChevronUp } from 'lucide-react'
+import {
+    SectionDescription,
+    SectionHeader,
+    SectionHeading,
+} from '@/app/(app)/_components/section-header'
 
 const screenshots = [
     '/starterkits/saas-v1/landing.png',
@@ -30,27 +35,20 @@ export function SaasStarterkitScreenShots() {
 
     return (
         <section>
-            <div className="border-grid border-b">
-                <div className="container-wrapper">
-                    <div className="container py-4">
-                        <h2 className="font-heading text-2xl">
-                            Screenshots: See It In Action
-                        </h2>
-                        <p className="text-muted-foreground">
-                            This Next.js SaaS starter kit is packed with
-                            features designed to accelerate your development
-                            workflow
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <SectionHeader>
+                <SectionHeading>
+                    Screenshots:{' '}
+                    <span className="hidden sm:block">See It In Action</span>
+                </SectionHeading>
+                <SectionDescription>
+                    This Next.js SaaS starter kit is packed with features
+                    designed to accelerate your development workflow
+                </SectionDescription>
+            </SectionHeader>
 
             <div className="container-wrapper">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     {displayedScreenshots.map((screenshot, index) => {
-                        // Calculate if this is the last item in the current view
-                        const isLastInCurrentView =
-                            index === displayedScreenshots.length - 1
                         // Calculate if this is in the last row based on grid columns
                         const isInLastRowMd =
                             index >=

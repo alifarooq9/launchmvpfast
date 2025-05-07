@@ -85,6 +85,7 @@ export default function RootLayout({
                 <div className="relative flex min-h-svh flex-col">
                     <Providers>{children}</Providers>
                 </div>
+
                 <Toaster />
             </body>
         </html>

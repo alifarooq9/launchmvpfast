@@ -1,5 +1,10 @@
 import { GridGap } from '@/app/(app)/_components/grid-gap'
 import {
+    SectionDescription,
+    SectionHeader,
+    SectionHeading,
+} from '@/app/(app)/_components/section-header'
+import {
     Accordion,
     AccordionContent,
     AccordionItem,
@@ -114,19 +119,13 @@ const categorizedFaqs: CategorizedFaqs = {
 export function SaasStarterkitFaqs() {
     return (
         <section>
-            <div className="border-grid border-b">
-                <div className="container-wrapper">
-                    <div className="container py-4">
-                        <h2 className="font-heading text-2xl">
-                            Everything You Need to Know
-                        </h2>
-                        <p className="text-muted-foreground">
-                            Frequently asked questions about the SaaS Starter
-                            Kit and its features.
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <SectionHeader>
+                <SectionHeading>Frequently Asked Questions</SectionHeading>
+                <SectionDescription>
+                    Frequently asked questions about the SaaS Starter Kit and
+                    its features.
+                </SectionDescription>
+            </SectionHeader>
 
             <FaqItem title="General" items={categorizedFaqs.general} />
 
@@ -163,8 +162,8 @@ function FaqItem({
     items: CategorizedFaqItem[]
 }) {
     return (
-        <div className="container-wrapper grid grid-cols-[1fr_2.5rem_1fr]">
-            <div className="flex p-4 md:px-6">
+        <div className="container-wrapper grid grid-cols-1 md:grid-cols-[1fr_2.5rem_1fr]">
+            <div className="border-grid flex border-b p-4 md:border-b-0 md:px-6">
                 <h3 className="font-heading text-lg">{title}</h3>
             </div>
 

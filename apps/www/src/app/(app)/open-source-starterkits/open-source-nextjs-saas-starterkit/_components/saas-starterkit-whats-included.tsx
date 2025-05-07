@@ -1,4 +1,9 @@
 import { GridGap } from '@/app/(app)/_components/grid-gap'
+import {
+    SectionDescription,
+    SectionHeader,
+    SectionHeading,
+} from '@/app/(app)/_components/section-header'
 import { cn } from '@/lib/utils'
 
 type WhatsIncludedItem = {
@@ -92,20 +97,18 @@ const whatsIncluded: WhatsIncludedCategory = {
 export function SaasStarterkitWhatsIncluded() {
     return (
         <section>
-            <div className="border-grid border-b">
-                <div className="container-wrapper">
-                    <div className="container py-4">
-                        <h2 className="font-heading text-2xl">
-                            What's Included: Your Production-Ready Foundation
-                        </h2>
-                        <p className="text-muted-foreground">
-                            This Next.js SaaS starter kit is packed with
-                            features designed to accelerate your development
-                            workflow
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <SectionHeader>
+                <SectionHeading>
+                    What&apos;s Included:{' '}
+                    <span className="hidden md:block">
+                        Your Production-Ready Foundation
+                    </span>
+                </SectionHeading>
+                <SectionDescription>
+                    This Next.js SaaS starter kit is packed with features
+                    designed to accelerate your development workflow
+                </SectionDescription>
+            </SectionHeader>
 
             <WhatsIncludedCard
                 title="Core Functionality"
@@ -137,19 +140,19 @@ function WhatsIncludedCard({
     list: WhatsIncludedItem[]
 }) {
     return (
-        <div className="container-wrapper grid grid-cols-[1fr_2.5rem_2fr]">
-            <div className="flex p-4 md:px-6">
+        <div className="container-wrapper grid-cols-[1fr_2.5rem_2fr] md:grid">
+            <div className="flex border-b p-4 md:border-b-0 md:px-6">
                 <h3 className="font-heading text-lg">{title}</h3>
             </div>
 
             <div className="border-grid h-full border-x" />
 
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2">
                 {list.map((item, index) => (
                     <p
                         key={index}
                         className={cn(
-                            'border-grid border-r border-b p-4 text-sm last:border-b-0 md:px-4',
+                            'border-grid border-b p-4 text-sm last:border-b-0 sm:border-r md:px-4',
                             index % 2 !== 0
                                 ? 'border-r-0'
                                 : '[&:nth-last-child(2)]:border-b-0'

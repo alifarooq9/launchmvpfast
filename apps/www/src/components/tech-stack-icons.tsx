@@ -1,9 +1,10 @@
 import { Icons } from '@/components/icons'
+import { JSX } from 'react'
 
 type TechStackIconType = {
     [key: string]: {
         name: string
-        icon: any
+        icon: JSX.Element
     }
 }
 export const techStackIcons: TechStackIconType = {

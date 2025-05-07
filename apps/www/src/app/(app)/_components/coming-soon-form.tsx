@@ -38,7 +38,7 @@ export function ComingSoonForm({ className }: ComingSoonFormProps) {
             toast.success("You're in the early access list!")
             form.reset()
         },
-        onError: (e) => {
+        onError: () => {
             toast.error('Something went wrong, please try again')
         },
     })

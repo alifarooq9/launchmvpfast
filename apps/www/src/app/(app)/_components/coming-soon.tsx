@@ -22,7 +22,7 @@ export function ComingSoon({ title, description }: ComingSoonProps) {
         >
             <PageHeader className="flex flex-col items-center justify-center overflow-hidden pt-0 pb-28">
                 <Icons.logo className="mb-8 size-14" />
-                <PageHeading>
+                <PageHeading className="text-center">
                     <span>{title}</span>{' '}
                     <span>
                         <AuroraText>Coming Soon</AuroraText>

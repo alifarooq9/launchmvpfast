@@ -39,7 +39,7 @@ export async function Features() {
     const stars = await getGitHubStars()
 
     return (
-        <section className="container-wrapper from-foreground/5 to-background/15 relative h-full bg-gradient-to-b py-20">
+        <section className="container-wrapper from-foreground/5 to-background/15 relative h-full bg-gradient-to-b p-4 py-20 md:px-6">
             <div className="flex h-full w-full flex-col items-center justify-center gap-3">
                 <p className="text-muted-foreground">Launch in days with</p>
                 <p className="font-heading mx-auto mt-4 max-w-md text-center text-4xl tracking-tighter text-balance">

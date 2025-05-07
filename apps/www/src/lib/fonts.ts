@@ -1,11 +1,5 @@
 import { cn } from '@/lib/utils'
-import {
-    Bricolage_Grotesque,
-    Bungee_Shade,
-    Geist,
-    Geist_Mono,
-    Oswald,
-} from 'next/font/google'
+import { Bricolage_Grotesque, Geist, Geist_Mono } from 'next/font/google'
 
 const fontSans = Geist({
     variable: '--font-geist-sans',

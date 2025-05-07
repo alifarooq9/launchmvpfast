@@ -1,4 +1,8 @@
 import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
+import {
+    SectionDescription,
+    SectionHeading,
+} from '@/app/(app)/_components/section-header'
 import { techStackIcons } from '@/components/tech-stack-icons'
 import { urls } from '@/config/urls'
 import Image from 'next/image'
@@ -38,27 +42,20 @@ const starterkits: Starterkit[] = [
 
 export default function StarterkitsTable() {
     return (
-        <section className="container-wrapper grid flex-1 grid-cols-[1fr_2.5rem_1fr]">
-            {/* <div className="border-grid border-b">
-                <div className="container-wrapper">
-                   
-                </div>
-            </div> */}
-
-            <div className="container py-4">
-                <h2 className="font-heading text-2xl">SaaS Starter Kits</h2>
-                <p className="text-muted-foreground">
+        <section className="container-wrapper grid flex-1 grid-cols-1 md:grid-cols-[1fr_2.5rem_1fr]">
+            <div className="container border-b py-4 md:border-b-0">
+                <SectionHeading>SaaS Starter Kits</SectionHeading>
+                <SectionDescription className="text-muted-foreground">
                     SaaS starter kits to help you build your SaaS MVP faster.
-                </p>
+                </SectionDescription>
             </div>
 
-            <div className="h-full border-x" />
+            <div className="hidden h-full border-x md:block" />
 
-            {starterkits.map((starterkit, index) => (
+            {starterkits.map((starterkit) => (
                 <StarterkitsTableItem
                     key={starterkit.id}
                     starterkit={starterkit}
-                    index={index}
                 />
             ))}
         </section>
@@ -67,15 +64,13 @@ export default function StarterkitsTable() {
 
 export function StarterkitsTableItem({
     starterkit,
-    index,
 }: {
     starterkit: Starterkit
-    index: number
 }) {
     return (
         <Link
             href={starterkit.buttonUrl}
-            className="border-grid hover:bg-accent/40 dark:hover:bg-accent/15 focus-ring border-r transition-all last:border-r-0 focus:border-transparent"
+            className="border-grid hover:bg-accent/40 dark:hover:bg-accent/15 focus-ring transition-all focus:border-transparent"
         >
             <ImageContentWrapper>
                 <div className="relative aspect-video w-full overflow-hidden">

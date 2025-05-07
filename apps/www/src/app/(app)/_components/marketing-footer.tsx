@@ -8,7 +8,7 @@ export function MarketingFooter() {
             <div className="container-wrapper overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
                 <nav
                     aria-label="Footer"
-                    className="-mb-6 flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm/6"
+                    className="-mb-6 flex flex-wrap gap-x-10 gap-y-3 text-sm/6 md:justify-center"
                 >
                     {navConfig.footerNav.main.map((item) => (
                         <Link
@@ -20,7 +20,7 @@ export function MarketingFooter() {
                         </Link>
                     ))}
                 </nav>
-                <div className="mt-16 flex justify-center gap-x-8">
+                <div className="mt-16 flex gap-x-8 md:justify-center">
                     {navConfig.footerNav.socials.map((item) => (
                         <Link
                             target="_blank"
@@ -34,11 +34,11 @@ export function MarketingFooter() {
                     ))}
                 </div>
                 <div className="mt-10 flex items-center justify-center">
-                    <p className="font-heading text-5xl">
+                    <p className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                         Built by developers for developers.
                     </p>
                 </div>
-                <p className="text-muted-foreground mt-10 text-center text-sm/6">
+                <p className="text-muted-foreground mt-10 text-left text-sm/6 md:text-center">
                     Built by{' '}
                     <Link
                         href={urls.socials.ali}
