@@ -6,10 +6,11 @@ import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { Moon, Sun } from 'lucide-react'
 import { Icons } from '@/components/icons'
+import { MobileNav } from '@/app/(app)/_components/mobile-nav'
 
 export function MarketingHeader() {
     return (
-        <header className="border-grid bg-background sticky top-0 z-50 hidden w-full border-b md:flex">
+        <header className="border-grid bg-background m sticky top-0 z-50 w-full border-b">
             <div className="container-wrapper border-grid uppercase">
                 <div className="mx-auto flex h-12 w-full max-w-screen-2xl items-center justify-between px-0 xl:px-0">
                     <Link
@@ -22,9 +23,14 @@ export function MarketingHeader() {
                         )}
                     >
                         <Icons.logo />
-                        {siteConfig.name}
+                        <span className="hidden lg:block">
+                            {siteConfig.name}
+                        </span>
                     </Link>
-                    <nav className="h-full">
+
+                    <MobileNav />
+
+                    <nav className="hidden h-full md:block">
                         <ul className="flex h-full items-center">
                             {navConfig.headerNav.map((navItem) => (
                                 <li
