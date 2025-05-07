@@ -63,7 +63,7 @@ export function PageDescription({
     return (
         <p
             className={cn(
-                'text-muted-foreground text-base leading-tight font-light text-balance sm:text-lg',
+                'text-muted-foreground text-base leading-tight font-light text-balance sm:text-xl',
                 className
             )}
             {...props}

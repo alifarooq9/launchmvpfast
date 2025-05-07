@@ -80,23 +80,23 @@ export function Demos() {
                                 <TabsTrigger
                                     key={trigger.key}
                                     value={trigger.key}
-                                    className="flex h-fit flex-col items-start gap-2 border-0 px-4 py-6 text-left whitespace-normal"
+                                    className="flex h-fit flex-col items-center gap-0 border-0 px-4 py-4 whitespace-normal md:items-start md:gap-2 md:py-6 md:text-left"
                                     disabled={trigger.disabled}
                                 >
                                     <div className="flex items-center gap-2">
-                                        <h2 className="text-foreground text-lg">
+                                        <h2 className="text-foreground text-sm md:text-lg">
                                             <strong className="font-heading">
                                                 {trigger.label}
                                             </strong>
                                         </h2>
                                         <Badge
                                             variant="secondary"
-                                            className="h-fit"
+                                            className="hidden h-fit md:block"
                                         >
                                             {trigger.badge}
                                         </Badge>
                                     </div>
-                                    <p className="text-muted-foreground">
+                                    <p className="text-muted-foreground hidden md:block">
                                         {trigger.description}
                                     </p>
                                 </TabsTrigger>

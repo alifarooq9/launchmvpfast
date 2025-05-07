@@ -20,7 +20,7 @@ import { cloneCmd } from '@/config/clone-cmd'
 export function Hero() {
     return (
         <PageHeaderWrapper>
-            <PageHeader className="grid min-h-[30rem] grid-cols-1 lg:grid-cols-2 lg:py-0">
+            <PageHeader className="grid grid-cols-1 lg:min-h-[30rem] lg:grid-cols-2 lg:py-0">
                 <div className="flex h-full flex-col justify-center gap-3">
                     <Announcement
                         actionText="Contact Us"
@@ -62,7 +62,7 @@ export function Hero() {
                     </PageActions>
                 </div>
 
-                <div className="hidden h-full w-full items-center justify-center sm:flex">
+                <div className="mt-0 hidden h-full w-full items-center justify-center sm:mt-8 sm:flex lg:mt-0">
                     <TerminalHero />
                 </div>
             </PageHeader>
