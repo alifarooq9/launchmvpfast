@@ -108,11 +108,11 @@ export function Announcement({
         <Link
             href={url}
             className={cn(
-                'focus-ring border-border relative mb-4 hidden w-full max-w-[30rem] items-center gap-2 border sm:flex',
+                'focus-ring border-border relative mb-4 flex w-full max-w-[30rem] items-center gap-2 border',
                 className
             )}
         >
-            <div className="bg-accent dark:bg-accent/30 m-0.5 flex w-full items-center justify-between gap-3 px-4 py-2">
+            <div className="bg-accent dark:bg-accent/30 m-0.5 flex w-full flex-col items-start justify-between gap-0.5 px-4 py-2 md:flex-row md:items-center md:gap-3">
                 <p className="text-sm font-medium">{text}</p>
                 <p className="text-sm font-semibold">{actionText}</p>
             </div>
