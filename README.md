@@ -1,16 +1,15 @@
 # launchmvpfast
 Elevate your development game with launchmvpfast! Launch your apps faster with our SaaS starterkits, components, building blocks. Customizable. Open Source.
 
-![Cover-launchmvpfast](https://utfs.io/f/4ae0ddb1-4260-46f5-aa7c-70408cc192b9-aadavt.png)
+![Cover-launchmvpfast](https://www.launchmvpfast.com/og.png)
 
 ## SaaS Starterkit
 
 Soon to be launched. In development. Documentation will be available soon as well. Want to explore it yourself?
 
 Head over to `/starterkits/saas` and play with it.
-## Roadmap 
 
-Please check the [ROADMAP.md](https://github.com/alifarooq9/launchmvpfast/blob/main/ROADMAP.md) for the complete roadmap.
+# Docs (Coming soon)
 
 ## Contribution
 
