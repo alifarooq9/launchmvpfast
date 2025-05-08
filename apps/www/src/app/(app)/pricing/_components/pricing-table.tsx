@@ -1,6 +1,6 @@
 import { SendProposalDialog } from '@/app/(app)/pricing/_components/send-proposal-dialog'
 import { Badge } from '@/components/ui/badge'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { urls } from '@/config/urls'
 import { CheckIcon } from 'lucide-react'
 import Link from 'next/link'

@@ -24,6 +24,7 @@ export const proposalRouter = createTRPCRouter({
                     text: `Proposal from ${input.name} (${input.email})\n\nService Interest: ${input.serviceInterest}\n\nProject Idea: ${input.projectIdea}\n\nProject Description: ${input.projectDescription}`,
                 })
             } catch (error) {
+                console.error(error)
                 throw new Error('Failed to create early access entry')
             }
         }),

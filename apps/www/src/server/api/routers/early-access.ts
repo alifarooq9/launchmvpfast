@@ -28,6 +28,7 @@ export const earlyAccessRouter = createTRPCRouter({
                     text: `Hello ${input.name},\n\nThank you for your interest in ${siteConfig.name}. We have received your request for early access and will notify you once we have updates.\n\nBest regards,\nThe ${siteConfig.name} Team`,
                 })
             } catch (error) {
+                console.error(error)
                 throw new Error('Failed to create early access entry')
             }
         }),

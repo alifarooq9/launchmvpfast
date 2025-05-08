@@ -14,10 +14,8 @@ import { Button, buttonVariants } from '@/components/ui/button'
 import { useMediaQuery } from '@/hooks/use-media-query'
 import {
     Drawer,
-    DrawerClose,
     DrawerContent,
     DrawerDescription,
-    DrawerFooter,
     DrawerHeader,
     DrawerTitle,
     DrawerTrigger,
