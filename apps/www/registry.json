@@ -1,0 +1,19 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "launchmvpfast",
+    "homepage": "https://launchmvpfast.com",
+    "items": [
+        {
+            "name": "hello-button",
+            "type": "registry:component",
+            "title": "Hello Button",
+            "description": "A button that says hello",
+            "files": [
+                {
+                    "path": "src/registry/free/button/button-01.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        }
+    ]
+}

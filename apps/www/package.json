@@ -9,7 +9,8 @@
         "lint": "next lint",
         "db:push": "drizzle-kit push:pg",
         "db:studio": "drizzle-kit studio",
-        "db:generate": "drizzle-kit generate:pg"
+        "db:generate": "drizzle-kit generate:pg",
+        "registry:build": "shadcn registry:build"
     },
     "dependencies": {
         "@hookform/resolvers": "^5.0.1",
@@ -40,6 +41,7 @@
         "react-dom": "^19.1.0",
         "react-hook-form": "^7.56.3",
         "resend": "^4.5.1",
+        "shadcn": "2.6.0-canary.2",
         "sonner": "^2.0.3",
         "superjson": "^2.2.2",
         "tailwind-merge": "^3.2.0",
