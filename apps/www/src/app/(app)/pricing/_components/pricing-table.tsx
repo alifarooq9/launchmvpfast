@@ -1,5 +1,6 @@
+import { SendProposalDialog } from '@/app/(app)/pricing/_components/send-proposal-dialog'
 import { Badge } from '@/components/ui/badge'
-import { buttonVariants } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { urls } from '@/config/urls'
 import { CheckIcon } from 'lucide-react'
 import Link from 'next/link'
@@ -12,7 +13,8 @@ type PricingPlan = {
     price: string
     badge?: string
     buttonText: string
-    buttonUrl: string
+    buttonUrl?: string
+    buttonType: 'link' | 'proposal'
 }
 
 const plans: PricingPlan[] = [
@@ -33,6 +35,7 @@ const plans: PricingPlan[] = [
         badge: 'Open Source',
         buttonText: 'Explore Starter Kits',
         buttonUrl: urls.app.starterkits.base,
+        buttonType: 'link',
     },
     {
         id: 'mvp-sprint',
@@ -50,7 +53,7 @@ const plans: PricingPlan[] = [
         ],
         price: '$999',
         buttonText: 'Send Proposal',
-        buttonUrl: '/',
+        buttonType: 'proposal',
     },
     {
         id: 'mvp-launchpad',
@@ -71,7 +74,7 @@ const plans: PricingPlan[] = [
         price: '$1,999',
         badge: 'Most Popular',
         buttonText: 'Send Proposal',
-        buttonUrl: '/',
+        buttonType: 'proposal',
     },
     {
         id: 'mvp-enterprise',
@@ -90,7 +93,7 @@ const plans: PricingPlan[] = [
         ],
         price: 'Custom',
         buttonText: 'Send Proposal',
-        buttonUrl: '/',
+        buttonType: 'proposal',
     },
 ]
 
@@ -133,12 +136,16 @@ export function PricingTableItem({ plan }: { plan: PricingPlan }) {
                 ))}
             </ul>
 
-            <Link
-                href={plan.buttonUrl}
-                className={buttonVariants({ size: 'lg' })}
-            >
-                {plan.buttonText}
-            </Link>
+            {plan.buttonType === 'link' ? (
+                <Link
+                    href={plan.buttonUrl as string}
+                    className={buttonVariants({ size: 'lg' })}
+                >
+                    {plan.buttonText}
+                </Link>
+            ) : (
+                <SendProposalDialog />
+            )}
         </div>
     )
 }

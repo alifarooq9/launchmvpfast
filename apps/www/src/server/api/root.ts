@@ -1,4 +1,5 @@
 import { earlyAccessRouter } from '@/server/api/routers/early-access'
+import { proposalRouter } from '@/server/api/routers/proposal'
 import { createCallerFactory, createTRPCRouter } from '@/server/api/trpc'
 
 /**
@@ -8,6 +9,7 @@ import { createCallerFactory, createTRPCRouter } from '@/server/api/trpc'
  */
 export const appRouter = createTRPCRouter({
     earlyAccess: earlyAccessRouter,
+    proposal: proposalRouter,
 })
 
 // export type definition of API

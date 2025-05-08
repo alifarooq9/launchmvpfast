@@ -70,7 +70,7 @@ export function MobileNav() {
                     <DrawerHeader>
                         <DrawerTitle>{siteConfig.name}</DrawerTitle>
                     </DrawerHeader>
-                    <div>
+                    <div className="overflow-y-auto">
                         {navConfig.headerNav
                             .filter((n) => n.iconOnly !== true)
                             .map((navItem) => (

@@ -1,7 +1,6 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { earlyAccessInsertSchema } from '@/server/db/schema'
 import { api } from '@/trpc/react'
 import React from 'react'
 import { useForm } from 'react-hook-form'
@@ -22,7 +21,17 @@ type ComingSoonFormProps = {
     className?: string
 }
 
-const formSchema = earlyAccessInsertSchema
+const formSchema = z.object({
+    email: z.string().email({ message: 'Invalid email address' }),
+    name: z
+        .string()
+        .min(1, {
+            message: 'Name is required',
+        })
+        .max(255, {
+            message: 'Name must be at most 255 characters',
+        }),
+})
 
 export function ComingSoonForm({ className }: ComingSoonFormProps) {
     const form = useForm<z.infer<typeof formSchema>>({

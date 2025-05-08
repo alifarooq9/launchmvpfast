@@ -7,4 +7,7 @@ export const siteConfig = {
         nextjsSaas: 'https://www.launchmvpfast.com/og_nextjs_saas.png',
         components: 'https://www.launchmvpfast.com/og_components.png',
     },
+    emails: {
+        noReply: 'no-reply@support.launchmvpfast.com',
+    },
 } as const
