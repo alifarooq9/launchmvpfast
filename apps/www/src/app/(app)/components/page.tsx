@@ -1,4 +1,8 @@
 import { ComingSoon } from '@/app/(app)/_components/coming-soon'
+import { GridGap } from '@/app/(app)/_components/grid-gap'
+import { Suggest } from '@/app/(app)/_components/suggest'
+import { ComponentsHero } from '@/app/(app)/components/_components/components-hero'
+import { ComponentsTable } from '@/app/(app)/components/_components/components-table'
 import { siteConfig } from '@/config/site'
 import { Metadata } from 'next'
 
@@ -11,9 +15,24 @@ export const metadata: Metadata = {
 export default function Components() {
     return (
         <>
-            <ComingSoon
+            {/* <ComingSoon
                 title="Components"
                 description="We're working on a set of powerful, re-usable components. Join the early access list to get notified"
+            /> */}
+
+            <ComponentsHero />
+
+            <GridGap className="h-10" />
+
+            <ComponentsTable />
+
+            <GridGap className="h-10" />
+
+            <Suggest
+                title="Didn't find what you were looking for?"
+                buttonText="Suggest Component"
+                buttonLink="#"
+                className="flex-1"
             />
         </>
     )

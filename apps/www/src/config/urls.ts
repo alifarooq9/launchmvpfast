@@ -1,6 +1,6 @@
 export const urls = {
     base: '/',
-    public: 'https://www.launchmvpfast.com',
+    public: 'https://launchmvpfast.com',
     app: {
         components: '/components',
         starterkits: {
