@@ -44,3 +44,14 @@ export const components: ComponentsType = {
         },
     ],
 }
+
+export function getCategories() {
+    const categories = components.default.map((c) => ({
+        id: c.id,
+        name: c.name,
+        componentsCount: c.components.length,
+        image: c.image,
+    }))
+
+    return categories
+}

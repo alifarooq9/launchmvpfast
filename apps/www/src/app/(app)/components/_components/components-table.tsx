@@ -1,37 +1,54 @@
 import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
 import { buttonVariants } from '@/components/ui/button'
-import { components } from '@/config/registry/components'
+import { components, getCategories } from '@/config/registry/components'
 import { urls } from '@/config/urls'
+import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export function ComponentsTable() {
+    const categories = getCategories()
+    const itemCount = categories.length
+
     return (
         <section className="container-wrapper">
             <div className="divide-border grid grid-cols-1 divide-y sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {components.default.map((component) => (
+                {categories.map((category, index) => (
                     <Link
-                        href={`${urls.app.components}/${component.id}`}
-                        key={component.id}
-                        className="hover:bg-accent dark:hover:bg-accent/20 sm[&:nth-child(2n)]:border-r-0 col-span-1 flex flex-col items-center justify-center border-r transition-all lg:[&:nth-child(3n)]:border-r-0 xl:[&:nth-child(3n)]:border-r xl:[&:nth-child(4n)]:border-r-0"
-                        aria-label={`Go to ${component.name} components`}
-                        title={`Go to ${component.name} components`}
+                        href={`${urls.app.components}/${category.id}`}
+                        key={category.id}
+                        className={cn(
+                            'hover:bg-accent dark:hover:bg-accent/20 sm[&:nth-child(2n)]:border-r-0 col-span-1 flex flex-col items-center justify-center border-r transition-all lg:[&:nth-child(3n)]:border-r-0 xl:[&:nth-child(3n)]:border-r xl:[&:nth-child(4n)]:border-r-0',
+                            index >= itemCount - 1 ? 'border-b-0' : '',
+                            index >= itemCount - 2 ? 'sm:border-b-0' : '',
+                            index >= itemCount - 3 ? 'lg:border-b-0' : '',
+                            index >= itemCount - 4 ? 'xl:border-b-0' : ''
+                        )}
+                        aria-label={`Go to ${category.name} components`}
+                        title={`Go to ${category.name} components`}
                     >
                         <ImageContentWrapper className="w-full">
                             <div className="aspect-video-large relative w-[80%]">
                                 <Image
-                                    src={component.image.dark}
+                                    src={category.image.dark}
                                     fill
-                                    alt={component.name}
-                                    className="object-contain"
+                                    alt={category.name}
+                                    className="hidden object-contain dark:block"
+                                />
+
+                                <Image
+                                    src={category.image.light}
+                                    fill
+                                    alt={category.name}
+                                    className="block object-contain dark:hidden"
                                 />
                             </div>
                         </ImageContentWrapper>
 
                         <div className="flex w-full flex-col items-start justify-start px-4 py-2">
-                            <h2 className="font-heading">{component.name}</h2>
+                            <h2 className="font-heading">{category.name}</h2>
                             <p className="text-muted-foreground text-sm">
-                                {component.components.length} components
+                                {category.componentsCount} components
                             </p>
                         </div>
                     </Link>
