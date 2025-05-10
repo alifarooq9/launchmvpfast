@@ -1,11 +1,8 @@
 import { CodeBlock } from '@/app/(app)/_components/code-block'
 import { ComponentLoaderServer } from '@/app/(app)/_components/component-loader-server'
 import { OpenInV0 } from '@/app/(app)/_components/open-in-v0'
-import { buttonVariants } from '@/components/ui/button'
 import { Category } from '@/config/registry/components'
-import { urls } from '@/config/urls'
 import { cn } from '@/lib/utils'
-import Link from 'next/link'
 
 type CategoryComponentsTableProps = {
     category: Category
