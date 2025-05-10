@@ -12,7 +12,7 @@ export function CategoryComponentsTable({
     category,
 }: CategoryComponentsTableProps) {
     // Calculate total columns used by components with spans
-    let totalColsUsed = category.components.reduce(
+    const totalColsUsed = category.components.reduce(
         (acc, component) => acc + (component.span || 1),
         0
     )
