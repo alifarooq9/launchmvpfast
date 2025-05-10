@@ -6,14 +6,28 @@
         {
             "name": "prompt-input-01",
             "type": "registry:component",
-            "title": "Prompt Input",
-            "description": "A component for inputting ai prompts",
+            "title": "Prompt Input 01",
+            "description": "A first component for inputting ai prompts",
             "dependencies": ["react-textarea-autosize", "lucide-react"],
             "files": [
                 {
                     "path": "src/registry/default/components/input/prompt-input-01.tsx",
                     "type": "registry:component",
                     "target": "components/prompt-input-01.tsx"
+                }
+            ]
+        },
+        {
+            "name": "prompt-input-02",
+            "type": "registry:component",
+            "title": "Prompt Input 02",
+            "description": "A second component for inputting ai prompts",
+            "dependencies": ["react-textarea-autosize", "lucide-react"],
+            "files": [
+                {
+                    "path": "src/registry/default/components/input/prompt-input-02.tsx",
+                    "type": "registry:component",
+                    "target": "components/prompt-input-02.tsx"
                 }
             ]
         }
