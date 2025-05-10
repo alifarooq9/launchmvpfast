@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "next dev --turbopack",
-        "build": "next build",
+        "build": "shadcn registry:build && next build",
         "start": "next start",
         "lint": "next lint",
         "db:push": "drizzle-kit push:pg",
@@ -32,6 +32,7 @@
         "clsx": "^2.1.1",
         "drizzle-orm": "^0.43.1",
         "drizzle-zod": "^0.7.1",
+        "hast-util-to-jsx-runtime": "^2.3.6",
         "lucide-react": "^0.508.0",
         "motion": "^12.10.4",
         "next": "15.3.2",
@@ -61,6 +62,7 @@
         "eslint-config-next": "15.3.2",
         "prettier": "^3.5.3",
         "prettier-plugin-tailwindcss": "^0.6.11",
+        "shiki": "^3.4.0",
         "tailwindcss": "^4",
         "typescript": "^5"
     }

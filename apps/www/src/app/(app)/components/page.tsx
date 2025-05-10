@@ -2,7 +2,7 @@ import { ComingSoon } from '@/app/(app)/_components/coming-soon'
 import { GridGap } from '@/app/(app)/_components/grid-gap'
 import { Suggest } from '@/app/(app)/_components/suggest'
 import { ComponentsHero } from '@/app/(app)/components/_components/components-hero'
-import { ComponentsTable } from '@/app/(app)/components/_components/components-table'
+import { CategoriesTable } from '@/app/(app)/components/_components/categories-table'
 import { siteConfig } from '@/config/site'
 import { Metadata } from 'next'
 
@@ -24,7 +24,7 @@ export default function Components() {
 
             <GridGap className="h-10" />
 
-            <ComponentsTable />
+            <CategoriesTable />
 
             <GridGap className="h-10" />
 

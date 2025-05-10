@@ -2,6 +2,7 @@ import { urls } from '@/config/urls'
 import { JSX } from 'react'
 
 export type Component = {
+    id: string
     name: string
     installation: string
     path: string
@@ -34,11 +35,11 @@ export const components: ComponentsType = {
             },
             components: [
                 {
-                    name: 'input-01',
+                    id: 'input-01',
+                    name: 'Input 01',
                     installation: `${urls.public}/r/input-01.json`,
                     path: 'default/components/input/input-01',
                     element: <p>asd</p>,
-                    span: 2,
                 },
             ],
         },
@@ -54,4 +55,10 @@ export function getCategories() {
     }))
 
     return categories
+}
+
+export function getCategory(slug: string): Category | undefined {
+    const category = components.default.find((c) => c.id === slug)
+
+    return category ?? undefined
 }

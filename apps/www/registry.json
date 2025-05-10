@@ -4,14 +4,14 @@
     "homepage": "https://launchmvpfast.com",
     "items": [
         {
-            "name": "hello-button",
-            "type": "registry:component",
-            "title": "Hello Button",
-            "description": "A button that says hello",
+            "name": "input-01",
+            "type": "registry:ui",
+            "title": "Input-01",
+            "description": "A simple input component",
             "files": [
                 {
-                    "path": "src/registry/free/button/button-01.tsx",
-                    "type": "registry:ui"
+                    "path": "src/registry/default/components/input/input-01.tsx",
+                    "type": "registry:component"
                 }
             ]
         }

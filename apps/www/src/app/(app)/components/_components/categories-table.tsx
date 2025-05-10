@@ -1,12 +1,12 @@
 import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
 import { buttonVariants } from '@/components/ui/button'
-import { components, getCategories } from '@/config/registry/components'
+import { getCategories } from '@/config/registry/components'
 import { urls } from '@/config/urls'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export function ComponentsTable() {
+export function CategoriesTable() {
     const categories = getCategories()
     const itemCount = categories.length
 
@@ -18,7 +18,7 @@ export function ComponentsTable() {
                         href={`${urls.app.components}/${category.id}`}
                         key={category.id}
                         className={cn(
-                            'hover:bg-accent dark:hover:bg-accent/20 sm[&:nth-child(2n)]:border-r-0 col-span-1 flex flex-col items-center justify-center border-r transition-all lg:[&:nth-child(3n)]:border-r-0 xl:[&:nth-child(3n)]:border-r xl:[&:nth-child(4n)]:border-r-0',
+                            'hover:bg-accent dark:hover:bg-accent/20 sm[&:nth-child(2n)]:border-r-0 focus-ring border-grid col-span-1 flex flex-col items-center justify-center border-r transition-all lg:[&:nth-child(3n)]:border-r-0 xl:[&:nth-child(3n)]:border-r xl:[&:nth-child(4n)]:border-r-0',
                             index >= itemCount - 1 ? 'border-b-0' : '',
                             index >= itemCount - 2 ? 'sm:border-b-0' : '',
                             index >= itemCount - 3 ? 'lg:border-b-0' : '',
@@ -54,7 +54,7 @@ export function ComponentsTable() {
                     </Link>
                 ))}
 
-                <div className="sm[&:nth-child(2n)]:border-r-0 col-span-1 flex flex-col items-center justify-center border-r transition-all lg:[&:nth-child(3n)]:border-r-0 xl:[&:nth-child(3n)]:border-r xl:[&:nth-child(4n)]:border-r-0">
+                <div className="border-grid flex flex-col items-center justify-center border-r">
                     <p>
                         <strong className="font-heading">
                             More Components Coming
