@@ -41,20 +41,6 @@ export function CategoryComponentsTable({
                         </div>
                     </div>
                 ))}
-
-                <div className="border-grid flex flex-col items-center justify-center border-r">
-                    <p>
-                        <strong className="font-heading">
-                            More {category.name} Components Coming
-                        </strong>
-                    </p>
-                    <Link
-                        href={urls.app.earlyAccess}
-                        className={buttonVariants({ variant: 'link' })}
-                    >
-                        Join Early Access
-                    </Link>
-                </div>
             </div>
         </section>
     )
