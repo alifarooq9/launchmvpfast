@@ -1,5 +1,3 @@
-import { urls } from '@/config/urls'
-
 export type Component = {
     id: string
     name: string
