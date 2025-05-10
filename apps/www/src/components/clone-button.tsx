@@ -82,7 +82,7 @@ export default function CloneButton({
                 <DropdownMenuTrigger asChild>
                     <Button
                         size="lg"
-                        className="rounded-nonefont-mono shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10"
+                        className="rounded-nonefont-mono rounded-l-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10"
                     >
                         {options[Number(selectedIndex)].label}
                         <ChevronDownIcon size={16} aria-hidden="true" />

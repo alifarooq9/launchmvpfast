@@ -4,12 +4,13 @@
     "private": true,
     "scripts": {
         "dev": "next dev --turbopack",
-        "build": "next build",
+        "build": "shadcn registry:build && next build",
         "start": "next start",
         "lint": "next lint",
         "db:push": "drizzle-kit push:pg",
         "db:studio": "drizzle-kit studio",
-        "db:generate": "drizzle-kit generate:pg"
+        "db:generate": "drizzle-kit generate:pg",
+        "registry:build": "shadcn registry:build"
     },
     "dependencies": {
         "@hookform/resolvers": "^5.0.1",
@@ -21,6 +22,8 @@
         "@radix-ui/react-select": "^2.2.4",
         "@radix-ui/react-slot": "^1.2.2",
         "@radix-ui/react-tabs": "^1.1.11",
+        "@radix-ui/react-toggle": "^1.1.8",
+        "@radix-ui/react-toggle-group": "^1.1.9",
         "@radix-ui/react-tooltip": "^1.2.6",
         "@tanstack/react-query": "^5.75.5",
         "@trpc/client": "^11.1.2",
@@ -31,6 +34,7 @@
         "clsx": "^2.1.1",
         "drizzle-orm": "^0.43.1",
         "drizzle-zod": "^0.7.1",
+        "hast-util-to-jsx-runtime": "^2.3.6",
         "lucide-react": "^0.508.0",
         "motion": "^12.10.4",
         "next": "15.3.2",
@@ -39,7 +43,9 @@
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
         "react-hook-form": "^7.56.3",
+        "react-textarea-autosize": "^8.5.9",
         "resend": "^4.5.1",
+        "shadcn": "2.6.0-canary.2",
         "sonner": "^2.0.3",
         "superjson": "^2.2.2",
         "tailwind-merge": "^3.2.0",
@@ -59,6 +65,7 @@
         "eslint-config-next": "15.3.2",
         "prettier": "^3.5.3",
         "prettier-plugin-tailwindcss": "^0.6.11",
+        "shiki": "^3.4.0",
         "tailwindcss": "^4",
         "typescript": "^5"
     }
