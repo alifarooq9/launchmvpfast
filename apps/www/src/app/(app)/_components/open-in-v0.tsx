@@ -6,13 +6,26 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from '@/components/ui/tooltip'
+import { Component } from '@/config/registry/components'
+import { urls } from '@/config/urls'
 
-export function OpenInV0() {
+type OpenInV0Props = {
+    component: Component
+}
+
+export function OpenInV0({ component }: OpenInV0Props) {
+    const componentSource = `${urls.public}/r/${component.id}.json`
+
     return (
         <TooltipProvider>
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <Link href="#" className="focus-ring w-fit cursor-pointer">
+                    <Link
+                        className="focus-ring w-fit cursor-pointer"
+                        href={`https://v0.dev/chat/api/open?url=${encodeURIComponent(componentSource)}`}
+                        aria-label="Open in v0"
+                        target="_blank"
+                    >
                         <Icons.v0 className="text-muted-foreground h-4 w-4" />
                     </Link>
                 </TooltipTrigger>

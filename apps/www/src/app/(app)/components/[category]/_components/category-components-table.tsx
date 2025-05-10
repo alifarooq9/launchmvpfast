@@ -32,7 +32,7 @@ export function CategoryComponentsTable({
                         )}
                     >
                         <div className="absolute top-3 right-4 flex items-center justify-end gap-8">
-                            <OpenInV0 />
+                            <OpenInV0 component={component} />
 
                             <CodeBlock component={component} />
                         </div>
