@@ -56,7 +56,11 @@ export function MarketingHeader() {
                                         <Link
                                             href={navItem.href}
                                             aria-disabled={navItem.disabled}
-                                            target="_blank"
+                                            target={
+                                                navItem.iconOnly
+                                                    ? '_blank'
+                                                    : undefined
+                                            }
                                             className={cn(
                                                 buttonVariants({
                                                     variant: 'ghost',
