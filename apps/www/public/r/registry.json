@@ -4,16 +4,16 @@
     "homepage": "https://launchmvpfast.com",
     "items": [
         {
-            "name": "prompt-input",
+            "name": "prompt-input-01",
             "type": "registry:component",
             "title": "Prompt Input",
             "description": "A component for inputting ai prompts",
             "dependencies": ["react-textarea-autosize", "lucide-react"],
             "files": [
                 {
-                    "path": "src/registry/default/components/input/prompt-input.tsx",
+                    "path": "src/registry/default/components/input/prompt-input-01.tsx",
                     "type": "registry:component",
-                    "target": "components/prompt-input.tsx"
+                    "target": "components/prompt-input-01.tsx"
                 }
             ]
         }

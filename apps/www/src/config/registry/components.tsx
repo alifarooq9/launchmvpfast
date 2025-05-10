@@ -3,7 +3,6 @@ import { urls } from '@/config/urls'
 export type Component = {
     id: string
     name: string
-    installation: string
     path: string
     span?: 1 | 2 | 3 | 4
 }
@@ -33,10 +32,15 @@ export const components: ComponentsType = {
             },
             components: [
                 {
-                    id: 'prompt-input',
-                    name: 'Prompt Input',
-                    installation: `${urls.public}/r/prompt-input.json`,
-                    path: 'default/components/input/prompt-input',
+                    id: 'prompt-input-01',
+                    name: 'Prompt Input 01',
+                    path: 'default/components/input/prompt-input-01',
+                    span: 2,
+                },
+                {
+                    id: 'prompt-input-02',
+                    name: 'Prompt Input 02',
+                    path: 'default/components/input/prompt-input-02',
                     span: 2,
                 },
             ],

@@ -3,11 +3,10 @@
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import {
-    ArrowUpIcon,
     CloudUploadIcon,
+    CornerLeftUpIcon,
     GlobeIcon,
     LightbulbIcon,
-    MicIcon,
     PaperclipIcon,
 } from 'lucide-react'
 import {
@@ -26,11 +25,33 @@ import {
 import React from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
 import { Toggle } from '@/components/ui/toggle'
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from '@/components/ui/select'
 
-export default function PromptInput() {
+const models = [
+    'GPT-4.5',
+    'Claude 3.7 Sonnet',
+    'Gemini 2.0 Pro',
+    'LLaMA 4',
+    'DeepSeek-R1',
+    'Qwen 3',
+    'Grok 3',
+    'Mistral Large 2',
+    'Gemma 3',
+    'Mixtral 8x22B',
+]
+
+export default function PromptInput02() {
     const [message, setMessage] = React.useState<string>('')
     const [searchToggle, setSearchToggle] = React.useState<boolean>(false)
     const [reasonToggle, setReasonToggle] = React.useState<boolean>(false)
+    const [model, setModel] = React.useState<string>(models[0])
 
     const handleSubmit = () => {
         if (message.trim() === '') return
@@ -52,21 +73,34 @@ export default function PromptInput() {
             className={cn(
                 'placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input rounded-md border bg-transparent text-base shadow-xs transition-[color,box-shadow] outline-none md:text-sm',
                 'focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px]',
-                'has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40 has-aria-invalid:border-destructive group p-4',
-                'flex w-full flex-col gap-6'
+                'has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40 has-aria-invalid:border-destructive group',
+                'flex w-full flex-col'
             )}
         >
-            <TextareaAutosize
-                className="min-h-9 w-full resize-none border-none bg-transparent text-base focus-visible:outline-none"
-                placeholder="Ask anything..."
-                minRows={1}
-                rows={1}
-                maxRows={6}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-            />
+            <div className="flex items-center justify-center gap-2 p-4">
+                <TextareaAutosize
+                    className="w-full resize-none border-none bg-transparent text-base focus-visible:outline-none"
+                    placeholder="Ask anything..."
+                    minRows={1}
+                    rows={1}
+                    maxRows={6}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                />
 
-            <div className="flex items-center justify-between">
+                <Button
+                    type="submit"
+                    variant="ghost"
+                    className="cursor-pointer"
+                    disabled={!message || message.length === 0}
+                    onClick={() => handleSubmit()}
+                >
+                    Send to AI
+                    <CornerLeftUpIcon />
+                </Button>
+            </div>
+
+            <div className="border-border flex items-center justify-between border-t p-3 px-4">
                 <TooltipProvider delayDuration={0}>
                     <div className="flex items-center gap-2">
                         <Attachments />
@@ -74,7 +108,6 @@ export default function PromptInput() {
                         <Tooltip>
                             <Toggle
                                 value="search"
-                                variant="outline"
                                 asChild
                                 pressed={searchToggle}
                                 onPressedChange={setSearchToggle}
@@ -95,7 +128,6 @@ export default function PromptInput() {
                         <Tooltip>
                             <Toggle
                                 value="reason"
-                                variant="outline"
                                 asChild
                                 pressed={reasonToggle}
                                 onPressedChange={setReasonToggle}
@@ -113,41 +145,26 @@ export default function PromptInput() {
                             </TooltipContent>
                         </Tooltip>
                     </div>
-
-                    <div className="flex items-center gap-2">
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <Button
-                                    type="button"
-                                    size="icon"
-                                    className="cursor-pointer"
-                                    variant="outline"
-                                >
-                                    <MicIcon />
-                                </Button>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>Dictate</p>
-                            </TooltipContent>
-                        </Tooltip>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <Button
-                                    type="submit"
-                                    size="icon"
-                                    className="cursor-pointer"
-                                    disabled={!message || message.length === 0}
-                                    onClick={() => handleSubmit()}
-                                >
-                                    <ArrowUpIcon />
-                                </Button>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>Send</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </div>
                 </TooltipProvider>
+
+                <Select value={model} onValueChange={setModel}>
+                    <SelectTrigger className="max-w-[120px] sm:max-w-max">
+                        <SelectValue placeholder="Select modal" />
+                    </SelectTrigger>
+                    <SelectContent align="end" side="top">
+                        <SelectGroup>
+                            {models.map((model) => (
+                                <SelectItem
+                                    key={model}
+                                    value={model}
+                                    onClick={() => setModel(model)}
+                                >
+                                    {model}
+                                </SelectItem>
+                            ))}
+                        </SelectGroup>
+                    </SelectContent>
+                </Select>
             </div>
         </div>
     )
@@ -161,12 +178,11 @@ function Attachments() {
                     <DropdownMenuTrigger asChild>
                         <Button
                             type="button"
-                            variant="outline"
-                            size="icon"
+                            variant="ghost"
                             className="cursor-pointer"
                         >
                             <PaperclipIcon />
-                            <span className="sr-only">Attachments</span>
+                            <span className="hidden sm:block">Attachments</span>
                         </Button>
                     </DropdownMenuTrigger>
                 </TooltipTrigger>
