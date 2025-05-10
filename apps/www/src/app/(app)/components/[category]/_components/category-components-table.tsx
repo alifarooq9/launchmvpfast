@@ -23,7 +23,7 @@ export function CategoryComponentsTable({
                     <div
                         key={component.id}
                         className={cn(
-                            'sm[&:nth-child(2n)]:border-r-0 border-grid relative flex min-h-50 flex-col items-center justify-center border-r p-4 py-10 transition-all md:px-6 lg:[&:nth-child(3n)]:border-r-0 xl:[&:nth-child(3n)]:border-r xl:[&:nth-child(4n)]:border-r-0',
+                            'sm[&:nth-child(2n)]:border-r-0 border-grid relative flex min-h-50 flex-col items-center justify-center border-r p-4 py-14 transition-all md:px-6 lg:[&:nth-child(3n)]:border-r-0 xl:[&:nth-child(3n)]:border-r xl:[&:nth-child(4n)]:border-r-0',
                             index >= itemCount - 1 ? 'border-b-0' : '',
                             index >= itemCount - 2 ? 'sm:border-b-0' : '',
                             index >= itemCount - 3 ? 'lg:border-b-0' : '',

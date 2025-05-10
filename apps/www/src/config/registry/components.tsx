@@ -1,13 +1,11 @@
 import { urls } from '@/config/urls'
-import { JSX } from 'react'
 
 export type Component = {
     id: string
     name: string
     installation: string
     path: string
-    element?: JSX.Element
-    span?: 1 | 2 | 3
+    span?: 1 | 2 | 3 | 4
 }
 
 export type Category = {
@@ -35,11 +33,11 @@ export const components: ComponentsType = {
             },
             components: [
                 {
-                    id: 'input-01',
-                    name: 'Input 01',
-                    installation: `${urls.public}/r/input-01.json`,
-                    path: 'default/components/input/input-01',
-                    element: <p>asd</p>,
+                    id: 'prompt-input',
+                    name: 'Prompt Input',
+                    installation: `${urls.public}/r/prompt-input.json`,
+                    path: 'default/components/input/prompt-input',
+                    span: 2,
                 },
             ],
         },
