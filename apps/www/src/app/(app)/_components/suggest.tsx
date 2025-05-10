@@ -27,6 +27,7 @@ export function Suggest({
             <Link
                 href={buttonLink}
                 className={buttonVariants({ variant: 'outline' })}
+                target="_blank"
             >
                 {buttonText}
             </Link>

@@ -4,6 +4,7 @@ import { CategoryComponentsTable } from '@/app/(app)/components/[category]/_comp
 import { CategoryHero } from '@/app/(app)/components/[category]/_components/category-hero'
 import { getCategories, getCategory } from '@/config/registry/components'
 import { siteConfig } from '@/config/site'
+import { urls } from '@/config/urls'
 import { notFound } from 'next/navigation'
 
 export async function generateMetadata({
@@ -73,7 +74,7 @@ export default async function ComponentsCategory({
             <Suggest
                 title="Didn't find what you were looking for?"
                 buttonText="Suggest Component"
-                buttonLink="#"
+                buttonLink={urls.socials.suggestions}
                 className="flex-1"
             />
         </>

@@ -18,7 +18,9 @@ export const urls = {
         base: '/docs',
     },
     socials: {
-        gh: 'https://git.new/launchmvpfast',
+        gh: 'https://github.com/alifarooq9/launchmvpfast',
+        suggestions:
+            'https://github.com/alifarooq9/launchmvpfast/discussions/categories/suggestions',
         x: 'https://x.com/AliFarooqDev',
         ali: 'https://x.com/AliFarooqDev',
     },

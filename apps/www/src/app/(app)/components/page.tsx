@@ -4,6 +4,7 @@ import { ComponentsHero } from '@/app/(app)/components/_components/components-he
 import { CategoriesTable } from '@/app/(app)/components/_components/categories-table'
 import { siteConfig } from '@/config/site'
 import { Metadata } from 'next'
+import { urls } from '@/config/urls'
 
 export const metadata: Metadata = {
     title: `Open Source UI Components | Shadcn UI & Tailwind CSS | ${siteConfig.name}`,
@@ -38,7 +39,7 @@ export default function Components() {
             <Suggest
                 title="Didn't find what you were looking for?"
                 buttonText="Suggest Component"
-                buttonLink="#"
+                buttonLink={urls.socials.suggestions}
                 className="flex-1"
             />
         </>
