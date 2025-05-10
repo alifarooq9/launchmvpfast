@@ -23,7 +23,7 @@ export function Suggest({
             )}
             {...props}
         >
-            <h2 className="font-heading text-2xl">{title}</h2>
+            <h2 className="font-heading text-center text-2xl">{title}</h2>
             <Link
                 href={buttonLink}
                 className={buttonVariants({ variant: 'outline' })}

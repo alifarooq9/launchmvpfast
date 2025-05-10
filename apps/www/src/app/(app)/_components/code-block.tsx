@@ -65,6 +65,7 @@ export function CodeBlock({ component }: CodeBlockProps) {
                     highlightedCode: data.content,
                 }
             } catch (error) {
+                console.error('Error fetching code block:', error)
                 return {
                     code: '',
                     highlightedCode: '',
@@ -90,7 +91,7 @@ export function CodeBlock({ component }: CodeBlockProps) {
                 </Tooltip>
             </TooltipProvider>
 
-            <DialogContent className="sm:max-w-[600px]">
+            <DialogContent className="max-h-svh overflow-auto sm:max-w-[600px]">
                 <DialogHeader>
                     <DialogTitle>
                         Use {component.name} in your project
