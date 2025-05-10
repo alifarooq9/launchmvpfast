@@ -30,6 +30,62 @@
                     "target": "components/prompt-input-02.tsx"
                 }
             ]
+        },
+        {
+            "name": "otp-with-no-spaces",
+            "type": "registry:component",
+            "title": "OTP with No Spaces",
+            "description": "A component for inputting OTP codes without spaces",
+            "dependencies": ["zod", "react-hook-form"],
+            "files": [
+                {
+                    "path": "src/registry/default/components/input/otp-with-no-spaces.tsx",
+                    "type": "registry:component",
+                    "target": "components/otp-with-no-spaces.tsx"
+                }
+            ]
+        },
+        {
+            "name": "otp-with-spaces",
+            "type": "registry:component",
+            "title": "OTP with Spaces",
+            "description": "A component for inputting OTP codes with spaces",
+            "dependencies": ["zod", "react-hook-form"],
+            "files": [
+                {
+                    "path": "src/registry/default/components/input/otp-with-spaces.tsx",
+                    "type": "registry:component",
+                    "target": "components/otp-with-spaces.tsx"
+                }
+            ]
+        },
+        {
+            "name": "otp-with-seperator",
+            "type": "registry:component",
+            "title": "OTP with Seperator",
+            "description": "A component for inputting OTP codes with a custom separator",
+            "dependencies": ["zod", "react-hook-form"],
+            "files": [
+                {
+                    "path": "src/registry/default/components/input/otp-with-seperator.tsx",
+                    "type": "registry:component",
+                    "target": "components/otp-with-seperator.tsx"
+                }
+            ]
+        },
+        {
+            "name": "otp-with-numbers-only",
+            "type": "registry:component",
+            "title": "OTP with Numbers Only",
+            "description": "A component for inputting OTP codes with numbers only",
+            "dependencies": ["zod", "react-hook-form"],
+            "files": [
+                {
+                    "path": "src/registry/default/components/input/otp-with-numbers-only.tsx",
+                    "type": "registry:component",
+                    "target": "components/otp-with-numbers-only.tsx"
+                }
+            ]
         }
     ]
 }

@@ -35,6 +35,7 @@
         "drizzle-orm": "^0.43.1",
         "drizzle-zod": "^0.7.1",
         "hast-util-to-jsx-runtime": "^2.3.6",
+        "input-otp": "^1.4.2",
         "lucide-react": "^0.508.0",
         "motion": "^12.10.4",
         "next": "15.3.2",

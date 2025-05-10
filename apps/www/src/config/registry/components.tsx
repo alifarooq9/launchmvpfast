@@ -41,6 +41,26 @@ export const components: ComponentsType = {
                     path: 'default/components/input/prompt-input-02',
                     span: 2,
                 },
+                {
+                    id: 'otp-with-no-spaces',
+                    name: 'OTP with No Spaces',
+                    path: 'default/components/input/otp-with-no-spaces',
+                },
+                {
+                    id: 'otp-with-spaces',
+                    name: 'OTP with Spaces',
+                    path: 'default/components/input/otp-with-spaces',
+                },
+                {
+                    id: 'otp-with-seperator',
+                    name: 'OTP with Seperator',
+                    path: 'default/components/input/otp-with-seperator',
+                },
+                {
+                    id: 'otp-with-numbers-only',
+                    name: 'OTP with Numbers Only',
+                    path: 'default/components/input/otp-with-numbers-only',
+                },
             ],
         },
     ],
