@@ -80,7 +80,7 @@ export function Demos() {
                                 <TabsTrigger
                                     key={trigger.key}
                                     value={trigger.key}
-                                    className="flex h-fit flex-col items-center gap-0 border-0 px-4 py-4 whitespace-normal md:items-start md:gap-2 md:py-6 md:text-left"
+                                    className="flex h-fit flex-col items-center gap-0 rounded-none border-0 px-4 py-4 whitespace-normal md:items-start md:gap-2 md:py-6 md:text-left"
                                     disabled={trigger.disabled}
                                 >
                                     <div className="flex items-center gap-2">

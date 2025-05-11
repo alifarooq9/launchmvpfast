@@ -227,7 +227,7 @@ function CodeBlockContent({ code }: { code: string }) {
     }, [code])
 
     return nodes ? (
-        <div className="[&_pre]:bg-muted! [&_code]:font-mono [&_code]:text-[13px] [&_pre]:max-h-[450px] [&_pre]:overflow-auto [&_pre]:rounded-md [&_pre]:p-4 [&_pre]:leading-snug">
+        <div className="[&_pre]:bg-[oklch(0.274 0.006 286.033)]! [&_code]:font-mono [&_code]:text-[13px] [&_pre]:max-h-[450px] [&_pre]:overflow-auto [&_pre]:rounded-md [&_pre]:p-4 [&_pre]:leading-snug">
             {nodes}
         </div>
     ) : (
