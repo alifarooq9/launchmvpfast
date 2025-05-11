@@ -112,6 +112,25 @@
                     "target": "components/input-with-animated-inset-label.tsx"
                 }
             ]
+        },
+        {
+            "name": "phone-number-input",
+            "type": "registry:component",
+            "title": "Phone Number Input",
+            "description": "A component for inputting phone numbers",
+            "dependencies": [
+                "react-phone-number-input",
+                "react-hook-form",
+                "zod",
+                "lucide-react"
+            ],
+            "files": [
+                {
+                    "path": "src/registry/default/components/input/phone-number-input.tsx",
+                    "type": "registry:component",
+                    "target": "components/phone-number-input.tsx"
+                }
+            ]
         }
     ]
 }

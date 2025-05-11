@@ -71,6 +71,11 @@ export const components: ComponentsType = {
                     name: 'Input with Animated Inset Label',
                     path: 'default/components/input/input-with-animated-inset-label',
                 },
+                {
+                    id: 'phone-number-input',
+                    name: 'Phone Number Input',
+                    path: 'default/components/input/phone-number-input',
+                },
             ],
         },
     ],

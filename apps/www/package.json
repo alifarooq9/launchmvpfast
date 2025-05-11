@@ -44,6 +44,7 @@
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
         "react-hook-form": "^7.56.3",
+        "react-phone-number-input": "^3.4.12",
         "react-textarea-autosize": "^8.5.9",
         "resend": "^4.5.1",
         "shadcn": "2.6.0-canary.2",
