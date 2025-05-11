@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { urls } from '@/config/urls'
+import { components } from '@/config/registry/components'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = urls.public
@@ -14,6 +15,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         urls.app.pricing,
         urls.app.earlyAccess,
         urls.docs.base,
+        ...components.default.map(
+            (component) => `${urls.app.components}/${component.id}`
+        ),
     ]
 
     return paths.map((path) => ({
