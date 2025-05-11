@@ -1,3 +1,4 @@
+import { ComponentsDemoContent } from '@/app/(app)/(landing)/_components/components-demo-content'
 import { GridGap } from '@/app/(app)/_components/grid-gap'
 import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
 import { ThreeDMarquee } from '@/components/ui/3d-marquee'
@@ -23,8 +24,8 @@ const tabTriggers = [
         label: 'Components',
         description:
             'Reusable, customizable components for your tech stack. Save time with pre-built UI elements and code snippets.',
-        badge: 'Coming Soon',
-        disabled: true,
+        badge: 'New inputs',
+        disabled: false,
     },
     {
         key: tabTriggerKeys.blocks,
@@ -80,7 +81,7 @@ export function Demos() {
                                 <TabsTrigger
                                     key={trigger.key}
                                     value={trigger.key}
-                                    className="flex h-fit flex-col items-center gap-0 rounded-none border-0 px-4 py-4 whitespace-normal md:items-start md:gap-2 md:py-6 md:text-left"
+                                    className="flex h-fit cursor-pointer flex-col items-center gap-0 rounded-none border-0 px-4 py-4 whitespace-normal disabled:pointer-events-none md:items-start md:gap-2 md:py-6 md:text-left"
                                     disabled={trigger.disabled}
                                 >
                                     <div className="flex items-center gap-2">
@@ -114,7 +115,7 @@ export function Demos() {
                         </ImageContentWrapper>
                     </TabsContent>
                     <TabsContent value={tabTriggerKeys.components}>
-                        {/* TODO: Add components showcase */}
+                        <ComponentsDemoContent />
                     </TabsContent>
                     <TabsContent value={tabTriggerKeys.blocks}>
                         {/* TODO: Add blocks showcase */}
