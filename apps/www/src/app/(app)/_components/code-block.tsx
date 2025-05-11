@@ -72,6 +72,7 @@ export function CodeBlock({ component }: CodeBlockProps) {
                 }
             }
         },
+        enabled: !!component.id,
     })
 
     return (
@@ -93,7 +94,7 @@ export function CodeBlock({ component }: CodeBlockProps) {
 
             <DialogContent className="max-h-svh overflow-auto sm:max-w-[600px]">
                 <DialogHeader>
-                    <DialogTitle>
+                    <DialogTitle className="text-left">
                         Use {component.name} in your project
                     </DialogTitle>
                 </DialogHeader>
