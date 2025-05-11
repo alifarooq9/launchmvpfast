@@ -61,6 +61,16 @@ export const components: ComponentsType = {
                     name: 'OTP with Numbers Only',
                     path: 'default/components/input/otp-with-numbers-only',
                 },
+                {
+                    id: 'input-with-animated-label',
+                    name: 'Input with Animated Label',
+                    path: 'default/components/input/input-with-animated-label',
+                },
+                {
+                    id: 'input-with-animated-inset-label',
+                    name: 'Input with Animated Inset Label',
+                    path: 'default/components/input/input-with-animated-inset-label',
+                },
             ],
         },
     ],

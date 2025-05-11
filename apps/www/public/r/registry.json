@@ -86,6 +86,32 @@
                     "target": "components/otp-with-numbers-only.tsx"
                 }
             ]
+        },
+        {
+            "name": "input-with-animated-label",
+            "type": "registry:component",
+            "title": "Input with Animated Label",
+            "description": "A component for inputting text with an animated label",
+            "files": [
+                {
+                    "path": "src/registry/default/components/input/input-with-animated-label.tsx",
+                    "type": "registry:component",
+                    "target": "components/input-with-animated-label.tsx"
+                }
+            ]
+        },
+        {
+            "name": "input-with-animated-inset-label",
+            "type": "registry:component",
+            "title": "Input with Animated Inset Label",
+            "description": "A component for inputting text with an animated inset label",
+            "files": [
+                {
+                    "path": "src/registry/default/components/input/input-with-animated-inset-label.tsx",
+                    "type": "registry:component",
+                    "target": "components/input-with-animated-inset-label.tsx"
+                }
+            ]
         }
     ]
 }

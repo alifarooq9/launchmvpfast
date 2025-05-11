@@ -45,7 +45,7 @@ export default function OtpWithNumbersOnly() {
         <Form {...form}>
             <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="flex max-w-2/3 justify-center space-y-6"
+                className="flex max-w-4/5 justify-center space-y-6"
             >
                 <FormField
                     control={form.control}
