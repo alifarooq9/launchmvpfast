@@ -48,7 +48,11 @@ export default function InputWithLeftSelect() {
                     </SelectContent>
                 </Select>
 
-                <Input placeholder="Shadcn" className="rounded-l-none" />
+                <Input
+                    placeholder="Shadcn"
+                    id={id}
+                    className="rounded-l-none"
+                />
             </div>
         </div>
     )

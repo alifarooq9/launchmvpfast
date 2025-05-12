@@ -41,7 +41,11 @@ export default function InputWithLeftSelect() {
             <Label htmlFor={id}>Input with right select</Label>
 
             <div className="flex items-center">
-                <Input placeholder="launchmvpfast" className="rounded-r-none" />
+                <Input
+                    placeholder="launchmvpfast"
+                    id={id}
+                    className="rounded-r-none"
+                />
 
                 <Select defaultValue={suffixKeys.com}>
                     <SelectTrigger className="rounded-l-none border-l-0">

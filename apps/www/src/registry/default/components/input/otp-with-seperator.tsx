@@ -5,18 +5,15 @@ import {
     InputOTPSlot,
 } from '@/components/ui/input-otp'
 import { Label } from '@/components/ui/label'
-import { useId } from 'react'
 
 // Change the inputLength to the desired number of slots
 const inputLength = [3, 3]
 const sum = () => inputLength.reduce((a, b) => a + b, 0)
 
 export default function OtpWithSeperator() {
-    const id = useId()
-
     return (
         <div className="flex w-full max-w-4/5 flex-col gap-2">
-            <Label htmlFor={id}>OTP with seperator</Label>
+            <Label>OTP with seperator</Label>
 
             <InputOTP maxLength={sum()}>
                 <InputOTPGroup>

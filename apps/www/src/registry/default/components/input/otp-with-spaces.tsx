@@ -4,17 +4,14 @@ import {
     InputOTPSlot,
 } from '@/components/ui/input-otp'
 import { Label } from '@/components/ui/label'
-import { useId } from 'react'
 
 // Change the inputLength to the desired number of slots
 const inputLength = 6
 
 export default function OtpWithSpaces() {
-    const id = useId()
-
     return (
         <div className="flex w-full max-w-4/5 flex-col gap-2">
-            <Label htmlFor={id}>OTP with spaces</Label>
+            <Label>OTP with spaces</Label>
 
             <InputOTP maxLength={inputLength}>
                 <InputOTPGroup className="gap-1">
