@@ -76,6 +76,11 @@ export const components: ComponentsType = {
                     name: 'Phone Number Input',
                     path: 'default/components/input/phone-number-input',
                 },
+                {
+                    id: 'input-with-right-button',
+                    name: 'Input with Right Button',
+                    path: 'default/components/input/input-with-right-button',
+                },
             ],
         },
     ],

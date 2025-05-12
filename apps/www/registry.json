@@ -133,6 +133,20 @@
                     "target": "components/phone-number-input.tsx"
                 }
             ]
+        },
+        {
+            "name": "input-with-right-button",
+            "type": "registry:component",
+            "title": "Input with Right Button",
+            "description": "A component for inputting text with a button on the right",
+            "dependencies": ["zod", "react-hook-form", "lucide-react"],
+            "files": [
+                {
+                    "path": "src/registry/default/components/input/input-with-right-button.tsx",
+                    "type": "registry:component",
+                    "target": "components/input-with-right-button.tsx"
+                }
+            ]
         }
     ]
 }
