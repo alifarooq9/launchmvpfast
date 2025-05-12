@@ -92,6 +92,7 @@
             "type": "registry:component",
             "title": "Input with Animated Label",
             "description": "A component for inputting text with an animated label",
+            "dependencies": ["zod", "react-hook-form"],
             "files": [
                 {
                     "path": "src/registry/default/components/input/input-with-animated-label.tsx",
@@ -105,6 +106,7 @@
             "type": "registry:component",
             "title": "Input with Animated Inset Label",
             "description": "A component for inputting text with an animated inset label",
+            "dependencies": ["zod", "react-hook-form"],
             "files": [
                 {
                     "path": "src/registry/default/components/input/input-with-animated-inset-label.tsx",
