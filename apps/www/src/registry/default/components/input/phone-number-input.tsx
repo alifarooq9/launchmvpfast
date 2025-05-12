@@ -88,6 +88,14 @@ export default function PhoneNumberInput() {
                                 >
                                     react-phone-number-input
                                 </Link>{' '}
+                                and{' '}
+                                <Link
+                                    target="_blank"
+                                    href="https://react-hook-form.com/"
+                                    className="underline underline-offset-2"
+                                >
+                                    react-hook-form
+                                </Link>
                             </FormDescription>
 
                             <FormMessage />
