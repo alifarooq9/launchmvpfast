@@ -1,18 +1,5 @@
-'use client'
-
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
-import {
-    Form,
-    FormControl,
-    FormDescription,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import {
     Select,
     SelectContent,
@@ -20,6 +7,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from '@/components/ui/select'
+import { useId } from 'react'
 
 const prefixKeys = {
     mr: 'mr',
@@ -39,98 +27,29 @@ const prefixs = [
     { value: prefixKeys.madam, label: 'Madam' },
 ] as const
 
-const fromSchema = z.object({
-    prefix: z.enum(Object.keys(prefixKeys) as [keyof typeof prefixKeys]),
-    name: z.string().min(1, {
-        message: 'Name is required',
-    }),
-})
-
 export default function InputWithLeftSelect() {
-    const form = useForm<z.infer<typeof fromSchema>>({
-        resolver: zodResolver(fromSchema),
-        defaultValues: {
-            prefix: prefixKeys.dr,
-            name: '',
-        },
-    })
-
-    function onSubmit(data: z.infer<typeof fromSchema>) {
-        console.log('Form submitted:', data)
-        // Handle form submission logic here
-    }
+    const id = useId()
 
     return (
-        <Form {...form}>
-            <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="w-full max-w-4/5 space-y-6"
-            >
-                <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field, fieldState }) => (
-                        <FormItem id="name">
-                            <FormLabel>Input with left select</FormLabel>
-                            <FormControl>
-                                <div className="flex items-center">
-                                    <FormField
-                                        control={form.control}
-                                        name="prefix"
-                                        render={({ field }) => (
-                                            <FormItem>
-                                                <Select
-                                                    onValueChange={
-                                                        field.onChange
-                                                    }
-                                                    value={field.value}
-                                                    defaultValue={field.value}
-                                                >
-                                                    <FormControl>
-                                                        <SelectTrigger className="rounded-r-none border-r-0">
-                                                            <SelectValue placeholder="Select a verified email to display" />
-                                                        </SelectTrigger>
-                                                    </FormControl>
-                                                    <SelectContent>
-                                                        {prefixs.map((item) => (
-                                                            <SelectItem
-                                                                key={item.value}
-                                                                value={
-                                                                    item.value
-                                                                }
-                                                            >
-                                                                {item.label}
-                                                            </SelectItem>
-                                                        ))}
-                                                    </SelectContent>
-                                                </Select>
-                                            </FormItem>
-                                        )}
-                                    />
-                                    <Input
-                                        placeholder="Shadcn"
-                                        className="rounded-l-none"
-                                        aria-invalid={!!fieldState.invalid}
-                                        {...field}
-                                    />
-                                </div>
-                            </FormControl>
+        <div className="flex w-full max-w-4/5 flex-col gap-2">
+            <Label htmlFor={id}>Input with left select</Label>
 
-                            <FormDescription>
-                                Built with{' '}
-                                <a
-                                    target="_blank"
-                                    href="https://react-hook-form.com/"
-                                    className="underline underline-offset-2"
-                                >
-                                    react-hook-form
-                                </a>
-                            </FormDescription>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-            </form>
-        </Form>
+            <div className="flex items-center">
+                <Select defaultValue={prefixKeys.mr}>
+                    <SelectTrigger className="rounded-r-none border-r-0">
+                        <SelectValue placeholder="Select a verified email to display" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        {prefixs.map((item) => (
+                            <SelectItem key={item.value} value={item.value}>
+                                {item.label}
+                            </SelectItem>
+                        ))}
+                    </SelectContent>
+                </Select>
+
+                <Input placeholder="Shadcn" className="rounded-l-none" />
+            </div>
+        </div>
     )
 }

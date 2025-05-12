@@ -17,92 +17,26 @@ import {
 import { Input } from '@/components/ui/input'
 import flags from 'react-phone-number-input/flags'
 import { PhoneIcon } from 'lucide-react'
-import { z } from 'zod'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import {
-    Form,
-    FormControl,
-    FormDescription,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from '@/components/ui/form'
-
-const formSchema = z.object({
-    phone: z.string().min(1, {
-        message: 'Phone number is required',
-    }),
-})
+import { Label } from '@/components/ui/label'
 
 export default function PhoneNumberInput() {
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
-        defaultValues: {
-            phone: '',
-        },
-    })
-
-    function onSubmit(data: z.infer<typeof formSchema>) {
-        console.log('Form submitted:', data)
-        // Handle form submission logic here
-    }
+    const [value, setValue] = React.useState('')
 
     return (
-        <Form {...form}>
-            <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="w-full max-w-4/5 space-y-6"
-            >
-                <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Phone number input</FormLabel>
-                            <FormControl>
-                                <PhoneInput
-                                    placeholder="Enter phone number"
-                                    international
-                                    inputComponent={InputComponent}
-                                    countrySelectComponent={
-                                        CountrySelectComponent
-                                    }
-                                    value={field.value}
-                                    onChange={(value) =>
-                                        field.onChange(value || '')
-                                    }
-                                    className="flex items-center justify-center"
-                                    flagComponent={FlagComponent}
-                                />
-                            </FormControl>
+        <div className="flex w-full max-w-4/5 flex-col gap-2">
+            <Label>Phone number input</Label>
 
-                            <FormDescription>
-                                Built with{' '}
-                                <a
-                                    target="_blank"
-                                    href="https://catamphetamine.gitlab.io/react-phone-number-input/"
-                                    className="underline underline-offset-2"
-                                >
-                                    react-phone-number-input
-                                </a>{' '}
-                                and{' '}
-                                <a
-                                    target="_blank"
-                                    href="https://react-hook-form.com/"
-                                    className="underline underline-offset-2"
-                                >
-                                    react-hook-form
-                                </a>
-                            </FormDescription>
-
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-            </form>
-        </Form>
+            <PhoneInput
+                placeholder="Enter phone number"
+                international
+                value={value}
+                onChange={(e) => setValue(e ?? '')}
+                inputComponent={InputComponent}
+                countrySelectComponent={CountrySelectComponent}
+                className="flex items-center justify-center"
+                flagComponent={FlagComponent}
+            />
+        </div>
     )
 }
 

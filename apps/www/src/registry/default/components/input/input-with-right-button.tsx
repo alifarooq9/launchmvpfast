@@ -1,83 +1,25 @@
-'use client'
-
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
-import {
-    Form,
-    FormControl,
-    FormDescription,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { CornerRightUpIcon } from 'lucide-react'
-
-const formSchema = z.object({
-    email: z.string().email({
-        message: 'Invalid email address',
-    }),
-})
+import { Label } from '@/components/ui/label'
+import { useId } from 'react'
 
 export default function InputWithRightButton() {
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
-        defaultValues: {
-            email: '',
-        },
-    })
-
-    function onSubmit(data: z.infer<typeof formSchema>) {
-        console.log('Form submitted:', data)
-        // Handle form submission logic here
-    }
+    const id = useId()
 
     return (
-        <Form {...form}>
-            <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="w-full max-w-4/5 space-y-6"
-            >
-                <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Input with right button</FormLabel>
-                            <div className="flex items-center">
-                                <FormControl>
-                                    <Input
-                                        placeholder="Email"
-                                        className="rounded-r-none"
-                                        {...field}
-                                    />
-                                </FormControl>
-                                <Button
-                                    type="submit"
-                                    className="dark:bg-input/30 cursor-pointer rounded-l-none border-l-0 bg-transparent"
-                                    variant="outline"
-                                >
-                                    <CornerRightUpIcon />
-                                </Button>
-                            </div>
-                            <FormDescription>
-                                Built with{' '}
-                                <a
-                                    target="_blank"
-                                    href="https://react-hook-form.com/"
-                                    className="underline underline-offset-2"
-                                >
-                                    react-hook-form
-                                </a>
-                            </FormDescription>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-            </form>
-        </Form>
+        <div className="flex w-full max-w-4/5 flex-col gap-2">
+            <Label htmlFor={id}>Input with right button</Label>
+
+            <div className="flex items-center">
+                <Input id={id} placeholder="Email" className="rounded-r-none" />
+                <Button
+                    variant="outline"
+                    className="dark:bg-input/30 rounded-l-none border-l-0 bg-transparent"
+                >
+                    <CornerRightUpIcon className="h-4 w-4" />
+                </Button>
+            </div>
+        </div>
     )
 }
