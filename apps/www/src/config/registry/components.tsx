@@ -91,6 +91,21 @@ export const components: ComponentsType = {
                     name: 'Input with Right Select',
                     path: 'default/components/input/input-with-right-select',
                 },
+                {
+                    id: 'password-input',
+                    name: 'Password Input',
+                    path: 'default/components/input/password-input',
+                },
+                {
+                    id: 'copy-input',
+                    name: 'Copy Input',
+                    path: 'default/components/input/copy-input',
+                },
+                {
+                    id: 'search-input',
+                    name: 'Search Input',
+                    path: 'default/components/input/search-input',
+                },
             ],
         },
     ],

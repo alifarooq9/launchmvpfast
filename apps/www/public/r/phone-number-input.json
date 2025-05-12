@@ -6,8 +6,6 @@
   "description": "A component for inputting phone numbers",
   "dependencies": [
     "react-phone-number-input",
-    "react-hook-form",
-    "zod",
     "lucide-react",
     "clsx",
     "tailwind-merge",

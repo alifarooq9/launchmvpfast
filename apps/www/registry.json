@@ -36,7 +36,6 @@
             "type": "registry:component",
             "title": "OTP with No Spaces",
             "description": "A component for inputting OTP codes without spaces",
-            "dependencies": ["zod", "react-hook-form"],
             "files": [
                 {
                     "path": "src/registry/default/components/input/otp-with-no-spaces.tsx",
@@ -50,7 +49,6 @@
             "type": "registry:component",
             "title": "OTP with Spaces",
             "description": "A component for inputting OTP codes with spaces",
-            "dependencies": ["zod", "react-hook-form"],
             "files": [
                 {
                     "path": "src/registry/default/components/input/otp-with-spaces.tsx",
@@ -64,7 +62,6 @@
             "type": "registry:component",
             "title": "OTP with Seperator",
             "description": "A component for inputting OTP codes with a custom separator",
-            "dependencies": ["zod", "react-hook-form"],
             "files": [
                 {
                     "path": "src/registry/default/components/input/otp-with-seperator.tsx",
@@ -78,7 +75,6 @@
             "type": "registry:component",
             "title": "OTP with Numbers Only",
             "description": "A component for inputting OTP codes with numbers only",
-            "dependencies": ["zod", "react-hook-form"],
             "files": [
                 {
                     "path": "src/registry/default/components/input/otp-with-numbers-only.tsx",
@@ -92,7 +88,6 @@
             "type": "registry:component",
             "title": "Input with Animated Label",
             "description": "A component for inputting text with an animated label",
-            "dependencies": ["zod", "react-hook-form"],
             "files": [
                 {
                     "path": "src/registry/default/components/input/input-with-animated-label.tsx",
@@ -106,7 +101,6 @@
             "type": "registry:component",
             "title": "Input with Animated Inset Label",
             "description": "A component for inputting text with an animated inset label",
-            "dependencies": ["zod", "react-hook-form"],
             "files": [
                 {
                     "path": "src/registry/default/components/input/input-with-animated-inset-label.tsx",
@@ -120,12 +114,7 @@
             "type": "registry:component",
             "title": "Phone Number Input",
             "description": "A component for inputting phone numbers",
-            "dependencies": [
-                "react-phone-number-input",
-                "react-hook-form",
-                "zod",
-                "lucide-react"
-            ],
+            "dependencies": ["react-phone-number-input", "lucide-react"],
             "files": [
                 {
                     "path": "src/registry/default/components/input/phone-number-input.tsx",
@@ -139,7 +128,7 @@
             "type": "registry:component",
             "title": "Input with Right Button",
             "description": "A component for inputting text with a button on the right",
-            "dependencies": ["zod", "react-hook-form", "lucide-react"],
+            "dependencies": ["lucide-react"],
             "files": [
                 {
                     "path": "src/registry/default/components/input/input-with-right-button.tsx",
@@ -153,7 +142,6 @@
             "type": "registry:component",
             "title": "Input with Left Select",
             "description": "A component for inputting text with a select on the left",
-            "dependencies": ["zod", "react-hook-form"],
             "files": [
                 {
                     "path": "src/registry/default/components/input/input-with-left-select.tsx",
@@ -167,12 +155,50 @@
             "type": "registry:component",
             "title": "Input with Right Select",
             "description": "A component for inputting text with a select on the right",
-            "dependencies": ["zod", "react-hook-form"],
             "files": [
                 {
                     "path": "src/registry/default/components/input/input-with-right-select.tsx",
                     "type": "registry:component",
                     "target": "components/input-with-right-select.tsx"
+                }
+            ]
+        },
+        {
+            "name": "password-input",
+            "type": "registry:component",
+            "title": "Password Input",
+            "description": "A component for inputting passwords",
+            "files": [
+                {
+                    "path": "src/registry/default/components/input/password-input.tsx",
+                    "type": "registry:component",
+                    "target": "components/password-input.tsx"
+                }
+            ]
+        },
+        {
+            "name": "copy-input",
+            "type": "registry:component",
+            "title": "Copy Input",
+            "description": "A component for inputting text with a copy button",
+            "files": [
+                {
+                    "path": "src/registry/default/components/input/copy-input.tsx",
+                    "type": "registry:component",
+                    "target": "components/copy-input.tsx"
+                }
+            ]
+        },
+        {
+            "name": "search-input",
+            "type": "registry:component",
+            "title": "Search Input",
+            "description": "A component for inputting search queries",
+            "files": [
+                {
+                    "path": "src/registry/default/components/input/search-input.tsx",
+                    "type": "registry:component",
+                    "target": "components/search-input.tsx"
                 }
             ]
         }

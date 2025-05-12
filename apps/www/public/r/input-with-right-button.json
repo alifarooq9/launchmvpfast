@@ -5,8 +5,6 @@
   "title": "Input with Right Button",
   "description": "A component for inputting text with a button on the right",
   "dependencies": [
-    "zod",
-    "react-hook-form",
     "lucide-react",
     "clsx",
     "tailwind-merge",

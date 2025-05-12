@@ -5,8 +5,6 @@
   "title": "Input with Animated Inset Label",
   "description": "A component for inputting text with an animated inset label",
   "dependencies": [
-    "zod",
-    "react-hook-form",
     "@radix-ui/react-label",
     "clsx",
     "tailwind-merge"

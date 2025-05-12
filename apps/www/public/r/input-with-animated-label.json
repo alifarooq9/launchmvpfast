@@ -5,8 +5,6 @@
   "title": "Input with Animated Label",
   "description": "A component for inputting text with an animated label",
   "dependencies": [
-    "zod",
-    "react-hook-form",
     "clsx",
     "tailwind-merge",
     "@radix-ui/react-label"
