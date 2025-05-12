@@ -29,7 +29,6 @@ import {
     FormLabel,
     FormMessage,
 } from '@/components/ui/form'
-import Link from 'next/link'
 
 const formSchema = z.object({
     phone: z.string().min(1, {
@@ -81,21 +80,21 @@ export default function PhoneNumberInput() {
 
                             <FormDescription>
                                 Built with{' '}
-                                <Link
+                                <a
                                     target="_blank"
                                     href="https://catamphetamine.gitlab.io/react-phone-number-input/"
                                     className="underline underline-offset-2"
                                 >
                                     react-phone-number-input
-                                </Link>{' '}
+                                </a>{' '}
                                 and{' '}
-                                <Link
+                                <a
                                     target="_blank"
                                     href="https://react-hook-form.com/"
                                     className="underline underline-offset-2"
                                 >
                                     react-hook-form
-                                </Link>
+                                </a>
                             </FormDescription>
 
                             <FormMessage />

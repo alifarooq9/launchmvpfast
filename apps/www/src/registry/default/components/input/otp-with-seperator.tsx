@@ -18,7 +18,6 @@ import {
     InputOTPSeparator,
     InputOTPSlot,
 } from '@/components/ui/input-otp'
-import Link from 'next/link'
 
 // Change the inputLength to the desired number of slots
 const inputLength = [3, 3]
@@ -87,21 +86,21 @@ export default function OtpWithSeperator() {
 
                             <FormDescription>
                                 Built with{' '}
-                                <Link
+                                <a
                                     target="_blank"
                                     href="https://input-otp.rodz.dev/"
                                     className="underline underline-offset-2"
                                 >
                                     input-otp
-                                </Link>{' '}
+                                </a>{' '}
                                 and{' '}
-                                <Link
+                                <a
                                     target="_blank"
                                     href="https://react-hook-form.com/"
                                     className="underline underline-offset-2"
                                 >
                                     react-hook-form
-                                </Link>
+                                </a>
                             </FormDescription>
 
                             <FormMessage />

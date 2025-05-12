@@ -11,7 +11,6 @@ import {
 } from '@/components/ui/form'
 import { cn } from '@/lib/utils'
 import { zodResolver } from '@hookform/resolvers/zod'
-import Link from 'next/link'
 import { useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -75,13 +74,13 @@ export default function InputWithAnimatedInsetLabel() {
                             </div>
                             <FormDescription>
                                 Built with{' '}
-                                <Link
+                                <a
                                     target="_blank"
                                     href="https://react-hook-form.com/"
                                     className="underline underline-offset-2"
                                 >
                                     react-hook-form
-                                </Link>
+                                </a>
                             </FormDescription>
                             <FormMessage />
                         </FormItem>

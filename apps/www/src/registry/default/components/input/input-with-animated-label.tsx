@@ -13,7 +13,6 @@ import {
 } from '@/components/ui/form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import Link from 'next/link'
 
 const formSchema = z.object({
     input: z.string().min(1, {
@@ -60,13 +59,13 @@ export default function InputWithAnimatedLabel() {
                             </div>
                             <FormDescription>
                                 Built with{' '}
-                                <Link
+                                <a
                                     target="_blank"
                                     href="https://react-hook-form.com/"
                                     className="underline underline-offset-2"
                                 >
                                     react-hook-form
-                                </Link>
+                                </a>
                             </FormDescription>
                             <FormMessage />
                         </FormItem>

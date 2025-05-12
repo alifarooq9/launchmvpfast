@@ -13,7 +13,6 @@ import {
     FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { CornerRightUpIcon } from 'lucide-react'
 
@@ -66,13 +65,13 @@ export default function InputWithRightButton() {
                             </div>
                             <FormDescription>
                                 Built with{' '}
-                                <Link
+                                <a
                                     target="_blank"
                                     href="https://react-hook-form.com/"
                                     className="underline underline-offset-2"
                                 >
                                     react-hook-form
-                                </Link>
+                                </a>
                             </FormDescription>
                             <FormMessage />
                         </FormItem>
