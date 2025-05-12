@@ -147,6 +147,20 @@
                     "target": "components/input-with-right-button.tsx"
                 }
             ]
+        },
+        {
+            "name": "input-with-left-select",
+            "type": "registry:component",
+            "title": "Input with Left Select",
+            "description": "A component for inputting text with a select on the left",
+            "dependencies": ["zod", "react-hook-form"],
+            "files": [
+                {
+                    "path": "src/registry/default/components/input/input-with-left-select.tsx",
+                    "type": "registry:component",
+                    "target": "components/input-with-left-select.tsx"
+                }
+            ]
         }
     ]
 }
