@@ -21,28 +21,34 @@ import {
     SelectValue,
 } from '@/components/ui/select'
 
-const prefixKeys = {
-    mr: 'mr',
-    ms: 'ms',
-    dr: 'dr',
-    prof: 'prof',
-    sir: 'sir',
-    madam: 'madam',
+const suffixKeys = {
+    com: 'com',
+    org: 'org',
+    net: 'net',
+    co: 'co',
+    io: 'io',
+    dev: 'dev',
+    edu: 'edu',
+    xyz: 'xyz',
+    tech: 'tech',
 } as const
 
-const prefixs = [
-    { value: prefixKeys.mr, label: 'Mr.' },
-    { value: prefixKeys.ms, label: 'Ms.' },
-    { value: prefixKeys.dr, label: 'Dr.' },
-    { value: prefixKeys.prof, label: 'Prof.' },
-    { value: prefixKeys.sir, label: 'Sir' },
-    { value: prefixKeys.madam, label: 'Madam' },
+const suffix = [
+    { value: suffixKeys.com, label: '.com' },
+    { value: suffixKeys.org, label: '.org' },
+    { value: suffixKeys.net, label: '.net' },
+    { value: suffixKeys.co, label: '.co' },
+    { value: suffixKeys.io, label: '.io' },
+    { value: suffixKeys.dev, label: '.dev' },
+    { value: suffixKeys.edu, label: '.edu' },
+    { value: suffixKeys.xyz, label: '.xyz' },
+    { value: suffixKeys.tech, label: '.tech' },
 ] as const
 
 const fromSchema = z.object({
-    prefix: z.enum(Object.keys(prefixKeys) as [keyof typeof prefixKeys]),
-    name: z.string().min(1, {
-        message: 'Name is required',
+    suffix: z.enum(Object.keys(suffixKeys) as [keyof typeof suffixKeys]),
+    webName: z.string().min(1, {
+        message: 'Website name is required',
     }),
 })
 
@@ -50,8 +56,8 @@ export default function InputWithLeftSelect() {
     const form = useForm<z.infer<typeof fromSchema>>({
         resolver: zodResolver(fromSchema),
         defaultValues: {
-            prefix: prefixKeys.dr,
-            name: '',
+            suffix: suffixKeys.com,
+            webName: '',
         },
     })
 
@@ -68,15 +74,22 @@ export default function InputWithLeftSelect() {
             >
                 <FormField
                     control={form.control}
-                    name="name"
+                    name="webName"
                     render={({ field, fieldState }) => (
                         <FormItem id="name">
-                            <FormLabel>Input with left select</FormLabel>
+                            <FormLabel>Input with right select</FormLabel>
                             <FormControl>
                                 <div className="flex items-center">
+                                    <Input
+                                        placeholder="launchmvpfast"
+                                        className="rounded-r-none"
+                                        aria-invalid={!!fieldState.invalid}
+                                        {...field}
+                                    />
+
                                     <FormField
                                         control={form.control}
-                                        name="prefix"
+                                        name="suffix"
                                         render={({ field }) => (
                                             <FormItem>
                                                 <Select
@@ -87,12 +100,12 @@ export default function InputWithLeftSelect() {
                                                     defaultValue={field.value}
                                                 >
                                                     <FormControl>
-                                                        <SelectTrigger className="rounded-r-none border-r-0">
+                                                        <SelectTrigger className="rounded-l-none border-l-0">
                                                             <SelectValue placeholder="Select a verified email to display" />
                                                         </SelectTrigger>
                                                     </FormControl>
-                                                    <SelectContent>
-                                                        {prefixs.map((item) => (
+                                                    <SelectContent align="end">
+                                                        {suffix.map((item) => (
                                                             <SelectItem
                                                                 key={item.value}
                                                                 value={
@@ -106,12 +119,6 @@ export default function InputWithLeftSelect() {
                                                 </Select>
                                             </FormItem>
                                         )}
-                                    />
-                                    <Input
-                                        placeholder="Shadcn"
-                                        className="rounded-l-none"
-                                        aria-invalid={!!fieldState.invalid}
-                                        {...field}
                                     />
                                 </div>
                             </FormControl>
