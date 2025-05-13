@@ -102,7 +102,9 @@ export default function Hero() {
                         <img
                             src="https://launchmvpfast.com/landing.png"
                             alt=""
-                            className="bg-muted aspect-video overflow-hidden rounded-xl"
+                            className="bg-muted aspect-video overflow-hidden rounded-xl object-cover"
+                            width={1920}
+                            height={1080}
                         />
                     </div>
                 </div>
