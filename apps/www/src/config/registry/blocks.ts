@@ -24,8 +24,8 @@ export const blocks: ComponentsType = {
             id: 'hero-sections',
             name: 'Hero Sections',
             image: {
-                dark: '/registry/components/input-dark.svg',
-                light: '/registry/components/input-light.svg',
+                dark: '/registry/blocks/hero-dark.svg',
+                light: '/registry/blocks/hero-light.svg',
             },
             blocks: [
                 {
