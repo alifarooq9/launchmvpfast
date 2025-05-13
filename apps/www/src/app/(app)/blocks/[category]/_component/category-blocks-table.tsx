@@ -6,6 +6,7 @@ import { OpenInV0 } from '@/app/(app)/_components/open-in-v0'
 import { Icons } from '@/components/icons'
 import { Button } from '@/components/ui/button'
 import { Category } from '@/config/registry/blocks'
+import { TerminalIcon } from 'lucide-react'
 
 type BlocksCategoryTableProps = {
     category: Category
@@ -40,7 +41,7 @@ export function BlocksCategoryTable({ category }: BlocksCategoryTableProps) {
                                         size="sm"
                                         className="cursor-pointer"
                                     >
-                                        View Code
+                                        <TerminalIcon /> Show Code
                                     </Button>
                                 }
                             />

@@ -246,14 +246,14 @@
             ]
         },
         {
-            "name": "hero-01",
+            "name": "split-with-image-hero",
             "type": "registry:block",
-            "title": "Hero 01",
-            "description": "A hero section with a title, subtitle, and button",
+            "title": "Split with image hero",
+            "description": "A split layout with an image on one side and content on the other",
             "dependencies": ["lucide-react"],
             "files": [
                 {
-                    "path": "src/registry/default/blocks/hero-sections/hero-01.tsx",
+                    "path": "src/registry/default/blocks/hero-sections/split-with-image-hero.tsx",
                     "type": "registry:block",
                     "target": "components/hero.tsx"
                 }

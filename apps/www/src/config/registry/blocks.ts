@@ -29,9 +29,9 @@ export const blocks: ComponentsType = {
             },
             blocks: [
                 {
-                    id: 'hero-01',
-                    name: 'Hero 01',
-                    path: 'default/blocks/hero-sections/hero-01',
+                    id: 'split-with-image-hero',
+                    name: 'Split with image',
+                    path: 'default/blocks/hero-sections/split-with-image-hero',
                 },
             ],
         },
