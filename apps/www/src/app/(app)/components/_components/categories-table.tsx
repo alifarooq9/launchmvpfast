@@ -54,7 +54,7 @@ export function CategoriesTable() {
                     </Link>
                 ))}
 
-                <div className="border-grid flex flex-col items-center justify-center border-r">
+                <div className="border-grid flex min-h-56 flex-col items-center justify-center border-t border-r md:border-t-0">
                     <p>
                         <strong className="font-heading">
                             More Components Coming
@@ -62,7 +62,10 @@ export function CategoriesTable() {
                     </p>
                     <Link
                         href={urls.app.earlyAccess}
-                        className={buttonVariants({ variant: 'link' })}
+                        className={buttonVariants({
+                            variant: 'link',
+                            className: 'underline',
+                        })}
                     >
                         Join Early Access
                     </Link>
