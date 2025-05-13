@@ -1,5 +1,9 @@
-import { ComingSoon } from '@/app/(app)/_components/coming-soon'
+import { GridGap } from '@/app/(app)/_components/grid-gap'
+import { Suggest } from '@/app/(app)/_components/suggest'
+import { BlocksHero } from '@/app/(app)/blocks/_components/blocks-hero'
+import { BlocksTable } from '@/app/(app)/blocks/_components/blocks-table'
 import { siteConfig } from '@/config/site'
+import { urls } from '@/config/urls'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -11,9 +15,19 @@ export const metadata: Metadata = {
 export default function Blocks() {
     return (
         <>
-            <ComingSoon
-                title="Blocks"
-                description="We're working on a set of powerful, ready-to-use blocks. Join the early access list to get notified"
+            <BlocksHero />
+
+            <GridGap className="h-10" />
+
+            <BlocksTable />
+
+            <GridGap className="h-10" />
+
+            <Suggest
+                title="Didn't find what you were looking for?"
+                buttonText="Suggest Component"
+                buttonLink={urls.socials.suggestions}
+                className="flex-1"
             />
         </>
     )

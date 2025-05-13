@@ -126,7 +126,7 @@ export const components: ComponentsType = {
     ],
 }
 
-export function getCategories() {
+export function getComponentCategories() {
     const categories = components.default.map((c) => ({
         id: c.id,
         name: c.name,
@@ -137,7 +137,7 @@ export function getCategories() {
     return categories
 }
 
-export function getCategory(slug: string): Category | undefined {
+export function getComponentCategory(slug: string): Category | undefined {
     const category = components.default.find((c) => c.id === slug)
 
     return category ?? undefined

@@ -1,13 +1,13 @@
 import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
 import { buttonVariants } from '@/components/ui/button'
-import { getCategories } from '@/config/registry/components'
+import { getComponentCategories } from '@/config/registry/components'
 import { urls } from '@/config/urls'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export function ComponentsDemoContent() {
-    const categories = getCategories()
+    const categories = getComponentCategories()
     const itemCount = categories.length
 
     return (
