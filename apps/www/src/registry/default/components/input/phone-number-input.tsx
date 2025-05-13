@@ -36,6 +36,18 @@ export default function PhoneNumberInput() {
                 className="flex items-center justify-center"
                 flagComponent={FlagComponent}
             />
+
+            <p className="text-muted-foreground text-sm">
+                Built with{' '}
+                <a
+                    href="https://catamphetamine.gitlab.io/react-phone-number-input/"
+                    target="_blank"
+                    className="underline underline-offset-4"
+                    rel="noreferrer"
+                >
+                    react-phone-number-input
+                </a>
+            </p>
         </div>
     )
 }

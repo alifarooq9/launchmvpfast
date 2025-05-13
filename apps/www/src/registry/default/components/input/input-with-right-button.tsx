@@ -15,7 +15,7 @@ export default function InputWithRightButton() {
                 <Input id={id} placeholder="Email" className="rounded-r-none" />
                 <Button
                     variant="outline"
-                    className="dark:bg-input/30 rounded-l-none border-l-0 bg-transparent"
+                    className="dark:bg-input/30 cursor-pointer rounded-l-none border-l-0 bg-transparent"
                 >
                     <CornerRightUpIcon className="h-4 w-4" />
                 </Button>

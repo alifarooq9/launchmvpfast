@@ -82,6 +82,11 @@ export const components: ComponentsType = {
                     path: 'default/components/input/input-with-right-button',
                 },
                 {
+                    id: 'input-with-left-right-buttons',
+                    name: 'Input with Left Right Buttons',
+                    path: 'default/components/input/input-with-left-right-buttons',
+                },
+                {
                     id: 'input-with-left-select',
                     name: 'Input with Left Select',
                     path: 'default/components/input/input-with-left-select',

@@ -230,6 +230,20 @@
                     "target": "components/input-with-suffix.tsx"
                 }
             ]
+        },
+        {
+            "name": "input-with-left-right-buttons",
+            "type": "registry:component",
+            "title": "Input with Left and Right Buttons",
+            "description": "A component for inputting text with buttons on both sides",
+            "dependencies": ["lucide-react"],
+            "files": [
+                {
+                    "path": "src/registry/default/components/input/input-with-left-right-buttons.tsx",
+                    "type": "registry:component",
+                    "target": "components/input-with-left-right-buttons.tsx"
+                }
+            ]
         }
     ]
 }
