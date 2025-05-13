@@ -92,7 +92,7 @@ export function CodeBlock({ component }: CodeBlockProps) {
                 </Tooltip>
             </TooltipProvider>
 
-            <DialogContent className="max-h-svh overflow-auto sm:max-w-[600px]">
+            <DialogContent className="max-h-[80%] overflow-auto sm:max-w-[600px]">
                 <DialogHeader>
                     <DialogTitle className="text-left">
                         Use {component.name} in your project
