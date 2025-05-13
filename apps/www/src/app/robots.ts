@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { urls } from '@/config/urls'
 import { components } from '@/config/registry/components'
+import { blocks } from '@/config/registry/blocks'
 
 export default function robots(): MetadataRoute.Robots {
     return {
@@ -17,7 +18,10 @@ export default function robots(): MetadataRoute.Robots {
                     urls.app.earlyAccess,
                     urls.docs.base,
                     ...components.default.map(
-                        (component) => `${urls.app.components}/${component.id}`
+                        (category) => `${urls.app.components}/${category.id}`
+                    ),
+                    ...blocks.default.map(
+                        (category) => `${urls.app.blocks}/${category.id}`
                     ),
                 ],
                 disallow: ['/api', '/secret'],
