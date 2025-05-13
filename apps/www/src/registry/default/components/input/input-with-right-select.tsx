@@ -51,7 +51,7 @@ export default function InputWithLeftSelect() {
                     <SelectTrigger className="rounded-l-none border-l-0">
                         <SelectValue placeholder="Select a verified email to display" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent align="end">
                         {suffix.map((item) => (
                             <SelectItem key={item.value} value={item.value}>
                                 {item.label}
