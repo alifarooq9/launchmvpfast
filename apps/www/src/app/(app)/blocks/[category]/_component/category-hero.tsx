@@ -5,22 +5,20 @@ import {
     PageHeading,
 } from '@/app/(app)/_components/page-header'
 
-type ComponentsCategoryHeroProps = {
+type BlocksCategoryHeroProps = {
     name: string
     count: number
 }
 
-export function ComponentsCategoryHero({
-    name,
-    count,
-}: ComponentsCategoryHeroProps) {
+export function BlocksCategoryHero({ name, count }: BlocksCategoryHeroProps) {
     return (
         <PageHeaderWrapper>
             <PageHeader>
                 <PageHeading>{name}</PageHeading>
                 <PageDescription className="max-w-[80rem]">
-                    A growing collection of {count} {name} components built with
-                    Shadcn UI and Tailwind CSS.
+                    Discover our library of {count} premium {name} Blocks —
+                    responsive sections and pages crafted with Shadcn UI and
+                    Tailwind CSS for seamless integration into your projects.
                 </PageDescription>
             </PageHeader>
         </PageHeaderWrapper>

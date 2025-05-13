@@ -1,8 +1,11 @@
 import { GridGap } from '@/app/(app)/_components/grid-gap'
 import { Suggest } from '@/app/(app)/_components/suggest'
 import { CategoryComponentsTable } from '@/app/(app)/components/[category]/_components/category-components-table'
-import { CategoryHero } from '@/app/(app)/components/[category]/_components/category-hero'
-import { getCategories, getCategory } from '@/config/registry/components'
+import { ComponentsCategoryHero } from '@/app/(app)/components/[category]/_components/category-hero'
+import {
+    getComponentCategories,
+    getComponentCategory,
+} from '@/config/registry/components'
 import { siteConfig } from '@/config/site'
 import { urls } from '@/config/urls'
 import { notFound } from 'next/navigation'
@@ -12,7 +15,7 @@ export async function generateMetadata({
 }: {
     params: Promise<{ category: string }>
 }) {
-    const category = getCategory((await params).category)
+    const category = getComponentCategory((await params).category)
 
     if (!category) {
         return notFound()
@@ -38,7 +41,7 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-    const categories = getCategories()
+    const categories = getComponentCategories()
 
     return categories.map((c) => ({
         category: c.id,
@@ -52,7 +55,7 @@ type ComponentsCategoryProps = {
 export default async function ComponentsCategory({
     params,
 }: ComponentsCategoryProps) {
-    const category = getCategory((await params).category)
+    const category = getComponentCategory((await params).category)
 
     if (!category) {
         return notFound()
@@ -60,7 +63,7 @@ export default async function ComponentsCategory({
 
     return (
         <>
-            <CategoryHero
+            <ComponentsCategoryHero
                 name={category.name}
                 count={category.components.length}
             />

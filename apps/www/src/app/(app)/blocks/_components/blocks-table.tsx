@@ -1,13 +1,13 @@
 import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
 import { buttonVariants } from '@/components/ui/button'
-import { getComponentCategories } from '@/config/registry/components'
+import { getBlocksCategories } from '@/config/registry/blocks'
 import { urls } from '@/config/urls'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export function CategoriesTable() {
-    const categories = getComponentCategories()
+export function BlocksTable() {
+    const categories = getBlocksCategories()
     const itemCount = categories.length
 
     return (
@@ -15,7 +15,7 @@ export function CategoriesTable() {
             <div className="divide-border grid grid-cols-1 divide-y sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {categories.map((category, index) => (
                     <Link
-                        href={`${urls.app.components}/${category.id}`}
+                        href={`${urls.app.blocks}/${category.id}`}
                         key={category.id}
                         className={cn(
                             'hover:bg-accent dark:hover:bg-accent/20 sm[&:nth-child(2n)]:border-r-0 focus-ring border-grid col-span-1 flex flex-col items-center justify-center border-r transition-all lg:[&:nth-child(3n)]:border-r-0 xl:[&:nth-child(3n)]:border-r xl:[&:nth-child(4n)]:border-r-0',
@@ -48,7 +48,7 @@ export function CategoriesTable() {
                         <div className="flex w-full flex-col items-start justify-start px-4 py-2">
                             <h2 className="font-heading">{category.name}</h2>
                             <p className="text-muted-foreground text-sm">
-                                {category.componentsCount} components
+                                {category.blocksCount} components
                             </p>
                         </div>
                     </Link>
