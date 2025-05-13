@@ -1,3 +1,4 @@
+import { BlocksDemoContent } from '@/app/(app)/(landing)/_components/blocks-demo-content'
 import { ComponentsDemoContent } from '@/app/(app)/(landing)/_components/components-demo-content'
 import { GridGap } from '@/app/(app)/_components/grid-gap'
 import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
@@ -32,8 +33,8 @@ const tabTriggers = [
         label: 'Blocks',
         description:
             'Modular blocks to build complex apps faster. Combine pre-built sections for seamless, efficient development.',
-        badge: 'Coming Soon',
-        disabled: true,
+        badge: 'New hero',
+        disabled: false,
     },
 ]
 
@@ -118,7 +119,7 @@ export function Demos() {
                         <ComponentsDemoContent />
                     </TabsContent>
                     <TabsContent value={tabTriggerKeys.blocks}>
-                        {/* TODO: Add blocks showcase */}
+                        <BlocksDemoContent />
                     </TabsContent>
                 </div>
             </Tabs>
