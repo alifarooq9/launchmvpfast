@@ -5,6 +5,7 @@
   "title": "Search Input",
   "description": "A component for inputting search queries",
   "dependencies": [
+    "lucide-react",
     "@radix-ui/react-slot",
     "class-variance-authority",
     "clsx",

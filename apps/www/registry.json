@@ -168,6 +168,7 @@
             "type": "registry:component",
             "title": "Password Input",
             "description": "A component for inputting passwords",
+            "dependencies": ["lucide-react"],
             "files": [
                 {
                     "path": "src/registry/default/components/input/password-input.tsx",
@@ -181,6 +182,7 @@
             "type": "registry:component",
             "title": "Copy Input",
             "description": "A component for inputting text with a copy button",
+            "dependencies": ["lucide-react"],
             "files": [
                 {
                     "path": "src/registry/default/components/input/copy-input.tsx",
@@ -194,11 +196,38 @@
             "type": "registry:component",
             "title": "Search Input",
             "description": "A component for inputting search queries",
+            "dependencies": ["lucide-react"],
             "files": [
                 {
                     "path": "src/registry/default/components/input/search-input.tsx",
                     "type": "registry:component",
                     "target": "components/search-input.tsx"
+                }
+            ]
+        },
+        {
+            "name": "input-with-prefix",
+            "type": "registry:component",
+            "title": "Input with Prefix",
+            "description": "A component for inputting text with a prefix",
+            "files": [
+                {
+                    "path": "src/registry/default/components/input/input-with-prefix.tsx",
+                    "type": "registry:component",
+                    "target": "components/input-with-prefix.tsx"
+                }
+            ]
+        },
+        {
+            "name": "input-with-suffix",
+            "type": "registry:component",
+            "title": "Input with Suffix",
+            "description": "A component for inputting text with a suffix",
+            "files": [
+                {
+                    "path": "src/registry/default/components/input/input-with-suffix.tsx",
+                    "type": "registry:component",
+                    "target": "components/input-with-suffix.tsx"
                 }
             ]
         }

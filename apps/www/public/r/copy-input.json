@@ -5,6 +5,7 @@
   "title": "Copy Input",
   "description": "A component for inputting text with a copy button",
   "dependencies": [
+    "lucide-react",
     "@radix-ui/react-slot",
     "class-variance-authority",
     "clsx",

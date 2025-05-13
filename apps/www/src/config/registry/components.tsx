@@ -106,6 +106,16 @@ export const components: ComponentsType = {
                     name: 'Search Input',
                     path: 'default/components/input/search-input',
                 },
+                {
+                    id: 'input-with-prefix',
+                    name: 'Input with Prefix',
+                    path: 'default/components/input/input-with-prefix',
+                },
+                {
+                    id: 'input-with-suffix',
+                    name: 'Input with Suffix',
+                    path: 'default/components/input/input-with-suffix',
+                },
             ],
         },
     ],
