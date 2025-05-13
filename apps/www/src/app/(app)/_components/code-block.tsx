@@ -24,6 +24,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { urls } from '@/config/urls'
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from '@/components/ui/select'
 
 type CodeBlockProps = {
     component: Component
@@ -31,17 +38,19 @@ type CodeBlockProps = {
 }
 
 type CodeBlockData = {
-    code: string
+    codeFiles: { content: string; target: string; path: string }[]
     highlightedCode: string
 }
 
 export function CodeBlock({ component, Button }: CodeBlockProps) {
+    const [selectedFileIdx, setSelectedFileIdx] = React.useState<number>(0)
+
     const { data: code } = useQuery<CodeBlockData>({
         queryKey: ['code-block', component.id],
         queryFn: async () => {
             const handleEmptyCode = () => {
                 return {
-                    code: '',
+                    codeFiles: '',
                     highlightedCode: '',
                 }
             }
@@ -62,13 +71,13 @@ export function CodeBlock({ component, Button }: CodeBlockProps) {
                 const data = await response.json()
                 console.log('data', data)
                 return {
-                    code: data.files[0].content,
+                    codeFiles: data.files,
                     highlightedCode: data.content,
                 }
             } catch (error) {
                 console.error('Error fetching code block:', error)
                 return {
-                    code: '',
+                    codeFiles: '',
                     highlightedCode: '',
                 }
             }
@@ -118,11 +127,60 @@ export function CodeBlock({ component, Button }: CodeBlockProps) {
                             </strong>
                         </p>
 
+                        <Select
+                            defaultValue={String(selectedFileIdx)}
+                            value={String(selectedFileIdx)}
+                            onValueChange={(value) => {
+                                setSelectedFileIdx(Number(value))
+                            }}
+                        >
+                            <SelectTrigger className="max-w-full">
+                                <SelectValue placeholder="Select file">
+                                    {code?.codeFiles[selectedFileIdx].target !==
+                                    ''
+                                        ? code?.codeFiles[selectedFileIdx]
+                                              .target
+                                        : code?.codeFiles[selectedFileIdx].path
+                                              .split('/')
+                                              ?.slice(-2)[0] +
+                                          '/' +
+                                          code?.codeFiles[selectedFileIdx].path
+                                              .split('/')
+                                              ?.slice(-2)[1]}
+                                </SelectValue>
+                            </SelectTrigger>
+                            <SelectContent className="max-w-full">
+                                {code?.codeFiles.map((file, index) => (
+                                    <SelectItem
+                                        key={index}
+                                        value={String(index)}
+                                    >
+                                        {file.target !== ''
+                                            ? file.target
+                                            : // use the last 2 segments of the path
+                                              file.path
+                                                  .split('/')
+                                                  .slice(-2)[0] +
+                                              '/' +
+                                              file.path.split('/').slice(-2)[1]}
+                                    </SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
+
                         <div className="relative">
-                            <CodeBlockContent code={code?.code ?? ''} />
+                            <CodeBlockContent
+                                code={
+                                    code?.codeFiles[selectedFileIdx].content ??
+                                    ''
+                                }
+                            />
 
                             <CopyButton
-                                command={code?.code ?? ''}
+                                command={
+                                    code?.codeFiles[selectedFileIdx].content ??
+                                    ''
+                                }
                                 className="absolute top-0 right-0"
                             />
                         </div>
