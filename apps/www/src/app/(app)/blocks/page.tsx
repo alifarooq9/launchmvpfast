@@ -10,6 +10,22 @@ export const metadata: Metadata = {
     title: `Reusable Page Blocks & Sections | Shadcn UI & Tailwind CSS | ${siteConfig.name}`,
     description:
         'Quickly assemble beautiful pages with our collection of pre-built, responsive blocks and sections built with Shadcn UI and Tailwind CSS.',
+    keywords: [
+        'shadcn ui',
+        'shadcn',
+        'tailwind css',
+        'tailwind',
+        'open source',
+        'ui blocks',
+        'blocks',
+        'react blocks',
+        'react',
+        'typescript',
+        'nextjs',
+        'blocks sections',
+        'page blocks',
+        'page sections',
+    ],
 }
 
 export default function Blocks() {
@@ -25,7 +41,7 @@ export default function Blocks() {
 
             <Suggest
                 title="Didn't find what you were looking for?"
-                buttonText="Suggest Component"
+                buttonText="Suggest Block"
                 buttonLink={urls.socials.suggestions}
                 className="flex-1"
             />

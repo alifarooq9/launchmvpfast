@@ -244,6 +244,20 @@
                     "target": "components/input-with-left-right-buttons.tsx"
                 }
             ]
+        },
+        {
+            "name": "hero-01",
+            "type": "registry:block",
+            "title": "Hero 01",
+            "description": "A hero section with a title, subtitle, and button",
+            "dependencies": ["lucide-react"],
+            "files": [
+                {
+                    "path": "src/registry/default/blocks/hero-sections/hero-01.tsx",
+                    "type": "registry:block",
+                    "target": "components/hero.tsx"
+                }
+            ]
         }
     ]
 }

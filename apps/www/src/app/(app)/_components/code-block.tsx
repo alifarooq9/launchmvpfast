@@ -27,6 +27,7 @@ import { urls } from '@/config/urls'
 
 type CodeBlockProps = {
     component: Component
+    Button?: JSX.Element
 }
 
 type CodeBlockData = {
@@ -34,7 +35,7 @@ type CodeBlockData = {
     highlightedCode: string
 }
 
-export function CodeBlock({ component }: CodeBlockProps) {
+export function CodeBlock({ component, Button }: CodeBlockProps) {
     const { data: code } = useQuery<CodeBlockData>({
         queryKey: ['code-block', component.id],
         queryFn: async () => {
@@ -81,9 +82,11 @@ export function CodeBlock({ component }: CodeBlockProps) {
                 <Tooltip>
                     <TooltipTrigger asChild>
                         <DialogTrigger asChild>
-                            <button className="focus-ring w-fit cursor-pointer">
-                                <Code2Icon className="text-muted-foreground h-4 w-4" />
-                            </button>
+                            {Button ?? (
+                                <button className="focus-ring w-fit cursor-pointer">
+                                    <Code2Icon className="text-muted-foreground h-4 w-4" />
+                                </button>
+                            )}
                         </DialogTrigger>
                     </TooltipTrigger>
                     <TooltipContent>

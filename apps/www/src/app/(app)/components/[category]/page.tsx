@@ -1,7 +1,7 @@
 import { GridGap } from '@/app/(app)/_components/grid-gap'
 import { Suggest } from '@/app/(app)/_components/suggest'
 import { CategoryComponentsTable } from '@/app/(app)/components/[category]/_components/category-components-table'
-import { CategoryHero } from '@/app/(app)/components/[category]/_components/category-hero'
+import { ComponentsCategoryHero } from '@/app/(app)/components/[category]/_components/category-hero'
 import {
     getComponentCategories,
     getComponentCategory,
@@ -63,7 +63,7 @@ export default async function ComponentsCategory({
 
     return (
         <>
-            <CategoryHero
+            <ComponentsCategoryHero
                 name={category.name}
                 count={category.components.length}
             />
