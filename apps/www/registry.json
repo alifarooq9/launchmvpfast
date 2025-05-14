@@ -251,13 +251,31 @@
             "title": "Split with image hero",
             "description": "A split layout with an image on one side and content on the other",
             "dependencies": ["lucide-react"],
+            "registryDependencies": ["utils"],
             "files": [
                 {
                     "path": "registry/default/blocks/hero-sections/split-with-image-hero.tsx",
                     "type": "registry:block",
                     "target": "components/hero.tsx"
                 }
-            ]
+            ],
+            "css": {
+                "@keyframes spotlight": {
+                    "0%": {
+                        "opacity": "0",
+                        "transform": "translate(-72%, -62%) scale(0.5)"
+                    },
+                    "100%": {
+                        "opacity": "1",
+                        "transform": "translate(-50%, -40%) scale(1)"
+                    }
+                }
+            },
+            "cssVars": {
+                "theme": {
+                    "animate-spotlight": "spotlight 2s ease 0.75s 1 forwards"
+                }
+            }
         }
     ]
 }

@@ -10,6 +10,9 @@
     "class-variance-authority",
     "lucide-react"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "registry/default/blocks/hero-sections/split-with-image-hero.tsx",
@@ -29,5 +32,22 @@
       "type": "registry:ui",
       "target": ""
     }
-  ]
+  ],
+  "cssVars": {
+    "theme": {
+      "animate-spotlight": "spotlight 2s ease 0.75s 1 forwards"
+    }
+  },
+  "css": {
+    "@keyframes spotlight": {
+      "0%": {
+        "opacity": "0",
+        "transform": "translate(-72%, -62%) scale(0.5)"
+      },
+      "100%": {
+        "opacity": "1",
+        "transform": "translate(-50%, -40%) scale(1)"
+      }
+    }
+  }
 }
