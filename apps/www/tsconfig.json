@@ -19,7 +19,7 @@
             }
         ],
         "paths": {
-            "@/*": ["./src/*"]
+            "@/*": ["./*"]
         }
     },
     "include": [
@@ -27,8 +27,8 @@
         "**/*.ts",
         "**/*.tsx",
         ".next/types/**/*.ts",
-        "src/env.js",
-        "src/registry/default/blocks/hero-sections/hero-01/index.tss"
+        "env.js",
+        "registry/default/blocks/hero-sections/hero-01/index.tss"
     ],
     "exclude": ["node_modules"]
 }

@@ -11,7 +11,7 @@
             "dependencies": ["react-textarea-autosize", "lucide-react"],
             "files": [
                 {
-                    "path": "src/registry/default/components/input/prompt-input-01.tsx",
+                    "path": "registry/default/components/input/prompt-input-01.tsx",
                     "type": "registry:component",
                     "target": "components/prompt-input-01.tsx"
                 }
@@ -25,7 +25,7 @@
             "dependencies": ["react-textarea-autosize", "lucide-react"],
             "files": [
                 {
-                    "path": "src/registry/default/components/input/prompt-input-02.tsx",
+                    "path": "registry/default/components/input/prompt-input-02.tsx",
                     "type": "registry:component",
                     "target": "components/prompt-input-02.tsx"
                 }
@@ -38,7 +38,7 @@
             "description": "A component for inputting OTP codes without spaces",
             "files": [
                 {
-                    "path": "src/registry/default/components/input/otp-with-no-spaces.tsx",
+                    "path": "registry/default/components/input/otp-with-no-spaces.tsx",
                     "type": "registry:component",
                     "target": "components/otp-with-no-spaces.tsx"
                 }
@@ -51,7 +51,7 @@
             "description": "A component for inputting OTP codes with spaces",
             "files": [
                 {
-                    "path": "src/registry/default/components/input/otp-with-spaces.tsx",
+                    "path": "registry/default/components/input/otp-with-spaces.tsx",
                     "type": "registry:component",
                     "target": "components/otp-with-spaces.tsx"
                 }
@@ -64,7 +64,7 @@
             "description": "A component for inputting OTP codes with a custom separator",
             "files": [
                 {
-                    "path": "src/registry/default/components/input/otp-with-seperator.tsx",
+                    "path": "registry/default/components/input/otp-with-seperator.tsx",
                     "type": "registry:component",
                     "target": "components/otp-with-seperator.tsx"
                 }
@@ -77,7 +77,7 @@
             "description": "A component for inputting OTP codes with numbers only",
             "files": [
                 {
-                    "path": "src/registry/default/components/input/otp-with-numbers-only.tsx",
+                    "path": "registry/default/components/input/otp-with-numbers-only.tsx",
                     "type": "registry:component",
                     "target": "components/otp-with-numbers-only.tsx"
                 }
@@ -90,7 +90,7 @@
             "description": "A component for inputting text with an animated label",
             "files": [
                 {
-                    "path": "src/registry/default/components/input/input-with-animated-label.tsx",
+                    "path": "registry/default/components/input/input-with-animated-label.tsx",
                     "type": "registry:component",
                     "target": "components/input-with-animated-label.tsx"
                 }
@@ -103,7 +103,7 @@
             "description": "A component for inputting text with an animated inset label",
             "files": [
                 {
-                    "path": "src/registry/default/components/input/input-with-animated-inset-label.tsx",
+                    "path": "registry/default/components/input/input-with-animated-inset-label.tsx",
                     "type": "registry:component",
                     "target": "components/input-with-animated-inset-label.tsx"
                 }
@@ -117,7 +117,7 @@
             "dependencies": ["react-phone-number-input", "lucide-react"],
             "files": [
                 {
-                    "path": "src/registry/default/components/input/phone-number-input.tsx",
+                    "path": "registry/default/components/input/phone-number-input.tsx",
                     "type": "registry:component",
                     "target": "components/phone-number-input.tsx"
                 }
@@ -131,7 +131,7 @@
             "dependencies": ["lucide-react"],
             "files": [
                 {
-                    "path": "src/registry/default/components/input/input-with-right-button.tsx",
+                    "path": "registry/default/components/input/input-with-right-button.tsx",
                     "type": "registry:component",
                     "target": "components/input-with-right-button.tsx"
                 }
@@ -144,7 +144,7 @@
             "description": "A component for inputting text with a select on the left",
             "files": [
                 {
-                    "path": "src/registry/default/components/input/input-with-left-select.tsx",
+                    "path": "registry/default/components/input/input-with-left-select.tsx",
                     "type": "registry:component",
                     "target": "components/input-with-left-select.tsx"
                 }
@@ -157,7 +157,7 @@
             "description": "A component for inputting text with a select on the right",
             "files": [
                 {
-                    "path": "src/registry/default/components/input/input-with-right-select.tsx",
+                    "path": "registry/default/components/input/input-with-right-select.tsx",
                     "type": "registry:component",
                     "target": "components/input-with-right-select.tsx"
                 }
@@ -171,7 +171,7 @@
             "dependencies": ["lucide-react"],
             "files": [
                 {
-                    "path": "src/registry/default/components/input/password-input.tsx",
+                    "path": "registry/default/components/input/password-input.tsx",
                     "type": "registry:component",
                     "target": "components/password-input.tsx"
                 }
@@ -185,7 +185,7 @@
             "dependencies": ["lucide-react"],
             "files": [
                 {
-                    "path": "src/registry/default/components/input/copy-input.tsx",
+                    "path": "registry/default/components/input/copy-input.tsx",
                     "type": "registry:component",
                     "target": "components/copy-input.tsx"
                 }
@@ -199,7 +199,7 @@
             "dependencies": ["lucide-react"],
             "files": [
                 {
-                    "path": "src/registry/default/components/input/search-input.tsx",
+                    "path": "registry/default/components/input/search-input.tsx",
                     "type": "registry:component",
                     "target": "components/search-input.tsx"
                 }
@@ -212,7 +212,7 @@
             "description": "A component for inputting text with a prefix",
             "files": [
                 {
-                    "path": "src/registry/default/components/input/input-with-prefix.tsx",
+                    "path": "registry/default/components/input/input-with-prefix.tsx",
                     "type": "registry:component",
                     "target": "components/input-with-prefix.tsx"
                 }
@@ -225,7 +225,7 @@
             "description": "A component for inputting text with a suffix",
             "files": [
                 {
-                    "path": "src/registry/default/components/input/input-with-suffix.tsx",
+                    "path": "registry/default/components/input/input-with-suffix.tsx",
                     "type": "registry:component",
                     "target": "components/input-with-suffix.tsx"
                 }
@@ -239,7 +239,7 @@
             "dependencies": ["lucide-react"],
             "files": [
                 {
-                    "path": "src/registry/default/components/input/input-with-left-right-buttons.tsx",
+                    "path": "registry/default/components/input/input-with-left-right-buttons.tsx",
                     "type": "registry:component",
                     "target": "components/input-with-left-right-buttons.tsx"
                 }
@@ -253,7 +253,7 @@
             "dependencies": ["lucide-react"],
             "files": [
                 {
-                    "path": "src/registry/default/blocks/hero-sections/split-with-image-hero.tsx",
+                    "path": "registry/default/blocks/hero-sections/split-with-image-hero.tsx",
                     "type": "registry:block",
                     "target": "components/hero.tsx"
                 }

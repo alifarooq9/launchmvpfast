@@ -4,7 +4,7 @@ import { siteConfig } from '@/config/site'
 import { env } from '@/env'
 
 export default {
-    schema: './src/server/db/schema.ts',
+    schema: './server/db/schema.ts',
     dialect: 'postgresql',
     dbCredentials: {
         url: env.DATABASE_URL,

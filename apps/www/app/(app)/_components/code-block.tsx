@@ -140,13 +140,7 @@ export function CodeBlock({ component, Button }: CodeBlockProps) {
                                     ''
                                         ? code?.codeFiles[selectedFileIdx]
                                               .target
-                                        : code?.codeFiles[selectedFileIdx].path
-                                              .split('/')
-                                              ?.slice(-2)[0] +
-                                          '/' +
-                                          code?.codeFiles[selectedFileIdx].path
-                                              .split('/')
-                                              ?.slice(-2)[1]}
+                                        : code?.codeFiles[selectedFileIdx].path}
                                 </SelectValue>
                             </SelectTrigger>
                             <SelectContent className="max-w-full">
@@ -158,11 +152,7 @@ export function CodeBlock({ component, Button }: CodeBlockProps) {
                                         {file.target !== ''
                                             ? file.target
                                             : // use the last 2 segments of the path
-                                              file.path
-                                                  .split('/')
-                                                  .slice(-2)[0] +
-                                              '/' +
-                                              file.path.split('/').slice(-2)[1]}
+                                              file.path}
                                     </SelectItem>
                                 ))}
                             </SelectContent>
