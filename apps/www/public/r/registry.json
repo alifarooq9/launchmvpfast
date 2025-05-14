@@ -255,7 +255,7 @@
             "files": [
                 {
                     "path": "registry/default/blocks/hero-sections/split-with-image-hero.tsx",
-                    "type": "registry:block",
+                    "type": "registry:component",
                     "target": "components/hero.tsx"
                 }
             ],
