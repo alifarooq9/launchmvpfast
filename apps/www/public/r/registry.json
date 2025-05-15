@@ -268,6 +268,24 @@
             ]
         },
         {
+            "name": "input-with-email-spell-checker",
+            "type": "registry:component",
+            "title": "Input with Email Spell Checker",
+            "description": "A component for inputting email addresses with spell checking",
+            "dependencies": [
+                "lucide-react",
+                "@zootools/email-spell-checker",
+                "use-debounce"
+            ],
+            "files": [
+                {
+                    "path": "registry/default/components/input/input-with-email-spell-checker.tsx",
+                    "type": "registry:component",
+                    "target": "components/input-with-email-spell-checker.tsx"
+                }
+            ]
+        },
+        {
             "name": "split-with-image-hero",
             "type": "registry:block",
             "title": "Split with image hero",
