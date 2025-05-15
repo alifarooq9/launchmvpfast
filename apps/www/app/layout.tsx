@@ -5,6 +5,7 @@ import { Providers } from '@/components/providers/providers'
 import { siteConfig } from '@/config/site'
 import { Toaster } from '@/components/ui/sonner'
 import { urls } from '@/config/urls'
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
     title: `${siteConfig.noSpacesName}: Open Source Starter Kits & UI Components`,
@@ -87,6 +88,8 @@ export default function RootLayout({
                 </div>
 
                 <Toaster />
+
+                <Analytics />
             </body>
         </html>
     )
