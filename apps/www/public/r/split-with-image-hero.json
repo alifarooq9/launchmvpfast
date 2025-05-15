@@ -12,7 +12,7 @@
   ],
   "registryDependencies": [
     "utils",
-    "http://localhost:3000/r/fonts.json"
+    "https://launchmvpfast.com/r/fonts.json"
   ],
   "files": [
     {

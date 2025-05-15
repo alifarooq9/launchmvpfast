@@ -121,6 +121,11 @@ export const components: ComponentsType = {
                     name: 'Input with Suffix',
                     path: 'default/components/input/input-with-suffix',
                 },
+                {
+                    id: 'input-with-email-spell-checker',
+                    name: 'Input with Email Spell Checker',
+                    path: 'default/components/input/input-with-email-spell-checker',
+                },
             ],
         },
     ],

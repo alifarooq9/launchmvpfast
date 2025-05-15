@@ -127,53 +127,58 @@ export function CodeBlock({ component, Button }: CodeBlockProps) {
                             </strong>
                         </p>
 
-                        <Select
-                            defaultValue={String(selectedFileIdx)}
-                            value={String(selectedFileIdx)}
-                            onValueChange={(value) => {
-                                setSelectedFileIdx(Number(value))
-                            }}
-                        >
-                            <SelectTrigger className="max-w-full">
-                                <SelectValue placeholder="Select file">
-                                    {code?.codeFiles[selectedFileIdx].target !==
-                                    ''
-                                        ? code?.codeFiles[selectedFileIdx]
-                                              .target
-                                        : code?.codeFiles[selectedFileIdx].path}
-                                </SelectValue>
-                            </SelectTrigger>
-                            <SelectContent className="max-w-full">
-                                {code?.codeFiles.map((file, index) => (
-                                    <SelectItem
-                                        key={index}
-                                        value={String(index)}
-                                    >
-                                        {file.target !== ''
-                                            ? file.target
-                                            : // use the last 2 segments of the path
-                                              file.path}
-                                    </SelectItem>
-                                ))}
-                            </SelectContent>
-                        </Select>
+                        {code && code?.codeFiles.length >= 1 && (
+                            <Select
+                                defaultValue={String(selectedFileIdx)}
+                                value={String(selectedFileIdx)}
+                                onValueChange={(value) => {
+                                    setSelectedFileIdx(Number(value))
+                                }}
+                            >
+                                <SelectTrigger className="max-w-full">
+                                    <SelectValue placeholder="Select file">
+                                        {code?.codeFiles[selectedFileIdx]
+                                            .target !== ''
+                                            ? code?.codeFiles[selectedFileIdx]
+                                                  .target
+                                            : code?.codeFiles[selectedFileIdx]
+                                                  .path}
+                                    </SelectValue>
+                                </SelectTrigger>
+                                <SelectContent className="max-w-full">
+                                    {code?.codeFiles.map((file, index) => (
+                                        <SelectItem
+                                            key={index}
+                                            value={String(index)}
+                                        >
+                                            {file.target !== ''
+                                                ? file.target
+                                                : // use the last 2 segments of the path
+                                                  file.path}
+                                        </SelectItem>
+                                    ))}
+                                </SelectContent>
+                            </Select>
+                        )}
 
-                        <div className="relative">
-                            <CodeBlockContent
-                                code={
-                                    code?.codeFiles[selectedFileIdx].content ??
-                                    ''
-                                }
-                            />
+                        {code && code?.codeFiles.length >= 1 && (
+                            <div className="relative">
+                                <CodeBlockContent
+                                    code={
+                                        code?.codeFiles[selectedFileIdx]
+                                            .content ?? ''
+                                    }
+                                />
 
-                            <CopyButton
-                                command={
-                                    code?.codeFiles[selectedFileIdx].content ??
-                                    ''
-                                }
-                                className="absolute top-0 right-0"
-                            />
-                        </div>
+                                <CopyButton
+                                    command={
+                                        code?.codeFiles[selectedFileIdx]
+                                            .content ?? ''
+                                    }
+                                    className="absolute top-0 right-0"
+                                />
+                            </div>
+                        )}
                     </div>
                 </div>
             </DialogContent>
