@@ -18,7 +18,7 @@ export function CategoriesTable() {
                         href={`${urls.app.components}/${category.id}`}
                         key={category.id}
                         className={cn(
-                            'hover:bg-accent dark:hover:bg-accent/20 sm[&:nth-child(2n)]:border-r-0 focus-ring border-grid col-span-1 flex flex-col items-center justify-center border-r transition-all lg:[&:nth-child(3n)]:border-r-0 xl:[&:nth-child(3n)]:border-r xl:[&:nth-child(4n)]:border-r-0',
+                            'hover:bg-accent dark:hover:bg-accent/20 focus-ring border-grid col-span-1 flex flex-col items-center justify-center transition-all first:border-l-0 sm:border-r sm:border-l sm:[&:nth-child(2n)]:border-r-0 md:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0 xl:[&:nth-child(3n)]:border-r xl:[&:nth-child(4n)]:border-r-0',
                             index >= itemCount - 1 ? 'border-b-0' : '',
                             index >= itemCount - 2 ? 'sm:border-b-0' : '',
                             index >= itemCount - 3 ? 'lg:border-b-0' : '',

@@ -35,6 +35,15 @@ export const blocks: ComponentsType = {
                 },
             ],
         },
+        {
+            id: 'signin-signup',
+            name: 'Sign In and Sign Up',
+            image: {
+                dark: '/registry/blocks/auth-dark.svg',
+                light: '/registry/blocks/auth-light.svg',
+            },
+            blocks: [],
+        },
     ],
 }
 

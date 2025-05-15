@@ -1,5 +1,4 @@
 import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
-import { buttonVariants } from '@/components/ui/button'
 import { getBlocksCategories } from '@/config/registry/blocks'
 import { urls } from '@/config/urls'
 import { cn } from '@/lib/utils'
@@ -12,13 +11,13 @@ export function BlocksTable() {
 
     return (
         <section className="container-wrapper">
-            <div className="divide-border grid grid-cols-1 divide-y sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="divide-border grid grid-cols-1 gap-4 divide-y sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {categories.map((category, index) => (
                     <Link
                         href={`${urls.app.blocks}/${category.id}`}
                         key={category.id}
                         className={cn(
-                            'hover:bg-accent dark:hover:bg-accent/20 sm[&:nth-child(2n)]:border-r-0 focus-ring border-grid col-span-1 flex flex-col items-center justify-center border-r transition-all lg:[&:nth-child(3n)]:border-r-0 xl:[&:nth-child(3n)]:border-r xl:[&:nth-child(4n)]:border-r-0',
+                            'hover:bg-accent dark:hover:bg-accent/20 focus-ring border-grid col-span-1 flex flex-col items-center justify-center transition-all first:border-l-0 sm:border-r sm:border-l sm:[&:nth-child(2n)]:border-r-0 md:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0 xl:[&:nth-child(3n)]:border-r xl:[&:nth-child(4n)]:border-r-0',
                             index >= itemCount - 1 ? 'border-b-0' : '',
                             index >= itemCount - 2 ? 'sm:border-b-0' : '',
                             index >= itemCount - 3 ? 'lg:border-b-0' : '',
@@ -53,23 +52,6 @@ export function BlocksTable() {
                         </div>
                     </Link>
                 ))}
-
-                <div className="border-grid flex min-h-56 flex-col items-center justify-center border-t border-r md:border-t-0">
-                    <p>
-                        <strong className="font-heading">
-                            More Components Coming
-                        </strong>
-                    </p>
-                    <Link
-                        href={urls.app.earlyAccess}
-                        className={buttonVariants({
-                            variant: 'link',
-                            className: 'underline',
-                        })}
-                    >
-                        Join Early Access
-                    </Link>
-                </div>
             </div>
         </section>
     )
