@@ -4,6 +4,28 @@
     "homepage": "https://launchmvpfast.com",
     "items": [
         {
+            "name": "fonts",
+            "type": "registry:lib",
+            "title": "Fonts",
+            "description": "Fonts for the project",
+            "docs": "Do not forget to add `fontsVariables` to your body className",
+            "files": [
+                {
+                    "path": "registry/default/lib/fonts.ts",
+                    "type": "registry:file",
+                    "target": "lib/fonts.ts"
+                }
+            ],
+            "cssVars": {
+                "theme": {
+                    "--font-sans": "var(--font-geist-sans)",
+                    "--font-mono": " var(--font-geist-mono)",
+                    "--font-heading": "var(--font-heading)",
+                    "--font-serif": "var(--font-serif)"
+                }
+            }
+        },
+        {
             "name": "prompt-input-01",
             "type": "registry:component",
             "title": "Prompt Input 01",
@@ -251,7 +273,10 @@
             "title": "Split with image hero",
             "description": "A split layout with an image on one side and content on the other",
             "dependencies": ["lucide-react"],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils",
+                "http://localhost:3000/r/fonts.json"
+            ],
             "files": [
                 {
                     "path": "registry/default/blocks/hero-sections/split-with-image-hero.tsx",

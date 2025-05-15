@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fonts",
+  "type": "registry:lib",
+  "title": "Fonts",
+  "description": "Fonts for the project",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "registry/default/lib/fonts.ts",
+      "content": "import { cn } from '@/lib/utils'\nimport {\n    Bricolage_Grotesque,\n    Geist,\n    Geist_Mono,\n    Instrument_Serif,\n} from 'next/font/google'\n\nconst fontSans = Geist({\n    variable: '--font-geist-sans',\n    subsets: ['latin'],\n})\n\nconst fontMono = Geist_Mono({\n    variable: '--font-geist-mono',\n    subsets: ['latin'],\n})\n\nconst fontHeading = Bricolage_Grotesque({\n    variable: '--font-heading',\n    subsets: ['latin'],\n})\n\nconst fontSerif = Instrument_Serif({\n    variable: '--font-serif',\n    subsets: ['latin'],\n    weight: '400',\n    style: 'italic',\n})\n\nexport const fontsVariables = cn(\n    fontSans.variable,\n    fontHeading.variable,\n    fontMono.variable,\n    fontSerif.variable\n)\n",
+      "type": "registry:file",
+      "target": "lib/fonts.ts"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "--font-sans": "var(--font-geist-sans)",
+      "--font-mono": " var(--font-geist-mono)",
+      "--font-heading": "var(--font-heading)",
+      "--font-serif": "var(--font-serif)"
+    }
+  },
+  "docs": "Do not forget to add `fontsVariables` to your body className"
+}

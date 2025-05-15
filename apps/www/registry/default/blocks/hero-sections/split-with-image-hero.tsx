@@ -29,14 +29,14 @@ export default function Hero() {
                     strokeWidth={0}
                 />
             </svg>
-            <div className="relative flex flex-col items-center justify-center gap-6 p-4 px-6 sm:items-start">
+            <div className="relative flex flex-col items-center justify-center gap-6 p-4 sm:items-start lg:px-6">
                 <Spotlight className="-top-40 left-0 text-white/10 md:-top-10 md:left-34" />
                 <a
                     href="#"
                     className="border-border bg-muted/50 flex w-fit items-center justify-center gap-1 rounded-md border px-3 py-2 text-sm font-semibold transition-[gap] ease-out hover:gap-3"
                 >
                     <span className="flex items-center gap-2">
-                        🎉
+                        <span>🎉</span>
                         <span className="hidden sm:block">
                             New Feature Alert:
                         </span>
@@ -44,8 +44,11 @@ export default function Hero() {
                     </span>
                     <ArrowRightIcon className="size-4" />
                 </a>
-                <h1 className="text-center text-4xl font-semibold text-balance sm:text-left md:text-5xl xl:text-6xl">
-                    Re-usable Page Blocks & Sections
+                <h1 className="font-heading flex flex-col text-center text-4xl font-semibold text-balance sm:text-left md:text-5xl xl:text-7xl xl:leading-[5rem]">
+                    <span>Re-usable Page </span>
+                    <span className="font-serif font-medium">
+                        Blocks and Sections
+                    </span>
                 </h1>
                 <p className="text-muted-foreground text-center text-base font-light text-balance sm:text-left sm:text-lg md:text-xl">
                     Modular, responsive hero sections built with{' '}
@@ -96,9 +99,9 @@ export default function Hero() {
                     </a>
                 </div>
             </div>
-            <div className="overflow-hidden">
+            <div className="overflow-hidden p-4 lg:px-6">
                 <div className="w-full max-w-none lg:w-[65rem] lg:flex-none">
-                    <div className="bg-accent dark:bg-accent/40 ring-border rounded-2xl p-2 ring-1 ring-inset">
+                    <div className="bg-accent dark:bg-accent/40 ring-border rounded-2xl p-1 ring-1 ring-inset md:p-2">
                         <img
                             src="https://launchmvpfast.com/landing.png"
                             alt=""
