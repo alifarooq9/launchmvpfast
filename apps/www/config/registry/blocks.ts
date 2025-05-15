@@ -42,7 +42,13 @@ export const blocks: ComponentsType = {
                 dark: '/registry/blocks/auth-dark.svg',
                 light: '/registry/blocks/auth-light.svg',
             },
-            blocks: [],
+            blocks: [
+                {
+                    id: 'center-signin-card-with-email-only',
+                    name: 'Center Sign In Card with Email Only',
+                    path: 'default/blocks/signin-signup/center-signin-card-with-email-only',
+                },
+            ],
         },
     ],
 }
