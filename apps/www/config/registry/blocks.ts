@@ -37,7 +37,7 @@ export const blocks: ComponentsType = {
         },
         {
             id: 'signin-signup',
-            name: 'Sign In and Sign Up',
+            name: 'Sign-In and Sign-Up',
             image: {
                 dark: '/registry/blocks/auth-dark.svg',
                 light: '/registry/blocks/auth-light.svg',
@@ -45,12 +45,12 @@ export const blocks: ComponentsType = {
             blocks: [
                 {
                     id: 'center-signin-card-with-email-only',
-                    name: 'Center Sign In Card with Email Only',
+                    name: 'Center Sign-In Card with Email Only',
                     path: 'default/blocks/signin-signup/center-signin-card-with-email-only',
                 },
                 {
                     id: 'center-signin-card',
-                    name: 'Center Sign In Card',
+                    name: 'Center Sign-In Card',
                     path: 'default/blocks/signin-signup/center-signin-card',
                 },
             ],
