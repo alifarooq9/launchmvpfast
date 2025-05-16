@@ -25,7 +25,7 @@ const tabTriggers = [
         label: 'Components',
         description:
             'Reusable, customizable components for your tech stack. Save time with pre-built UI elements and code snippets.',
-        badge: 'New inputs',
+        badge: 'New',
         disabled: false,
     },
     {
@@ -33,7 +33,7 @@ const tabTriggers = [
         label: 'Blocks',
         description:
             'Modular blocks to build complex apps faster. Combine pre-built sections for seamless, efficient development.',
-        badge: 'New hero',
+        badge: 'New',
         disabled: false,
     },
 ]
