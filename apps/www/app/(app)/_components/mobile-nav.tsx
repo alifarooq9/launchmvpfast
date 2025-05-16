@@ -27,7 +27,7 @@ export function MobileNav() {
                 target="_blank"
                 className={buttonVariants({
                     variant: 'ghost',
-                    className: 'aspect-square h-full border-x',
+                    className: 'aspect-square h-full rounded-none border-x',
                 })}
             >
                 <Icons.gitHub className="size-4" />

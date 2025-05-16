@@ -17,8 +17,10 @@ export function BlocksCategoryTable({ category }: BlocksCategoryTableProps) {
         <section className="container-wrapper flex flex-col">
             {category.blocks.map((block, index) => (
                 <div key={block.id}>
-                    <div className="container flex items-center justify-between py-4">
-                        <h2 className="font-heading text-lg">{block.name}</h2>
+                    <div className="container flex flex-col items-start justify-between gap-4 py-4 sm:flex-row sm:items-center">
+                        <h2 className="font-heading sm:text-lg">
+                            {block.name}
+                        </h2>
 
                         <div className="flex items-center gap-2">
                             <OpenInV0

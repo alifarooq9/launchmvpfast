@@ -328,7 +328,20 @@
             "files": [
                 {
                     "path": "registry/default/blocks/signin-signup/center-signin-card-with-email-only.tsx",
-                    "type": "registry:component",
+                    "type": "registry:block",
+                    "target": "components/auth/signin.tsx"
+                }
+            ]
+        },
+        {
+            "name": "center-signin-card",
+            "type": "registry:block",
+            "title": "Center Signin Card",
+            "description": "A centered sign-in card with email and password inputs",
+            "files": [
+                {
+                    "path": "registry/default/blocks/signin-signup/center-signin-card.tsx",
+                    "type": "registry:block",
                     "target": "components/auth/signin.tsx"
                 }
             ]

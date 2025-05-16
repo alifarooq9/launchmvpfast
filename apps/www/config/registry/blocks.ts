@@ -48,6 +48,11 @@ export const blocks: ComponentsType = {
                     name: 'Center Sign In Card with Email Only',
                     path: 'default/blocks/signin-signup/center-signin-card-with-email-only',
                 },
+                {
+                    id: 'center-signin-card',
+                    name: 'Center Sign In Card',
+                    path: 'default/blocks/signin-signup/center-signin-card',
+                },
             ],
         },
     ],
