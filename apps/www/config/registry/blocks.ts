@@ -44,6 +44,16 @@ export const blocks: ComponentsType = {
             },
             blocks: [
                 {
+                    id: 'simple-signin',
+                    name: 'Simple Sign-In',
+                    path: 'default/blocks/signin-signup/simple-signin',
+                },
+                {
+                    id: 'simple-signup',
+                    name: 'Simple Sign-Up',
+                    path: 'default/blocks/signin-signup/simple-signup',
+                },
+                {
                     id: 'center-signin-card-with-email-only',
                     name: 'Center Sign-In Card with Email Only',
                     path: 'default/blocks/signin-signup/center-signin-card-with-email-only',
@@ -52,6 +62,11 @@ export const blocks: ComponentsType = {
                     id: 'center-signin-card',
                     name: 'Center Sign-In Card',
                     path: 'default/blocks/signin-signup/center-signin-card',
+                },
+                {
+                    id: 'center-signup-card',
+                    name: 'Center Sign-Up Card',
+                    path: 'default/blocks/signin-signup/center-signup-card',
                 },
             ],
         },
