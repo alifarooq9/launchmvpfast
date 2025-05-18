@@ -12,7 +12,7 @@ export function CategoriesTable() {
 
     return (
         <section className="container-wrapper">
-            <div className="divide-border grid grid-cols-1 divide-y sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="divide-border grid grid-cols-1 gap-4 divide-y sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {categories.map((category, index) => (
                     <Link
                         href={`${urls.app.components}/${category.id}`}
@@ -53,23 +53,6 @@ export function CategoriesTable() {
                         </div>
                     </Link>
                 ))}
-
-                <div className="border-grid flex min-h-56 flex-col items-center justify-center border-t border-r md:border-t-0">
-                    <p>
-                        <strong className="font-heading">
-                            More Components Coming
-                        </strong>
-                    </p>
-                    <Link
-                        href={urls.app.earlyAccess}
-                        className={buttonVariants({
-                            variant: 'link',
-                            className: 'underline',
-                        })}
-                    >
-                        Join Early Access
-                    </Link>
-                </div>
             </div>
         </section>
     )

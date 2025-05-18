@@ -128,6 +128,21 @@ export const components: ComponentsType = {
                 },
             ],
         },
+        {
+            id: 'dropdown-menu',
+            name: 'Dropdown Menu',
+            image: {
+                dark: '/registry/components/dropdown-menu-dark.svg',
+                light: '/registry/components/dropdown-menu-light.svg',
+            },
+            components: [
+                {
+                    id: 'user-profile-dropdown',
+                    name: 'User Profile Dropdown',
+                    path: 'default/components/dropdown-menu/user-profile-dropdown',
+                },
+            ],
+        },
     ],
 }
 

@@ -286,6 +286,19 @@
             ]
         },
         {
+            "name": "user-profile-dropdown",
+            "type": "registry:component",
+            "title": "User Profile Dropdown",
+            "description": "A dropdown menu for user profile actions",
+            "files": [
+                {
+                    "path": "registry/default/components/dropdown-menu/user-profile-dropdown.tsx",
+                    "type": "registry:component",
+                    "target": "components/user-profile-dropdown.tsx"
+                }
+            ]
+        },
+        {
             "name": "split-with-image-hero",
             "type": "registry:block",
             "title": "Split with image hero",
