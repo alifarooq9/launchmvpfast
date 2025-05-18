@@ -299,6 +299,32 @@
             ]
         },
         {
+            "name": "action-dropdown",
+            "type": "registry:component",
+            "title": "Action Dropdown",
+            "description": "A dropdown menu for various actions",
+            "files": [
+                {
+                    "path": "registry/default/components/dropdown-menu/action-dropdown.tsx",
+                    "type": "registry:component",
+                    "target": "components/action-dropdown.tsx"
+                }
+            ]
+        },
+        {
+            "name": "action-with-loading-dropdown",
+            "type": "registry:component",
+            "title": "Action with Loading Dropdown",
+            "description": "A dropdown menu for actions with loading state",
+            "files": [
+                {
+                    "path": "registry/default/components/dropdown-menu/action-with-loading-dropdown.tsx",
+                    "type": "registry:component",
+                    "target": "components/action-with-loading-dropdown.tsx"
+                }
+            ]
+        },
+        {
             "name": "split-with-image-hero",
             "type": "registry:block",
             "title": "Split with image hero",

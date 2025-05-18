@@ -54,37 +54,37 @@ const items: Item[] = [
         subItems: [
             {
                 label: 'Profile',
-                shortcut: '⇧⌘P',
+                shortcut: '⇧P',
                 icon: <UserRoundIcon />,
                 url: '#',
             },
             {
                 label: 'Appearance',
-                shortcut: '⇧⌘A',
+                shortcut: '⇧A',
                 icon: <CloudSunIcon />,
                 url: '#',
             },
             {
                 label: 'Settings',
-                shortcut: '⇧⌘S',
+                shortcut: '⇧S',
                 icon: <BoltIcon />,
                 url: '#',
             },
             {
                 label: 'Billing',
-                shortcut: '⇧⌘B',
+                shortcut: '⇧B',
                 icon: <CreditCardIcon />,
                 url: '#',
             },
             {
                 label: 'Keyboard Shortcuts',
-                shortcut: '⇧⌘K',
+                shortcut: '⇧K',
                 icon: <KeyboardIcon />,
                 url: '#',
             },
             {
                 label: 'Notifications',
-                shortcut: '⇧⌘N',
+                shortcut: '⇧N',
                 icon: <BellRingIcon />,
                 url: '#',
             },
@@ -94,19 +94,19 @@ const items: Item[] = [
         id: 'premium',
         subItems: [
             {
-                label: 'Upgrade to Pro',
-                shortcut: '⇧⌘U',
+                label: 'Upgrade to Premium',
+                shortcut: '⇧U',
                 icon: <StarIcon className="fill-yellow-500 text-yellow-500" />,
                 badge: (
                     <Badge className="ml-auto rounded-sm bg-yellow-500 px-1 font-semibold text-black">
-                        20% off
+                        15% off
                     </Badge>
                 ),
                 url: '#',
             },
             {
                 label: 'Referral',
-                shortcut: '⇧⌘R',
+                shortcut: '⇧R',
                 icon: <GiftIcon />,
                 url: '#',
             },
@@ -117,7 +117,7 @@ const items: Item[] = [
         subItems: [
             {
                 label: 'Github',
-                shortcut: '⇧⌘G',
+                shortcut: '⇧G',
                 icon: (
                     <svg viewBox="0 0 438.549 438.549" fill="currentColor">
                         <path
@@ -131,14 +131,14 @@ const items: Item[] = [
             },
             {
                 label: 'Documentation',
-                shortcut: '⇧⌘D',
+                shortcut: '⇧D',
                 icon: <BookOpenIcon />,
                 url: '#',
                 external: true,
             },
             {
                 label: 'Support',
-                shortcut: '⇧⌘S',
+                shortcut: '⇧S',
                 icon: <LifeBuoyIcon />,
                 url: '#',
                 external: true,

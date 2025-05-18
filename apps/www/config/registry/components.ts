@@ -141,6 +141,16 @@ export const components: ComponentsType = {
                     name: 'User Profile Dropdown',
                     path: 'default/components/dropdown-menu/user-profile-dropdown',
                 },
+                {
+                    id: 'action-dropdown',
+                    name: 'Action Dropdown',
+                    path: 'default/components/dropdown-menu/action-dropdown',
+                },
+                {
+                    id: 'action-with-loading-dropdown',
+                    name: 'Action with Loading Dropdown',
+                    path: 'default/components/dropdown-menu/action-with-loading-dropdown',
+                },
             ],
         },
     ],
