@@ -1,5 +1,4 @@
 import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
-import { buttonVariants } from '@/components/ui/button'
 import { getComponentCategories } from '@/config/registry/components'
 import { urls } from '@/config/urls'
 import { cn } from '@/lib/utils'
