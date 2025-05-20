@@ -338,6 +338,19 @@
             ]
         },
         {
+            "name": "multiple-tags-dropdown",
+            "type": "registry:component",
+            "title": "Multiple Tags Dropdown",
+            "description": "A dropdown menu for selecting multiple tags",
+            "files": [
+                {
+                    "path": "registry/default/components/dropdown-menu/multiple-tags-dropdown.tsx",
+                    "type": "registry:component",
+                    "target": "components/multiple-tags-dropdown.tsx"
+                }
+            ]
+        },
+        {
             "name": "action-with-loading-dropdown",
             "type": "registry:component",
             "title": "Action with Loading Dropdown",

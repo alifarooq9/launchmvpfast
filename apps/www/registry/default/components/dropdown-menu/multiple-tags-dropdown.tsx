@@ -23,6 +23,7 @@ import React from 'react'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Badge } from '@/components/ui/badge'
 
 const defaultTags = [
     {
@@ -51,7 +52,7 @@ const defaultTags = [
     },
 ]
 
-type TagDropdownProps = {
+type MultipleTagsDropdownProps = {
     side: 'left' | 'right' | 'top' | 'bottom'
     align: 'start' | 'center' | 'end'
 }
@@ -62,20 +63,20 @@ const formSchema = z.object({
     }),
 })
 
-export default function TagDropdown({
+export default function MultipleTagsDropdown({
     side = 'bottom',
     align = 'center',
-}: TagDropdownProps) {
+}: MultipleTagsDropdownProps) {
     const [tags, setTags] = React.useState([...defaultTags])
-    const [selectedTag, setSelectedTag] = React.useState<string>('')
+    const [selectedTags, setSelectedTags] = React.useState<string[]>([])
     const [isInputFocused, setIsInputFocused] = React.useState(false)
 
     const handleOnSelect = (tag: { id: string; label: string }) => {
-        if (selectedTag === tag.id) {
-            return setSelectedTag('')
+        if (selectedTags.includes(tag.id)) {
+            return setSelectedTags(selectedTags.filter((id) => id !== tag.id))
         }
 
-        setSelectedTag(tag.id)
+        setSelectedTags([...selectedTags, tag.id])
     }
 
     // Handle keyboard events when input is focused
@@ -112,13 +113,17 @@ export default function TagDropdown({
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm">
-                    {selectedTag ? (
-                        <span>
-                            {tags.find((tag) => tag.id === selectedTag)?.label}
-                        </span>
+                <Button variant="outline" size="sm" className="h-auto py-2">
+                    {selectedTags.length > 0 ? (
+                        <div className="flex max-w-[150px] flex-wrap gap-1">
+                            {selectedTags.map((t) => (
+                                <Badge key={t} variant="outline">
+                                    {tags.find((tag) => tag.id === t)?.label}
+                                </Badge>
+                            ))}
+                        </div>
                     ) : (
-                        <span>Assign Tag</span>
+                        <span>Assign Multiple Tags</span>
                     )}
                     <ChevronDownIcon />
                 </Button>
@@ -147,7 +152,7 @@ export default function TagDropdown({
                         >
                             {tag.label}
 
-                            {selectedTag == tag.id && <XIcon />}
+                            {selectedTags.includes(tag.id) && <XIcon />}
                         </DropdownMenuItem>
                     ))}
                 </div>
