@@ -42,7 +42,7 @@ const items: Item[] = [
         subItems: [
             {
                 label: 'Edit',
-                shortcut: '⇧E',
+                shortcut: 'E',
                 icon: <SquarePenIcon />,
                 action: () => {
                     console.log('Edit clicked')
@@ -50,7 +50,7 @@ const items: Item[] = [
             },
             {
                 label: 'View',
-                shortcut: '⇧V',
+                shortcut: 'V',
                 icon: <ScanSearchIcon />,
                 action: () => {
                     console.log('View clicked')
@@ -58,7 +58,7 @@ const items: Item[] = [
             },
             {
                 label: 'Block',
-                shortcut: '⇧B',
+                shortcut: 'B',
                 icon: <LockIcon />,
                 action: () => {
                     console.log('Block clicked')
@@ -71,7 +71,7 @@ const items: Item[] = [
         subItems: [
             {
                 label: 'Delete',
-                shortcut: '⇧D',
+                shortcut: 'D',
                 icon: <Trash2Icon />,
                 action: () => {
                     console.log('Delete clicked')

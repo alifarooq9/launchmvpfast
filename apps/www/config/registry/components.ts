@@ -151,6 +151,16 @@ export const components: ComponentsType = {
                     name: 'Action with Loading Dropdown',
                     path: 'default/components/dropdown-menu/action-with-loading-dropdown',
                 },
+                {
+                    id: 'button-dropdown',
+                    name: 'Button Dropdown',
+                    path: 'default/components/dropdown-menu/button-dropdown',
+                },
+                {
+                    id: 'dropdown-with-tag',
+                    name: 'Dropdown with Tag',
+                    path: 'default/components/dropdown-menu/dropdown-with-tag',
+                },
             ],
         },
     ],

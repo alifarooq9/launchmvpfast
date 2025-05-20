@@ -145,7 +145,7 @@ function EditItem({ setOpen }: ComponentProps) {
                 <SquarePenIcon />
             )}
             <span className="flex-1">Edit</span>
-            <DropdownMenuShortcut>⇧E</DropdownMenuShortcut>
+            <DropdownMenuShortcut>E</DropdownMenuShortcut>
         </DropdownMenuItem>
     )
 }
@@ -185,7 +185,7 @@ function ViewItem({ setOpen }: ComponentProps) {
                 <ScanSearchIcon />
             )}
             <span className="flex-1">View</span>
-            <DropdownMenuShortcut>⇧V</DropdownMenuShortcut>
+            <DropdownMenuShortcut>V</DropdownMenuShortcut>
         </DropdownMenuItem>
     )
 }
@@ -225,7 +225,7 @@ function BlockItem({ setOpen }: ComponentProps) {
                 <LockIcon />
             )}
             <span className="flex-1">Block</span>
-            <DropdownMenuShortcut>⇧B</DropdownMenuShortcut>
+            <DropdownMenuShortcut>B</DropdownMenuShortcut>
         </DropdownMenuItem>
     )
 }
@@ -267,7 +267,7 @@ function DeleteItem({ setOpen }: ComponentProps) {
             )}
             <span className="flex-1">Delete</span>
             <DropdownMenuShortcut className="text-destructive">
-                ⇧D
+                D
             </DropdownMenuShortcut>
         </DropdownMenuItem>
     )

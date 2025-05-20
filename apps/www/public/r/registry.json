@@ -312,6 +312,19 @@
             ]
         },
         {
+            "name": "button-dropdown",
+            "type": "registry:component",
+            "title": "Button Dropdown",
+            "description": "A dropdown menu for buttons",
+            "files": [
+                {
+                    "path": "registry/default/components/dropdown-menu/button-dropdown.tsx",
+                    "type": "registry:component",
+                    "target": "components/button-dropdown.tsx"
+                }
+            ]
+        },
+        {
             "name": "action-with-loading-dropdown",
             "type": "registry:component",
             "title": "Action with Loading Dropdown",
