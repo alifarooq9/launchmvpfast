@@ -157,9 +157,9 @@ export const components: ComponentsType = {
                     path: 'default/components/dropdown-menu/button-dropdown',
                 },
                 {
-                    id: 'dropdown-with-tag',
-                    name: 'Dropdown with Tag',
-                    path: 'default/components/dropdown-menu/dropdown-with-tag',
+                    id: 'tag-dropdown',
+                    name: 'Tag Dropdown',
+                    path: 'default/components/dropdown-menu/tag-dropdown',
                 },
             ],
         },

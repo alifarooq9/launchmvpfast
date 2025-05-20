@@ -325,6 +325,19 @@
             ]
         },
         {
+            "name": "tag-dropdown",
+            "type": "registry:component",
+            "title": "Tag Dropdown",
+            "description": "A dropdown menu for tags",
+            "files": [
+                {
+                    "path": "registry/default/components/dropdown-menu/tag-dropdown.tsx",
+                    "type": "registry:component",
+                    "target": "components/tag-dropdown.tsx"
+                }
+            ]
+        },
+        {
             "name": "action-with-loading-dropdown",
             "type": "registry:component",
             "title": "Action with Loading Dropdown",

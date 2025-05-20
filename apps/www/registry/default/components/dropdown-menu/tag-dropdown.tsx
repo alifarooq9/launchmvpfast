@@ -53,7 +53,7 @@ const defaultTags = [
     },
 ]
 
-type DropdownMenuWithTagProps = {
+type TagDropdownProps = {
     side: 'left' | 'right' | 'top' | 'bottom'
     align: 'start' | 'center' | 'end'
 }
@@ -64,10 +64,10 @@ const formSchema = z.object({
     }),
 })
 
-export default function DropdownWithTag({
+export default function TagDropdown({
     side = 'bottom',
     align = 'start',
-}: DropdownMenuWithTagProps) {
+}: TagDropdownProps) {
     const [tags, setTags] = React.useState([...defaultTags])
     const [selectedTag, setSelectedTag] = React.useState<string>('')
     const [isInputFocused, setIsInputFocused] = React.useState(false)
@@ -120,7 +120,7 @@ export default function DropdownWithTag({
                             {tags.find((tag) => tag.id === selectedTag)?.label}
                         </span>
                     ) : (
-                        <span>With tag</span>
+                        <span>Assign Tag</span>
                     )}
                     <ChevronDownIcon />
                 </Button>
