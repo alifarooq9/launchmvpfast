@@ -145,7 +145,10 @@ export default function MultipleTagsDropdown({
                     {tags.map((tag) => (
                         <DropdownMenuItem
                             key={tag.id}
-                            onSelect={() => handleOnSelect(tag)}
+                            onSelect={(e) => {
+                                e.preventDefault()
+                                handleOnSelect(tag)
+                            }}
                             className={cn(
                                 'bg-accent focus:bg-accent/50 cursor-pointer py-1'
                             )}
