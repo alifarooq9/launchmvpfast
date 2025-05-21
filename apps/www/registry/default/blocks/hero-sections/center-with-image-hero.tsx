@@ -11,8 +11,16 @@ export default function Hero() {
             <section className="relative container mx-auto flex w-full flex-col items-center p-4 py-28 xl:px-6">
                 <div className="flex w-full max-w-3xl flex-col items-center gap-4">
                     <m.a
-                        animate={{ transform: 'translateY(0)', opacity: 1 }}
-                        initial={{ transform: 'translateY(-20px)', opacity: 0 }}
+                        animate={{
+                            transform: 'translateY(0)',
+                            opacity: 1,
+                            filter: 'blur(0)',
+                        }}
+                        initial={{
+                            transform: 'translateY(-20px)',
+                            opacity: 0,
+                            filter: 'blur(10px)',
+                        }}
                         transition={{
                             duration: 0.6,
                             delay: 0,
@@ -31,8 +39,16 @@ export default function Hero() {
                         <ArrowRightIcon className="size-4" />
                     </m.a>
                     <m.h1
-                        animate={{ transform: 'translateY(0)', opacity: 1 }}
-                        initial={{ transform: 'translateY(-20px)', opacity: 0 }}
+                        animate={{
+                            transform: 'translateY(0)',
+                            opacity: 1,
+                            filter: 'blur(0)',
+                        }}
+                        initial={{
+                            transform: 'translateY(-20px)',
+                            opacity: 0,
+                            filter: 'blur(10px)',
+                        }}
                         transition={{
                             duration: 0.6,
                             delay: 0.1,
@@ -43,11 +59,19 @@ export default function Hero() {
                         Re-usable Page Blocks and Sections
                     </m.h1>
                     <m.p
-                        animate={{ transform: 'translateY(0)', opacity: 1 }}
-                        initial={{ transform: 'translateY(-20px)', opacity: 0 }}
+                        animate={{
+                            transform: 'translateY(0)',
+                            opacity: 1,
+                            filter: 'blur(0)',
+                        }}
+                        initial={{
+                            transform: 'translateY(-20px)',
+                            opacity: 0,
+                            filter: 'blur(10px)',
+                        }}
                         transition={{
                             duration: 0.6,
-                            delay: 0.2,
+                            delay: 0.3,
                             ease: 'easeOut',
                         }}
                         className="text-muted-foreground text-center text-base text-balance sm:text-lg"
@@ -90,11 +114,19 @@ export default function Hero() {
                         .
                     </m.p>
                     <m.div
-                        animate={{ transform: 'translateY(0)', opacity: 1 }}
-                        initial={{ transform: 'translateY(-20px)', opacity: 0 }}
+                        animate={{
+                            transform: 'translateY(0)',
+                            opacity: 1,
+                            filter: 'blur(0)',
+                        }}
+                        initial={{
+                            transform: 'translateY(-20px)',
+                            opacity: 0,
+                            filter: 'blur(10px)',
+                        }}
                         transition={{
                             duration: 0.6,
-                            delay: 0.3,
+                            delay: 0.5,
                             ease: 'easeOut',
                         }}
                     >
@@ -118,11 +150,19 @@ export default function Hero() {
 
                 <div className="relative mt-24 flex w-full max-w-7xl">
                     <m.div
-                        animate={{ transform: 'translateY(0)', opacity: 1 }}
-                        initial={{ transform: 'translateY(20px)', opacity: 0 }}
+                        animate={{
+                            transform: 'translateY(0)',
+                            opacity: 1,
+                            filter: 'blur(0)',
+                        }}
+                        initial={{
+                            transform: 'translateY(20px)',
+                            opacity: 0,
+                            filter: 'blur(10px)',
+                        }}
                         transition={{
                             duration: 0.6,
-                            delay: 0.5,
+                            delay: 0.8,
                             ease: 'easeOut',
                         }}
                         className="bg-accent dark:bg-accent/40 ring-border z-10 aspect-video w-full rounded-2xl p-1 ring-1 ring-inset md:p-2"
@@ -143,7 +183,7 @@ export default function Hero() {
                         initial={{ opacity: 0 }}
                         transition={{
                             duration: 0.6,
-                            delay: 0.8,
+                            delay: 1,
                             ease: 'easeOut',
                         }}
                         className="absolute top-0 z-0 h-5 w-full rounded-xl bg-blue-400 blur-[20px] sm:h-10 md:h-20 md:blur-[100px] dark:bg-blue-200 dark:blur-[40px] sm:dark:top-10 md:dark:blur-[100px]"

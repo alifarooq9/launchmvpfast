@@ -33,11 +33,6 @@ export const blocks: ComponentsType = {
                     name: 'Center with image',
                     path: 'default/blocks/hero-sections/center-with-image-hero',
                 },
-                {
-                    id: 'split-with-image-hero',
-                    name: 'Split with image',
-                    path: 'default/blocks/hero-sections/split-with-image-hero',
-                },
             ],
         },
         {
