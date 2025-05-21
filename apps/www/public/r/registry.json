@@ -351,6 +351,19 @@
             ]
         },
         {
+            "name": "rich-dropdown",
+            "type": "registry:component",
+            "title": "Rich Dropdown",
+            "description": "A dropdown menu with rich content",
+            "files": [
+                {
+                    "path": "registry/default/components/dropdown-menu/rich-dropdown.tsx",
+                    "type": "registry:component",
+                    "target": "components/rich-dropdown.tsx"
+                }
+            ]
+        },
+        {
             "name": "action-with-loading-dropdown",
             "type": "registry:component",
             "title": "Action with Loading Dropdown",

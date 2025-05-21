@@ -190,7 +190,7 @@ function DropdownMenuShortcut({
         <span
             data-slot="dropdown-menu-shortcut"
             className={cn(
-                'text-muted-foreground border-border tex ml-auto flex aspect-square h-5 w-5 items-center justify-center rounded-sm border text-xs font-medium tracking-widest',
+                'text-muted-foreground border-border ml-auto flex aspect-square h-5 w-5 items-center justify-center rounded-sm border text-xs leading-none font-medium tracking-widest',
                 className
             )}
             {...props}

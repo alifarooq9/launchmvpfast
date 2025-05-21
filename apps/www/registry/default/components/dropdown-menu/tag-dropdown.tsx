@@ -112,7 +112,7 @@ export default function TagDropdown({
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm">
+                <Button variant="outline">
                     {selectedTag ? (
                         <span>
                             {tags.find((tag) => tag.id === selectedTag)?.label}

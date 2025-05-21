@@ -166,6 +166,11 @@ export const components: ComponentsType = {
                     name: 'Multiple Tags Dropdown',
                     path: 'default/components/dropdown-menu/multiple-tags-dropdown',
                 },
+                {
+                    id: 'rich-dropdown',
+                    name: 'Rich Dropdown',
+                    path: 'default/components/dropdown-menu/rich-dropdown',
+                },
             ],
         },
     ],
