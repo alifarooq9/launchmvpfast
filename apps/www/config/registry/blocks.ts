@@ -33,6 +33,11 @@ export const blocks: ComponentsType = {
                     name: 'Center with image',
                     path: 'default/blocks/hero-sections/center-with-image-hero',
                 },
+                {
+                    id: 'simple-hero-with-content-bottom',
+                    name: 'Simple Hero with Content Bottom',
+                    path: 'default/blocks/hero-sections/simple-hero-with-content-bottom',
+                },
             ],
         },
         {

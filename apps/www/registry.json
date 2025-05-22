@@ -26,6 +26,20 @@
             }
         },
         {
+            "name": "motion-provider",
+            "type": "registry:lib",
+            "title": "Motion Provider",
+            "description": "Motion provider for the project",
+            "docs": "Wrap your app with this provider to enable motion features.",
+            "files": [
+                {
+                    "path": "registry/default/lib/motion-provider.tsx",
+                    "type": "registry:file",
+                    "target": "lib/motion-provider.tsx"
+                }
+            ]
+        },
+        {
             "name": "prompt-input-01",
             "type": "registry:component",
             "title": "Prompt Input 01",
@@ -383,7 +397,8 @@
             "description": "A centered layout with an image and content",
             "registryDependencies": [
                 "utils",
-                "https://launchmvpfast.com/r/fonts.json"
+                "https://launchmvpfast.com/r/fonts.json",
+                "https://launchmvpfast.com/r/motion-provider.json"
             ],
             "files": [
                 {
@@ -421,6 +436,23 @@
                     "--color-5": "oklch(90.7% 0.231 133)"
                 }
             }
+        },
+        {
+            "name": "simple-hero-with-content-bottom",
+            "type": "registry:block",
+            "title": "Simple Hero with Content Bottom",
+            "description": "A simple hero section with content at the bottom",
+            "registryDependencies": [
+                "utils",
+                "https://launchmvpfast.com/r/motion-provider.json"
+            ],
+            "files": [
+                {
+                    "path": "registry/default/blocks/hero-sections/simple-hero-with-content-bottom.tsx",
+                    "type": "registry:component",
+                    "target": "components/hero.tsx"
+                }
+            ]
         },
         {
             "name": "center-signin-card-with-email-only",
