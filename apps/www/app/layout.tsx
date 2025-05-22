@@ -76,12 +76,6 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <head>
-                <meta
-                    name="apple-mobile-web-app-title"
-                    content="Launch MVP Fast"
-                />
-            </head>
             <body className={`${fontsVariables} font-sans antialiased`}>
                 <div className="relative flex min-h-svh flex-col">
                     <Providers>{children}</Providers>
