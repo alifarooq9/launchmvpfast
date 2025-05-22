@@ -30,7 +30,7 @@
             "type": "registry:lib",
             "title": "Motion Provider",
             "description": "Motion provider for the project",
-            "docs": "Wrap your app with this provider to enable motion features.",
+            "docs": "Wrap your app with this `MotionProvider` to enable motion features.",
             "files": [
                 {
                     "path": "registry/default/lib/motion-provider.tsx",
