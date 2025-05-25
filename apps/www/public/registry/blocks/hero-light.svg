@@ -1,16 +1,1 @@
-<svg width="256" height="160" viewBox="0 0 256 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_21_134)">
-<rect x="123.5" y="27.5" width="132" height="109" rx="9.5" fill="#C7C7C7" stroke="#B9B9B9"/>
-<rect y="59" width="75" height="5" rx="2.5" fill="#C7C7C7"/>
-<rect x="-4" y="68" width="97" height="13" rx="4" fill="#C7C7C7"/>
-<rect x="-4" y="85" width="97" height="3" rx="1.5" fill="#C7C7C7"/>
-<rect x="-4" y="91" width="97" height="3" rx="1.5" fill="#C7C7C7"/>
-<rect y="98" width="28" height="9" rx="4" fill="#C7C7C7"/>
-<rect x="31" y="98" width="28" height="9" rx="4" fill="#202020"/>
-</g>
-<defs>
-<clipPath id="clip0_21_134">
-<rect width="256" height="160" fill="white"/>
-</clipPath>
-</defs>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="160" fill="none" viewBox="0 0 256 160"><g clip-path="url(#clip0_21_134)"><rect width="132" height="109" x="123.5" y="27.5" fill="#C7C7C7" stroke="#B9B9B9" rx="9.5"/><rect width="75" height="5" y="59" fill="#C7C7C7" rx="2.5"/><rect width="97" height="13" x="-4" y="68" fill="#C7C7C7" rx="4"/><rect width="97" height="3" x="-4" y="85" fill="#C7C7C7" rx="1.5"/><rect width="97" height="3" x="-4" y="91" fill="#C7C7C7" rx="1.5"/><rect width="28" height="9" y="98" fill="#C7C7C7" rx="4"/><rect width="28" height="9" x="31" y="98" fill="#202020" rx="4"/></g><defs><clipPath id="clip0_21_134"><rect width="256" height="160" fill="#fff"/></clipPath></defs></svg>
