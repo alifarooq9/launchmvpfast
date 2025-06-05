@@ -265,7 +265,7 @@ export default function Signup() {
                     <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                         <Button
                             type="button"
-                            variant="secondary"
+                            variant="outline"
                             className="cursor-pointer"
                         >
                             <svg
@@ -294,7 +294,7 @@ export default function Signup() {
                         </Button>
                         <Button
                             type="button"
-                            variant="secondary"
+                            variant="outline"
                             className="cursor-pointer"
                         >
                             <svg

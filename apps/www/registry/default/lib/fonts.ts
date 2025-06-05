@@ -4,6 +4,7 @@ import {
     Geist,
     Geist_Mono,
     Instrument_Serif,
+    Inter,
 } from 'next/font/google'
 
 const fontSans = Geist({
@@ -28,9 +29,15 @@ const fontSerif = Instrument_Serif({
     style: 'italic',
 })
 
+const fontInter = Inter({
+    variable: '--font-inter',
+    subsets: ['latin'],
+})
+
 export const fontsVariables = cn(
     fontSans.variable,
     fontHeading.variable,
     fontMono.variable,
-    fontSerif.variable
+    fontSerif.variable,
+    fontInter.variable
 )

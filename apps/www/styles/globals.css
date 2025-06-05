@@ -6,9 +6,9 @@
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
+    --font-sans: var(--font-inter);
     --font-mono: var(--font-geist-mono);
-    --font-heading: var(--font-heading);
+    --font-heading: var(--font-inter);
     --font-serif: var(--font-serif);
     --font-inter: var(--font-inter);
     --aspect-video-large: 16 / 13;
@@ -129,7 +129,7 @@
 }
 
 :root {
-    --radius: 0.725rem;
+    --radius: 0.825rem;
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
