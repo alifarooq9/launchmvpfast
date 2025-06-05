@@ -13,6 +13,7 @@ export const urls = {
         blocks: '/blocks',
         pricing: '/pricing',
         earlyAccess: '/early-access',
+        blocksRegistry: '/blocks-registry',
     },
     docs: {
         base: '/docs',

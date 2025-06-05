@@ -87,22 +87,20 @@ export function CodeBlock({ component, Button }: CodeBlockProps) {
 
     return (
         <Dialog>
-            <TooltipProvider delayDuration={0}>
-                <Tooltip>
-                    <TooltipTrigger asChild>
-                        <DialogTrigger asChild>
-                            {Button ?? (
-                                <button className="focus-ring w-fit cursor-pointer">
-                                    <Code2Icon className="text-muted-foreground h-4 w-4" />
-                                </button>
-                            )}
-                        </DialogTrigger>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                        <p>View code</p>
-                    </TooltipContent>
-                </Tooltip>
-            </TooltipProvider>
+            <Tooltip>
+                <TooltipTrigger asChild>
+                    <DialogTrigger asChild>
+                        {Button ?? (
+                            <button className="focus-ring w-fit cursor-pointer">
+                                <Code2Icon className="text-muted-foreground h-4 w-4" />
+                            </button>
+                        )}
+                    </DialogTrigger>
+                </TooltipTrigger>
+                <TooltipContent>
+                    <p>View code</p>
+                </TooltipContent>
+            </Tooltip>
 
             <DialogContent className="max-h-[80%] overflow-auto sm:max-w-[600px]">
                 <DialogHeader>
