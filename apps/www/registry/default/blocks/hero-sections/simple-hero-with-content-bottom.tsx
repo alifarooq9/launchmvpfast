@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
-import * as m from 'motion/react-m'
+import { motion as m } from 'motion/react'
 
-export default function SimpleHero() {
+export default function Hero() {
     return (
         <section className="relative isolate flex min-h-[100svh] w-full flex-col items-center justify-end overflow-hidden">
             <div className="z-20 flex w-full max-w-4xl flex-col items-center justify-center gap-8 px-4 py-16 text-center">

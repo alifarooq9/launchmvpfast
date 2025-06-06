@@ -4,42 +4,6 @@
     "homepage": "https://launchmvpfast.com",
     "items": [
         {
-            "name": "fonts",
-            "type": "registry:lib",
-            "title": "Fonts",
-            "description": "Fonts for the project",
-            "docs": "Do not forget to add `fontsVariables` to your body className",
-            "files": [
-                {
-                    "path": "registry/default/lib/fonts.ts",
-                    "type": "registry:file",
-                    "target": "lib/fonts.ts"
-                }
-            ],
-            "cssVars": {
-                "theme": {
-                    "--font-sans": "var(--font-geist-sans)",
-                    "--font-mono": " var(--font-geist-mono)",
-                    "--font-heading": "var(--font-heading)",
-                    "--font-serif": "var(--font-serif)"
-                }
-            }
-        },
-        {
-            "name": "motion-provider",
-            "type": "registry:lib",
-            "title": "Motion Provider",
-            "description": "Motion provider for the project",
-            "docs": "Wrap your app with this `MotionProvider` to enable motion features.",
-            "files": [
-                {
-                    "path": "registry/default/lib/motion-provider.tsx",
-                    "type": "registry:file",
-                    "target": "lib/motion-provider.tsx"
-                }
-            ]
-        },
-        {
             "name": "prompt-input-01",
             "type": "registry:component",
             "title": "Prompt Input 01",
@@ -395,11 +359,7 @@
             "type": "registry:block",
             "title": "Center with image hero",
             "description": "A centered layout with an image and content",
-            "registryDependencies": [
-                "utils",
-                "https://launchmvpfast.com/r/fonts.json",
-                "https://launchmvpfast.com/r/motion-provider.json"
-            ],
+            "registryDependencies": ["utils"],
             "files": [
                 {
                     "path": "registry/default/blocks/hero-sections/center-with-image-hero.tsx",
@@ -438,14 +398,25 @@
             }
         },
         {
+            "name": "center-content-darks-hero",
+            "type": "registry:block",
+            "title": "Center Content Darks",
+            "description": "A centered hero section with dark content",
+            "registryDependencies": ["utils"],
+            "files": [
+                {
+                    "path": "registry/default/blocks/hero-sections/center-content-darks-hero.tsx",
+                    "type": "registry:component",
+                    "target": "components/hero.tsx"
+                }
+            ]
+        },
+        {
             "name": "simple-hero-with-content-bottom",
             "type": "registry:block",
             "title": "Simple Hero with Content Bottom",
             "description": "A simple hero section with content at the bottom",
-            "registryDependencies": [
-                "utils",
-                "https://launchmvpfast.com/r/motion-provider.json"
-            ],
+            "registryDependencies": ["utils"],
             "files": [
                 {
                     "path": "registry/default/blocks/hero-sections/simple-hero-with-content-bottom.tsx",

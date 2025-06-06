@@ -2,7 +2,7 @@ import { Particles } from '@/components/ui/particles'
 import { rainbowButtonVariants } from '@/components/ui/rainbow-button'
 import { cn } from '@/lib/utils'
 import { ArrowRightIcon } from 'lucide-react'
-import * as m from 'motion/react-m'
+import { motion as m } from 'motion/react'
 
 export default function Hero() {
     return (
