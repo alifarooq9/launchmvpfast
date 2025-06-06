@@ -13,7 +13,7 @@ import {
     TooltipTrigger,
     TooltipContent,
 } from '@/components/ui/tooltip'
-import { Category } from '@/config/registry/blocks'
+import { Block, Category } from '@/config/registry/blocks'
 import { urls } from '@/config/urls'
 import { cn } from '@/lib/utils'
 import { MaximizeIcon, TerminalIcon, RefreshCwIcon } from 'lucide-react'
@@ -30,7 +30,7 @@ function BlockItem({
     category,
     isLast,
 }: {
-    block: any
+    block: Block
     category: Category
     isLast: boolean
 }) {
