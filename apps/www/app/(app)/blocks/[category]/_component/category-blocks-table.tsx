@@ -28,12 +28,10 @@ type BlocksCategoryTableProps = {
 function BlockItem({
     block,
     category,
-    index,
     isLast,
 }: {
     block: any
     category: Category
-    index: number
     isLast: boolean
 }) {
     const [refreshKey, setRefreshKey] = useState(0)
@@ -130,7 +128,6 @@ export function BlocksCategoryTable({ category }: BlocksCategoryTableProps) {
                     key={block.id}
                     block={block}
                     category={category}
-                    index={index}
                     isLast={index === category.blocks.length - 1}
                 />
             ))}
