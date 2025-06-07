@@ -39,6 +39,11 @@ export const blocks: ComponentsType = {
                     path: 'default/blocks/hero-sections/center-content-hero/hero',
                 },
                 {
+                    id: 'content-on-side-hero',
+                    name: 'Content on Side',
+                    path: 'default/blocks/hero-sections/content-on-side-hero',
+                },
+                {
                     id: 'simple-hero-with-content-bottom',
                     name: 'Simple with Content Bottom',
                     path: 'default/blocks/hero-sections/simple-hero-with-content-bottom',

@@ -417,6 +417,19 @@
             ]
         },
         {
+            "name": "content-on-side-hero",
+            "type": "registry:block",
+            "title": "Content on Side Hero",
+            "description": "A hero section with content on the side",
+            "files": [
+                {
+                    "path": "registry/default/blocks/hero-sections/content-on-side-hero.tsx",
+                    "type": "registry:component",
+                    "target": "components/hero.tsx"
+                }
+            ]
+        },
+        {
             "name": "simple-hero-with-content-bottom",
             "type": "registry:block",
             "title": "Simple Hero with Content Bottom",
