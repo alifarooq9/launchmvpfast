@@ -1,9 +1,11 @@
+'use client'
+
 import Link from 'next/link'
-import Header from './header'
+import Header from '@/registry/default/blocks/hero-sections/center-content-hero/header'
 import { cn } from '@/lib/utils'
 import { buttonVariants } from '@/components/ui/button'
 import { InteractiveGridPattern } from '@/components/ui/interactive-grid-pattern'
-import { motion as m, scale } from 'motion/react'
+import { motion as m } from 'motion/react'
 
 const staggerDelay = 0.4
 const initialDelay = 0.2 // initial delay before the first element animates
