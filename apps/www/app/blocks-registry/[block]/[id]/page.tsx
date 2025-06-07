@@ -1,6 +1,6 @@
-import { ComponentLoaderServer } from '@/app/(app)/_components/component-loader-server'
+import { ComponentLoaderClient } from '@/app/(app)/_components/component-loader-client'
 import { getBlockCategory } from '@/config/registry/blocks'
-import MotionProvider from '@/registry/default/lib/motion-provider'
+import { notFound } from 'next/navigation'
 
 export default async function Component({
     params,
@@ -12,16 +12,8 @@ export default async function Component({
     const block = category?.blocks.find((b) => b.id === par.id)
 
     if (!block) {
-        return (
-            <div className="flex h-full w-full items-center justify-center">
-                Block not found
-            </div>
-        )
+        return notFound()
     }
 
-    return (
-        <MotionProvider>
-            <ComponentLoaderServer component={block} />
-        </MotionProvider>
-    )
+    return <ComponentLoaderClient component={block} />
 }

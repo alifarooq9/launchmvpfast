@@ -60,11 +60,11 @@ function BlockItem({
                             component={block}
                             Button={
                                 <Button
-                                    variant="secondary"
+                                    variant="outline"
                                     size="sm"
                                     className="cursor-pointer"
                                 >
-                                    <TerminalIcon /> Show Code
+                                    <TerminalIcon /> Code
                                 </Button>
                             }
                         />

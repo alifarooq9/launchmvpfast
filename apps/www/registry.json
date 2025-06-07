@@ -398,16 +398,21 @@
             }
         },
         {
-            "name": "center-content-darks-hero",
+            "name": "center-content-hero",
             "type": "registry:block",
-            "title": "Center Content Darks",
-            "description": "A centered hero section with dark content",
+            "title": "Center Content",
+            "description": "A centered hero section with content",
             "registryDependencies": ["utils"],
             "files": [
                 {
-                    "path": "registry/default/blocks/hero-sections/center-content-darks-hero.tsx",
+                    "path": "registry/default/blocks/hero-sections/center-content-hero/hero.tsx",
                     "type": "registry:component",
                     "target": "components/hero.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/hero-sections/center-content-hero/header.tsx",
+                    "type": "registry:component",
+                    "target": "components/header.tsx"
                 }
             ]
         },
