@@ -36,7 +36,7 @@ export default function Hero() {
                     <div className="flex max-w-2xl flex-1 flex-col items-start justify-center gap-4">
                         <m.h1
                             initial="hidden"
-                            whileInView="visible"
+                            animate="visible"
                             custom={0}
                             variants={variants}
                             className="text-center text-2xl font-bold text-balance sm:text-3xl md:text-4xl lg:text-left"
@@ -45,7 +45,7 @@ export default function Hero() {
                         </m.h1>
                         <m.p
                             initial="hidden"
-                            whileInView="visible"
+                            animate="visible"
                             custom={1}
                             variants={variants}
                             className="text-muted-foreground text-center text-sm font-medium sm:text-base md:text-lg lg:text-left"
@@ -107,7 +107,7 @@ function SignupForm() {
     return (
         <m.div
             initial="hidden"
-            whileInView="visible"
+            animate="visible"
             custom={2}
             variants={variants}
             className="flex w-full flex-col gap-2 md:max-w-4/5"
@@ -132,7 +132,7 @@ function SocialProof() {
             {Object.entries(socialProofIcons).map(([key, Icon], index) => (
                 <m.div
                     initial="hidden"
-                    whileInView="visible"
+                    animate="visible"
                     custom={3 + index}
                     variants={variants}
                     key={key}
