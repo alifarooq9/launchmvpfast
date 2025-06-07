@@ -22,6 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ...blocks.default.map(
             (category) => `${urls.app.blocks}/${category.id}`
         ),
+        ...blocks.default.flatMap((category) =>
+            category.blocks.map(
+                (block) =>
+                    `${urls.app.blocksRegistry}/${category.id}/${block.id}`
+            )
+        ),
     ]
 
     return paths.map((path) => ({

@@ -23,6 +23,12 @@ export default function robots(): MetadataRoute.Robots {
                     ...blocks.default.map(
                         (category) => `${urls.app.blocks}/${category.id}`
                     ),
+                    ...blocks.default.flatMap((category) =>
+                        category.blocks.map(
+                            (block) =>
+                                `${urls.app.blocksRegistry}/${category.id}/${block.id}`
+                        )
+                    ),
                 ],
                 disallow: ['/api', '/secret'],
             },
