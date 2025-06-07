@@ -26,8 +26,8 @@ import { toast } from 'sonner'
 import { Icons } from '@/components/icons'
 
 const serviceInterests = [
-    'Sprint ($999) · 2-3 Core Features',
-    'Launchpad ($1,999) · 4-5 Core Features',
+    'Sprint ($1,999) · 2-3 Core Features',
+    'Launchpad ($2,999) · 4-5 Core Features',
     'Enterprise (Custom) · Unlimited Features',
     "I'm not sure yet",
 ] as const
