@@ -47,7 +47,11 @@ const models = [
     'Mixtral 8x22B',
 ]
 
-export default function PromptInput02() {
+type PromptInput02Props = {
+    quickPrompts?: { label: string; value: string }[]
+}
+
+export default function PromptInput02({ quickPrompts }: PromptInput02Props) {
     const [message, setMessage] = React.useState<string>('')
     const [searchToggle, setSearchToggle] = React.useState<boolean>(false)
     const [reasonToggle, setReasonToggle] = React.useState<boolean>(false)
@@ -69,104 +73,123 @@ export default function PromptInput02() {
     }
 
     return (
-        <div
-            className={cn(
-                'placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input rounded-3xl border bg-transparent text-base shadow-xs transition-[color,box-shadow] outline-none md:text-sm',
-                'focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px]',
-                'has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40 has-aria-invalid:border-destructive group',
-                'flex w-full flex-col'
-            )}
-        >
-            <div className="flex items-center justify-center gap-2 p-4">
-                <TextareaAutosize
-                    className="w-full resize-none border-none bg-transparent text-base focus-visible:outline-none"
-                    placeholder="Ask anything..."
-                    minRows={1}
-                    rows={1}
-                    maxRows={6}
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                />
+        <>
+            <div
+                className={cn(
+                    'placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input rounded-xl border bg-transparent text-base shadow-xs transition-[color,box-shadow] outline-none md:text-sm',
+                    'focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px]',
+                    'has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40 has-aria-invalid:border-destructive group',
+                    'flex w-full flex-col'
+                )}
+            >
+                <div className="flex items-center justify-center gap-2 p-4">
+                    <TextareaAutosize
+                        className="w-full resize-none border-none bg-transparent text-base focus-visible:outline-none"
+                        placeholder="Ask anything..."
+                        minRows={1}
+                        rows={1}
+                        maxRows={6}
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                    />
 
-                <Button
-                    type="submit"
-                    variant="ghost"
-                    className="cursor-pointer"
-                    disabled={!message || message.length === 0}
-                    onClick={() => handleSubmit()}
-                >
-                    Send to AI
-                    <CornerLeftUpIcon />
-                </Button>
-            </div>
+                    <Button
+                        type="submit"
+                        variant="ghost"
+                        className="cursor-pointer"
+                        disabled={!message || message.length === 0}
+                        onClick={() => handleSubmit()}
+                    >
+                        Send to AI
+                        <CornerLeftUpIcon />
+                    </Button>
+                </div>
 
-            <div className="border-border flex items-center justify-between border-t p-3 px-4">
-                <TooltipProvider delayDuration={0}>
-                    <div className="flex items-center gap-2">
-                        <Attachments />
+                <div className="border-border flex items-center justify-between border-t p-3 px-4">
+                    <TooltipProvider delayDuration={0}>
+                        <div className="flex items-center gap-2">
+                            <Attachments />
 
-                        <Tooltip>
-                            <Toggle
-                                value="search"
-                                asChild
-                                pressed={searchToggle}
-                                onPressedChange={setSearchToggle}
-                                className="cursor-pointer"
-                            >
-                                <TooltipTrigger>
-                                    <GlobeIcon />
-                                    <span className="hidden sm:block">
-                                        Search
-                                    </span>
-                                </TooltipTrigger>
-                            </Toggle>
-                            <TooltipContent>
-                                <p>Search the web</p>
-                            </TooltipContent>
-                        </Tooltip>
-
-                        <Tooltip>
-                            <Toggle
-                                value="reason"
-                                asChild
-                                pressed={reasonToggle}
-                                onPressedChange={setReasonToggle}
-                                className="cursor-pointer"
-                            >
-                                <TooltipTrigger>
-                                    <LightbulbIcon />
-                                    <span className="hidden sm:block">
-                                        Reason
-                                    </span>
-                                </TooltipTrigger>
-                            </Toggle>
-                            <TooltipContent>
-                                <p>Think before responding</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </div>
-                </TooltipProvider>
-
-                <Select value={model} onValueChange={setModel}>
-                    <SelectTrigger className="max-w-[120px] sm:max-w-max">
-                        <SelectValue placeholder="Select modal" />
-                    </SelectTrigger>
-                    <SelectContent align="end" side="top">
-                        <SelectGroup>
-                            {models.map((model) => (
-                                <SelectItem
-                                    key={model}
-                                    value={model}
-                                    onClick={() => setModel(model)}
+                            <Tooltip>
+                                <Toggle
+                                    value="search"
+                                    asChild
+                                    pressed={searchToggle}
+                                    onPressedChange={setSearchToggle}
+                                    className="cursor-pointer"
                                 >
-                                    {model}
-                                </SelectItem>
-                            ))}
-                        </SelectGroup>
-                    </SelectContent>
-                </Select>
+                                    <TooltipTrigger>
+                                        <GlobeIcon />
+                                        <span className="hidden sm:block">
+                                            Search
+                                        </span>
+                                    </TooltipTrigger>
+                                </Toggle>
+                                <TooltipContent>
+                                    <p>Search the web</p>
+                                </TooltipContent>
+                            </Tooltip>
+
+                            <Tooltip>
+                                <Toggle
+                                    value="reason"
+                                    asChild
+                                    pressed={reasonToggle}
+                                    onPressedChange={setReasonToggle}
+                                    className="cursor-pointer"
+                                >
+                                    <TooltipTrigger>
+                                        <LightbulbIcon />
+                                        <span className="hidden sm:block">
+                                            Reason
+                                        </span>
+                                    </TooltipTrigger>
+                                </Toggle>
+                                <TooltipContent>
+                                    <p>Think before responding</p>
+                                </TooltipContent>
+                            </Tooltip>
+                        </div>
+                    </TooltipProvider>
+
+                    <Select value={model} onValueChange={setModel}>
+                        <SelectTrigger className="max-w-[120px] sm:max-w-max">
+                            <SelectValue placeholder="Select modal" />
+                        </SelectTrigger>
+                        <SelectContent align="end" side="top">
+                            <SelectGroup>
+                                {models.map((model) => (
+                                    <SelectItem
+                                        key={model}
+                                        value={model}
+                                        onClick={() => setModel(model)}
+                                    >
+                                        {model}
+                                    </SelectItem>
+                                ))}
+                            </SelectGroup>
+                        </SelectContent>
+                    </Select>
+                </div>
             </div>
-        </div>
+            {quickPrompts && quickPrompts.length > 0 && (
+                <div className="w-full">
+                    <div className="mt-4 flex flex-wrap items-center gap-2">
+                        {quickPrompts.map((prompt) => (
+                            <Button
+                                key={prompt.value}
+                                variant="outline"
+                                size="sm"
+                                onClick={() => setMessage(prompt.value)}
+                                className="cursor-pointer"
+                            >
+                                {prompt.label}
+                            </Button>
+                        ))}
+                    </div>
+                </div>
+            )}
+        </>
     )
 }
 

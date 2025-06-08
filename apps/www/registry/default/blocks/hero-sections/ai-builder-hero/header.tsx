@@ -35,7 +35,7 @@ const navLinks = [
 
 export default function Header() {
     return (
-        <header className="bg-background sticky top-0 z-20 container grid h-14 w-full grid-cols-2 gap-4 md:grid-cols-5">
+        <header className="bg-background sticky top-0 z-20 grid h-14 w-full grid-cols-2 gap-4 border-b px-4 md:grid-cols-5 xl:px-6">
             <div className="flex items-center justify-start gap-4">
                 <MobileNav />
                 <Link

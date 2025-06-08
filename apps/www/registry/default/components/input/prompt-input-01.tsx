@@ -50,7 +50,7 @@ export default function PromptInput01() {
     return (
         <div
             className={cn(
-                'placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input rounded-3xl border bg-transparent text-base shadow-xs transition-[color,box-shadow] outline-none md:text-sm',
+                'placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input rounded-xl border bg-transparent text-base shadow-xs transition-[color,box-shadow] outline-none md:text-sm',
                 'focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px]',
                 'has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40 has-aria-invalid:border-destructive group p-4',
                 'flex w-full flex-col gap-6'

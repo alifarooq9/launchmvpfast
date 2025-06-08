@@ -39,7 +39,7 @@ export default function Hero() {
                             animate="visible"
                             custom={0}
                             variants={variants}
-                            className="text-center text-2xl font-bold text-balance sm:text-3xl md:text-4xl lg:text-left"
+                            className="text-center text-2xl font-bold text-balance sm:text-3xl md:text-4xl lg:text-left xl:text-5xl"
                         >
                             Collaborate smarter streamlined your workflow
                         </m.h1>

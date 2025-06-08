@@ -430,6 +430,50 @@
             ]
         },
         {
+            "name": "ai-builder-hero",
+            "type": "registry:block",
+            "title": "AI Builder Hero",
+            "description": "A hero section designed for AI builder applications",
+            "files": [
+                {
+                    "path": "registry/default/blocks/hero-sections/ai-builder-hero/hero.tsx",
+                    "type": "registry:component",
+                    "target": "components/hero.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/hero-sections/ai-builder-hero/header.tsx",
+                    "type": "registry:component",
+                    "target": "components/header.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/hero-sections/ai-builder-hero/line.tsx",
+                    "type": "registry:ui",
+                    "target": "components/ui/line.tsx"
+                },
+                {
+                    "path": "registry/default/components/input/prompt-input-02.tsx",
+                    "type": "registry:component",
+                    "target": "components/prompt-input-02.tsx"
+                }
+            ],
+            "css": {
+                ".container-line-wrapper": {
+                    "margin-left": "auto",
+                    "margin-right": "auto",
+                    "width": "100%",
+                    "max-width": "800px"
+                },
+                "@media (min-width: 800px)": {
+                    ".container-line-wrapper": {
+                        "border-top": "none",
+                        "border-bottom": "none",
+                        "border-left": "1px solid var(--border)",
+                        "border-right": "1px solid var(--border)"
+                    }
+                }
+            }
+        },
+        {
             "name": "simple-hero-with-content-bottom",
             "type": "registry:block",
             "title": "Simple Hero with Content Bottom",
