@@ -15,22 +15,10 @@ export const metadata: Metadata = {
 
 export default function MarketingPage() {
     return (
-        <>
+        <div className="flex flex-1 flex-col gap-16">
             <Hero />
 
             <Demos />
-
-            <GridGap className="h-20" />
-
-            <Showcase />
-
-            <GridGap className="h-20" />
-
-            <Testimonials />
-
-            <GridGap className="h-20" />
-
-            <Features />
-        </>
+        </div>
     )
 }

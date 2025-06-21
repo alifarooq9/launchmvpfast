@@ -1,124 +1,62 @@
+import { BorderTrail } from '@/components/ui/border-trail'
 import { buttonVariants } from '@/components/ui/button'
-import { urls } from '@/config/urls'
+import { cn } from '@/lib/utils'
 import Link from 'next/link'
-import { ArrowRightIcon } from 'lucide-react'
-import {
-    AnimatedSpan,
-    Terminal,
-    TypingAnimation,
-} from '@/components/ui/terminal'
-import {
-    PageActions,
-    PageHeader,
-    PageHeaderWrapper,
-    PageHeading,
-    PageDescription,
-    Announcement,
-} from '@/app/(app)/_components/page-header'
-import { cloneCmd } from '@/config/clone-cmd'
 
 export function Hero() {
     return (
-        <PageHeaderWrapper>
-            <PageHeader className="grid grid-cols-1 gap-4 lg:min-h-[30rem] lg:grid-cols-2 lg:py-0">
-                <div className="flex h-full flex-col justify-center gap-3">
-                    <Announcement
-                        actionText="Contact Us"
-                        url={urls.app.pricing}
-                        text="Want us to build your MVP for you?"
-                    />
-
-                    <PageHeading>
-                        Launch Your <span>MVP Fast</span> with{' '}
-                        <span className="bg-foreground text-primary-foreground px-2 whitespace-nowrap">
-                            Open Source
-                        </span>{' '}
-                        Starterkits & More
-                    </PageHeading>
-                    <PageDescription>
-                        Launch your MVP faster with Open Source Starterkits,
-                        Re-usable components, and more. Build your next MVP in
-                        days.
-                    </PageDescription>
-
-                    <PageActions>
-                        <Link
-                            href={urls.app.starterkits.base}
-                            className={buttonVariants({
-                                variant: 'secondary',
-                                size: 'lg',
-                            })}
-                        >
-                            Explore Starterkits <ArrowRightIcon />
-                        </Link>
-                        <Link
-                            href={urls.app.pricing}
-                            className={buttonVariants({
-                                size: 'lg',
-                            })}
-                        >
-                            Want Us To Build?
-                        </Link>
-                    </PageActions>
-                </div>
-
-                <div className="mt-0 hidden h-full w-full items-center justify-center sm:mt-8 sm:flex lg:mt-0">
-                    <TerminalHero />
-                </div>
-            </PageHeader>
-        </PageHeaderWrapper>
-    )
-}
-
-const savedCommands = [
-    'Next.js ready. [Saved: 1m]',
-    'Auth flows ready. [Saved: 4h]',
-    'Organizations set. [Saved: 5h]',
-    'Landing pages built. [Saved: 8h]',
-    'Stripe integrated. [Saved: 3h]',
-    'Drizzle DB configured. [Saved: 2.5h]',
-    'Uploadthing active. [Saved: 2h]',
-    'shadcn UI installed. [Saved: 1m]',
-    'Dashboard ready. [Saved: 10h]',
-    'Waitlist enabled. [Saved: 3h]',
-    'Email templates ready. [Saved: 3h]',
-]
-
-export function TerminalHero() {
-    return (
-        <Terminal copyText={`pnpx ${cloneCmd.starterkits.saasNextjs.base}`}>
-            <TypingAnimation duration={30}>
-                &gt; Clone Launch MVP Fast SaaS Starterkit
-            </TypingAnimation>
-
-            <AnimatedSpan delay={1500} className="text-green-500">
-                <span>Cloning repo...</span>
-            </AnimatedSpan>
-            {savedCommands.map((command, index) => (
-                <AnimatedSpan
-                    key={`${command}+${index}`}
-                    delay={1500 + index * 200}
-                    className="text-blue-500"
+        <section className="container flex flex-col items-center gap-6 pt-16">
+            <div className="bg-muted/50 border-border relative rounded-full border px-4 py-1.5 text-sm font-semibold">
+                Want us to build your MVP? Contact us
+                <BorderTrail
+                    style={{
+                        boxShadow:
+                            '0px 0px 60px 30px rgb(255 255 255 / 50%), 0 0 100px 60px rgb(0 0 0 / 50%), 0 0 140px 90px rgb(0 0 0 / 50%)',
+                    }}
+                    size={20}
+                />
+            </div>
+            <h1 className="font-heading text-foreground/70 max-w-3xl text-center text-6xl font-semibold text-balance">
+                <span className="text-foreground">Launch</span> your{' '}
+                <span className="text-foreground">MVP</span> in{' '}
+                <span className="text-foreground">days</span>, not months
+            </h1>
+            <p className="text-muted-foreground max-w-2xl text-center text-xl text-balance">
+                <span className="text-foreground font-bold">Accelerate</span>{' '}
+                your <span className="text-foreground font-bold">MVP</span> with{' '}
+                <span className="text-foreground font-bold">free</span>,{' '}
+                <span className="text-foreground font-bold">starter kits</span>{' '}
+                and reusable{' '}
+                <span className="text-foreground font-bold">components</span>—go
+                from <span className="text-foreground font-bold">idea</span> to{' '}
+                <span className="text-foreground font-bold">prototype</span> in{' '}
+                <span className="text-foreground font-bold">days</span>.
+            </p>
+            <div className="flex items-center justify-between gap-4">
+                <Link
+                    href="/#"
+                    className={cn(
+                        buttonVariants({
+                            size: 'xl',
+                            variant: 'defaultWithOutline',
+                        })
+                    )}
                 >
-                    <span>✔ {command}</span>
-                </AnimatedSpan>
-            ))}
-
-            <TypingAnimation
-                delay={3900}
-                duration={40}
-                className="text-green-500"
-            >
-                Success! Starterkit is live.
-            </TypingAnimation>
-
-            <TypingAnimation
-                delay={4100}
-                duration={40}
-                className="text-green-500"
-            >
-                Time saved: Days to minutes!
-            </TypingAnimation>
-        </Terminal>
+                    Get Started —{' '}
+                    <span className="font-normal italic">it's free</span>
+                </Link>
+                <Link
+                    href="/#"
+                    className={cn(
+                        buttonVariants({
+                            variant: 'secondaryWithOutline',
+                            size: 'xl',
+                        })
+                    )}
+                >
+                    What us to build?
+                </Link>
+            </div>
+        </section>
     )
 }

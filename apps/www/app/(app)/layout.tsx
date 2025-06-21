@@ -10,9 +10,9 @@ export default function MarketingLayout({
     return (
         <div className="flex flex-1 flex-col">
             {/* <MotionProvider> */}
-            <MarketingHeader />
+            {/* <MarketingHeader /> */}
             <main className="flex flex-1 flex-col">{children}</main>
-            <MarketingFooter />
+            {/* <MarketingFooter /> */}
             {/* </MotionProvider> */}
         </div>
     )
