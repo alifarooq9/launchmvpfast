@@ -106,74 +106,76 @@ function StarterKitItem({
                         : 'before:opacity-80'
                 )}
             >
-                <CardContent className="relative flex aspect-video items-center justify-center">
-                    <Image
-                        src={image}
-                        alt={`Starterkit Image ${index + 1}`}
-                        className="rounded-xl object-cover"
-                        fill
-                    />
-                    <ProgressiveBlur
-                        className="pointer-events-none absolute bottom-0 left-0 z-20 h-[75%] w-full"
-                        blurIntensity={0.5}
-                        animate={
-                            isMobile
-                                ? 'visible'
-                                : isHover
-                                  ? 'visible'
-                                  : 'hidden'
-                        }
-                        variants={{
-                            hidden: { opacity: 0 },
-                            visible: { opacity: 1 },
-                        }}
-                        transition={{ duration: 0.2, ease: 'easeOut' }}
-                    />
-                    <motion.div
-                        className="absolute bottom-0 left-0 z-20"
-                        animate={
-                            isMobile
-                                ? 'visible'
-                                : isHover
-                                  ? 'visible'
-                                  : 'hidden'
-                        }
-                        variants={{
-                            hidden: { opacity: 0 },
-                            visible: { opacity: 1 },
-                        }}
-                        transition={{ duration: 0.2, ease: 'easeOut' }}
-                    >
-                        <div className="flex flex-col items-start gap-3 px-5 py-4">
-                            <p className="text-base font-semibold text-white">
-                                SaaS Starter Kit
-                            </p>
-                            <div className="flex items-center gap-2">
-                                <Link
-                                    href="/starterkits/saas-v1"
-                                    className={buttonVariants({
-                                        variant: 'secondary',
-                                        size: 'sm',
-                                    })}
-                                >
-                                    View details
-                                </Link>
-                                <Link
-                                    href="/starterkits/saas-v1"
-                                    className={cn(
-                                        buttonVariants({
+                <div className="p-1">
+                    <CardContent className="relative flex aspect-video items-center justify-center">
+                        <Image
+                            src={image}
+                            alt={`Starterkit Image ${index + 1}`}
+                            className="rounded-lg object-cover"
+                            fill
+                        />
+                        <ProgressiveBlur
+                            className="pointer-events-none absolute bottom-0 left-0 z-20 h-[75%] w-full"
+                            blurIntensity={0.5}
+                            animate={
+                                isMobile
+                                    ? 'visible'
+                                    : isHover
+                                      ? 'visible'
+                                      : 'hidden'
+                            }
+                            variants={{
+                                hidden: { opacity: 0 },
+                                visible: { opacity: 1 },
+                            }}
+                            transition={{ duration: 0.2, ease: 'easeOut' }}
+                        />
+                        <motion.div
+                            className="absolute bottom-0 left-0 z-20"
+                            animate={
+                                isMobile
+                                    ? 'visible'
+                                    : isHover
+                                      ? 'visible'
+                                      : 'hidden'
+                            }
+                            variants={{
+                                hidden: { opacity: 0 },
+                                visible: { opacity: 1 },
+                            }}
+                            transition={{ duration: 0.2, ease: 'easeOut' }}
+                        >
+                            <div className="flex flex-col items-start gap-3 px-5 py-4">
+                                <p className="text-base font-semibold text-white">
+                                    SaaS Starter Kit
+                                </p>
+                                <div className="flex items-center gap-2">
+                                    <Link
+                                        href="/starterkits/saas-v1"
+                                        className={buttonVariants({
                                             variant: 'secondary',
                                             size: 'sm',
-                                        })
-                                    )}
-                                >
-                                    <SquareArrowOutUpRightIcon />
-                                    Live Preview
-                                </Link>
+                                        })}
+                                    >
+                                        View details
+                                    </Link>
+                                    <Link
+                                        href="/starterkits/saas-v1"
+                                        className={cn(
+                                            buttonVariants({
+                                                variant: 'secondary',
+                                                size: 'sm',
+                                            })
+                                        )}
+                                    >
+                                        <SquareArrowOutUpRightIcon />
+                                        Live Preview
+                                    </Link>
+                                </div>
                             </div>
-                        </div>
-                    </motion.div>
-                </CardContent>
+                        </motion.div>
+                    </CardContent>
+                </div>
             </Card>
         </CarouselItem>
     )

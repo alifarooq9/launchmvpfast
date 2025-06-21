@@ -77,7 +77,7 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <body className={`${fontsVariables} font-sans antialiased`}>
-                <div className="relative flex min-h-svh flex-col">
+                <div className="relative flex min-h-svh flex-col overflow-x-hidden">
                     <Providers>{children}</Providers>
                 </div>
 

@@ -12,7 +12,7 @@ export default function MarketingLayout({
             {/* <MotionProvider> */}
             {/* <MarketingHeader /> */}
             <main className="flex flex-1 flex-col">{children}</main>
-            {/* <MarketingFooter /> */}
+            <MarketingFooter />
             {/* </MotionProvider> */}
         </div>
     )
