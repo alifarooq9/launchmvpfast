@@ -6,7 +6,11 @@ import Link from 'next/link'
 export function Hero() {
     return (
         <section className="container flex flex-col items-center gap-6 pt-16">
-            <div className="bg-muted/50 border-border relative rounded-full border px-4 py-1.5 text-sm font-semibold">
+            <div className="bg-muted/50 border-border relative flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-semibold">
+                <div className="relative size-2">
+                    <div className="bg-foreground size-2 rounded-full" />
+                    <div className="bg-foreground absolute inset-0 size-2 animate-ping rounded-full" />
+                </div>
                 Want us to build your MVP? Contact us
                 <BorderTrail
                     style={{

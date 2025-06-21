@@ -43,16 +43,25 @@ interface TabsProps {
     value: string
     onValueChange: (value: string) => void
     children: React.ReactNode
+    className?: string
 }
 
-function Tabs({ value, onValueChange, children }: TabsProps) {
+function Tabs({
+    value,
+    onValueChange,
+    children,
+    className,
+    ...props
+}: TabsProps) {
     return (
         <MotionConfig transition={transition}>
             <TabsProvider value={value}>
                 <TabsPrimitive.Root
+                    data-slot="tabs"
                     value={value}
                     onValueChange={onValueChange}
-                    className="relative"
+                    className={cn('flex flex-col gap-2', className)}
+                    {...props}
                 >
                     {children}
                 </TabsPrimitive.Root>
@@ -67,8 +76,9 @@ const TabsList = forwardRef<
 >(({ className, ...props }, ref) => (
     <TabsPrimitive.List
         ref={ref}
+        data-slot="tabs-list"
         className={cn(
-            'inline-flex w-full items-center justify-start overflow-hidden rounded-2xl bg-neutral-100 p-2 dark:bg-neutral-800',
+            'bg-muted text-muted-foreground inline-flex h-fit w-fit items-center justify-center rounded-lg p-[3px]',
             className
         )}
         {...props}
@@ -88,14 +98,14 @@ const TabsTrigger = forwardRef<
             {isActive && (
                 <motion.div
                     layoutId="active-tab-bg"
-                    style={{ borderRadius: 8 }}
-                    className="absolute inset-0 rounded-lg bg-black shadow-[rgba(0,0,0,0.04)_0px_1px_6px] dark:bg-white dark:shadow-[rgba(0,0,0,0.2)_0px_1px_6px]"
+                    className="bg-accent/80 dark:border-input dark:bg-input/30 absolute inset-0 rounded-md border"
                 />
             )}
             <TabsPrimitive.Trigger
                 ref={ref}
+                data-slot="tabs-trigger"
                 className={cn(
-                    'relative z-10 inline-flex items-center justify-center rounded-lg bg-transparent px-3 py-1.5 text-sm font-medium whitespace-nowrap text-white mix-blend-exclusion transition-opacity transition-none focus-visible:ring-1 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-black focus-visible:outline-none hover:data-[state=inactive]:opacity-70',
+                    "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:text-foreground text-foreground dark:text-muted-foreground relative z-10 inline-flex h-[calc(100%-1px)] flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
                     className
                 )}
                 {...props}
@@ -113,10 +123,8 @@ const TabsContent = forwardRef<
 >(({ className, ...props }, ref) => (
     <TabsPrimitive.Content
         ref={ref}
-        className={cn(
-            'focus-visible:ring-ring border-muted ring-offset-background relative mt-2 rounded-xl border focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
-            className
-        )}
+        data-slot="tabs-content"
+        className={cn('flex-1 outline-none', className)}
         {...props}
     />
 ))
