@@ -18,7 +18,7 @@ export function ThemeSwitcher({ Trigger }: ThemeSwitcherProps) {
     const { setTheme } = useTheme()
 
     return (
-        <DropdownMenu>
+        <DropdownMenu modal={false}>
             <DropdownMenuTrigger asChild>{Trigger}</DropdownMenuTrigger>
             <DropdownMenuContent align="end">
                 <DropdownMenuItem onClick={() => setTheme('light')}>

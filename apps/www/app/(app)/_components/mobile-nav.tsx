@@ -1,111 +1,127 @@
 'use client'
 
-import { ThemeSwitcher } from '@/components/theme-switcher'
-import { Button, buttonVariants } from '@/components/ui/button'
-import { Moon, Sun } from 'lucide-react'
-import {
-    Drawer,
-    DrawerContent,
-    DrawerHeader,
-    DrawerTitle,
-    DrawerTrigger,
-} from '@/components/ui/drawer'
-import { navConfig } from '@/config/nav'
-import Link from 'next/link'
-import { siteConfig } from '@/config/site'
+import Link, { LinkProps } from 'next/link'
 import React from 'react'
-import { urls } from '@/config/urls'
-import { Icons } from '@/components/icons'
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from '@/components/ui/popover'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import { navConfig } from '@/config/nav'
 
 export function MobileNav() {
     const [open, setOpen] = React.useState(false)
+    const iconsOnlyNav = navConfig.headerNav.filter(
+        (item) => item.icon && item.iconOnly
+    )
+    const navigationLinks = navConfig.headerNav.filter(
+        (item) => !item.icon || !item.iconOnly
+    )
 
     return (
-        <nav className="flex h-full items-center md:hidden">
-            <Link
-                href={urls.socials.gh}
-                target="_blank"
-                className={buttonVariants({
-                    variant: 'ghost',
-                    className: 'aspect-square h-full rounded-none border-x',
-                })}
-            >
-                <Icons.gitHub className="size-4" />
-            </Link>
-            <div className="aspect-square h-full border-r first:border-l last:border-0">
-                <ThemeSwitcher
-                    Trigger={
-                        <Button
-                            variant="ghost"
-                            className="aspect-sqaure h-full w-full rounded-none [&_svg:not([class*='size-'])]:size-4.5"
-                        >
-                            <Sun className="scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-                            <Moon className="absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-                            <span className="sr-only">Toggle theme</span>
-                        </Button>
-                    }
-                />
-            </div>
-            <Drawer open={open} onOpenChange={setOpen}>
-                <DrawerTrigger asChild>
-                    <Button className="aspect-square h-full" variant="ghost">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth="1.5"
-                            stroke="currentColor"
-                            className="!size-6"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M3.75 9h16.5m-16.5 6.75h16.5"
+        <Popover open={open} onOpenChange={setOpen}>
+            <PopoverTrigger asChild>
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    className={cn(
+                        'extend-touch-target block touch-manipulation items-center justify-start gap-2.5 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 active:bg-transparent md:hidden dark:hover:bg-transparent'
+                    )}
+                >
+                    <div className="relative flex h-8 w-4 items-center justify-center">
+                        <div className="relative size-4">
+                            <span
+                                className={cn(
+                                    'bg-foreground absolute left-0 block h-0.5 w-4 transition-all duration-100',
+                                    open ? 'top-[0.4rem] -rotate-45' : 'top-1'
+                                )}
                             />
-                        </svg>
-                        <span className="sr-only">Toggle menu</span>
-                    </Button>
-                </DrawerTrigger>
-                <DrawerContent className="min-h-[80svh]">
-                    <DrawerHeader>
-                        <DrawerTitle>{siteConfig.name}</DrawerTitle>
-                    </DrawerHeader>
-                    <div className="overflow-y-auto">
-                        {navConfig.headerNav
-                            .filter((n) => n.iconOnly !== true)
-                            .map((navItem) => (
-                                <Link
-                                    key={navItem.label}
-                                    href={navItem.href}
-                                    className="border-grid flex h-full items-center gap-2 border-b p-4 first:border-t"
-                                    onClick={() => setOpen(false)}
-                                >
-                                    <span>{navItem.label}</span>
-                                </Link>
-                            ))}
+                            <span
+                                className={cn(
+                                    'bg-foreground absolute left-0 block h-0.5 w-4 transition-all duration-100',
+                                    open ? 'top-[0.4rem] rotate-45' : 'top-2.5'
+                                )}
+                            />
+                        </div>
+                        <span className="sr-only">Toggle Menu</span>
+                    </div>
+                </Button>
+            </PopoverTrigger>
+            <PopoverContent
+                className="bg-background/90 no-scrollbar h-(--radix-popover-content-available-height) w-(--radix-popover-content-available-width) overflow-y-auto rounded-none border-none p-0 shadow-none backdrop-blur duration-100"
+                align="start"
+                side="bottom"
+                alignOffset={-16}
+                sideOffset={14}
+            >
+                <div className="flex flex-col gap-12 overflow-auto px-6 py-6">
+                    <div className="flex flex-col gap-4">
+                        <p className="text-muted-foreground text-sm font-medium">
+                            Menu
+                        </p>
+                        <div className="flex flex-col gap-3">
+                            {navigationLinks.map((item, index) => {
+                                if (item.subMenu) {
+                                    return item.items?.map(
+                                        (subItem, subIndex) => {
+                                            return (
+                                                <MobileLink
+                                                    key={`${index}-${subIndex}`}
+                                                    href={
+                                                        subItem.href as string
+                                                    }
+                                                    onOpenChange={setOpen}
+                                                >
+                                                    {subItem.label}
+                                                </MobileLink>
+                                            )
+                                        }
+                                    )
+                                }
 
-                        <div className="divide-border flex w-full items-center divide-x divide-y">
-                            {navConfig.headerNav
-                                .filter((n) => n.iconOnly)
-                                .map((navItem) => (
-                                    <Link
-                                        key={navItem.label}
-                                        href={navItem.href}
-                                        className="border-grid flex h-full w-full items-center justify-center gap-2 border-b p-4"
-                                        target="_blank"
+                                return (
+                                    <MobileLink
+                                        key={index}
+                                        href={item.href as string}
+                                        onOpenChange={setOpen}
                                     >
-                                        <span className="sr-only">
-                                            {navItem.label}
-                                        </span>
-                                        {navItem.icon && (
-                                            <navItem.icon className="size-5" />
-                                        )}
-                                    </Link>
-                                ))}
+                                        {item.label}
+                                    </MobileLink>
+                                )
+                            })}
                         </div>
                     </div>
-                </DrawerContent>
-            </Drawer>
-        </nav>
+                </div>
+            </PopoverContent>
+        </Popover>
+    )
+}
+
+function MobileLink({
+    href,
+    onOpenChange,
+    className,
+    children,
+    ...props
+}: LinkProps & {
+    onOpenChange?: (open: boolean) => void
+    children: React.ReactNode
+    className?: string
+}) {
+    return (
+        <Link
+            href={href}
+            className={cn('text-2xl font-medium', className)}
+            onClick={() => {
+                if (onOpenChange) {
+                    onOpenChange(false)
+                }
+            }}
+            {...props}
+        >
+            {children}
+        </Link>
     )
 }

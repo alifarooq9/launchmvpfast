@@ -2,11 +2,20 @@ import { IconProps, Icons } from '@/components/icons'
 import { urls } from '@/config/urls'
 
 type NavItem = {
+    [x: string]: any
     label: string
-    href: string
+    href?: string
     icon?: React.ComponentType<IconProps>
     disabled?: boolean
     iconOnly?: boolean
+    subMenu?: boolean
+    items?: {
+        label: string
+        href: string
+        icon?: React.ComponentType<IconProps>
+        description?: string
+        disabled?: boolean
+    }[]
 }
 
 type SocialItem = {
@@ -26,16 +35,26 @@ type NavConfig = {
 export const navConfig: NavConfig = {
     headerNav: [
         {
-            label: 'Starterkits',
-            href: urls.app.starterkits.base,
-        },
-        {
-            label: 'Components',
-            href: urls.app.components,
-        },
-        {
-            label: 'Blocks',
-            href: urls.app.blocks,
+            label: 'Features',
+            subMenu: true,
+            items: [
+                {
+                    href: urls.app.components,
+                    label: 'Components',
+                    description: 'Reusable UI components for your web apps.',
+                },
+                {
+                    href: urls.app.starterkits.base,
+                    label: 'Starter Kits',
+                    description:
+                        'Accelerate your MVP with our open-source starter kits.',
+                },
+                {
+                    href: urls.app.blocks,
+                    label: 'Blocks',
+                    description: 'Pre-built sections for faster development.',
+                },
+            ],
         },
         {
             label: 'Pricing',

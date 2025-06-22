@@ -64,7 +64,7 @@ export function Hero() {
             >
                 <span className="text-foreground">Launch</span> your{' '}
                 <span className="text-foreground">MVP</span> in{' '}
-                <span className="text-foreground">days</span>, not months{' '}
+                <span className="text-foreground">days,</span> not months{' '}
             </TextEffect>
             <m.p
                 variants={variants}
