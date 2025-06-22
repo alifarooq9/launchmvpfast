@@ -32,7 +32,7 @@ const variants = {
 
 export function Hero() {
     return (
-        <section className="container flex flex-col items-center gap-6 pt-16">
+        <div className="container flex flex-col items-center gap-6">
             <m.div
                 variants={variants}
                 initial="hidden"
@@ -122,6 +122,6 @@ export function Hero() {
                     </Link>
                 </m.div>
             </div>
-        </section>
+        </div>
     )
 }

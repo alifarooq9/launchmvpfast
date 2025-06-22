@@ -6,6 +6,7 @@ import { GridGap } from '@/app/(app)/_components/grid-gap'
 import { Showcase } from '@/app/(app)/(landing)/_components/showcase'
 import { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
+import { HeroParticles } from '@/app/(app)/(landing)/_components/hero-particles'
 
 export const metadata: Metadata = {
     title: `${siteConfig.name} | Open Source Starter Kits & UI Components`,
@@ -15,10 +16,14 @@ export const metadata: Metadata = {
 
 export default function MarketingPage() {
     return (
-        <div className="flex flex-1 flex-col gap-16">
-            <Hero />
+        <div className="relative flex flex-1 flex-col gap-16 py-16">
+            <section className="flex flex-col gap-16">
+                <Hero />
 
-            <Demos />
+                <Demos />
+            </section>
+
+            <HeroParticles />
         </div>
     )
 }

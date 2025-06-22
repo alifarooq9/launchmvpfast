@@ -12,11 +12,12 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Autoplay from 'embla-carousel-autoplay'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
-import { motion } from 'motion/react'
+import * as m from 'motion/react-m'
 import { useIsMobile } from '@/hooks/use-mobile'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
 import { SquareArrowOutUpRightIcon } from 'lucide-react'
+import { urls } from '@/config/urls'
 
 const starterkitImags = [
     '/starterkits/saas-v1/landing.png',
@@ -130,7 +131,7 @@ function StarterKitItem({
                             }}
                             transition={{ duration: 0.2, ease: 'easeOut' }}
                         />
-                        <motion.div
+                        <m.div
                             className="absolute bottom-0 left-0 z-20"
                             animate={
                                 isMobile
@@ -151,7 +152,9 @@ function StarterKitItem({
                                 </p>
                                 <div className="flex items-center gap-2">
                                     <Link
-                                        href="/starterkits/saas-v1"
+                                        href={
+                                            urls.app.starterkits.saasNextjs.base
+                                        }
                                         className={buttonVariants({
                                             variant: 'secondary',
                                             size: 'sm',
@@ -160,7 +163,12 @@ function StarterKitItem({
                                         View details
                                     </Link>
                                     <Link
-                                        href="/starterkits/saas-v1"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        href={
+                                            urls.app.starterkits.saasNextjs
+                                                .preview
+                                        }
                                         className={cn(
                                             buttonVariants({
                                                 variant: 'secondary',
@@ -173,7 +181,7 @@ function StarterKitItem({
                                     </Link>
                                 </div>
                             </div>
-                        </motion.div>
+                        </m.div>
                     </CardContent>
                 </div>
             </Card>
