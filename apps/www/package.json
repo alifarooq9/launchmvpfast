@@ -42,6 +42,7 @@
         "drizzle-zod": "^0.7.1",
         "embla-carousel-autoplay": "^8.6.0",
         "embla-carousel-react": "^8.6.0",
+        "framer-motion": "^12.18.1",
         "hast-util-to-jsx-runtime": "^2.3.6",
         "input-otp": "^1.4.2",
         "lucide-react": "^0.510.0",

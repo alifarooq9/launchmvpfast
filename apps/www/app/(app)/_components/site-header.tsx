@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/navigation-menu'
 import { DistortedGlass } from '@/components/ui/distorted-glass'
 import { Search } from '@/app/(app)/_components/search'
+import { NumberTicker } from '@/components/ui/number-ticker'
 
 export function SiteHeader() {
     const iconsOnlyNav = navConfig.headerNav.filter(
@@ -127,7 +128,9 @@ export function SiteHeader() {
                 {/* Right side */}
                 <div className="flex items-center">
                     {/* Search */}
-                    <Search />
+                    <div className="hidden md:block">
+                        <Search />
+                    </div>
 
                     {/* Icons only nav */}
                     <nav className="flex items-center">
@@ -175,7 +178,7 @@ export function SiteHeader() {
     )
 }
 
-function StarCount() {
+async function StarCount() {
     async function getGitHubStars() {
         try {
             const response = await fetch(
@@ -196,6 +199,6 @@ function StarCount() {
             return 0
         }
     }
-    const stars = getGitHubStars()
-    return <span>{stars}</span>
+    const stars = await getGitHubStars()
+    return <NumberTicker value={stars as number} />
 }
