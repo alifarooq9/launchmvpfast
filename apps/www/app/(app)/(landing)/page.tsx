@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function MarketingPage() {
     return (
-        <div className="relative flex flex-1 flex-col gap-16 py-14">
+        <div className="relative flex flex-1 flex-col gap-16 py-10 sm:py-14">
             <section className="flex w-full flex-col gap-16">
                 <Hero />
 

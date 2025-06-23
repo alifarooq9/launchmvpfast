@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/carousel'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import Autoplay from 'embla-carousel-autoplay'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 import * as m from 'motion/react-m'
@@ -81,7 +81,7 @@ export function StarterkitsDemoContent() {
     )
 }
 
-function StarterKitItem({
+const StarterKitItem = memo(function StarterKitItem({
     image,
     index,
     current,
@@ -187,4 +187,4 @@ function StarterKitItem({
             </Card>
         </CarouselItem>
     )
-}
+})

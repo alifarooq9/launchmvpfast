@@ -13,15 +13,13 @@ import { navConfig } from '@/config/nav'
 
 export function MobileNav() {
     const [open, setOpen] = React.useState(false)
-    const iconsOnlyNav = navConfig.headerNav.filter(
-        (item) => item.icon && item.iconOnly
-    )
+
     const navigationLinks = navConfig.headerNav.filter(
         (item) => !item.icon || !item.iconOnly
     )
 
     return (
-        <Popover open={open} onOpenChange={setOpen}>
+        <Popover open={open} onOpenChange={setOpen} modal={true}>
             <PopoverTrigger asChild>
                 <Button
                     variant="ghost"
@@ -30,7 +28,7 @@ export function MobileNav() {
                         'extend-touch-target block touch-manipulation items-center justify-start gap-2.5 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 active:bg-transparent md:hidden dark:hover:bg-transparent'
                     )}
                 >
-                    <div className="relative flex h-8 w-4 items-center justify-center">
+                    <div className="relative flex items-center justify-center">
                         <div className="relative size-4">
                             <span
                                 className={cn(

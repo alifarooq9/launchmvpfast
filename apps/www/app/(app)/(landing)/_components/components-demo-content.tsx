@@ -1,85 +1,109 @@
-import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
-import { buttonVariants } from '@/components/ui/button'
-import { getComponentCategories } from '@/config/registry/components'
-import { urls } from '@/config/urls'
+'use client'
+
+import {
+    Card,
+    CardContent,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from '@/components/ui/card'
+import {
+    Carousel,
+    CarouselApi,
+    CarouselContent,
+    CarouselItem,
+} from '@/components/ui/carousel'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
+import { useEffect, useState, memo } from 'react'
+import Autoplay from 'embla-carousel-autoplay'
+import { ProgressiveBlur } from '@/components/ui/progressive-blur'
+import * as m from 'motion/react-m'
+import { useIsMobile } from '@/hooks/use-mobile'
 import Link from 'next/link'
+import { buttonVariants } from '@/components/ui/button'
+import { SquareArrowOutUpRightIcon } from 'lucide-react'
+import { urls } from '@/config/urls'
+import { Component, getSelectiveComponents } from '@/config/registry/components'
+import { ComponentLoaderClient } from '@/app/(app)/_components/component-loader-client'
 
 export function ComponentsDemoContent() {
-    const categories = getComponentCategories()
-    const itemCount = categories.length
+    const components = getSelectiveComponents()
 
     return (
-        <div>
-            <div className="divide-border grid grid-cols-1 divide-y sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {categories.slice(-6).map((category, index) => (
-                    <Link
-                        href={`${urls.app.components}/${category.id}`}
-                        key={category.id}
-                        className={cn(
-                            'hover:bg-accent dark:hover:bg-accent/20 sm[&:nth-child(2n)]:border-r-0 focus-ring border-grid col-span-1 flex flex-col items-center justify-center border-r transition-all lg:[&:nth-child(3n)]:border-r-0 xl:[&:nth-child(3n)]:border-r xl:[&:nth-child(4n)]:border-r-0',
-                            index >= itemCount - 1 ? 'border-b-0' : '',
-                            index >= itemCount - 2 ? 'sm:border-b-0' : '',
-                            index >= itemCount - 3 ? 'lg:border-b-0' : '',
-                            index >= itemCount - 4 ? 'xl:border-b-0' : ''
-                        )}
-                        aria-label={`Go to ${category.name} components`}
-                        title={`Go to ${category.name} components`}
-                    >
-                        <ImageContentWrapper className="w-full">
-                            <div className="aspect-video-large relative w-[80%]">
-                                <Image
-                                    src={category.image.dark}
-                                    fill
-                                    alt={category.name}
-                                    className="hidden object-contain dark:block"
-                                />
-
-                                <Image
-                                    src={category.image.light}
-                                    fill
-                                    alt={category.name}
-                                    className="block object-contain dark:hidden"
-                                />
-                            </div>
-                        </ImageContentWrapper>
-
-                        <div className="flex w-full flex-col items-start justify-start px-4 py-2">
-                            <h2 className="font-heading">{category.name}</h2>
-                            <p className="text-muted-foreground text-sm">
-                                {category.componentsCount} components
-                            </p>
-                        </div>
-                    </Link>
+        <Carousel
+            opts={{
+                align: 'center',
+                duration: 20,
+            }}
+            plugins={[
+                Autoplay({
+                    delay: 3000,
+                    stopOnInteraction: false,
+                }),
+            ]}
+        >
+            <CarouselContent className="px-4 md:px-14">
+                {components.map((component, index) => (
+                    <ComponentItem key={index} component={component} />
                 ))}
 
-                <div className="border-grid flex min-h-56 flex-col items-center justify-center border-t border-r md:border-t-0">
-                    <p>
-                        <strong className="font-heading">
-                            More Components Coming
-                        </strong>
-                    </p>
-                    <Link
-                        href={urls.app.earlyAccess}
-                        className={buttonVariants({
-                            variant: 'link',
-                            className: 'underline',
-                        })}
-                    >
-                        Join Early Access
-                    </Link>
-                </div>
-            </div>
-
-            <div className="border-grid flex items-center justify-center border-t p-4 md:px-6">
-                <Link
-                    href={urls.app.components}
-                    className={cn(buttonVariants({ variant: 'outline' }))}
+                <CarouselItem
+                    className={cn(
+                        'aspect-video max-w-xl basis-full py-0 transition-all duration-500'
+                    )}
                 >
-                    See all components
-                </Link>
-            </div>
-        </div>
+                    <Card className="aspect-video">
+                        <CardContent className="relative flex h-full items-center justify-center">
+                            <Link
+                                href={urls.app.components}
+                                className={cn(
+                                    buttonVariants({ variant: 'outline' }),
+                                    'w-fit text-center'
+                                )}
+                            >
+                                View All Components
+                                <SquareArrowOutUpRightIcon />
+                            </Link>
+                        </CardContent>
+                    </Card>
+                </CarouselItem>
+            </CarouselContent>
+        </Carousel>
     )
 }
+
+const ComponentItem = memo(function ComponentItem({
+    component,
+}: {
+    component: Component
+}) {
+    return (
+        <CarouselItem
+            className={cn(
+                'aspect-video max-w-xl basis-full transition-all duration-500'
+            )}
+        >
+            <Card className="aspect-video">
+                <CardHeader>
+                    <CardTitle>{component.name}</CardTitle>
+                </CardHeader>
+                <CardContent className="relative flex flex-1 items-center justify-center">
+                    <ComponentLoaderClient component={component} />
+                </CardContent>
+                <CardFooter>
+                    <Link
+                        href={`${urls.app.components}/${component.category}`}
+                        className={cn(
+                            buttonVariants({ variant: 'link' }),
+                            'w-full'
+                        )}
+                    >
+                        View Components
+                        <SquareArrowOutUpRightIcon />
+                    </Link>
+                </CardFooter>
+            </Card>
+        </CarouselItem>
+    )
+})

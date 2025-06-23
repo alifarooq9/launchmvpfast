@@ -8,6 +8,7 @@ import * as m from 'motion/react-m'
 import { TextEffect } from '@/components/ui/text-effect'
 import LogoCarousel, { Logo } from '@/components/ui/logo-carousel'
 import { logos } from '@/config/logos'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 const h1Transition = {
     delay: 0,
@@ -33,6 +34,8 @@ const variants = {
 }
 
 export function Hero() {
+    const isMobile = useIsMobile()
+
     return (
         <div className="relative container flex flex-col items-center gap-6">
             <m.div
@@ -62,7 +65,7 @@ export function Hero() {
                 speedReveal={h1Transition.speedReveal}
                 speedSegment={h1Transition.speedSegment}
                 delay={h1Transition.delay}
-                className="font-heading text-foreground/70 max-w-3xl text-center text-6xl font-semibold text-balance"
+                className="font-heading text-foreground/70 max-w-3xl text-center text-4xl font-semibold text-balance sm:text-5xl lg:text-6xl"
             >
                 <span className="text-foreground">Launch</span> your{' '}
                 <span className="text-foreground">MVP</span> in{' '}
@@ -73,7 +76,7 @@ export function Hero() {
                 initial="hidden"
                 animate="visible"
                 custom={{ delay: 0.8 }}
-                className="text-muted-foreground max-w-2xl text-center text-xl text-balance"
+                className="text-muted-foreground max-w-2xl text-center text-balance md:text-lg lg:text-xl"
             >
                 <span className="text-foreground font-bold">Accelerate</span>{' '}
                 your <span className="text-foreground font-bold">MVP</span> with{' '}
@@ -85,7 +88,7 @@ export function Hero() {
                 <span className="text-foreground font-bold">prototype</span> in{' '}
                 <span className="text-foreground font-bold">days</span>.
             </m.p>
-            <div className="flex items-center justify-between gap-4">
+            <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
                 <m.div
                     variants={variants}
                     initial="hidden"
@@ -125,7 +128,7 @@ export function Hero() {
                 </m.div>
             </div>
 
-            <FloatingLogos />
+            {!isMobile ? <FloatingLogos /> : null}
         </div>
     )
 }

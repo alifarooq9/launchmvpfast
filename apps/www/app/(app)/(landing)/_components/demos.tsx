@@ -9,6 +9,8 @@ import {
 } from '@/components/ui/animated-tabs'
 import { useState } from 'react'
 import * as m from 'motion/react-m'
+import { ComponentsDemoContent } from '@/app/(app)/(landing)/_components/components-demo-content'
+import { BlocksDemoContent } from '@/app/(app)/(landing)/_components/blocks-demo-content'
 
 const initialDelay = 2
 
@@ -76,6 +78,12 @@ export function Demos() {
                 >
                     <TabsContent value={tabs[0].value} className="mt-4 w-full">
                         <StarterkitsDemoContent />
+                    </TabsContent>
+                    <TabsContent value={tabs[1].value} className="mt-4 w-full">
+                        <ComponentsDemoContent />
+                    </TabsContent>
+                    <TabsContent value={tabs[2].value} className="mt-4 w-full">
+                        <BlocksDemoContent />
                     </TabsContent>
                 </m.div>
             </Tabs>
