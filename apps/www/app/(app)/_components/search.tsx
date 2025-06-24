@@ -4,7 +4,7 @@ import { CommandIcon, SearchIcon } from 'lucide-react'
 export function Search() {
     return (
         <Button
-            variant="outline"
+            variant="secondary"
             className="text-muted-foreground rounded-md text-sm font-light"
         >
             <SearchIcon />

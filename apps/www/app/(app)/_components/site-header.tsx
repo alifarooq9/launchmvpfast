@@ -56,12 +56,12 @@ export function SiteHeader() {
                             viewport={false}
                             className="max-md:hidden"
                         >
-                            <NavigationMenuList className="gap-1">
+                            <NavigationMenuList className="gap-2">
                                 {navigationLinks.map((link, index) => (
                                     <NavigationMenuItem key={index}>
                                         {link.subMenu ? (
                                             <>
-                                                <NavigationMenuTrigger className="text-muted-foreground hover:text-primary rounded-full bg-transparent font-medium *:[svg]:-me-0.5 *:[svg]:size-3.5">
+                                                <NavigationMenuTrigger className="text-muted-foreground hover:text-primary h-8 bg-transparent px-2 font-medium *:[svg]:-me-0.5 *:[svg]:size-3.5">
                                                     {link.label}
                                                 </NavigationMenuTrigger>
                                                 <NavigationMenuContent className="data-[motion=from-end]:slide-in-from-right-16! data-[motion=from-start]:slide-in-from-left-16! data-[motion=to-end]:slide-out-to-right-16! data-[motion=to-start]:slide-out-to-left-16! z-50 p-1">
@@ -111,7 +111,7 @@ export function SiteHeader() {
                                             </>
                                         ) : (
                                             <NavigationMenuLink
-                                                className="text-muted-foreground hover:text-primary rounded-full font-medium"
+                                                className="text-muted-foreground hover:text-primary flex h-8 items-center justify-center px-2 py-0 font-medium"
                                                 asChild
                                             >
                                                 <Link href={link.href ?? '#'}>
@@ -128,7 +128,7 @@ export function SiteHeader() {
                 {/* Right side */}
                 <div className="flex items-center">
                     {/* Search */}
-                    <div className="hidden md:block">
+                    <div className="hidden px-3 md:block">
                         <Search />
                     </div>
 

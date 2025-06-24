@@ -16,25 +16,40 @@ import * as m from 'motion/react-m'
 import { useIsMobile } from '@/hooks/use-mobile'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
-import { SquareArrowOutUpRightIcon } from 'lucide-react'
+import { ScanIcon } from 'lucide-react'
 import { urls } from '@/config/urls'
 
-const starterkitImags = [
-    '/starterkits/saas-v1/landing.png',
-    '/starterkits/saas-v1/auth.png',
-    '/starterkits/saas-v1/blog.png',
-    '/starterkits/saas-v1/dashboard.png',
-    '/starterkits/saas-v1/admin-dashboard.png',
-    '/starterkits/saas-v1/changelog.png',
-    '/starterkits/saas-v1/billing.png',
-    '/starterkits/saas-v1/users.png',
-    '/starterkits/saas-v1/org-settings.png',
-    '/starterkits/saas-v1/org-members.png',
-    '/starterkits/saas-v1/org-invite.png',
-    '/starterkits/saas-v1/waitlist.png',
-    '/starterkits/saas-v1/organizations.png',
-    '/starterkits/saas-v1/feedback-list.png',
-    '/starterkits/saas-v1/docs.png',
+const blocks = [
+    {
+        id: 'ai-builder-hero',
+        name: 'AI Builder Hero',
+        image: '/blocks/ai-builder-hero.png',
+        category: 'hero-sections',
+    },
+    {
+        id: 'center-signin-card',
+        name: 'Center Signin Card',
+        image: '/blocks/center-signin-card.png',
+        category: 'signin-signup',
+    },
+    {
+        id: 'center-with-image-hero',
+        name: 'Center with Image Hero',
+        image: '/blocks/center-with-image-hero.png',
+        category: 'hero-sections',
+    },
+    {
+        id: 'simple-signup',
+        name: 'Simple Signup',
+        image: '/blocks/simple-signup.png',
+        category: 'signin-signup',
+    },
+    {
+        id: 'simple-hero-with-content-bottom',
+        name: 'Simple Hero with Content Bottom',
+        image: '/blocks/simple-hero-with-content-bottom.png',
+        category: 'hero-sections',
+    },
 ]
 
 export function BlocksDemoContent() {
@@ -68,10 +83,10 @@ export function BlocksDemoContent() {
             ]}
         >
             <CarouselContent className="px-4 md:px-14">
-                {starterkitImags.map((image, index) => (
+                {blocks.map((block, index) => (
                     <BlocksItem
                         key={index}
-                        image={image}
+                        block={block}
                         index={index}
                         current={current}
                     />
@@ -82,11 +97,11 @@ export function BlocksDemoContent() {
 }
 
 const BlocksItem = memo(function BlocksItem({
-    image,
+    block,
     index,
     current,
 }: {
-    image: string
+    block: (typeof blocks)[number]
     index: number
     current: number
 }) {
@@ -110,7 +125,7 @@ const BlocksItem = memo(function BlocksItem({
                 <div className="p-1">
                     <CardContent className="relative flex aspect-video items-center justify-center">
                         <Image
-                            src={image}
+                            src={block.image}
                             alt={`Starterkit Image ${index + 1}`}
                             className="rounded-lg object-cover"
                             fill
@@ -148,7 +163,7 @@ const BlocksItem = memo(function BlocksItem({
                         >
                             <div className="flex flex-col items-start gap-3 px-5 py-4">
                                 <p className="text-base font-semibold text-white">
-                                    SaaS Starter Kit
+                                    {block.name}
                                 </p>
                                 <div className="flex items-center gap-2">
                                     <Link
@@ -165,10 +180,7 @@ const BlocksItem = memo(function BlocksItem({
                                     <Link
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        href={
-                                            urls.app.starterkits.saasNextjs
-                                                .preview
-                                        }
+                                        href={`${urls.app.blocksRegistry}/${block.category}/${block.id}`}
                                         className={cn(
                                             buttonVariants({
                                                 variant: 'secondary',
@@ -176,8 +188,8 @@ const BlocksItem = memo(function BlocksItem({
                                             })
                                         )}
                                     >
-                                        <SquareArrowOutUpRightIcon />
-                                        Live Preview
+                                        <ScanIcon />
+                                        Full Screen
                                     </Link>
                                 </div>
                             </div>

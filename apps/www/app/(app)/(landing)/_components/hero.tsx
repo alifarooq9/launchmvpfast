@@ -101,6 +101,7 @@ export function Hero() {
                             buttonVariants({
                                 size: 'xl',
                                 variant: 'defaultWithOutline',
+                                className: 'rounded-full before:rounded-full',
                             })
                         )}
                     >
@@ -119,6 +120,7 @@ export function Hero() {
                         className={cn(
                             buttonVariants({
                                 variant: 'secondaryWithOutline',
+                                className: 'rounded-full before:rounded-full',
                                 size: 'xl',
                             })
                         )}
