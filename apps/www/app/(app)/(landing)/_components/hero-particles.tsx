@@ -2,9 +2,9 @@
 
 import { Particles } from '@/components/ui/particles'
 import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, memo } from 'react'
 
-export function HeroParticles() {
+export const HeroParticles = memo(function HeroParticles() {
     const { resolvedTheme } = useTheme()
     const [color, setColor] = useState('#ffffff')
 
@@ -21,4 +21,4 @@ export function HeroParticles() {
             refresh
         />
     )
-}
+})

@@ -11,7 +11,9 @@ export default function MarketingLayout({
         <div className="flex flex-1 flex-col">
             {/* <MotionProvider> */}
             <SiteHeader />
-            <main className="flex flex-1 flex-col pt-20">{children}</main>
+            <main className="flex flex-1 flex-col py-30 pb-10 sm:pt-34 sm:pb-14">
+                {children}
+            </main>
             <MarketingFooter />
             {/* </MotionProvider> */}
         </div>

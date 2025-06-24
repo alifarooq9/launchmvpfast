@@ -1,39 +1,52 @@
+import { BorderTrail } from '@/components/ui/border-trail'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
+import { forwardRef } from 'react'
 
 type PageHeaderWrapperProps = {
-    fullHeight?: boolean
+    as?: React.ElementType
 } & React.HTMLAttributes<HTMLDivElement>
 
 export function PageHeaderWrapper({
     className,
     children,
-    fullHeight,
+    as: Component = 'div',
     ...props
 }: PageHeaderWrapperProps) {
     return (
-        <section
+        <Component
             className={cn(
-                'container-wrapper flex',
-                fullHeight && 'min-h-[calc(100svh-3rem)]',
+                'relative container flex flex-col items-center gap-6',
+
                 className
             )}
             {...props}
         >
             {children}
-        </section>
+        </Component>
     )
 }
+
+type PageHeaderProps = {
+    as?: React.ElementType
+} & React.HTMLAttributes<HTMLDivElement>
 
 export function PageHeader({
     className,
     children,
+    as: Component = 'div',
     ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+}: PageHeaderProps) {
     return (
-        <div className={cn('container py-14', className)} {...props}>
+        <Component
+            className={cn(
+                'relative container flex flex-col items-center gap-6',
+                className
+            )}
+            {...props}
+        >
             {children}
-        </div>
+        </Component>
     )
 }
 
@@ -45,7 +58,7 @@ export function PageHeading({
     return (
         <h1
             className={cn(
-                'font-heading text text-3xl leading-tight tracking-tighter text-balance sm:text-4xl md:text-5xl',
+                'font-heading text-foreground max-w-3xl text-center text-4xl font-semibold text-balance sm:text-5xl lg:text-6xl',
                 className
             )}
             {...props}
@@ -54,16 +67,15 @@ export function PageHeading({
         </h1>
     )
 }
-
-export function PageDescription({
-    className,
-    children,
-    ...props
-}: React.HTMLAttributes<HTMLParagraphElement>) {
+export const PageDescription = forwardRef<
+    HTMLParagraphElement,
+    React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, children, ...props }, ref) => {
     return (
         <p
+            ref={ref}
             className={cn(
-                'text-muted-foreground text-base leading-tight font-light text-balance sm:text-xl',
+                'text-muted-foreground max-w-2xl text-center text-balance md:text-lg lg:text-xl',
                 className
             )}
             {...props}
@@ -71,7 +83,9 @@ export function PageDescription({
             {children}
         </p>
     )
-}
+})
+
+PageDescription.displayName = 'PageDescription'
 
 export function PageActions({
     className,
@@ -81,7 +95,7 @@ export function PageActions({
     return (
         <div
             className={cn(
-                'mt-4 flex w-full flex-col items-start gap-2 sm:w-fit sm:flex-row sm:items-center sm:gap-4',
+                'flex flex-col items-center justify-between gap-4 sm:flex-row',
                 className
             )}
             {...props}
@@ -108,14 +122,25 @@ export function Announcement({
         <Link
             href={url}
             className={cn(
-                'focus-ring border-border relative mb-4 flex w-full max-w-[30rem] items-center gap-2 border',
+                'bg-muted/50 border-border focus-ring relative flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-semibold',
                 className
             )}
         >
-            <div className="bg-accent dark:bg-accent/30 m-0.5 flex w-full flex-col items-start justify-between gap-0.5 px-4 py-2 md:flex-row md:items-center md:gap-3">
-                <p className="text-sm font-medium">{text}</p>
-                <p className="text-sm font-semibold">{actionText}</p>
+            <div className="relative size-2">
+                <div className="bg-foreground size-2 rounded-full" />
+                <div className="bg-foreground absolute inset-0 size-2 animate-ping rounded-full" />
             </div>
+            <p>
+                {text} <strong className="ml-1 font-bold">{actionText}</strong>
+            </p>
+
+            <BorderTrail
+                style={{
+                    boxShadow:
+                        '0px 0px 60px 30px rgb(255 255 255 / 50%), 0 0 100px 60px rgb(0 0 0 / 50%), 0 0 140px 90px rgb(0 0 0 / 50%)',
+                }}
+                size={20}
+            />
         </Link>
     )
 }

@@ -1,6 +1,5 @@
 'use client'
 
-import { BorderTrail } from '@/components/ui/border-trail'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
@@ -9,6 +8,14 @@ import { TextEffect } from '@/components/ui/text-effect'
 import LogoCarousel, { Logo } from '@/components/ui/logo-carousel'
 import { logos } from '@/config/logos'
 import { useIsMobile } from '@/hooks/use-mobile'
+import {
+    Announcement,
+    PageActions,
+    PageDescription,
+    PageHeader,
+    PageHeading,
+} from '@/app/(app)/_components/page-header'
+import { urls } from '@/config/urls'
 
 const h1Transition = {
     delay: 0,
@@ -33,50 +40,43 @@ const variants = {
     }),
 }
 
+const PageDescriptionMotion = m.create(PageDescription)
+const AnnouncementMotion = m.create(Announcement)
+
 export function Hero() {
     const isMobile = useIsMobile()
 
     return (
-        <div className="relative container flex flex-col items-center gap-6">
-            <m.div
+        <PageHeader className="relative container flex flex-col items-center gap-6">
+            <AnnouncementMotion
                 variants={variants}
                 initial="hidden"
                 animate="visible"
                 custom={{ delay: 0.5 }}
-                className="bg-muted/50 border-border relative flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-semibold"
-            >
-                <div className="relative size-2">
-                    <div className="bg-foreground size-2 rounded-full" />
-                    <div className="bg-foreground absolute inset-0 size-2 animate-ping rounded-full" />
-                </div>
-                Want us to build your MVP? Contact us
-                <BorderTrail
-                    style={{
-                        boxShadow:
-                            '0px 0px 60px 30px rgb(255 255 255 / 50%), 0 0 100px 60px rgb(0 0 0 / 50%), 0 0 140px 90px rgb(0 0 0 / 50%)',
-                    }}
-                    size={20}
-                />
-            </m.div>
+                url={urls.app.pricing}
+                text="Want us to build your MVP?"
+                actionText="Contact us"
+            />
 
-            <TextEffect
-                as="h1"
-                preset="fade-in-blur"
-                speedReveal={h1Transition.speedReveal}
-                speedSegment={h1Transition.speedSegment}
-                delay={h1Transition.delay}
-                className="font-heading text-foreground/70 max-w-3xl text-center text-4xl font-semibold text-balance sm:text-5xl lg:text-6xl"
-            >
-                <span className="text-foreground">Launch</span> your{' '}
-                <span className="text-foreground">MVP</span> in{' '}
-                <span className="text-foreground">days,</span> not months{' '}
-            </TextEffect>
-            <m.p
+            <PageHeading className="text-foreground/70">
+                <TextEffect
+                    as="span"
+                    preset="fade-in-blur"
+                    speedReveal={h1Transition.speedReveal}
+                    speedSegment={h1Transition.speedSegment}
+                    delay={h1Transition.delay}
+                >
+                    <span className="text-foreground">Launch</span> your{' '}
+                    <span className="text-foreground">MVP</span> in{' '}
+                    <span className="text-foreground">days,</span> not
+                    months{' '}
+                </TextEffect>
+            </PageHeading>
+            <PageDescriptionMotion
                 variants={variants}
                 initial="hidden"
                 animate="visible"
                 custom={{ delay: 0.8 }}
-                className="text-muted-foreground max-w-2xl text-center text-balance md:text-lg lg:text-xl"
             >
                 <span className="text-foreground font-bold">Accelerate</span>{' '}
                 your <span className="text-foreground font-bold">MVP</span> with{' '}
@@ -87,8 +87,8 @@ export function Hero() {
                 from <span className="text-foreground font-bold">idea</span> to{' '}
                 <span className="text-foreground font-bold">prototype</span> in{' '}
                 <span className="text-foreground font-bold">days</span>.
-            </m.p>
-            <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            </PageDescriptionMotion>
+            <PageActions>
                 <m.div
                     variants={variants}
                     initial="hidden"
@@ -96,7 +96,7 @@ export function Hero() {
                     custom={{ delay: 1 }}
                 >
                     <Link
-                        href="/#"
+                        href={urls.app.components}
                         className={cn(
                             buttonVariants({
                                 size: 'xl',
@@ -116,7 +116,7 @@ export function Hero() {
                     custom={{ delay: 1.1 }}
                 >
                     <Link
-                        href="/#"
+                        href={urls.app.pricing}
                         className={cn(
                             buttonVariants({
                                 variant: 'secondaryWithOutline',
@@ -128,10 +128,10 @@ export function Hero() {
                         What us to build?
                     </Link>
                 </m.div>
-            </div>
+            </PageActions>
 
             {!isMobile ? <FloatingLogos /> : null}
-        </div>
+        </PageHeader>
     )
 }
 
