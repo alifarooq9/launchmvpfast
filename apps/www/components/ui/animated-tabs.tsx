@@ -6,7 +6,7 @@ import { motion, MotionConfig } from 'motion/react'
 import { cn } from '@/lib/utils'
 
 const transition = {
-    type: 'spring',
+    type: 'spring' as const,
     stiffness: 170,
     damping: 24,
     mass: 1.2,
@@ -98,7 +98,7 @@ const TabsTrigger = forwardRef<
             {isActive && (
                 <motion.div
                     layoutId="active-tab-bg"
-                    className="bg-accent/80 dark:border-input dark:bg-input/30 absolute inset-0 rounded-md border"
+                    className="bg-background dark:border-input dark:bg-input/30 absolute inset-0 rounded-md border"
                 />
             )}
             <TabsPrimitive.Trigger

@@ -23,6 +23,8 @@ export default function MarketingPage() {
                 <Demos />
             </section>
 
+            <Features />
+
             <HeroParticles />
         </div>
     )

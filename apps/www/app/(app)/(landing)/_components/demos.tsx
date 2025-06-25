@@ -94,7 +94,7 @@ export function Demos() {
                     delay: 1.6,
                     duration: 0.8,
                 }}
-                className="bg-foreground/50 pointer-events-none absolute top-14 -z-10 h-64 w-[60%] max-w-6xl rounded-[100%] blur-[170px] select-none"
+                className="pointer-events-none absolute top-14 -z-10 h-64 w-[60%] max-w-6xl rounded-[100%] bg-white/50 blur-[170px] select-none"
             />
         </div>
     )

@@ -14,9 +14,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
-import { DistortedGlass } from '@/components/ui/distorted-glass'
 import { Search } from '@/app/(app)/_components/search'
-import { NumberTicker } from '@/components/ui/number-ticker'
 
 export function SiteHeader() {
     const iconsOnlyNav = navConfig.headerNav.filter(
@@ -28,10 +26,7 @@ export function SiteHeader() {
 
     return (
         <header className="fixed top-0 z-50 flex h-20 w-full items-center justify-center">
-            <div className="bg-background/60 relative mx-auto flex h-14 w-full max-w-6xl items-center justify-between rounded-xl px-4">
-                {/* Background */}
-                <DistortedGlass />
-
+            <div className="bg-background border-border relative mx-auto flex h-14 w-full max-w-6xl items-center justify-between rounded-xl border px-4">
                 {/* Left side */}
                 <div className="flex items-center md:gap-2">
                     {/* Mobile menu trigger */}
@@ -133,7 +128,7 @@ export function SiteHeader() {
                     </div>
 
                     {/* Icons only nav */}
-                    <nav className="flex items-center">
+                    <nav className="flex items-center gap-1">
                         {iconsOnlyNav.map((item) => (
                             <Link
                                 key={item.label}
@@ -164,7 +159,7 @@ export function SiteHeader() {
                             <Button
                                 variant="ghost"
                                 size="icon"
-                                className="cursor-pointer [&_svg:not([class*='size-'])]:size-4.5"
+                                className="ml-1 cursor-pointer [&_svg:not([class*='size-'])]:size-4.5"
                             >
                                 <Sun className="scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
                                 <Moon className="absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
@@ -200,5 +195,5 @@ async function StarCount() {
         }
     }
     const stars = await getGitHubStars()
-    return <NumberTicker value={stars as number} />
+    return <span>{stars}</span>
 }
