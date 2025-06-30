@@ -27,7 +27,7 @@ export default function MarketingPage() {
 
             <Benefits />
 
-            {/* <CallToAction /> */}
+            <CallToAction />
 
             <HeroParticles />
         </div>

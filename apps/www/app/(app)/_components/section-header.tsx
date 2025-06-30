@@ -44,7 +44,7 @@ export function SectionDescription({
     return (
         <p
             className={cn(
-                'text-muted-foreground max-w-xl text-center text-balance md:text-lg',
+                'text-muted-foreground max-w-xl text-center font-medium text-balance md:text-lg',
                 className
             )}
             {...props}
