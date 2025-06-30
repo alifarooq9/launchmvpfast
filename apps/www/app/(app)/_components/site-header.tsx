@@ -25,8 +25,8 @@ export function SiteHeader() {
     )
 
     return (
-        <header className="fixed top-0 z-50 flex h-20 w-full items-center justify-center">
-            <div className="bg-background border-border relative mx-auto flex h-14 w-full max-w-6xl items-center justify-between rounded-xl border px-4">
+        <header className="bg-background fixed top-0 z-50 flex h-14 w-full items-center justify-center">
+            <div className="relative mx-auto flex h-full w-full max-w-6xl items-center justify-between px-4">
                 {/* Left side */}
                 <div className="flex items-center md:gap-2">
                     {/* Mobile menu trigger */}
@@ -195,5 +195,9 @@ async function StarCount() {
         }
     }
     const stars = await getGitHubStars()
-    return <span>{stars}</span>
+    return (
+        <span className="text-muted-foreground text-sm font-medium">
+            {stars}
+        </span>
+    )
 }

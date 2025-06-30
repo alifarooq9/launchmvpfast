@@ -41,22 +41,24 @@ const variants = {
 }
 
 const PageDescriptionMotion = m.create(PageDescription)
-const AnnouncementMotion = m.create(Announcement)
 
 export function Hero() {
     const isMobile = useIsMobile()
 
     return (
         <PageHeader className="relative container flex flex-col items-center gap-6">
-            <AnnouncementMotion
+            <m.div
                 variants={variants}
                 initial="hidden"
                 animate="visible"
                 custom={{ delay: 0.5 }}
-                url={urls.app.pricing}
-                text="Want us to build your MVP?"
-                actionText="Contact us"
-            />
+            >
+                <Announcement
+                    url={urls.app.pricing}
+                    text="Want us to build your MVP?"
+                    actionText="Contact us"
+                />
+            </m.div>
 
             <PageHeading className="text-foreground/70">
                 <TextEffect

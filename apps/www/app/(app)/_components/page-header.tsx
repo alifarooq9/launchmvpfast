@@ -75,7 +75,7 @@ export const PageDescription = forwardRef<
         <p
             ref={ref}
             className={cn(
-                'text-muted-foreground max-w-2xl text-center text-balance md:text-lg lg:text-xl',
+                'text-muted-foreground max-w-2xl text-center font-medium text-balance md:text-lg lg:text-xl',
                 className
             )}
             {...props}

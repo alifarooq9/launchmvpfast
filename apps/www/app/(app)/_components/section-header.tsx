@@ -8,7 +8,7 @@ export function SectionHeader({
     return (
         <section
             className={cn(
-                'container flex flex-col items-center justify-center py-4',
+                'container flex flex-col items-center justify-center gap-2 py-4',
                 className
             )}
             {...props}
@@ -44,12 +44,30 @@ export function SectionDescription({
     return (
         <p
             className={cn(
-                'text-muted-foreground max-w-2xl text-center text-balance md:text-lg',
+                'text-muted-foreground max-w-xl text-center text-balance md:text-lg',
                 className
             )}
             {...props}
         >
             {children}
         </p>
+    )
+}
+
+export function SectionContent({
+    className,
+    children,
+    ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
+    return (
+        <div
+            className={cn(
+                'mt-14 flex w-full flex-col items-center gap-4',
+                className
+            )}
+            {...props}
+        >
+            {children}
+        </div>
     )
 }

@@ -15,7 +15,7 @@ export const HeroParticles = memo(function HeroParticles() {
     return (
         <Particles
             className="absolute inset-0 -z-10"
-            quantity={150}
+            quantity={400}
             ease={80}
             color={color}
             refresh

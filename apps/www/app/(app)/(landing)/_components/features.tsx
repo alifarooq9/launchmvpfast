@@ -1,6 +1,7 @@
 'use client'
 
 import {
+    SectionContent,
     SectionDescription,
     SectionHeader,
     SectionHeading,
@@ -47,11 +48,11 @@ function FeatureCard({
                 y: 0,
             }}
             initial={{ opacity: 0, y: 20 }}
-            viewport={{ once: true, amount: 0.5 }}
-            custom={{ duration: 1 }}
-            className="mt-10 grid w-full grid-cols-3 overflow-hidden py-0"
+            viewport={{ once: true, amount: 0.8 }}
+            transition={{ duration: 0.8, ease: 'easeInOut' }}
+            className="grid w-full grid-cols-1 overflow-hidden py-0 md:grid-cols-2 lg:grid-cols-3"
         >
-            <div className="relative flex h-full w-full items-center justify-center p-4">
+            <div className="relative flex h-full min-h-36 w-full items-center justify-center p-4">
                 <div className="absolute inset-0 z-0">
                     <div className="relative h-full w-full">
                         <Image
@@ -62,11 +63,11 @@ function FeatureCard({
                         />
                     </div>
                 </div>
-                <div className="z-20 text-center text-4xl leading-snug font-bold text-balance text-white">
+                <div className="z-20 text-center text-2xl leading-snug font-bold text-balance text-white md:text-4xl">
                     {heroText}
                 </div>
             </div>
-            <div className="col-span-2 py-6">
+            <div className="py-6 lg:col-span-2">
                 <CardHeader>
                     <CardTitle as="h3">{title}</CardTitle>
                     <CardDescription>{description}</CardDescription>
@@ -155,9 +156,11 @@ export function Features() {
                 What we offer in our open-source library.
             </SectionDescription>
 
-            {featureCards.map((card, index) => (
-                <FeatureCard key={index} {...card} />
-            ))}
+            <SectionContent className="gap-14">
+                {featureCards.map((card, index) => (
+                    <FeatureCard key={index} {...card} />
+                ))}
+            </SectionContent>
         </SectionHeader>
     )
 }
