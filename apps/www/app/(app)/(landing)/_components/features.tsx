@@ -46,8 +46,9 @@ function FeatureCard({
             whileInView={{
                 opacity: 1,
                 y: 0,
+                filter: 'blur(0px)',
             }}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.8, ease: 'easeInOut' }}
             className="grid w-full grid-cols-1 overflow-hidden py-0 md:grid-cols-2 lg:grid-cols-3"

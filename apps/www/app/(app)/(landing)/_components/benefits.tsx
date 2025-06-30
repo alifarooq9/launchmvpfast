@@ -24,9 +24,11 @@ import { Icons } from '@/components/icons'
 const variants: Variants = {
     hidden: {
         opacity: 0,
+        filter: 'blur(10px)',
     },
     visible: (delay?: number) => ({
         opacity: 1,
+        filter: 'blur(0px)',
         transition: {
             duration: 0.8,
             ease: 'easeInOut',
