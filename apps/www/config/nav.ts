@@ -1,4 +1,6 @@
 import { IconProps, Icons } from '@/components/icons'
+import { blocks } from '@/config/registry/blocks'
+import { components, getComponentCategory } from '@/config/registry/components'
 import { urls } from '@/config/urls'
 
 type NavItem = {
@@ -27,8 +29,10 @@ type SocialItem = {
 type NavConfig = {
     headerNav: NavItem[]
     footerNav: {
-        main: NavItem[]
-        socials: SocialItem[]
+        everythingByUs: NavItem[]
+        pro: NavItem[]
+        socials: NavItem[]
+        docs: NavItem[]
     }
 }
 
@@ -78,38 +82,56 @@ export const navConfig: NavConfig = {
         },
     ],
     footerNav: {
-        main: [
-            {
-                label: 'Starter kits',
-                href: urls.app.starterkits.base,
-            },
+        everythingByUs: [
             {
                 label: 'Components',
                 href: urls.app.components,
             },
             {
+                label: 'Starter Kits',
+                href: urls.app.starterkits.base,
+            },
+            {
                 label: 'Blocks',
                 href: urls.app.blocks,
             },
+        ],
+        pro: [
             {
                 label: 'Pricing',
                 href: urls.app.pricing,
             },
-            {
-                label: 'Docs',
-                href: urls.docs.base,
-            },
         ],
         socials: [
             {
-                name: 'Github',
+                label: 'GitHub',
                 href: urls.socials.gh,
-                icon: Icons.gitHub,
             },
             {
-                name: 'X',
+                label: '𝕏 (formerly Twitter)',
                 href: urls.socials.x,
-                icon: Icons.x,
+            },
+        ],
+        docs: [
+            {
+                label: 'Documentation',
+                href: urls.docs.base,
+            },
+            {
+                label: 'Installation',
+                href: urls.docs.base,
+            },
+            {
+                label: 'Roadmap',
+                href: urls.docs.base,
+            },
+            {
+                label: 'Contributing',
+                href: urls.docs.base,
+            },
+            {
+                label: 'Changelog',
+                href: urls.docs.base,
             },
         ],
     },

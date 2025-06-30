@@ -20,10 +20,7 @@ export const metadata: Metadata = {
 export default function EarlyAccess() {
     return (
         <>
-            <PageHeaderWrapper
-                className="from-foreground/10 to-background relative h-full bg-gradient-to-b py-20"
-                fullHeight
-            >
+            <PageHeaderWrapper className="from-foreground/10 to-background relative h-full bg-gradient-to-b py-20">
                 <PageHeader className="flex flex-col items-center justify-center overflow-hidden pt-0 pb-28">
                     <Icons.logo className="mb-8 size-14" />
                     <PageHeading className="text-center">

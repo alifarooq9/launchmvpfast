@@ -26,7 +26,7 @@ export function SectionHeading({
     return (
         <h2
             className={cn(
-                'text-foreground max-w-3xl text-center text-2xl font-semibold text-balance sm:text-3xl',
+                'text-foreground max-w-3xl text-center text-2xl font-semibold tracking-tight text-balance sm:text-3xl',
                 className
             )}
             {...props}

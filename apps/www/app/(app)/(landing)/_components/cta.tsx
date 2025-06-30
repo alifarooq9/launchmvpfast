@@ -44,10 +44,11 @@ export function CallToAction() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.8 }}
+                    className="max-w-2xl"
                 >
                     Have an Idea?{' '}
                     <span className="text-foreground/70">
-                        tell us we can create your
+                        tell us we can build your
                     </span>{' '}
                     MVP 10x Faster.
                 </MotionSectionHeading>
