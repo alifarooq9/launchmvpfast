@@ -48,4 +48,20 @@ export const techStackIcons: TechStackIconType = {
         name: 'FumaDocs',
         icon: <Icons.fumadocs />,
     },
+    discord: {
+        name: 'Discord',
+        icon: <Icons.discord />,
+    },
+    telegram: {
+        name: 'Telegram',
+        icon: <Icons.telegram />,
+    },
+    reddit: {
+        name: 'Reddit',
+        icon: <Icons.reddit />,
+    },
+    whatsapp: {
+        name: 'WhatsApp',
+        icon: <Icons.whatsapp />,
+    },
 }

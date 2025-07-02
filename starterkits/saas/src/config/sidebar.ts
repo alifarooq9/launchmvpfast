@@ -184,6 +184,53 @@ const navigation: SidebarNavItems[] = [
             },
         ],
     },
+    {
+        id: navIds.drone,
+        label: "Drone Operations",
+        showLabel: true,
+        items: [
+            {
+                label: "Fleet Dashboard",
+                icon: LayoutDashboardIcon,
+                href: siteUrls.drone.dashboard,
+            },
+            {
+                label: "Flight Management",
+                icon: PlaneIcon,
+                href: siteUrls.drone.flights,
+            },
+            {
+                label: "Mission Control",
+                icon: RadioIcon,
+                href: siteUrls.drone.missions,
+            },
+            {
+                label: "Locations",
+                icon: MapPinIcon,
+                href: siteUrls.drone.locations,
+            },
+            {
+                label: "Investments",
+                icon: WalletIcon,
+                href: siteUrls.drone.investments,
+            },
+            {
+                label: "Analytics",
+                icon: TrendingUpIcon,
+                href: siteUrls.drone.analytics,
+            },
+            {
+                label: "Reports",
+                icon: ClipboardListIcon,
+                href: siteUrls.drone.reports,
+            },
+            {
+                label: "Settings",
+                icon: Settings2Icon,
+                href: siteUrls.drone.settings,
+            },
+        ],
+    },
 ];
 
 type FilterNavItemsProps = {

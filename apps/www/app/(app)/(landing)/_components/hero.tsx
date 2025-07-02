@@ -23,41 +23,41 @@ export function Hero() {
             <PageHeader className="grid grid-cols-1 gap-4 lg:min-h-[30rem] lg:grid-cols-2 lg:py-0">
                 <div className="flex h-full flex-col justify-center gap-3">
                     <Announcement
-                        actionText="Contact Us"
-                        url={urls.app.pricing}
-                        text="Want us to build your MVP for you?"
+                        actionText="Learn More"
+                        url={urls.app.about}
+                        text="Join the drone cooperative revolution"
                     />
 
                     <PageHeading>
-                        Launch Your <span>MVP Fast</span> with{' '}
+                        Democratizing <span>Drone Technology</span> through{' '}
                         <span className="bg-foreground text-primary-foreground px-2 whitespace-nowrap">
-                            Open Source
+                            Cooperative
                         </span>{' '}
-                        Starterkits & More
+                        Investment & Ownership
                     </PageHeading>
                     <PageDescription>
-                        Launch your MVP faster with Open Source Starterkits,
-                        Re-usable components, and more. Build your next MVP in
-                        days.
+                        Join Drone Zoe cooperative to invest in cutting-edge drone 
+                        technology and share in the returns. Access professional 
+                        drone services at cooperative rates.
                     </PageDescription>
 
                     <PageActions>
                         <Link
-                            href={urls.app.starterkits.base}
+                            href={urls.app.invest}
                             className={buttonVariants({
                                 variant: 'secondary',
                                 size: 'lg',
                             })}
                         >
-                            Explore Starterkits <ArrowRightIcon />
+                            Explore Investments <ArrowRightIcon />
                         </Link>
                         <Link
-                            href={urls.app.pricing}
+                            href={urls.app.services}
                             className={buttonVariants({
                                 size: 'lg',
                             })}
                         >
-                            Want Us To Build?
+                            View Services
                         </Link>
                     </PageActions>
                 </div>
@@ -71,28 +71,28 @@ export function Hero() {
 }
 
 const savedCommands = [
-    'Next.js ready. [Saved: 1m]',
-    'Auth flows ready. [Saved: 4h]',
-    'Organizations set. [Saved: 5h]',
-    'Landing pages built. [Saved: 8h]',
-    'Stripe integrated. [Saved: 3h]',
-    'Drizzle DB configured. [Saved: 2.5h]',
-    'Uploadthing active. [Saved: 2h]',
-    'shadcn UI installed. [Saved: 1m]',
-    'Dashboard ready. [Saved: 10h]',
-    'Waitlist enabled. [Saved: 3h]',
-    'Email templates ready. [Saved: 3h]',
+    'Project planning phase completed. [Progress: 25%]',
+    'Community outreach initiated. [Partners: Connecting]',
+    'Technology research underway. [Vendors: Evaluating]',
+    'Cooperative structure designed. [Legal: In Progress]',
+    'Funding strategy developed. [Target: Phase 1]',
+    'Training programs outlined. [Curriculum: Drafting]',
+    'Service areas identified. [Regions: Mapping]',
+    'Partnership network building. [NGOs: Engaging]',
+    'Regulatory framework research. [FAA: Consulting]',
+    'Platform development started. [MVP: Building]',
+    'Local hiring plan created. [Jobs: Planning]',
 ]
 
 export function TerminalHero() {
     return (
-        <Terminal copyText={`pnpx ${cloneCmd.starterkits.saasNextjs.base}`}>
+        <Terminal copyText="Join Drone Zoe Development">
             <TypingAnimation duration={30}>
-                &gt; Clone Launch MVP Fast SaaS Starterkit
+                &gt; Initialize Drone Zoe Project Development
             </TypingAnimation>
 
             <AnimatedSpan delay={1500} className="text-green-500">
-                <span>Cloning repo...</span>
+                <span>Loading development progress...</span>
             </AnimatedSpan>
             {savedCommands.map((command, index) => (
                 <AnimatedSpan
@@ -109,7 +109,7 @@ export function TerminalHero() {
                 duration={40}
                 className="text-green-500"
             >
-                Success! Starterkit is live.
+                Development phase active!
             </TypingAnimation>
 
             <TypingAnimation
@@ -117,7 +117,7 @@ export function TerminalHero() {
                 duration={40}
                 className="text-green-500"
             >
-                Time saved: Days to minutes!
+                Join us in building the future!
             </TypingAnimation>
         </Terminal>
     )

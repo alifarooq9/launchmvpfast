@@ -26,24 +26,28 @@ type NavConfig = {
 export const navConfig: NavConfig = {
     headerNav: [
         {
-            label: 'Starterkits',
-            href: urls.app.starterkits.base,
+            label: 'About',
+            href: urls.app.about,
         },
         {
-            label: 'Components',
-            href: urls.app.components,
+            label: 'Services',
+            href: urls.app.services,
         },
         {
-            label: 'Blocks',
-            href: urls.app.blocks,
+            label: 'Invest',
+            href: urls.app.invest,
         },
         {
-            label: 'Pricing',
-            href: urls.app.pricing,
+            label: 'Impact',
+            href: urls.app.impact,
         },
         {
-            label: 'Docs',
-            href: urls.docs.base,
+            label: 'Blog',
+            href: urls.app.blog,
+        },
+        {
+            label: 'Contact',
+            href: urls.app.contact,
         },
         {
             label: 'GitHub',
@@ -61,24 +65,32 @@ export const navConfig: NavConfig = {
     footerNav: {
         main: [
             {
-                label: 'Starter kits',
-                href: urls.app.starterkits.base,
+                label: 'About',
+                href: urls.app.about,
             },
             {
-                label: 'Components',
-                href: urls.app.components,
+                label: 'Services',
+                href: urls.app.services,
             },
             {
-                label: 'Blocks',
-                href: urls.app.blocks,
+                label: 'Invest',
+                href: urls.app.invest,
             },
             {
-                label: 'Pricing',
-                href: urls.app.pricing,
+                label: 'Impact',
+                href: urls.app.impact,
             },
             {
-                label: 'Docs',
-                href: urls.docs.base,
+                label: 'Partners',
+                href: urls.app.partners,
+            },
+            {
+                label: 'Legal',
+                href: urls.app.legal,
+            },
+            {
+                label: 'Contact',
+                href: urls.app.contact,
             },
         ],
         socials: [

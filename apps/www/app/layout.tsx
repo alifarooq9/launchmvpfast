@@ -6,23 +6,24 @@ import { siteConfig } from '@/config/site'
 import { Toaster } from '@/components/ui/sonner'
 import { urls } from '@/config/urls'
 import { Analytics } from '@vercel/analytics/next'
+import { PerformanceMonitor } from '@/components/performance-monitor'
 
 export const metadata: Metadata = {
-    title: `${siteConfig.noSpacesName}: Open Source Starter Kits & UI Components`,
+    title: `${siteConfig.noSpacesName}: Drone Cooperative Investment Platform`,
     description:
-        'Build faster with free, open-source starter kits, UI components & blocks from LaunchMVPFast. Accelerate your MVP launch today.',
+        'Join our drone cooperative for shared investment opportunities in cutting-edge aerial technology. Democratizing access to drone services and equipment.',
     metadataBase: new URL(urls.public),
     keywords: [
-        'Launch MVP Fast', // Brand
-        'Next.js Starter Kit', // Primary Offering & Tech
-        'Open Source Starter Kit', // Key USP & Offering Type
-        'SaaS MVP', // Target Use Case
-        'Reusable UI Components', // Secondary Offering
-        'Tailwind CSS Components', // Specific Tech for UI
-        'Next.js', // Core Technology
-        'React', // Underlying Technology
-        'Tailwind CSS', // Core Styling Technology
-        'Drizzle ORM', // Key Backend Technology
+        'Drone Zoe', // Brand
+        'Drone Cooperative', // Primary Offering
+        'Drone Investment', // Key USP & Offering Type
+        'Aerial Services', // Target Use Case
+        'Cooperative Ownership', // Secondary Offering
+        'Precision Agriculture', // Specific Service
+        'Drone Technology', // Core Technology
+        'Agricultural Drones', // Specific Technology
+        'Survey Drones', // Service Technology
+        'Drone Services', // Key Service Technology
         'NextAuth.js', // Key Authentication Technology
         'MVP Development', // Core Service/Benefit
         'Open Source', // Key Value Proposition
@@ -82,8 +83,8 @@ export default function RootLayout({
                 </div>
 
                 <Toaster />
-
                 <Analytics />
+                <PerformanceMonitor />
             </body>
         </html>
     )

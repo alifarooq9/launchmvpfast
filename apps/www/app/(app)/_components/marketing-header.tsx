@@ -1,3 +1,5 @@
+'use client'
+
 import { ThemeSwitcher } from '@/components/theme-switcher'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { navConfig } from '@/config/nav'
@@ -7,8 +9,21 @@ import Link from 'next/link'
 import { Moon, Sun } from 'lucide-react'
 import { Icons } from '@/components/icons'
 import { MobileNav } from '@/app/(app)/_components/mobile-nav'
+import { usePathname } from 'next/navigation'
 
 export function MarketingHeader() {
+    const pathname = usePathname()
+    
+    const isActive = (href: string) => {
+        // Handle exact matches first
+        if (href === '/' && pathname === '/') return true
+        if (href !== '/' && pathname === href) return true
+        
+        // Handle sub-routes - if we're on a sub-route of the nav item
+        if (href !== '/' && pathname.startsWith(href + '/')) return true
+        
+        return false
+    }
     return (
         <header className="border-grid bg-background m sticky top-0 z-50 w-full border-b">
             <div className="container-wrapper border-grid uppercase">
@@ -63,13 +78,17 @@ export function MarketingHeader() {
                                             }
                                             className={cn(
                                                 buttonVariants({
-                                                    variant: 'ghost',
+                                                    variant: isActive(navItem.href) ? 'default' : 'ghost',
                                                 }),
-                                                'h-full rounded-none',
+                                                'h-full rounded-none transition-all duration-200',
                                                 navItem.iconOnly &&
                                                     'aspect-square',
                                                 navItem.disabled &&
-                                                    'pointer-events-none cursor-default opacity-60'
+                                                    'pointer-events-none cursor-default opacity-60',
+                                                isActive(navItem.href) &&
+                                                    'bg-primary text-primary-foreground shadow-sm border-primary/20',
+                                                !isActive(navItem.href) &&
+                                                    'hover:bg-accent hover:text-accent-foreground'
                                             )}
                                         >
                                             {navItem.icon && <navItem.icon />}

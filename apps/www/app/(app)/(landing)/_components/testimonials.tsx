@@ -1,7 +1,3 @@
-import { IconProps, Icons } from '@/components/icons'
-import { JSX } from 'react'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import Link from 'next/link'
 import { siteConfig } from '@/config/site'
 import {
     SectionDescription,
@@ -11,24 +7,35 @@ import {
 
 type Testimonial = {
     name: string
-    username: string
-    avatar: string
-    socialLink: string
+    title: string
+    organization: string
     text: string
-    Social: (props: IconProps) => JSX.Element
-    postLink: string
 }
 
 const testimonials: Testimonial[] = [
     {
-        name: 'Mohamed Shegow',
-        username: '@MoeShegow',
-        avatar: '/people-say/mohamed.jpg',
-        socialLink: 'https://x.com/MoeShegow',
-        text: "S/o to @AliFarooqDev! We were able to plan, build & launch our new product - sintahr.com in < 4 weeks. Thx mostly to using nextJS starter kit. Heavily recommend if you're building an MVP",
-        Social: Icons.x,
-        postLink:
-            'https://x.com/MoeShegow/status/1861172660635414785?t=hIUXOvcUEqvmpx0tqILJKg&s=08',
+        name: 'Volker Türk',
+        title: 'UN High Commissioner for Human Rights',
+        organization: 'United Nations',
+        text: "Haiti faces a human rights crisis of staggering proportions. The humanitarian situation is catastrophic, with millions in need of assistance. Innovative solutions for aid delivery are desperately needed.",
+    },
+    {
+        name: 'Grégoire Goodstein',
+        title: 'Representative in Haiti',
+        organization: 'UN World Food Programme',
+        text: "Access to affected populations remains our biggest challenge. Traditional logistics are severely hampered by security concerns and infrastructure damage. New technologies could revolutionize how we reach those in need.",
+    },
+    {
+        name: 'Amy Pope',
+        title: 'Director General',
+        organization: 'International Organization for Migration',
+        text: "Over 700,000 people are internally displaced in Haiti. Delivering aid safely and efficiently to scattered populations requires innovative approaches that can overcome security and logistical barriers.",
+    },
+    {
+        name: 'William O\'Neill',
+        title: 'Independent Expert on Human Rights in Haiti',
+        organization: 'UN Human Rights Council',
+        text: "The deteriorating security situation has made traditional aid delivery extremely dangerous. We need creative solutions that can bypass these challenges while ensuring aid reaches the most vulnerable populations.",
     },
 ]
 
@@ -37,27 +44,26 @@ export function Testimonials() {
         <section>
             <SectionHeader>
                 <SectionHeading>
-                    Testimonials:{' '}
+                    The Challenge:{' '}
                     <span className="hidden sm:block">
-                        Hear from Our Community
+                        Voices from the Field
                     </span>
                 </SectionHeading>
                 <SectionDescription>
-                    This is what our users say about us
+                    International leaders highlight the urgent need for innovative humanitarian aid delivery
                 </SectionDescription>
             </SectionHeader>
             <div className="container-wrapper">
-                <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-6">
                     {testimonials.map((testimonial, idx) => (
                         <TestimonialCard key={idx} {...testimonial} />
                     ))}
-
-                    <div className="col-span-2 flex flex-col items-center justify-center p-4">
-                        <p className="text-muted-foreground text-base font-light">
-                            Tell us about your experience with {siteConfig.name}
-                            . We&apos;d love to hear from you! 🙌
-                        </p>
-                    </div>
+                </div>
+                <div className="mt-8 text-center">
+                    <p className="text-muted-foreground text-base font-light max-w-2xl mx-auto">
+                        These challenges highlight why we need innovative, cooperative solutions 
+                        like {siteConfig.name} to revolutionize humanitarian aid delivery �
+                    </p>
                 </div>
             </div>
         </section>
@@ -66,43 +72,20 @@ export function Testimonials() {
 
 function TestimonialCard({
     name,
-    username,
-    avatar,
+    title,
+    organization,
     text,
-    Social,
-    postLink,
-    socialLink,
 }: Testimonial) {
     return (
-        <div className="flex flex-col items-center gap-2 border-b md:border-r md:border-b-0 md:last:border-r-0">
-            <p className="p-4 text-lg font-extralight">{text}</p>
-
-            <div className="flex w-full items-center justify-between divide-x border-t">
-                <div className="flex flex-1 gap-2 px-4 py-2">
-                    <Avatar className="h-10 w-10">
-                        <AvatarImage src={avatar} />
-                        <AvatarFallback>{name[0]}</AvatarFallback>
-                    </Avatar>
-
-                    <div className="flex flex-1 flex-col items-start justify-start gap-0">
-                        <h5 className="text-base font-medium">{name}</h5>
-                        <Link
-                            target="_blank"
-                            href={socialLink}
-                            className="text-muted-foreground text-light focus-ring text-sm"
-                        >
-                            {username}
-                        </Link>
-                    </div>
-                </div>
-
-                <Link
-                    href={postLink}
-                    target="_blank"
-                    className="hover:bg-accent/30 focus-ring flex aspect-square h-full items-center justify-center transition-colors"
-                >
-                    <Social className="size-6" />
-                </Link>
+        <div className="flex flex-col gap-4 p-6 border rounded-lg bg-card">
+            <blockquote className="text-lg font-light italic leading-relaxed">
+                &ldquo;{text}&rdquo;
+            </blockquote>
+            
+            <div className="flex flex-col gap-1 mt-auto">
+                <h5 className="text-base font-semibold">{name}</h5>
+                <p className="text-sm text-muted-foreground">{title}</p>
+                <p className="text-sm text-muted-foreground font-medium">{organization}</p>
             </div>
         </div>
     )

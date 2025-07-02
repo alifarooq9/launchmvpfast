@@ -10,21 +10,29 @@ import {
 const fontInter = Inter({
     variable: '--font-inter',
     subsets: ['latin'],
+    display: 'swap',
+    preload: true,
 })
 
 const fontSans = Geist({
     variable: '--font-geist-sans',
     subsets: ['latin'],
+    display: 'swap',
+    preload: true,
 })
 
 const fontMono = Geist_Mono({
     variable: '--font-geist-mono',
     subsets: ['latin'],
+    display: 'swap',
+    preload: false, // Less critical font
 })
 
 const fontHeading = Bricolage_Grotesque({
     variable: '--font-heading',
     subsets: ['latin'],
+    display: 'swap',
+    preload: true,
 })
 
 const fontSerif = Instrument_Serif({
@@ -32,6 +40,8 @@ const fontSerif = Instrument_Serif({
     subsets: ['latin'],
     weight: '400',
     style: 'italic',
+    display: 'swap',
+    preload: false, // Less critical font
 })
 
 export const fontsVariables = cn(

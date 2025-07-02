@@ -20,42 +20,20 @@ export function MarketingFooter() {
                         </Link>
                     ))}
                 </nav>
-                <div className="mt-16 flex gap-x-8 md:justify-center">
-                    {navConfig.footerNav.socials.map((item) => (
-                        <Link
-                            target="_blank"
-                            key={item.name}
-                            href={item.href}
-                            className="text-muted-foreground focus-ring p-1"
-                        >
-                            <span className="sr-only">{item.name}</span>
-                            <item.icon aria-hidden="true" className="size-6" />
-                        </Link>
-                    ))}
-                </div>
                 <div className="mt-10 flex items-center justify-center">
                     <p className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-                        Built by developers for developers.
+                        By Haitians, for Haiti—One Drone at a Time
                     </p>
                 </div>
                 <p className="text-muted-foreground mt-10 text-left text-sm/6 md:text-center">
-                    Built by{' '}
+                    Have questions or want to get involved?{' '}
                     <Link
-                        href={urls.socials.ali}
-                        target="_blank"
+                        href="/contact"
                         className="focus-ring underline underline-offset-2"
                     >
-                        Ali Farooq
+                        Contact us
                     </Link>
-                    . The source code is available on{' '}
-                    <Link
-                        href={urls.socials.gh}
-                        target="_blank"
-                        className="focus-ring underline underline-offset-2"
-                    >
-                        Github
-                    </Link>
-                    .
+                    {' '}to learn more about joining the cooperative.
                 </p>
             </div>
         </footer>

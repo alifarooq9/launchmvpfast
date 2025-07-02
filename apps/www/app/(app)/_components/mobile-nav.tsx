@@ -16,9 +16,23 @@ import { siteConfig } from '@/config/site'
 import React from 'react'
 import { urls } from '@/config/urls'
 import { Icons } from '@/components/icons'
+import { usePathname } from 'next/navigation'
+import { cn } from '@/lib/utils'
 
 export function MobileNav() {
     const [open, setOpen] = React.useState(false)
+    const pathname = usePathname()
+    
+    const isActive = (href: string) => {
+        // Handle exact matches first
+        if (href === '/' && pathname === '/') return true
+        if (href !== '/' && pathname === href) return true
+        
+        // Handle sub-routes - if we're on a sub-route of the nav item
+        if (href !== '/' && pathname.startsWith(href + '/')) return true
+        
+        return false
+    }
 
     return (
         <nav className="flex h-full items-center md:hidden">
@@ -77,7 +91,12 @@ export function MobileNav() {
                                 <Link
                                     key={navItem.label}
                                     href={navItem.href}
-                                    className="border-grid flex h-full items-center gap-2 border-b p-4 first:border-t"
+                                    className={cn(
+                                        "border-grid flex h-full items-center gap-2 border-b p-4 first:border-t transition-all duration-200",
+                                        isActive(navItem.href)
+                                            ? "bg-primary text-primary-foreground font-semibold"
+                                            : "hover:bg-accent hover:text-accent-foreground"
+                                    )}
                                     onClick={() => setOpen(false)}
                                 >
                                     <span>{navItem.label}</span>

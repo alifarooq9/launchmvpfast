@@ -41,23 +41,18 @@ export async function Features() {
     return (
         <section className="container-wrapper from-foreground/5 to-background/15 relative h-full bg-gradient-to-b p-4 py-20 md:px-6">
             <div className="flex h-full w-full flex-col items-center justify-center gap-3">
-                <p className="text-muted-foreground">Launch in days with</p>
+                <p className="text-muted-foreground">Join our community on</p>
                 <p className="font-heading mx-auto mt-4 max-w-md text-center text-4xl tracking-tighter text-balance">
                     <strong className="font-medium">
-                        Starter kits, Reusable Components, and Modular Blocks
+                        Discord, Telegram, Reddit, and WhatsApp
                     </strong>
                 </p>
                 <TechStackDisplay
                     skills={[
-                        'nextJs',
-                        'shadcnui',
-                        'uploadthing',
-                        'nextauth',
-                        'stripe',
-                        'tailwindcss',
-                        'typescript',
-                        'drizzle',
-                        'lemon',
+                        'discord',
+                        'telegram',
+                        'reddit',
+                        'whatsapp',
                     ]}
                 />
 
@@ -70,18 +65,10 @@ export async function Features() {
                             }),
                             'group'
                         )}
-                        target="_blank"
-                        href={urls.socials.gh}
+                        href="/invest"
                     >
-                        <Icons.gitHub className="size-4" />
-                        <span>Star on GitHub</span>{' '}
-                        <div className="ml-2 flex items-center gap-1 text-sm md:flex">
-                            <StarIcon className="text-muted-foreground fill-muted-foreground size-4 transition-all duration-300 group-hover:fill-yellow-300 group-hover:text-yellow-300" />
-                            <NumberTicker
-                                value={stars as number}
-                                className="font-medium"
-                            />
-                        </div>
+                        <Icons.logo className="size-4" />
+                        <span>Join the Cooperative</span>
                     </Link>
                 </div>
 

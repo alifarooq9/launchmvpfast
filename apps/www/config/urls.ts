@@ -2,6 +2,18 @@ export const urls = {
     base: '/',
     public: 'https://launchmvpfast.com',
     app: {
+        // Main public site pages
+        home: '/',
+        about: '/about',
+        services: '/services',
+        invest: '/invest',
+        impact: '/impact',
+        blog: '/blog',
+        partners: '/partners',
+        contact: '/contact',
+        legal: '/legal',
+        
+        // Legacy pages (keeping for backward compatibility)
         components: '/components',
         starterkits: {
             base: '/open-source-starterkits',
@@ -17,6 +29,12 @@ export const urls = {
     },
     docs: {
         base: '/docs',
+    },
+    api: {
+        publicStats: '/api/public-stats',
+        equipmentStatus: '/api/equipment-status',
+        marketData: '/api/market-data',
+        newsFeed: '/api/news-feed',
     },
     socials: {
         gh: 'https://github.com/alifarooq9/launchmvpfast',

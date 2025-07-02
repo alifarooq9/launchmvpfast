@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node:*)",
+      "Bash(nvm current)",
+      "Bash(source ~/.bashrc)",
+      "Bash(nvm use:*)",
+      "Bash(export:*)",
+      "Bash(npm run dev:*)",
+      "Bash(corepack enable)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm run:*)"
+    ],
+    "deny": []
+  }
+}
