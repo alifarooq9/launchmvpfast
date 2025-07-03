@@ -27,6 +27,22 @@ export function PageHeaderWrapper({
     )
 }
 
+export function PageContainer({
+    className,
+    children,
+    as: Component = 'div',
+    ...props
+}: PageHeaderWrapperProps) {
+    return (
+        <Component
+            className={cn('relative flex flex-1 flex-col gap-16', className)}
+            {...props}
+        >
+            {children}
+        </Component>
+    )
+}
+
 type PageHeaderProps = {
     as?: React.ElementType
 } & React.HTMLAttributes<HTMLDivElement>
@@ -34,7 +50,7 @@ type PageHeaderProps = {
 export function PageHeader({
     className,
     children,
-    as: Component = 'div',
+    as: Component = 'section',
     ...props
 }: PageHeaderProps) {
     return (

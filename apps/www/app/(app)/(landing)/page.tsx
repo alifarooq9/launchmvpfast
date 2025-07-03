@@ -1,12 +1,11 @@
 import { Features } from '@/app/(app)/(landing)/_components/features'
 import { Hero } from '@/app/(app)/(landing)/_components/hero'
 import { Demos } from '@/app/(app)/(landing)/_components/demos'
-import { GridGap } from '@/app/(app)/_components/grid-gap'
 import { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
-import { HeroParticles } from '@/app/(app)/(landing)/_components/hero-particles'
 import { CallToAction } from '@/app/(app)/(landing)/_components/cta'
 import { Benefits } from '@/app/(app)/(landing)/_components/benefits'
+import { PageContainer } from '@/app/(app)/_components/page-header'
 
 export const metadata: Metadata = {
     title: `${siteConfig.name} | Open Source Starter Kits & UI Components`,
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function MarketingPage() {
     return (
-        <div className="relative flex flex-1 flex-col gap-16">
+        <PageContainer>
             <section className="flex w-full flex-col gap-16">
                 <Hero />
 
@@ -28,8 +27,6 @@ export default function MarketingPage() {
             <Benefits />
 
             <CallToAction />
-
-            <HeroParticles />
-        </div>
+        </PageContainer>
     )
 }

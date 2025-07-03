@@ -114,7 +114,7 @@ export function SiteFooter() {
                 </nav>
             </div>
 
-            <div className="font-heading text-foreground/30 pointer-events-none relative hidden w-full overflow-hidden text-center text-[6vw] font-bold whitespace-nowrap select-none md:block">
+            <div className="font-heading text-foreground/10 pointer-events-none relative hidden w-full overflow-hidden text-center text-[6vw] font-bold whitespace-nowrap select-none md:block">
                 <div className="from-background pointer-events-none absolute inset-0 z-10 bg-gradient-to-b via-transparent to-transparent"></div>
                 Built by Developers for Developers
             </div>

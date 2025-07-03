@@ -46,7 +46,7 @@ export function Hero() {
     const isMobile = useIsMobile()
 
     return (
-        <PageHeader className="relative container flex flex-col items-center gap-6">
+        <PageHeader as="div">
             <m.div
                 variants={variants}
                 initial="hidden"

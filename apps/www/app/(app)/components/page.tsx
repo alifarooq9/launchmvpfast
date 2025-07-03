@@ -5,6 +5,7 @@ import { CategoriesTable } from '@/app/(app)/components/_components/categories-t
 import { siteConfig } from '@/config/site'
 import { Metadata } from 'next'
 import { urls } from '@/config/urls'
+import { PageContainer } from '@/app/(app)/_components/page-header'
 
 export const metadata: Metadata = {
     title: `Open Source UI Components | Shadcn UI & Tailwind CSS | ${siteConfig.name}`,
@@ -27,14 +28,10 @@ export const metadata: Metadata = {
 
 export default function Components() {
     return (
-        <>
+        <PageContainer>
             <ComponentsHero />
 
-            <GridGap className="h-10" />
-
             <CategoriesTable />
-
-            <GridGap className="h-10" />
 
             <Suggest
                 title="Didn't find what you were looking for?"
@@ -42,6 +39,6 @@ export default function Components() {
                 buttonLink={urls.socials.suggestions}
                 className="flex-1"
             />
-        </>
+        </PageContainer>
     )
 }

@@ -9,13 +9,11 @@ export default function MarketingLayout({
 }>) {
     return (
         <div className="flex flex-1 flex-col">
-            {/* <MotionProvider> */}
             <SiteHeader />
-            <main className="flex flex-1 flex-col py-30 pb-10 sm:pt-34 sm:pb-14">
+            <main className="flex flex-1 flex-col py-30 pb-10 sm:pt-42 sm:pb-14">
                 {children}
             </main>
             <SiteFooter />
-            {/* </MotionProvider> */}
         </div>
     )
 }

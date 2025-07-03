@@ -10,8 +10,8 @@ export function CategoriesTable() {
     const itemCount = categories.length
 
     return (
-        <section className="container-wrapper">
-            <div className="divide-border grid grid-cols-1 gap-4 divide-y sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <section className="container">
+            <div className="divide-border grid grid-cols-1 gap-4 divide-y sm:grid-cols-2 lg:grid-cols-3">
                 {categories.map((category, index) => (
                     <Link
                         href={`${urls.app.components}/${category.id}`}

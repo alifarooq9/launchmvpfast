@@ -300,7 +300,6 @@ function BenefitCard({
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.5 }}
-                    custom={0.4}
                     as="h3"
                     className="text-lg tracking-tight lg:text-xl"
                 >
@@ -312,7 +311,6 @@ function BenefitCard({
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.5 }}
-                custom={0.4 + 0.2}
                 className="flex-1 place-content-center"
             >
                 {children}
