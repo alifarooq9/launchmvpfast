@@ -1,4 +1,4 @@
-import { GridGap } from '@/app/(app)/_components/grid-gap'
+import { PageContainer } from '@/app/(app)/_components/page-header'
 import { StarterkitsHero } from '@/app/(app)/open-source-starterkits/_components/starterkits-hero'
 import StarterkitsTable from '@/app/(app)/open-source-starterkits/_components/starterkits-table'
 import { siteConfig } from '@/config/site'
@@ -12,12 +12,10 @@ export const metadata: Metadata = {
 
 export default function StarterKits() {
     return (
-        <>
+        <PageContainer>
             <StarterkitsHero />
 
-            <GridGap className="h-10" />
-
             <StarterkitsTable />
-        </>
+        </PageContainer>
     )
 }

@@ -74,7 +74,7 @@ export function PageHeading({
     return (
         <h1
             className={cn(
-                'font-heading text-foreground max-w-3xl text-center text-4xl font-semibold text-balance sm:text-5xl lg:text-6xl',
+                'font-heading text-foreground max-w-3xl text-center text-4xl leading-[1.1] font-semibold text-balance sm:text-5xl lg:text-6xl',
                 className
             )}
             {...props}

@@ -14,16 +14,33 @@ export function StarterkitsHero() {
                 <Announcement
                     actionText="Get Early Access"
                     url={urls.app.earlyAccess}
-                    text="SaaS V2 Starterkit is coming soon!"
+                    text="SaaS V2 soon!"
                 />
-                <PageHeading>
+                <PageHeading className="leading-[1.2]">
                     Open Source Starter Kits for Modern Web Apps
                 </PageHeading>
                 <PageDescription className="max-w-[80rem]">
-                    Get a head start with our free, open-source starter kits.
-                    Packed with essential features like authentication, database
-                    integration, styling and more, so you can focus on building
-                    your unique application faster.
+                    Packed with{' '}
+                    <span className="text-foreground font-bold">
+                        essential features
+                    </span>{' '}
+                    like{' '}
+                    <span className="text-foreground font-bold">
+                        authentication
+                    </span>
+                    ,{' '}
+                    <span className="text-foreground font-bold">
+                        database integration
+                    </span>
+                    , <span className="text-foreground font-bold">styling</span>{' '}
+                    and more, so you can{' '}
+                    <span className="text-foreground font-bold">focus</span> on{' '}
+                    <span className="text-foreground font-bold">building</span>{' '}
+                    your{' '}
+                    <span className="text-foreground font-bold">
+                        unique application
+                    </span>{' '}
+                    faster.
                 </PageDescription>
             </PageHeader>
         </PageHeaderWrapper>

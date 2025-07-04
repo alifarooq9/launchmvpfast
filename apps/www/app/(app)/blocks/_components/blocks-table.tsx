@@ -1,10 +1,14 @@
+'use client'
+
 import { getBlocksCategories } from '@/config/registry/blocks'
 import { urls } from '@/config/urls'
+import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export function BlocksTable() {
     const categories = getBlocksCategories()
+    const { resolvedTheme } = useTheme()
 
     return (
         <section className="container grid grid-cols-3 gap-4">
@@ -21,7 +25,11 @@ export function BlocksTable() {
                             <div className="bg-muted dark:bg-muted/50 border-border aspect-video w-full rounded-xl border p-8">
                                 <div className="relative aspect-video w-full">
                                     <Image
-                                        src={category.image.dark}
+                                        src={
+                                            resolvedTheme === 'dark'
+                                                ? category.image.dark
+                                                : category.image.light
+                                        }
                                         alt={category.name}
                                         fill
                                     />
