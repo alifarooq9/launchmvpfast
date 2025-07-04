@@ -1,4 +1,3 @@
-import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
 import {
     SectionDescription,
     SectionHeading,
@@ -72,18 +71,16 @@ export function StarterkitsTableItem({
             href={starterkit.buttonUrl}
             className="border-grid hover:bg-accent/40 dark:hover:bg-accent/15 focus-ring transition-all focus:border-transparent"
         >
-            <ImageContentWrapper>
-                <div className="relative aspect-video w-full overflow-hidden">
-                    <Image
-                        src={starterkit.imageUrl}
-                        fill
-                        alt={starterkit.name}
-                        sizes="(min-width: 768px) 50vw, 100vw"
-                        placeholder="blur"
-                        blurDataURL="/starterkits/saas-v1/landing.png"
-                    />
-                </div>
-            </ImageContentWrapper>
+            <div className="relative aspect-video w-full overflow-hidden">
+                <Image
+                    src={starterkit.imageUrl}
+                    fill
+                    alt={starterkit.name}
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    placeholder="blur"
+                    blurDataURL="/starterkits/saas-v1/landing.png"
+                />
+            </div>
 
             <div className="col-span-1 flex flex-col gap-2 p-4 md:px-6">
                 <h2 className="font-heading text-xl">{starterkit.name}</h2>

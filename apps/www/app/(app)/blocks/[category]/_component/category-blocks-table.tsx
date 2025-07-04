@@ -3,7 +3,6 @@
 import { CodeBlock } from '@/app/(app)/_components/code-block'
 import { ComponentLoaderClient } from '@/app/(app)/_components/component-loader-client'
 import { GridGap } from '@/app/(app)/_components/grid-gap'
-import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
 import { OpenInV0 } from '@/app/(app)/_components/open-in-v0'
 import { Icons } from '@/components/icons'
 import { Button, buttonVariants } from '@/components/ui/button'
@@ -108,12 +107,10 @@ function BlockItem({
                 </div>
             </div>
 
-            <ImageContentWrapper>
-                <ComponentLoaderClient
-                    key={`${block.id}-${refreshKey}`}
-                    component={block}
-                />
-            </ImageContentWrapper>
+            <ComponentLoaderClient
+                key={`${block.id}-${refreshKey}`}
+                component={block}
+            />
 
             {!isLast && <GridGap className="h-20 border-x-0" />}
         </div>

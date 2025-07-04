@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ChevronDown, ChevronUp } from 'lucide-react'
@@ -60,22 +59,17 @@ export function SaasStarterkitScreenShots() {
                                 (displayedScreenshots.length % 3 || 3)
 
                         return (
-                            <ImageContentWrapper
-                                key={index}
-                                className={`border-grid border-b p-2 md:border-r lg:border-r md:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0 ${isInLastRowMd ? 'md:border-b-0' : ''} ${isInLastRowLg ? 'lg:border-b-0' : ''} `}
-                            >
-                                <div className="relative aspect-video w-full overflow-hidden rounded-lg">
-                                    <Image
-                                        src={screenshot || '/placeholder.svg'}
-                                        fill
-                                        alt="saas-starterkit-demo"
-                                        quality={100}
-                                        placeholder="blur"
-                                        blurDataURL="/starterkits/saas-v1/landing.png"
-                                        className="object-cover"
-                                    />
-                                </div>
-                            </ImageContentWrapper>
+                            <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+                                <Image
+                                    src={screenshot || '/placeholder.svg'}
+                                    fill
+                                    alt="saas-starterkit-demo"
+                                    quality={100}
+                                    placeholder="blur"
+                                    blurDataURL="/starterkits/saas-v1/landing.png"
+                                    className="object-cover"
+                                />
+                            </div>
                         )
                     })}
                 </div>

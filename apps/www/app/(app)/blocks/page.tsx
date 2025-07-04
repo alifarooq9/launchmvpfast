@@ -1,4 +1,4 @@
-import { GridGap } from '@/app/(app)/_components/grid-gap'
+import { PageContainer } from '@/app/(app)/_components/page-header'
 import { Suggest } from '@/app/(app)/_components/suggest'
 import { BlocksHero } from '@/app/(app)/blocks/_components/blocks-hero'
 import { BlocksTable } from '@/app/(app)/blocks/_components/blocks-table'
@@ -30,14 +30,10 @@ export const metadata: Metadata = {
 
 export default function Blocks() {
     return (
-        <>
+        <PageContainer>
             <BlocksHero />
 
-            <GridGap className="h-10" />
-
             <BlocksTable />
-
-            <GridGap className="h-10" />
 
             <Suggest
                 title="Didn't find what you were looking for?"
@@ -45,6 +41,6 @@ export default function Blocks() {
                 buttonLink={urls.socials.suggestions}
                 className="flex-1"
             />
-        </>
+        </PageContainer>
     )
 }
