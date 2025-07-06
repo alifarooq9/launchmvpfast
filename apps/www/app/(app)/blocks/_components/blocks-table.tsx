@@ -19,7 +19,7 @@ export function BlocksTable() {
                         className="flex flex-col items-center gap-4"
                     >
                         <Link
-                            href={`${urls.app.components}/${category.id}`}
+                            href={`${urls.app.blocks}/${category.id}`}
                             className="w-full"
                         >
                             <div className="bg-muted dark:bg-muted/50 border-border aspect-video w-full rounded-xl border p-8">
@@ -40,7 +40,7 @@ export function BlocksTable() {
                         <div className="text-center">
                             <h2 className="font-medium hover:underline hover:underline-offset-2">
                                 <Link
-                                    href={`${urls.app.components}/${category.id}`}
+                                    href={`${urls.app.blocks}/${category.id}`}
                                 >
                                     {category.name}
                                 </Link>
