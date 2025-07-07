@@ -1,7 +1,6 @@
 import { techStackIcons } from '@/components/tech-stack-icons'
 import { buttonVariants } from '@/components/ui/button'
 import { urls } from '@/config/urls'
-import { SquareArrowOutUpRightIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -41,9 +40,9 @@ export default function StarterkitsTable() {
     return (
         <section className="container">
             <div className="grid grid-cols-1 gap-4">
-                {starterkits.map((starterkit) => (
+                {starterkits.map((starterkit, index) => (
                     <StarterkitsTableItem
-                        key={starterkit.id}
+                        key={starterkit.id + index}
                         starterkit={starterkit}
                     />
                 ))}

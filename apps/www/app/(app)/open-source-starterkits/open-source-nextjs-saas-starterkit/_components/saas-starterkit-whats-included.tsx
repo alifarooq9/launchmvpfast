@@ -1,5 +1,5 @@
-import { GridGap } from '@/app/(app)/_components/grid-gap'
 import {
+    SectionContent,
     SectionDescription,
     SectionHeader,
     SectionHeading,
@@ -96,39 +96,35 @@ const whatsIncluded: WhatsIncludedCategory = {
 
 export function SaasStarterkitWhatsIncluded() {
     return (
-        <section>
-            <SectionHeader>
-                <SectionHeading>
-                    What&apos;s Included:{' '}
-                    <span className="hidden md:block">
-                        Your Production-Ready Foundation
-                    </span>
-                </SectionHeading>
-                <SectionDescription>
-                    This Next.js SaaS starter kit is packed with features
-                    designed to accelerate your development workflow
-                </SectionDescription>
-            </SectionHeader>
+        <SectionHeader>
+            <SectionHeading>
+                What&apos;s Included:{' '}
+                <span className="hidden md:block">
+                    Your Production-Ready Foundation
+                </span>
+            </SectionHeading>
+            <SectionDescription>
+                This Next.js SaaS starter kit is packed with features designed
+                to accelerate your development workflow
+            </SectionDescription>
 
-            <WhatsIncludedCard
-                title="Core Functionality"
-                list={whatsIncluded.core}
-            />
+            <SectionContent className="border-border divide-border gap-0 divide-y rounded-xl border">
+                <WhatsIncludedCard
+                    title="Core Functionality"
+                    list={whatsIncluded.core}
+                />
 
-            <GridGap className="h-10" />
+                <WhatsIncludedCard
+                    title="User Experience & Dashboards"
+                    list={whatsIncluded.userExperience}
+                />
 
-            <WhatsIncludedCard
-                title="User Experience & Dashboards"
-                list={whatsIncluded.userExperience}
-            />
-
-            <GridGap className="h-10" />
-
-            <WhatsIncludedCard
-                title="Growth & Content Features"
-                list={whatsIncluded.growthContent}
-            />
-        </section>
+                <WhatsIncludedCard
+                    title="Growth & Content Features"
+                    list={whatsIncluded.growthContent}
+                />
+            </SectionContent>
+        </SectionHeader>
     )
 }
 
@@ -140,25 +136,15 @@ function WhatsIncludedCard({
     list: WhatsIncludedItem[]
 }) {
     return (
-        <div className="container-wrapper grid-cols-[1fr_2.5rem_2fr] md:grid">
-            <div className="flex border-b p-4 md:border-b-0 md:px-6">
-                <h3 className="font-heading text-lg">{title}</h3>
-            </div>
+        <div>
+            <h3 className="border-b p-4 text-base font-bold tracking-tight">
+                {title}:
+            </h3>
 
-            <div className="border-grid h-full border-x" />
-
-            <div className="grid grid-cols-1 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2">
                 {list.map((item, index) => (
-                    <p
-                        key={index}
-                        className={cn(
-                            'border-grid border-b p-4 text-sm last:border-b-0 sm:border-r md:px-4',
-                            index % 2 !== 0
-                                ? 'border-r-0'
-                                : '[&:nth-last-child(2)]:border-b-0'
-                        )}
-                    >
-                        <strong className="font-heading">{item.title}</strong>
+                    <p key={index} className={cn('text-sm')}>
+                        <strong className="font-semibold">{item.title}</strong>
                         <span className="mx-1">—</span>
                         <span className="text-muted-foreground">
                             {item.description}

@@ -64,9 +64,9 @@ export function PricingTableItem({ plan }: { plan: PricingPlan }) {
                     {plan.features.map((feature, index) => (
                         <li
                             key={index}
-                            className="text-muted-foreground flex items-center gap-1 text-sm font-medium"
+                            className="text-muted-foreground flex items-start gap-1 text-sm font-medium"
                         >
-                            <CheckIcon className="size-4" /> {feature}
+                            <CheckIcon className="mt-1 size-4" /> {feature}
                         </li>
                     ))}
                 </ul>
