@@ -9,20 +9,16 @@ import {
 } from '@/components/ui/card'
 import {
     Carousel,
-    CarouselApi,
     CarouselContent,
     CarouselItem,
 } from '@/components/ui/carousel'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
-import { useEffect, useState, memo } from 'react'
+import { memo } from 'react'
 import Autoplay from 'embla-carousel-autoplay'
-import { ProgressiveBlur } from '@/components/ui/progressive-blur'
-import * as m from 'motion/react-m'
-import { useIsMobile } from '@/hooks/use-mobile'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
-import { SquareArrowOutUpRightIcon } from 'lucide-react'
+import { ExternalLinkIcon } from 'lucide-react'
 import { urls } from '@/config/urls'
 import { Component, getSelectiveComponents } from '@/config/registry/components'
 import { ComponentLoaderClient } from '@/app/(app)/_components/component-loader-client'
@@ -63,7 +59,7 @@ export function ComponentsDemoContent() {
                                 )}
                             >
                                 View All Components
-                                <SquareArrowOutUpRightIcon />
+                                <ExternalLinkIcon />
                             </Link>
                         </CardContent>
                     </Card>
@@ -100,7 +96,7 @@ const ComponentItem = memo(function ComponentItem({
                         )}
                     >
                         View Components
-                        <SquareArrowOutUpRightIcon />
+                        <ExternalLinkIcon />
                     </Link>
                 </CardFooter>
             </Card>

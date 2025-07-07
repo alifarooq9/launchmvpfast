@@ -14,7 +14,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
-import { Search } from '@/app/(app)/_components/search'
+import { CommandMenu } from '@/app/(app)/_components/command-menu'
 import { Banner } from '@/app/(app)/_components/banner'
 
 export function SiteHeader() {
@@ -130,7 +130,7 @@ export function SiteHeader() {
                     <div className="flex items-center">
                         {/* Search */}
                         <div className="hidden px-3 md:block">
-                            <Search />
+                            <CommandMenu />
                         </div>
 
                         {/* Icons only nav */}

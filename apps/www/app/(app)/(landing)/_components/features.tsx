@@ -17,7 +17,7 @@ import {
 } from '@/components/ui/card'
 import { urls } from '@/config/urls'
 import { cn } from '@/lib/utils'
-import { SquareArrowOutUpRightIcon } from 'lucide-react'
+import { ExternalLinkIcon } from 'lucide-react'
 import * as m from 'motion/react-m'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -83,7 +83,7 @@ function FeatureCard({
                         )}
                     >
                         {linkText}
-                        <SquareArrowOutUpRightIcon />
+                        <ExternalLinkIcon />
                     </Link>
                 </CardFooter>
             </div>

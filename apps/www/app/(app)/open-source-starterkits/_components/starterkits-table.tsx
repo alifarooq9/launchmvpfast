@@ -1,40 +1,9 @@
 import { techStackIcons } from '@/components/tech-stack-icons'
 import { buttonVariants } from '@/components/ui/button'
-import { urls } from '@/config/urls'
+import { Starterkit, starterkits } from '@/config/registry/starterkits'
+import { ExternalLinkIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-
-type Starterkit = {
-    id: string
-    name: string
-    description: string
-    techStack: string[]
-    imageUrl: string
-    buttonText: string
-    buttonUrl: string
-}
-
-const starterkits: Starterkit[] = [
-    {
-        id: 'saas-v1-nextjs',
-        name: 'SaaS Next.js Starterkit',
-        description:
-            'Open-source Next.js SaaS starter kit with built-in authentication, database ORM, styling, landing page, dashboard, and more.',
-        techStack: [
-            'nextJs',
-            'shadcnui',
-            'nextauth',
-            'uploadthing',
-            'lemon',
-            'drizzle',
-            'tailwindcss',
-            'typescript',
-        ],
-        imageUrl: '/starterkits/saas-v1/landing.png',
-        buttonText: 'Get Starter-kit - (Free)',
-        buttonUrl: urls.app.starterkits.saasNextjs.base,
-    },
-]
 
 export default function StarterkitsTable() {
     return (
@@ -79,12 +48,24 @@ export function StarterkitsTableItem({
                         </li>
                     ))}
                 </ul>
-                <Link
-                    href={starterkit.buttonUrl}
-                    className={buttonVariants({ className: 'w-fit' })}
-                >
-                    {starterkit.buttonText}
-                </Link>
+                <div className="flex flex-col gap-2 sm:flex-row">
+                    <Link
+                        href={starterkit.buttonUrl}
+                        className={buttonVariants({ className: 'w-fit' })}
+                    >
+                        {starterkit.buttonText}
+                    </Link>
+                    <Link
+                        href={starterkit.preview}
+                        className={buttonVariants({
+                            className: 'w-fit',
+                            variant: 'outline',
+                        })}
+                    >
+                        Live Preview
+                        <ExternalLinkIcon />
+                    </Link>
+                </div>
             </div>
             <div className="border-border relative aspect-video overflow-hidden rounded-xl border">
                 <Image

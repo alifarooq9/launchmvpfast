@@ -16,7 +16,7 @@ import * as m from 'motion/react-m'
 import { useIsMobile } from '@/hooks/use-mobile'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
-import { SquareArrowOutUpRightIcon } from 'lucide-react'
+import { ExternalLinkIcon } from 'lucide-react'
 import { urls } from '@/config/urls'
 
 const starterkitImags = [
@@ -176,7 +176,7 @@ const StarterKitItem = memo(function StarterKitItem({
                                             })
                                         )}
                                     >
-                                        <SquareArrowOutUpRightIcon />
+                                        <ExternalLinkIcon />
                                         Live Preview
                                     </Link>
                                 </div>
