@@ -8,7 +8,6 @@
     "lucide-react",
     "@radix-ui/react-slot",
     "class-variance-authority",
-    "lucide-react",
     "@radix-ui/react-label"
   ],
   "files": [

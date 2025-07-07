@@ -8,10 +8,7 @@
     "lucide-react",
     "@zootools/email-spell-checker",
     "use-debounce",
-    "@radix-ui/react-label",
-    "lucide-react",
-    "use-debounce",
-    "@zootools/email-spell-checker"
+    "@radix-ui/react-label"
   ],
   "files": [
     {

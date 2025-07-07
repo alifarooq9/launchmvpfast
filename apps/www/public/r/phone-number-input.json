@@ -7,9 +7,7 @@
   "dependencies": [
     "react-phone-number-input",
     "lucide-react",
-    "react-phone-number-input",
     "@radix-ui/react-select",
-    "lucide-react",
     "@radix-ui/react-label"
   ],
   "files": [

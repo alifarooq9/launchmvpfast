@@ -3,7 +3,7 @@
 import Line from '@/registry/default/blocks/hero-sections/ai-builder-hero/line'
 import Header from '@/registry/default/blocks/hero-sections/ai-builder-hero/header'
 import PromptInput02 from '@/registry/default/components/input/prompt-input-02'
-import { motion as m } from 'motion/react'
+import { motion as m, Variants } from 'motion/react'
 
 const quickPrompts = [
     {
@@ -60,7 +60,7 @@ export default function Hero() {
                         initial="hidden"
                         animate="visible"
                         custom={0}
-                        variants={variants}
+                        variants={variants as Variants}
                     >
                         Create
                     </m.span>{' '}
@@ -68,7 +68,7 @@ export default function Hero() {
                         initial="hidden"
                         animate="visible"
                         custom={1}
-                        variants={variants}
+                        variants={variants as Variants}
                     >
                         Stunning
                     </m.span>{' '}
@@ -76,7 +76,7 @@ export default function Hero() {
                         initial="hidden"
                         animate="visible"
                         custom={2}
-                        variants={variants}
+                        variants={variants as Variants}
                     >
                         Visuals
                     </m.span>
@@ -87,7 +87,7 @@ export default function Hero() {
                         initial="hidden"
                         animate="visible"
                         custom={3}
-                        variants={variants}
+                        variants={variants as Variants}
                         className="w-full"
                     >
                         <PromptInput02 quickPrompts={quickPrompts} />
@@ -107,7 +107,7 @@ function StarterTemplate() {
                 initial="hidden"
                 animate="visible"
                 custom={4}
-                variants={variants}
+                variants={variants as Variants}
                 className="font-semibold"
             >
                 Browse Templates
@@ -119,7 +119,7 @@ function StarterTemplate() {
                         initial="hidden"
                         animate="visible"
                         custom={5 + index}
-                        variants={variants}
+                        variants={variants as Variants}
                         key={template.title}
                         className="border-border bg-card hover:bg-card/50 flex flex-col items-start rounded-lg border p-4 transition-all"
                     >

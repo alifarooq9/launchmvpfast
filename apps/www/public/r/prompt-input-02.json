@@ -9,10 +9,8 @@
     "lucide-react",
     "@radix-ui/react-slot",
     "class-variance-authority",
-    "lucide-react",
     "@radix-ui/react-dropdown-menu",
     "@radix-ui/react-tooltip",
-    "react-textarea-autosize",
     "@radix-ui/react-toggle",
     "@radix-ui/react-select"
   ],
