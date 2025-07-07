@@ -1,4 +1,4 @@
-import { GridGap } from '@/app/(app)/_components/grid-gap'
+import { PageContainer } from '@/app/(app)/_components/page-header'
 import { PricingHero } from '@/app/(app)/pricing/_components/pricing-hero'
 import PricingTable from '@/app/(app)/pricing/_components/pricing-table'
 import { siteConfig } from '@/config/site'
@@ -12,12 +12,10 @@ export const metadata: Metadata = {
 
 export default function Pricing() {
     return (
-        <>
+        <PageContainer>
             <PricingHero />
 
-            <GridGap className="h-10" />
-
             <PricingTable />
-        </>
+        </PageContainer>
     )
 }

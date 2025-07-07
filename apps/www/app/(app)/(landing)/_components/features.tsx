@@ -53,17 +53,7 @@ function FeatureCard({
             transition={{ duration: 0.8, ease: 'easeInOut' }}
             className="grid w-full grid-cols-1 overflow-hidden py-0 md:grid-cols-2 lg:grid-cols-3"
         >
-            <div className="relative flex h-full min-h-36 w-full items-center justify-center p-4">
-                <div className="absolute inset-0 z-0">
-                    <div className="relative h-full w-full">
-                        <Image
-                            src="/mesh-background.svg"
-                            fill
-                            alt="Mesh Background"
-                            className="object-cover"
-                        />
-                    </div>
-                </div>
+            <div className="grain-effect mesh-background relative flex h-full min-h-36 w-full items-center justify-center p-4">
                 <div className="z-20 text-center text-2xl leading-snug font-bold text-balance text-white md:text-4xl">
                     {heroText}
                 </div>
