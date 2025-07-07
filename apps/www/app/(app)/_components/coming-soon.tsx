@@ -16,30 +16,25 @@ type ComingSoonProps = {
 
 export function ComingSoon({ title, description }: ComingSoonProps) {
     return (
-        <PageHeaderWrapper
-            className="from-foreground/10 to-background relative h-full bg-gradient-to-b py-20"
-            fullHeight
-        >
-            <PageHeader className="flex flex-col items-center justify-center overflow-hidden pt-0 pb-28">
-                <Icons.logo className="mb-8 size-14" />
-                <PageHeading className="text-center">
-                    <span>{title}</span>{' '}
-                    <span>
-                        <AuroraText>Coming Soon</AuroraText>
-                    </span>
-                </PageHeading>
-                <PageDescription className="max-w-3xl text-center">
-                    {description}
-                </PageDescription>
+        <PageHeader className="flex flex-col items-center justify-center overflow-hidden py-20 pb-28">
+            <Icons.logo className="mb-8 size-14" />
+            <PageHeading className="text-center">
+                <span>{title}</span>{' '}
+                <span>
+                    <AuroraText>Coming Soon</AuroraText>
+                </span>
+            </PageHeading>
+            <PageDescription className="max-w-3xl text-center">
+                {description}
+            </PageDescription>
 
-                <ComingSoonForm className="mt-10 flex w-full max-w-96 flex-col gap-3" />
-            </PageHeader>
+            <ComingSoonForm className="mt-10 flex w-full max-w-96 flex-col gap-3" />
 
             <Ripple
                 mainCircleSize={400}
                 mainCircleOpacity={0.2}
                 className="opacity-60"
             />
-        </PageHeaderWrapper>
+        </PageHeader>
     )
 }

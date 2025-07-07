@@ -48,7 +48,10 @@ export function SaasStarterkitScreenShots() {
                 <div className="grid w-full grid-cols-1 gap-2 md:grid-cols-2">
                     {displayedScreenshots.map((screenshot, index) => {
                         return (
-                            <div className="border-border relative aspect-video w-full overflow-hidden rounded-lg border">
+                            <div
+                                key={index}
+                                className="border-border relative aspect-video w-full overflow-hidden rounded-lg border"
+                            >
                                 <Image
                                     src={screenshot || '/placeholder.svg'}
                                     fill
