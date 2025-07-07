@@ -13,7 +13,6 @@ import {
     CarouselItem,
 } from '@/components/ui/carousel'
 import { cn } from '@/lib/utils'
-import Image from 'next/image'
 import { memo } from 'react'
 import Autoplay from 'embla-carousel-autoplay'
 import Link from 'next/link'

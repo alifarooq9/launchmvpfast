@@ -95,11 +95,6 @@ export function SaasStarterkitTechUsed() {
             <SectionContent>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
                     {technologiesSelected.map((technology, index) => {
-                        const isInLastRowLg =
-                            index >=
-                            technologiesSelected.length -
-                                (technologiesSelected.length % 4 || 4)
-
                         return (
                             <Link
                                 href={technology.link}

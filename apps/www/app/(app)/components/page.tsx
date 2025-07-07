@@ -1,4 +1,3 @@
-import { GridGap } from '@/app/(app)/_components/grid-gap'
 import { Suggest } from '@/app/(app)/_components/suggest'
 import { ComponentsHero } from '@/app/(app)/components/_components/components-hero'
 import { CategoriesTable } from '@/app/(app)/components/_components/categories-table'

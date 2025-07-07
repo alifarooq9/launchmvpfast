@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import * as m from 'motion/react-m'
 import { TextEffect } from '@/components/ui/text-effect'
-import LogoCarousel, { Logo } from '@/components/ui/logo-carousel'
+import LogoCarousel from '@/components/ui/logo-carousel'
 import { logos } from '@/config/logos'
 import { useIsMobile } from '@/hooks/use-mobile'
 import {
@@ -108,7 +108,9 @@ export function Hero() {
                         )}
                     >
                         Get Started —{' '}
-                        <span className="font-normal italic">it's free</span>
+                        <span className="font-normal italic">
+                            it&apos;s free
+                        </span>
                     </Link>
                 </m.div>
                 <m.div

@@ -1,7 +1,6 @@
 import { ComingSoonForm } from '@/app/(app)/_components/coming-soon-form'
 import {
     PageHeader,
-    PageHeaderWrapper,
     PageHeading,
     PageDescription,
 } from '@/app/(app)/_components/page-header'

@@ -3,36 +3,16 @@ import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { forwardRef } from 'react'
 
-type PageHeaderWrapperProps = {
+type PageContainerProps = {
     as?: React.ElementType
 } & React.HTMLAttributes<HTMLDivElement>
-
-export function PageHeaderWrapper({
-    className,
-    children,
-    as: Component = 'div',
-    ...props
-}: PageHeaderWrapperProps) {
-    return (
-        <Component
-            className={cn(
-                'relative container flex flex-col items-center gap-6',
-
-                className
-            )}
-            {...props}
-        >
-            {children}
-        </Component>
-    )
-}
 
 export function PageContainer({
     className,
     children,
     as: Component = 'div',
     ...props
-}: PageHeaderWrapperProps) {
+}: PageContainerProps) {
     return (
         <Component
             className={cn('relative flex flex-1 flex-col gap-16', className)}

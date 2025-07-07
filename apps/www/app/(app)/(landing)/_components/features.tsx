@@ -19,7 +19,6 @@ import { urls } from '@/config/urls'
 import { cn } from '@/lib/utils'
 import { ExternalLinkIcon } from 'lucide-react'
 import * as m from 'motion/react-m'
-import Image from 'next/image'
 import Link from 'next/link'
 
 interface FeatureCardProps {

@@ -117,13 +117,13 @@ const AnimationComponent: React.FC<{
 }> = React.memo(({ segment, variants, per, segmentWrapperClassName }) => {
     const content =
         per === 'line' ? (
-            <m.span variants={variants as any} className="block">
+            <m.span variants={variants} className="block">
                 {segment}
             </m.span>
         ) : per === 'word' ? (
             <m.span
                 aria-hidden="true"
-                variants={variants as any}
+                variants={variants}
                 className="inline-block whitespace-pre"
             >
                 {segment}
@@ -135,7 +135,7 @@ const AnimationComponent: React.FC<{
                           <m.span
                               key={`char-${charIndex}`}
                               aria-hidden="true"
-                              variants={variants as any}
+                              variants={variants}
                               className="inline-block whitespace-pre"
                           >
                               {char}
@@ -261,7 +261,7 @@ const createVariantsWithTransition = (
 ): Variants => {
     if (!transition) return baseVariants
 
-    const { exit: _, ...mainTransition } = transition
+    const { ...mainTransition } = transition
 
     return {
         ...baseVariants,
@@ -357,7 +357,7 @@ export function TextEffect({
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    variants={computedVariants.container as any}
+                    variants={computedVariants.container}
                     className={className}
                     onAnimationComplete={onAnimationComplete}
                     onAnimationStart={onAnimationStart}
