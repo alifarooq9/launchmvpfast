@@ -1,11 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import {
+    SectionContent,
     SectionDescription,
     SectionHeader,
     SectionHeading,
@@ -34,53 +34,39 @@ export function SaasStarterkitScreenShots() {
     const displayedScreenshots = showAll ? screenshots : screenshots.slice(0, 6)
 
     return (
-        <section>
-            <SectionHeader>
-                <SectionHeading>
-                    Screenshots:{' '}
-                    <span className="hidden sm:block">See It In Action</span>
-                </SectionHeading>
-                <SectionDescription>
-                    This Next.js SaaS starter kit is packed with features
-                    designed to accelerate your development workflow
-                </SectionDescription>
-            </SectionHeader>
+        <SectionHeader>
+            <SectionHeading>
+                Screenshots:{' '}
+                <span className="hidden sm:block">See It In Action</span>
+            </SectionHeading>
+            <SectionDescription>
+                This Next.js SaaS starter kit is packed with features designed
+                to accelerate your development workflow
+            </SectionDescription>
 
-            <div className="container-wrapper">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <SectionContent className="w-full">
+                <div className="grid w-full grid-cols-1 gap-2 md:grid-cols-2">
                     {displayedScreenshots.map((screenshot, index) => {
-                        // Calculate if this is in the last row based on grid columns
-                        const isInLastRowMd =
-                            index >=
-                            displayedScreenshots.length -
-                                (displayedScreenshots.length % 2 || 2)
-                        const isInLastRowLg =
-                            index >=
-                            displayedScreenshots.length -
-                                (displayedScreenshots.length % 3 || 3)
-
                         return (
-                            <ImageContentWrapper
+                            <div
                                 key={index}
-                                className={`border-grid border-b p-2 md:border-r lg:border-r md:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0 ${isInLastRowMd ? 'md:border-b-0' : ''} ${isInLastRowLg ? 'lg:border-b-0' : ''} `}
+                                className="border-border relative aspect-video w-full overflow-hidden rounded-lg border"
                             >
-                                <div className="relative aspect-video w-full overflow-hidden rounded-lg">
-                                    <Image
-                                        src={screenshot || '/placeholder.svg'}
-                                        fill
-                                        alt="saas-starterkit-demo"
-                                        quality={100}
-                                        placeholder="blur"
-                                        blurDataURL="/starterkits/saas-v1/landing.png"
-                                        className="object-cover"
-                                    />
-                                </div>
-                            </ImageContentWrapper>
+                                <Image
+                                    src={screenshot || '/placeholder.svg'}
+                                    fill
+                                    alt="saas-starterkit-demo"
+                                    quality={100}
+                                    placeholder="blur"
+                                    blurDataURL="/starterkits/saas-v1/landing.png"
+                                    className="object-cover"
+                                />
+                            </div>
                         )
                     })}
                 </div>
 
-                <div className="border-grid flex justify-center border-t py-6">
+                <div className="border-grid flex justify-center py-6">
                     <Button
                         variant="outline"
                         onClick={() => setShowAll(!showAll)}
@@ -97,7 +83,7 @@ export function SaasStarterkitScreenShots() {
                         )}
                     </Button>
                 </div>
-            </div>
-        </section>
+            </SectionContent>
+        </SectionHeader>
     )
 }

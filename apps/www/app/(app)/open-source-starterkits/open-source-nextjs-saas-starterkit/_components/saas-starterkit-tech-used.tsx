@@ -1,4 +1,5 @@
 import {
+    SectionContent,
     SectionDescription,
     SectionHeader,
     SectionHeading,
@@ -83,46 +84,40 @@ const technologiesSelected = [
 
 export function SaasStarterkitTechUsed() {
     return (
-        <section>
-            <SectionHeader>
-                <SectionHeading>
-                    Built with a Modern Technology Stack
-                </SectionHeading>
-                <SectionDescription>
-                    Leveraging the best of the modern web development ecosystem
-                    for performance, developer experience, and scalability.
-                </SectionDescription>
-            </SectionHeader>
-            <div className="container-wrapper grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
-                {technologiesSelected.map((technology, index) => {
-                    const isInLastRowLg =
-                        index >=
-                        technologiesSelected.length -
-                            (technologiesSelected.length % 4 || 4)
-
-                    return (
-                        <Link
-                            href={technology.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`Learn more about ${technology.name}`}
-                            key={index}
-                            className={cn(
-                                "border-grid focus-ring hover:bg-accent/40 dark:hover:bg-accent/15 border-b p-4 transition-all md:border-r md:px-6 [&_svg:not([class*='size-'])]:size-7 md:[&:nth-child(4n)]:border-r-0",
-                                isInLastRowLg && 'border-b-0'
-                            )}
-                        >
-                            {techStackIcons[technology.icon].icon}
-                            <h3 className="font-heading mt-2 text-sm">
-                                {technology.name}
-                            </h3>
-                            <p className="text-muted-foreground text-sm">
-                                {technology.description}
-                            </p>
-                        </Link>
-                    )
-                })}
-            </div>
-        </section>
+        <SectionHeader>
+            <SectionHeading>
+                Built with a Modern Technology Stack
+            </SectionHeading>
+            <SectionDescription>
+                Leveraging the best of the modern web development ecosystem for
+                performance, developer experience, and scalability.
+            </SectionDescription>
+            <SectionContent>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+                    {technologiesSelected.map((technology, index) => {
+                        return (
+                            <Link
+                                href={technology.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`Learn more about ${technology.name}`}
+                                key={index}
+                                className={cn(
+                                    "focus-ring hover:bg-accent/40 dark:hover:bg-accent/15 rounded-xl p-4 transition-all md:px-6 [&_svg:not([class*='size-'])]:size-7"
+                                )}
+                            >
+                                {techStackIcons[technology.icon].icon}
+                                <h3 className="mt-2 text-sm font-semibold tracking-tight">
+                                    {technology.name}
+                                </h3>
+                                <p className="text-muted-foreground mt-1 text-sm">
+                                    {technology.description}
+                                </p>
+                            </Link>
+                        )
+                    })}
+                </div>
+            </SectionContent>
+        </SectionHeader>
     )
 }

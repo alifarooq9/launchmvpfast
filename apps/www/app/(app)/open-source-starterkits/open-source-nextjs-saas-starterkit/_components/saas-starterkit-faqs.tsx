@@ -1,5 +1,5 @@
-import { GridGap } from '@/app/(app)/_components/grid-gap'
 import {
+    SectionContent,
     SectionDescription,
     SectionHeader,
     SectionHeading,
@@ -118,39 +118,31 @@ const categorizedFaqs: CategorizedFaqs = {
 
 export function SaasStarterkitFaqs() {
     return (
-        <section>
-            <SectionHeader>
-                <SectionHeading>Frequently Asked Questions</SectionHeading>
-                <SectionDescription>
-                    Frequently asked questions about the SaaS Starter Kit and
-                    its features.
-                </SectionDescription>
-            </SectionHeader>
+        <SectionHeader>
+            <SectionHeading>Frequently Asked Questions</SectionHeading>
+            <SectionDescription>
+                Frequently asked questions about the SaaS Starter Kit and its
+                features.
+            </SectionDescription>
 
-            <FaqItem title="General" items={categorizedFaqs.general} />
+            <SectionContent className="divide-border gap-0 divide-y rounded-xl border">
+                <FaqItem title="General" items={categorizedFaqs.general} />
 
-            <GridGap className="h-10" />
+                <FaqItem title="Features" items={categorizedFaqs.features} />
 
-            <FaqItem title="Features" items={categorizedFaqs.features} />
+                <FaqItem title="Technical" items={categorizedFaqs.technical} />
 
-            <GridGap className="h-10" />
+                <FaqItem
+                    title="Usage & Customization"
+                    items={categorizedFaqs.usageAndCustomization}
+                />
 
-            <FaqItem title="Technical" items={categorizedFaqs.technical} />
-
-            <GridGap className="h-10" />
-
-            <FaqItem
-                title="Usage & Customization"
-                items={categorizedFaqs.usageAndCustomization}
-            />
-
-            <GridGap className="h-10" />
-
-            <FaqItem
-                title="Support & Licensing"
-                items={categorizedFaqs.supportAndLicensing}
-            />
-        </section>
+                <FaqItem
+                    title="Support & Licensing"
+                    items={categorizedFaqs.supportAndLicensing}
+                />
+            </SectionContent>
+        </SectionHeader>
     )
 }
 
@@ -162,9 +154,9 @@ function FaqItem({
     items: CategorizedFaqItem[]
 }) {
     return (
-        <div className="container-wrapper grid grid-cols-1 md:grid-cols-[1fr_2.5rem_1fr]">
-            <div className="border-grid flex border-b p-4 md:border-b-0 md:px-6">
-                <h3 className="font-heading text-lg">{title}</h3>
+        <div className="w-full">
+            <div className="border-grid flex border-b p-4">
+                <h3 className="text-lg font-bold tracking-tight">{title}</h3>
             </div>
 
             <div className="border-grid h-full border-x" />
@@ -174,7 +166,7 @@ function FaqItem({
                     <Accordion
                         type="single"
                         collapsible
-                        className="border-grid w-full border-b px-4 last:border-b-0"
+                        className="border-grid w-full px-4"
                         key={index}
                     >
                         <AccordionItem

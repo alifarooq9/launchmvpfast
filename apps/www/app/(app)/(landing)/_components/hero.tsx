@@ -1,124 +1,216 @@
+'use client'
+
 import { buttonVariants } from '@/components/ui/button'
-import { urls } from '@/config/urls'
+import { cn } from '@/lib/utils'
 import Link from 'next/link'
-import { ArrowRightIcon } from 'lucide-react'
+import * as m from 'motion/react-m'
+import { TextEffect } from '@/components/ui/text-effect'
+import LogoCarousel from '@/components/ui/logo-carousel'
+import { logos } from '@/config/logos'
+import { useIsMobile } from '@/hooks/use-mobile'
 import {
-    AnimatedSpan,
-    Terminal,
-    TypingAnimation,
-} from '@/components/ui/terminal'
-import {
-    PageActions,
-    PageHeader,
-    PageHeaderWrapper,
-    PageHeading,
-    PageDescription,
     Announcement,
+    PageActions,
+    PageDescription,
+    PageHeader,
+    PageHeading,
 } from '@/app/(app)/_components/page-header'
-import { cloneCmd } from '@/config/clone-cmd'
+import { urls } from '@/config/urls'
+
+const h1Transition = {
+    delay: 0,
+    speedReveal: 0.9,
+    speedSegment: 0.3,
+}
+
+const variants = {
+    hidden: {
+        opacity: 0,
+        y: 20,
+        filter: 'blur(15px)',
+    },
+    visible: (custom: { delay?: number; duration?: number }) => ({
+        opacity: 1,
+        y: 0,
+        filter: 'blur(0px)',
+        transition: {
+            delay: custom?.delay ?? 0,
+            duration: custom?.duration ?? 0.6,
+        },
+    }),
+}
+
+const PageDescriptionMotion = m.create(PageDescription)
 
 export function Hero() {
+    const isMobile = useIsMobile()
+
     return (
-        <PageHeaderWrapper>
-            <PageHeader className="grid grid-cols-1 gap-4 lg:min-h-[30rem] lg:grid-cols-2 lg:py-0">
-                <div className="flex h-full flex-col justify-center gap-3">
-                    <Announcement
-                        actionText="Contact Us"
-                        url={urls.app.pricing}
-                        text="Want us to build your MVP for you?"
-                    />
+        <PageHeader as="div">
+            <m.div
+                variants={variants}
+                initial="hidden"
+                animate="visible"
+                custom={{ delay: 0.5 }}
+            >
+                <Announcement
+                    url={urls.app.pricing}
+                    text="Want us to build your MVP?"
+                    actionText="Contact us"
+                />
+            </m.div>
 
-                    <PageHeading>
-                        Launch Your <span>MVP Fast</span> with{' '}
-                        <span className="bg-foreground text-primary-foreground px-2 whitespace-nowrap">
-                            Open Source
-                        </span>{' '}
-                        Starterkits & More
-                    </PageHeading>
-                    <PageDescription>
-                        Launch your MVP faster with Open Source Starterkits,
-                        Re-usable components, and more. Build your next MVP in
-                        days.
-                    </PageDescription>
+            <PageHeading className="text-foreground/70">
+                <TextEffect
+                    as="span"
+                    preset="fade-in-blur"
+                    speedReveal={h1Transition.speedReveal}
+                    speedSegment={h1Transition.speedSegment}
+                    delay={h1Transition.delay}
+                >
+                    <span className="text-foreground">Launch</span> your{' '}
+                    <span className="text-foreground">MVP</span> in{' '}
+                    <span className="text-foreground">days,</span> not
+                    months{' '}
+                </TextEffect>
+            </PageHeading>
+            <PageDescriptionMotion
+                variants={variants}
+                initial="hidden"
+                animate="visible"
+                custom={{ delay: 0.8 }}
+            >
+                <span className="text-foreground font-bold">Accelerate</span>{' '}
+                your <span className="text-foreground font-bold">MVP</span> with{' '}
+                <span className="text-foreground font-bold">free</span>,{' '}
+                <span className="text-foreground font-bold">starter kits</span>{' '}
+                and reusable{' '}
+                <span className="text-foreground font-bold">components</span>—go
+                from <span className="text-foreground font-bold">idea</span> to{' '}
+                <span className="text-foreground font-bold">prototype</span> in{' '}
+                <span className="text-foreground font-bold">days</span>.
+            </PageDescriptionMotion>
+            <PageActions>
+                <m.div
+                    variants={variants}
+                    initial="hidden"
+                    animate="visible"
+                    custom={{ delay: 1 }}
+                >
+                    <Link
+                        href={urls.app.components}
+                        className={cn(
+                            buttonVariants({
+                                size: 'xl',
+                                variant: 'defaultWithOutline',
+                                className: 'rounded-full before:rounded-full',
+                            })
+                        )}
+                    >
+                        Get Started —{' '}
+                        <span className="font-normal italic">
+                            it&apos;s free
+                        </span>
+                    </Link>
+                </m.div>
+                <m.div
+                    variants={variants}
+                    initial="hidden"
+                    animate="visible"
+                    custom={{ delay: 1.1 }}
+                >
+                    <Link
+                        href={urls.app.pricing}
+                        className={cn(
+                            buttonVariants({
+                                variant: 'secondaryWithOutline',
+                                className: 'rounded-full before:rounded-full',
+                                size: 'xl',
+                            })
+                        )}
+                    >
+                        What us to build?
+                    </Link>
+                </m.div>
+            </PageActions>
 
-                    <PageActions>
-                        <Link
-                            href={urls.app.starterkits.base}
-                            className={buttonVariants({
-                                variant: 'secondary',
-                                size: 'lg',
-                            })}
-                        >
-                            Explore Starterkits <ArrowRightIcon />
-                        </Link>
-                        <Link
-                            href={urls.app.pricing}
-                            className={buttonVariants({
-                                size: 'lg',
-                            })}
-                        >
-                            Want Us To Build?
-                        </Link>
-                    </PageActions>
-                </div>
-
-                <div className="mt-0 hidden h-full w-full items-center justify-center sm:mt-8 sm:flex lg:mt-0">
-                    <TerminalHero />
-                </div>
-            </PageHeader>
-        </PageHeaderWrapper>
+            {!isMobile ? <FloatingLogos /> : null}
+        </PageHeader>
     )
 }
 
-const savedCommands = [
-    'Next.js ready. [Saved: 1m]',
-    'Auth flows ready. [Saved: 4h]',
-    'Organizations set. [Saved: 5h]',
-    'Landing pages built. [Saved: 8h]',
-    'Stripe integrated. [Saved: 3h]',
-    'Drizzle DB configured. [Saved: 2.5h]',
-    'Uploadthing active. [Saved: 2h]',
-    'shadcn UI installed. [Saved: 1m]',
-    'Dashboard ready. [Saved: 10h]',
-    'Waitlist enabled. [Saved: 3h]',
-    'Email templates ready. [Saved: 3h]',
-]
+function FloatingLogos() {
+    const logoPositions = [
+        { x: 'left-0', y: 'top-0', duration: 8000, delay: 0 },
+        {
+            x: '-left-30',
+            y: 'top-1/3 -translate-y-1/3',
+            duration: 12000,
+            delay: 2000,
+        },
+        { x: 'left-0', y: 'bottom-0', duration: 10500, delay: 4000 },
+        { x: 'right-0', y: 'top-0', duration: 9500, delay: 1000 },
+        {
+            x: '-right-30',
+            y: 'top-1/3 -translate-y-1/3',
+            duration: 11000,
+            delay: 3000,
+        },
+        { x: 'right-0', y: 'bottom-0', duration: 13000, delay: 5000 },
+    ]
 
-export function TerminalHero() {
+    const logosPerPosition = Math.floor(logos.length / logoPositions.length)
+    const remainingLogos = logos.length % logoPositions.length
+
+    const positionsWithLogos = logoPositions.map((position, index) => {
+        const startIndex =
+            index * logosPerPosition + Math.min(index, remainingLogos)
+        const endIndex =
+            startIndex + logosPerPosition + (index < remainingLogos ? 1 : 0)
+        const positionLogos = logos.slice(startIndex, endIndex)
+
+        return {
+            ...position,
+            logos: positionLogos,
+            index,
+        }
+    })
+
     return (
-        <Terminal copyText={`pnpx ${cloneCmd.starterkits.saasNextjs.base}`}>
-            <TypingAnimation duration={30}>
-                &gt; Clone Launch MVP Fast SaaS Starterkit
-            </TypingAnimation>
-
-            <AnimatedSpan delay={1500} className="text-green-500">
-                <span>Cloning repo...</span>
-            </AnimatedSpan>
-            {savedCommands.map((command, index) => (
-                <AnimatedSpan
-                    key={`${command}+${index}`}
-                    delay={1500 + index * 200}
-                    className="text-blue-500"
+        <>
+            {positionsWithLogos.map((position, index) => (
+                <m.div
+                    variants={variants}
+                    initial="hidden"
+                    animate="visible"
+                    custom={{
+                        delay: 1 + 0.2 * index,
+                    }}
+                    key={position.index}
+                    className={`absolute ${position.x} ${position.y}`}
                 >
-                    <span>✔ {command}</span>
-                </AnimatedSpan>
+                    <m.div
+                        animate={{
+                            y: [0, -20, 0],
+                            rotate: [0, 2, -2, 0],
+                        }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: 4 + Math.random() * 4, // Random duration between 4-8 seconds
+                            ease: 'easeInOut',
+                            times: [0, 0.5, 1],
+                            delay: Math.random() * 2, // Random delay up to 2 seconds
+                        }}
+                    >
+                        <LogoCarousel
+                            columnCount={1}
+                            logos={position.logos}
+                            cycleInterval={position.duration}
+                            initialDelay={position.delay}
+                        />
+                    </m.div>
+                </m.div>
             ))}
-
-            <TypingAnimation
-                delay={3900}
-                duration={40}
-                className="text-green-500"
-            >
-                Success! Starterkit is live.
-            </TypingAnimation>
-
-            <TypingAnimation
-                delay={4100}
-                duration={40}
-                className="text-green-500"
-            >
-                Time saved: Days to minutes!
-            </TypingAnimation>
-        </Terminal>
+        </>
     )
 }

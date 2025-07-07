@@ -1,5 +1,5 @@
-import { MarketingFooter } from '@/app/(app)/_components/marketing-footer'
-import { MarketingHeader } from '@/app/(app)/_components/marketing-header'
+import { SiteFooter } from '@/app/(app)/_components/site-footer'
+import { SiteHeader } from '@/app/(app)/_components/site-header'
 import React from 'react'
 
 export default function MarketingLayout({
@@ -9,11 +9,11 @@ export default function MarketingLayout({
 }>) {
     return (
         <div className="flex flex-1 flex-col">
-            {/* <MotionProvider> */}
-            <MarketingHeader />
-            <main className="flex flex-1 flex-col">{children}</main>
-            <MarketingFooter />
-            {/* </MotionProvider> */}
+            <SiteHeader />
+            <main className="flex flex-1 flex-col py-30 pb-10 sm:pt-42 sm:pb-14">
+                {children}
+            </main>
+            <SiteFooter />
         </div>
     )
 }

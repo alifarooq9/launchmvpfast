@@ -3,6 +3,7 @@ export type Component = {
     name: string
     path: string
     span?: 1 | 2 | 3 | 4
+    category?: string
 }
 
 export type Category = {
@@ -185,6 +186,36 @@ export function getComponentCategories() {
     }))
 
     return categories
+}
+
+export function getSelectiveComponents() {
+    const availableIds = [
+        'prompt-input-01',
+        'otp-with-spaces',
+        'input-with-right-select',
+        'password-input',
+        'copy-input',
+        'search-input',
+        'input-with-email-spell-checker',
+        'user-profile-dropdown',
+        'button-dropdown',
+        'action-dropdown',
+        'action-with-loading-dropdown',
+    ]
+    const componentsList: Component[] = []
+
+    components.default.forEach((category) => {
+        category.components.forEach((component) => {
+            if (availableIds.includes(component.id)) {
+                componentsList.push({
+                    ...component,
+                    category: category.id,
+                })
+            }
+        })
+    })
+
+    return componentsList
 }
 
 export function getComponentCategory(slug: string): Category | undefined {

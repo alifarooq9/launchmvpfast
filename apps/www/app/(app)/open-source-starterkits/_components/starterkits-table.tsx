@@ -1,63 +1,21 @@
-import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
-import {
-    SectionDescription,
-    SectionHeading,
-} from '@/app/(app)/_components/section-header'
 import { techStackIcons } from '@/components/tech-stack-icons'
-import { urls } from '@/config/urls'
+import { buttonVariants } from '@/components/ui/button'
+import { Starterkit, starterkits } from '@/config/registry/starterkits'
+import { ExternalLinkIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-type Starterkit = {
-    id: string
-    name: string
-    description: string
-    techStack: string[]
-    imageUrl: string
-    buttonText: string
-    buttonUrl: string
-}
-
-const starterkits: Starterkit[] = [
-    {
-        id: 'saas-v1-nextjs',
-        name: 'SaaS Next.js Starterkit',
-        description:
-            'Open-source Next.js SaaS starter kit with built-in authentication, database ORM, styling, landing page, dashboard, and more.',
-        techStack: [
-            'nextJs',
-            'shadcnui',
-            'nextauth',
-            'uploadthing',
-            'lemon',
-            'drizzle',
-            'tailwindcss',
-            'typescript',
-        ],
-        imageUrl: '/starterkits/saas-v1/landing.png',
-        buttonText: 'Clone',
-        buttonUrl: urls.app.starterkits.saasNextjs.base,
-    },
-]
-
 export default function StarterkitsTable() {
     return (
-        <section className="container-wrapper grid flex-1 grid-cols-1 md:grid-cols-[1fr_2.5rem_1fr]">
-            <div className="container border-b py-4 md:border-b-0">
-                <SectionHeading>SaaS Starter Kits</SectionHeading>
-                <SectionDescription className="text-muted-foreground">
-                    SaaS starter kits to help you build your SaaS MVP faster.
-                </SectionDescription>
+        <section className="container">
+            <div className="grid grid-cols-1 gap-4">
+                {starterkits.map((starterkit, index) => (
+                    <StarterkitsTableItem
+                        key={starterkit.id + index}
+                        starterkit={starterkit}
+                    />
+                ))}
             </div>
-
-            <div className="hidden h-full border-x md:block" />
-
-            {starterkits.map((starterkit) => (
-                <StarterkitsTableItem
-                    key={starterkit.id}
-                    starterkit={starterkit}
-                />
-            ))}
         </section>
     )
 }
@@ -68,41 +26,56 @@ export function StarterkitsTableItem({
     starterkit: Starterkit
 }) {
     return (
-        <Link
-            href={starterkit.buttonUrl}
-            className="border-grid hover:bg-accent/40 dark:hover:bg-accent/15 focus-ring transition-all focus:border-transparent"
-        >
-            <ImageContentWrapper>
-                <div className="relative aspect-video w-full overflow-hidden">
-                    <Image
-                        src={starterkit.imageUrl}
-                        fill
-                        alt={starterkit.name}
-                        sizes="(min-width: 768px) 50vw, 100vw"
-                        placeholder="blur"
-                        blurDataURL="/starterkits/saas-v1/landing.png"
-                    />
-                </div>
-            </ImageContentWrapper>
-
-            <div className="col-span-1 flex flex-col gap-2 p-4 md:px-6">
-                <h2 className="font-heading text-xl">{starterkit.name}</h2>
-                <p className="text-muted-foreground font-light">
+        <div className="grid w-full grid-cols-2 gap-8">
+            <div className="flex flex-col justify-center gap-4">
+                <p>
+                    <strong className="text-muted-foreground font-semibold">
+                        Starter-kit
+                    </strong>
+                </p>
+                <h2 className="text-2xl font-semibold">{starterkit.name}</h2>
+                <p className="text-foreground/90 text-base">
                     {starterkit.description}
                 </p>
-            </div>
-
-            <ul className="border-grid flex flex-wrap gap-x-4 gap-y-2 border-t p-4 md:px-6">
-                {starterkit.techStack.map((tech, index) => (
-                    <li
-                        key={index}
-                        className="text-foreground flex shrink-0 items-center gap-1 text-sm [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5"
+                <ul className="border-grid flex flex-wrap gap-x-4 gap-y-2 py-4">
+                    {starterkit.techStack.map((tech, index) => (
+                        <li
+                            key={index}
+                            className="text-foreground flex shrink-0 items-center gap-1 text-sm [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5"
+                        >
+                            {techStackIcons[tech].icon}
+                            {techStackIcons[tech].name}
+                        </li>
+                    ))}
+                </ul>
+                <div className="flex flex-col gap-2 sm:flex-row">
+                    <Link
+                        href={starterkit.buttonUrl}
+                        className={buttonVariants({ className: 'w-fit' })}
                     >
-                        {techStackIcons[tech].icon}
-                        {techStackIcons[tech].name}
-                    </li>
-                ))}
-            </ul>
-        </Link>
+                        {starterkit.buttonText}
+                    </Link>
+                    <Link
+                        href={starterkit.preview}
+                        className={buttonVariants({
+                            className: 'w-fit',
+                            variant: 'outline',
+                        })}
+                    >
+                        Live Preview
+                        <ExternalLinkIcon />
+                    </Link>
+                </div>
+            </div>
+            <div className="border-border relative aspect-video overflow-hidden rounded-xl border">
+                <Image
+                    src={starterkit.imageUrl}
+                    alt={starterkit.name}
+                    fill
+                    className="object-cover"
+                    quality={100}
+                />
+            </div>
+        </div>
     )
 }

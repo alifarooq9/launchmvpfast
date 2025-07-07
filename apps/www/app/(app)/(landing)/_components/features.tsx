@@ -1,130 +1,156 @@
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-} from '@/components/ui/tooltip'
-import { Icons } from '@/components/icons'
-import { cn } from '@/lib/utils'
-import { Ripple } from '@/components/ui/ripple'
-import Link from 'next/link'
-import { buttonVariants } from '@/components/ui/button'
-import { urls } from '@/config/urls'
-import { StarIcon } from 'lucide-react'
-import { NumberTicker } from '@/components/ui/number-ticker'
-import { techStackIcons } from '@/components/tech-stack-icons'
+'use client'
 
-async function getGitHubStars() {
-    try {
-        const response = await fetch(
-            'https://api.github.com/repos/alifarooq9/launchmvpfast',
-            {
-                next: {
-                    revalidate: 8400,
-                },
-            }
-        )
-        if (!response?.ok) {
-            return null
-        }
-        const json = await response.json()
-        const stars = parseInt(json.stargazers_count)
-        return stars ?? 0
-    } catch {
-        return 0
-    }
+import {
+    SectionContent,
+    SectionDescription,
+    SectionHeader,
+    SectionHeading,
+} from '@/app/(app)/_components/section-header'
+import { buttonVariants } from '@/components/ui/button'
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from '@/components/ui/card'
+import { urls } from '@/config/urls'
+import { cn } from '@/lib/utils'
+import { ExternalLinkIcon } from 'lucide-react'
+import * as m from 'motion/react-m'
+import Link from 'next/link'
+
+interface FeatureCardProps {
+    title: string
+    description: string
+    features: string[]
+    linkHref: string
+    linkText: string
+    heroText: string
 }
 
-export async function Features() {
-    const stars = await getGitHubStars()
+const MotionCard = m.create(Card)
 
+function FeatureCard({
+    title,
+    description,
+    features,
+    linkHref,
+    linkText,
+    heroText,
+}: FeatureCardProps) {
     return (
-        <section className="container-wrapper from-foreground/5 to-background/15 relative h-full bg-gradient-to-b p-4 py-20 md:px-6">
-            <div className="flex h-full w-full flex-col items-center justify-center gap-3">
-                <p className="text-muted-foreground">Launch in days with</p>
-                <p className="font-heading mx-auto mt-4 max-w-md text-center text-4xl tracking-tighter text-balance">
-                    <strong className="font-medium">
-                        Starter kits, Reusable Components, and Modular Blocks
-                    </strong>
-                </p>
-                <TechStackDisplay
-                    skills={[
-                        'nextJs',
-                        'shadcnui',
-                        'uploadthing',
-                        'nextauth',
-                        'stripe',
-                        'tailwindcss',
-                        'typescript',
-                        'drizzle',
-                        'lemon',
-                    ]}
-                />
-
-                <div className="pt-8">
+        <MotionCard
+            whileInView={{
+                opacity: 1,
+                y: 0,
+                filter: 'blur(0px)',
+            }}
+            initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
+            viewport={{ once: true, amount: 0.8 }}
+            transition={{ duration: 0.8, ease: 'easeInOut' }}
+            className="grid w-full grid-cols-1 overflow-hidden py-0 md:grid-cols-2 lg:grid-cols-3"
+        >
+            <div className="grain-effect mesh-background relative flex h-full min-h-36 w-full items-center justify-center p-4">
+                <div className="z-20 text-center text-2xl leading-snug font-bold text-balance text-white md:text-4xl">
+                    {heroText}
+                </div>
+            </div>
+            <div className="py-6 lg:col-span-2">
+                <CardHeader>
+                    <CardTitle as="h3">{title}</CardTitle>
+                    <CardDescription>{description}</CardDescription>
+                </CardHeader>
+                <CardContent className="my-6">
+                    <ul className="list-disc space-y-2 pl-6">
+                        {features.map((feature, index) => (
+                            <li key={index} className="text-sm font-medium">
+                                {feature}
+                            </li>
+                        ))}
+                    </ul>
+                </CardContent>
+                <CardFooter>
                     <Link
+                        href={linkHref}
                         className={cn(
                             buttonVariants({
                                 variant: 'outline',
-                                size: 'lg',
-                            }),
-                            'group'
+                                size: 'sm',
+                            })
                         )}
-                        target="_blank"
-                        href={urls.socials.gh}
                     >
-                        <Icons.gitHub className="size-4" />
-                        <span>Star on GitHub</span>{' '}
-                        <div className="ml-2 flex items-center gap-1 text-sm md:flex">
-                            <StarIcon className="text-muted-foreground fill-muted-foreground size-4 transition-all duration-300 group-hover:fill-yellow-300 group-hover:text-yellow-300" />
-                            <NumberTicker
-                                value={stars as number}
-                                className="font-medium"
-                            />
-                        </div>
+                        {linkText}
+                        <ExternalLinkIcon />
                     </Link>
-                </div>
-
-                <Ripple
-                    mainCircleSize={400}
-                    mainCircleOpacity={0.2}
-                    className="opacity-70"
-                />
+                </CardFooter>
             </div>
-        </section>
+        </MotionCard>
     )
 }
 
-export const TechStackDisplay = ({
-    skills,
-    className,
-}: {
-    skills: string[]
-    className?: string
-}) => {
+export function Features() {
+    const startkitsFeatures = [
+        'Next.js 15 + TypeScript with Tailwind v4 integration.',
+        'ShadCN UI components with dark/light mode support.',
+        'Authentication, database and payments and more pre-configured out of the box.',
+    ]
+
+    const componentsFeatures = [
+        'Built with ShadCN UI components and Tailwind CSS blocks for pixel-perfect design.',
+        'TypeScript-ready: Fully typed with JSDoc comments and Storybook stories.',
+        'Reusable components: Easily integrate into your Next.js projects with minimal setup.',
+    ]
+
+    const blocksFeatures = [
+        'Pre-built sections: Hero headers, feature grids, pricing tables, and testimonials—drop into any page.',
+        'Responsive: Customize via CSS variables for branding.',
+        'Shadcn & Tailwind blocks: Use in any shadcn or Tailwind project.',
+    ]
+
+    const featureCards = [
+        {
+            title: 'Open-Source Starter Kits',
+            description:
+                'A collection of open-source starter kits designed to help you kickstart your SaaS MVP development. Each kit is built with the latest technologies and best practices in mind.',
+            features: startkitsFeatures,
+            linkHref: urls.app.starterkits.base,
+            linkText: 'View All Starter Kits',
+            heroText: 'Open Source Starter Kits',
+        },
+        {
+            title: 'Re-usable Components',
+            description:
+                'A collection of re-usable components designed to help you build your SaaS MVP faster. Each component is built with the latest technologies and best practices in mind.',
+            features: componentsFeatures,
+            linkHref: urls.app.components,
+            linkText: 'View All Components',
+            heroText: 'Re-usable Components',
+        },
+        {
+            title: 'UI Blocks',
+            description:
+                'A collection of pre-built UI blocks designed to help you build your SaaS MVP faster. Each block is built with the latest technologies and best practices in mind.',
+            features: blocksFeatures,
+            linkHref: urls.app.blocks,
+            linkText: 'View All UI Blocks',
+            heroText: 'UI Blocks',
+        },
+    ]
+
     return (
-        <section
-            className={cn(
-                'mt-3 flex max-w-4xl flex-wrap items-center justify-center gap-7',
-                className
-            )}
-        >
-            {skills.map((icon) => {
-                return (
-                    <TooltipProvider delayDuration={50} key={icon}>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <span className="transform transition-transform duration-300 hover:rotate-12 [&_svg:not([class*='size-'])]:size-9">
-                                    {techStackIcons[icon].icon}
-                                </span>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                {techStackIcons[icon].name}
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
-                )
-            })}
-        </section>
+        <SectionHeader>
+            <SectionHeading>What we offer.</SectionHeading>
+            <SectionDescription>
+                What we offer in our open-source library.
+            </SectionDescription>
+
+            <SectionContent className="gap-14">
+                {featureCards.map((card, index) => (
+                    <FeatureCard key={index} {...card} />
+                ))}
+            </SectionContent>
+        </SectionHeader>
     )
 }

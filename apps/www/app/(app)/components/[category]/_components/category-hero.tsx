@@ -1,7 +1,6 @@
 import {
     PageDescription,
     PageHeader,
-    PageHeaderWrapper,
     PageHeading,
 } from '@/app/(app)/_components/page-header'
 
@@ -15,14 +14,19 @@ export function ComponentsCategoryHero({
     count,
 }: ComponentsCategoryHeroProps) {
     return (
-        <PageHeaderWrapper>
-            <PageHeader>
-                <PageHeading>{name}</PageHeading>
-                <PageDescription className="max-w-[80rem]">
-                    A growing collection of {count} {name} components built with
-                    Shadcn UI and Tailwind CSS.
-                </PageDescription>
-            </PageHeader>
-        </PageHeaderWrapper>
+        <PageHeader>
+            <PageHeading>
+                {name} <span className="text-foreground/70">Component</span>
+            </PageHeading>
+            <PageDescription className="max-w-[80rem]">
+                A growing collection of{' '}
+                <span className="text-foreground font-bold">
+                    {count} {name} components
+                </span>{' '}
+                built with{' '}
+                <span className="text-foreground font-bold">Shadcn UI</span> and{' '}
+                <span className="text-foreground font-bold">Tailwind CSS.</span>
+            </PageDescription>
+        </PageHeader>
     )
 }

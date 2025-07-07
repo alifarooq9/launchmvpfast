@@ -1,128 +1,119 @@
-import { BlocksDemoContent } from '@/app/(app)/(landing)/_components/blocks-demo-content'
+'use client'
+
+import { StarterkitsDemoContent } from '@/app/(app)/(landing)/_components/starterkits-demo-content'
+import {
+    Tabs,
+    TabsList,
+    TabsTrigger,
+    TabsContent,
+} from '@/components/ui/animated-tabs'
+import { useState } from 'react'
+import * as m from 'motion/react-m'
 import { ComponentsDemoContent } from '@/app/(app)/(landing)/_components/components-demo-content'
-import { GridGap } from '@/app/(app)/_components/grid-gap'
-import { ImageContentWrapper } from '@/app/(app)/_components/image-content-wrapper'
-import { ThreeDMarquee } from '@/components/ui/3d-marquee'
-import { Badge } from '@/components/ui/badge'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { BlocksDemoContent } from '@/app/(app)/(landing)/_components/blocks-demo-content'
 
-const tabTriggerKeys = {
-    starterkits: 'starterKits',
-    components: 'components',
-    blocks: 'blocks',
+const initialDelay = 2
+
+const variants = {
+    hidden: (custom: {
+        delay?: number
+        duration?: number
+        horizontal?: boolean
+    }) => ({
+        opacity: 0,
+        x: custom?.horizontal ? 40 : 0,
+        y: custom?.horizontal ? 0 : 20,
+        filter: 'blur(15px)',
+    }),
+    visible: (custom: {
+        delay?: number
+        duration?: number
+        horizontal?: boolean
+    }) => ({
+        opacity: 1,
+        x: 0,
+        y: 0,
+        filter: 'blur(0px)',
+        transition: {
+            delay: custom?.delay ?? initialDelay,
+            duration: custom?.duration ?? 0.6,
+        },
+    }),
 }
-const tabTriggers = [
-    {
-        key: tabTriggerKeys.starterkits,
-        label: 'Starter Kits',
-        description:
-            'Free open-source kits to launch your MVP fast. From SaaS to personal portfolios projects, start building in minutes.',
-        badge: 'SaaS V2 Soon',
-        disabled: false,
-    },
-    {
-        key: tabTriggerKeys.components, // Corrected from "commponents"
-        label: 'Components',
-        description:
-            'Reusable, customizable components for your tech stack. Save time with pre-built UI elements and code snippets.',
-        badge: 'New',
-        disabled: false,
-    },
-    {
-        key: tabTriggerKeys.blocks,
-        label: 'Blocks',
-        description:
-            'Modular blocks to build complex apps faster. Combine pre-built sections for seamless, efficient development.',
-        badge: 'New',
-        disabled: false,
-    },
-]
-
-const starterkitImags = [
-    '/starterkits/saas-v1/landing.png',
-    '/starterkits/saas-v1/auth.png',
-    '/starterkits/saas-v1/blog.png',
-    '/starterkits/saas-v1/dashboard.png',
-    '/starterkits/saas-v1/admin-dashboard.png',
-    '/starterkits/saas-v1/changelog.png',
-    '/starterkits/saas-v1/billing.png',
-    '/starterkits/saas-v1/users.png',
-    '/starterkits/saas-v1/org-settings.png',
-    '/starterkits/saas-v1/org-members.png',
-    '/starterkits/saas-v1/org-invite.png',
-    '/starterkits/saas-v1/waitlist.png',
-    '/starterkits/saas-v1/organizations.png',
-    '/starterkits/saas-v1/feedback-list.png',
-    '/starterkits/saas-v1/docs.png',
-    '/starterkits/saas-v1/landing.png',
-    '/starterkits/saas-v1/auth.png',
-    '/starterkits/saas-v1/blog.png',
-    '/starterkits/saas-v1/dashboard.png',
-    '/starterkits/saas-v1/admin-dashboard.png',
-    '/starterkits/saas-v1/changelog.png',
-    '/starterkits/saas-v1/billing.png',
-    '/starterkits/saas-v1/users.png',
-    '/starterkits/saas-v1/org-settings.png',
-    '/starterkits/saas-v1/org-members.png',
-    '/starterkits/saas-v1/org-invite.png',
-    '/starterkits/saas-v1/waitlist.png',
-    '/starterkits/saas-v1/organizations.png',
-    '/starterkits/saas-v1/feedback-list.png',
-    '/starterkits/saas-v1/docs.png',
-]
 
 export function Demos() {
+    const [value, setValue] = useState(tabs[0].value)
+
     return (
-        <section>
-            <Tabs defaultValue={tabTriggerKeys.starterkits} className="gap-0">
-                <div className="border-grid border-t">
-                    <div className="container-wrapper">
-                        <TabsList className="bg-background grid h-auto w-full grid-cols-3 p-0">
-                            {tabTriggers.map((trigger) => (
-                                <TabsTrigger
-                                    key={trigger.key}
-                                    value={trigger.key}
-                                    className="flex h-fit cursor-pointer flex-col items-center gap-0 rounded-none border-0 px-4 py-4 whitespace-normal disabled:pointer-events-none md:items-start md:gap-2 md:py-6 md:text-left"
-                                    disabled={trigger.disabled}
-                                >
-                                    <div className="flex items-center gap-2">
-                                        <h2 className="text-foreground text-sm md:text-lg">
-                                            <strong className="font-heading">
-                                                {trigger.label}
-                                            </strong>
-                                        </h2>
-                                        <Badge
-                                            variant="secondary"
-                                            className="hidden h-fit md:block"
-                                        >
-                                            {trigger.badge}
-                                        </Badge>
-                                    </div>
-                                    <p className="text-muted-foreground hidden md:block">
-                                        {trigger.description}
-                                    </p>
-                                </TabsTrigger>
-                            ))}
-                        </TabsList>
-                    </div>
-                </div>
-
-                <GridGap className="h-4" />
-
-                <div className="container-wrapper">
-                    <TabsContent value={tabTriggerKeys.starterkits}>
-                        <ImageContentWrapper>
-                            <ThreeDMarquee images={starterkitImags} />
-                        </ImageContentWrapper>
+        <div className="relative flex w-full items-center justify-center">
+            <Tabs
+                value={value}
+                onValueChange={setValue}
+                className="flex w-full flex-col items-center"
+            >
+                <m.div
+                    variants={variants}
+                    initial="hidden"
+                    animate="visible"
+                    custom={{ delay: 1.2 }}
+                >
+                    <TabsList>
+                        {tabs.map((tab) => (
+                            <TabsTrigger
+                                key={tab.value}
+                                value={tab.value}
+                                className="flex flex-col items-start"
+                            >
+                                {tab.label}
+                            </TabsTrigger>
+                        ))}
+                    </TabsList>
+                </m.div>
+                <m.div
+                    variants={variants}
+                    initial="hidden"
+                    animate="visible"
+                    custom={{ delay: 1.4, horizontal: true }}
+                    className="relative flex w-full items-center justify-center"
+                >
+                    <TabsContent value={tabs[0].value} className="mt-4 w-full">
+                        <StarterkitsDemoContent />
                     </TabsContent>
-                    <TabsContent value={tabTriggerKeys.components}>
+                    <TabsContent value={tabs[1].value} className="mt-4 w-full">
                         <ComponentsDemoContent />
                     </TabsContent>
-                    <TabsContent value={tabTriggerKeys.blocks}>
+                    <TabsContent value={tabs[2].value} className="mt-4 w-full">
                         <BlocksDemoContent />
                     </TabsContent>
-                </div>
+                </m.div>
             </Tabs>
-        </section>
+            <m.span
+                initial={{ opacity: 0, scale: 0.5, filter: 'blur(50px)' }}
+                animate={{ opacity: 1, scale: 1, filter: 'blur(170px)' }}
+                transition={{
+                    delay: 1.6,
+                    duration: 0.8,
+                }}
+                className="pointer-events-none absolute top-14 -z-10 h-64 w-[60%] max-w-6xl rounded-[100%] bg-white/50 blur-[170px] select-none"
+            />
+        </div>
     )
 }
+
+const tabs = [
+    {
+        label: 'Starter Kits',
+        description: 'Open-source starter kits to kickstart your SaaS MVP',
+        value: 'starter-kits',
+    },
+    {
+        label: 'Components',
+        description: 'Reusable UI components for your projects',
+        value: 'components',
+    },
+    {
+        label: 'Blocks',
+        description: 'Pre-built blocks for rapid development',
+        value: 'blocks',
+    },
+]

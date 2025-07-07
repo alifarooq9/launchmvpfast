@@ -1,7 +1,9 @@
-import { GridGap } from '@/app/(app)/_components/grid-gap'
+import { PageContainer } from '@/app/(app)/_components/page-header'
+import { Suggest } from '@/app/(app)/_components/suggest'
 import { StarterkitsHero } from '@/app/(app)/open-source-starterkits/_components/starterkits-hero'
 import StarterkitsTable from '@/app/(app)/open-source-starterkits/_components/starterkits-table'
 import { siteConfig } from '@/config/site'
+import { urls } from '@/config/urls'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -12,12 +14,17 @@ export const metadata: Metadata = {
 
 export default function StarterKits() {
     return (
-        <>
+        <PageContainer>
             <StarterkitsHero />
 
-            <GridGap className="h-10" />
-
             <StarterkitsTable />
-        </>
+
+            <Suggest
+                title="Didn't find what you were looking for?"
+                buttonText="Suggest Starter Kit"
+                buttonLink={urls.socials.suggestions}
+                className="flex-1"
+            />
+        </PageContainer>
     )
 }

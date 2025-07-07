@@ -1,4 +1,4 @@
-import { GridGap } from '@/app/(app)/_components/grid-gap'
+import { PageContainer } from '@/app/(app)/_components/page-header'
 import { Suggest } from '@/app/(app)/_components/suggest'
 import { BlocksCategoryTable } from '@/app/(app)/blocks/[category]/_component/category-blocks-table'
 import { BlocksCategoryHero } from '@/app/(app)/blocks/[category]/_component/category-hero'
@@ -60,17 +60,13 @@ export default async function BlocksCategory({ params }: BlocksCategoryProps) {
     }
 
     return (
-        <>
+        <PageContainer>
             <BlocksCategoryHero
                 name={category.name}
                 count={category.blocks.length}
             />
 
-            <GridGap className="h-10" />
-
             <BlocksCategoryTable category={category} />
-
-            <GridGap className="h-10" />
 
             <Suggest
                 title="Didn't find what you were looking for?"
@@ -78,6 +74,6 @@ export default async function BlocksCategory({ params }: BlocksCategoryProps) {
                 buttonLink={urls.socials.suggestions}
                 className="flex-1"
             />
-        </>
+        </PageContainer>
     )
 }

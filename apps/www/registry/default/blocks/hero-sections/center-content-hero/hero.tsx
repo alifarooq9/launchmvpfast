@@ -5,7 +5,7 @@ import Header from '@/registry/default/blocks/hero-sections/center-content-hero/
 import { cn } from '@/lib/utils'
 import { buttonVariants } from '@/components/ui/button'
 import { InteractiveGridPattern } from '@/components/ui/interactive-grid-pattern'
-import { motion as m } from 'motion/react'
+import { motion as m, Variants } from 'motion/react'
 
 const staggerDelay = 0.4
 const initialDelay = 0.2 // initial delay before the first element animates
@@ -47,7 +47,7 @@ export default function Hero() {
                 <div className="relative flex flex-col items-center justify-center gap-6">
                     <h1 className="text-center text-2xl font-bold text-balance md:text-3xl lg:text-4xl xl:text-5xl">
                         <m.span
-                            variants={variants}
+                            variants={variants as Variants}
                             custom={0}
                             initial="hidden"
                             animate="visible"
@@ -55,7 +55,7 @@ export default function Hero() {
                             Starterkits.
                         </m.span>{' '}
                         <m.span
-                            variants={variants}
+                            variants={variants as Variants}
                             custom={1}
                             initial="hidden"
                             animate="visible"
@@ -63,7 +63,7 @@ export default function Hero() {
                             Components.
                         </m.span>{' '}
                         <m.span
-                            variants={variants}
+                            variants={variants as Variants}
                             custom={2}
                             initial="hidden"
                             animate="visible"
@@ -72,7 +72,7 @@ export default function Hero() {
                         </m.span>
                     </h1>
                     <m.p
-                        variants={variants}
+                        variants={variants as Variants}
                         custom={3}
                         initial="hidden"
                         animate="visible"
@@ -93,7 +93,7 @@ export default function Hero() {
                     </m.p>
                     <div className="flex flex-col items-center gap-2 sm:flex-row">
                         <m.div
-                            variants={variants}
+                            variants={variants as Variants}
                             custom={4}
                             initial="hidden"
                             animate="visible"
@@ -113,7 +113,7 @@ export default function Hero() {
                             </Link>
                         </m.div>
                         <m.div
-                            variants={variants}
+                            variants={variants as Variants}
                             custom={5}
                             initial="hidden"
                             animate="visible"
@@ -253,7 +253,7 @@ function FadeLine({
                   transition: {
                       duration: 1.5,
                       delay: delay + totalDelay,
-                      ease: 'easeOut',
+                      ease: 'easeOut' as const,
                   },
               }
             : {
@@ -262,7 +262,7 @@ function FadeLine({
                   transition: {
                       duration: 1.5,
                       delay: delay + totalDelay,
-                      ease: 'easeOut',
+                      ease: 'easeOut' as const,
                   },
               }
 

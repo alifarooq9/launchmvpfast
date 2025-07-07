@@ -32,7 +32,7 @@ export function SendProposalDialog() {
                     <Button
                         className={buttonVariants({
                             size: 'lg',
-                            className: 'cursor-pointer',
+                            className: 'w-full cursor-pointer',
                         })}
                     >
                         Send Proposal
@@ -57,7 +57,7 @@ export function SendProposalDialog() {
                 <Button
                     className={buttonVariants({
                         size: 'lg',
-                        className: 'cursor-pointer',
+                        className: 'w-full cursor-pointer',
                     })}
                 >
                     Send Proposal

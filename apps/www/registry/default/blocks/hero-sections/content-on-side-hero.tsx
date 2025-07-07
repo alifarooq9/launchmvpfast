@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
 import { CornerRightUpIcon } from 'lucide-react'
 import Link from 'next/link'
-import { motion as m } from 'motion/react'
+import { motion as m, Variants } from 'motion/react'
 
 const staggerDelay = 0.3
 const initialDelay = 0.2 // initial delay before the first element animates
@@ -38,7 +38,7 @@ export default function Hero() {
                             initial="hidden"
                             animate="visible"
                             custom={0}
-                            variants={variants}
+                            variants={variants as Variants}
                             className="text-center text-2xl font-bold text-balance sm:text-3xl md:text-4xl lg:text-left xl:text-5xl"
                         >
                             Collaborate smarter streamlined your workflow
@@ -47,7 +47,7 @@ export default function Hero() {
                             initial="hidden"
                             animate="visible"
                             custom={1}
-                            variants={variants}
+                            variants={variants as Variants}
                             className="text-muted-foreground text-center text-sm font-medium sm:text-base md:text-lg lg:text-left"
                         >
                             <span className="text-foreground">Collaborate</span>{' '}
@@ -109,7 +109,7 @@ function SignupForm() {
             initial="hidden"
             animate="visible"
             custom={2}
-            variants={variants}
+            variants={variants as Variants}
             className="flex w-full flex-col gap-2 md:max-w-4/5"
         >
             <div className="flex items-center">
@@ -134,7 +134,7 @@ function SocialProof() {
                     initial="hidden"
                     animate="visible"
                     custom={3 + index}
-                    variants={variants}
+                    variants={variants as Variants}
                     key={key}
                 >
                     <Icon className="text-muted-foreground hover:text-foreground h-6 w-6 transition-all sm:h-8 sm:w-8" />
