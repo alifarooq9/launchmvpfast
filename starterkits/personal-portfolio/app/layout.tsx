@@ -34,7 +34,7 @@ export default function RootLayout({
           src="/background.png"
           alt="Background Image"
           fill
-          className="object-cover -z-10 blur-xl"
+          className="object-cover -z-10 blur-md"
         />
       </body>
     </html>
