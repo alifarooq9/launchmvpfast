@@ -11,7 +11,7 @@ export function BlocksTable() {
     const { resolvedTheme } = useTheme()
 
     return (
-        <section className="container grid grid-cols-3 gap-4">
+        <section className="container grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             {categories.length > 0 &&
                 categories.map((category) => (
                     <div

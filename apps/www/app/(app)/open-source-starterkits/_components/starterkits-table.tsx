@@ -26,7 +26,7 @@ export function StarterkitsTableItem({
     starterkit: Starterkit
 }) {
     return (
-        <div className="grid w-full grid-cols-2 gap-8">
+        <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2">
             <div className="flex flex-col justify-center gap-4">
                 <p>
                     <strong className="text-muted-foreground font-semibold">
