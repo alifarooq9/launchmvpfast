@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
+import { SiteHeader } from "@/components/site-header";
 
 const fontsans = Inter({
   variable: "--font-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body
         className={`${fontsans.variable} ${fontmono.variable} antialiased dark font-sans relative`}
       >
+        <SiteHeader />
         {children}
 
         <Image

@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex items-start gap-8 flex-col min-h-svh justify-center container">
-      <p className="text-lg">👋 Hi there, nice to meet you...</p>
+    <main className="flex items-start gap-8 py-16 flex-col min-h-svh justify-center container">
+      <p className="text-lg">👋 Hi there, I'm Ali. nice to meet you...</p>
       <h1 className="font-medium text-4xl flex flex-col text-balance leading-normal tracking-tight">
-        Web Developer —<span>✦ I focus on building your MVP fast</span>
+        Web Developer —<span>✦ I focus on building your MVP fast.</span>
         <span>✦ You focus on growing it fast.</span>
       </h1>
       <p className="text-muted-foreground font-medium text-balance">
