@@ -1,0 +1,499 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* FediFlow brand colors and customizations */
+:root {
+  --ifm-color-primary: #6366f1;
+  --ifm-color-primary-dark: #4f46e5;
+  --ifm-color-primary-darker: #4338ca;
+  --ifm-color-primary-darkest: #3730a3;
+  --ifm-color-primary-light: #818cf8;
+  --ifm-color-primary-lighter: #a5b4fc;
+  --ifm-color-primary-lightest: #c7d2fe;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-font-family-base: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif;
+  --ifm-heading-font-family: var(--ifm-font-family-base);
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.6;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #818cf8;
+  --ifm-color-primary-dark: #6366f1;
+  --ifm-color-primary-darker: #4f46e5;
+  --ifm-color-primary-darkest: #4338ca;
+  --ifm-color-primary-light: #a5b4fc;
+  --ifm-color-primary-lighter: #c7d2fe;
+  --ifm-color-primary-lightest: #e0e7ff;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Custom styles for FediFlow documentation */
+.hero--primary {
+  --ifm-hero-background-color: var(--ifm-color-primary);
+  --ifm-hero-text-color: var(--ifm-color-white);
+}
+
+.navbar__brand {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.menu__link {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.table-of-contents__link {
+  font-size: 0.85rem;
+}
+
+/* Enhanced typography for better readability */
+.markdown h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-color-primary);
+}
+
+.markdown h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--ifm-color-emphasis-300);
+  padding-bottom: 0.5rem;
+}
+
+.markdown h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.markdown h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Custom cards for feature highlights */
+.feature-card {
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--ifm-color-primary);
+}
+
+.feature-card h4 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .markdown h1 {
+    font-size: 2rem;
+  }
+  
+  .markdown h2 {
+    font-size: 1.5rem;
+  }
+  
+  .markdown h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Custom Callout Boxes and Enhanced Reader Aids */
+
+/* Callout Box Base Styles */
+.callout {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid;
+  border-radius: 0 8px 8px 0;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Light Mode Callouts */
+[data-theme='light'] .callout {
+  background: #f8f9fa;
+}
+
+/* Dark Mode Callouts */
+[data-theme='dark'] .callout {
+  background: #1e1e1e;
+}
+
+/* Callout Types */
+.callout--note {
+  border-left-color: #0969da;
+}
+
+[data-theme='light'] .callout--note {
+  background: #f6f8fa;
+  color: #24292f;
+}
+
+[data-theme='dark'] .callout--note {
+  background: #0d1117;
+  color: #f0f6fc;
+}
+
+.callout--tip {
+  border-left-color: #1a7f37;
+}
+
+[data-theme='light'] .callout--tip {
+  background: #f6f8fa;
+  color: #24292f;
+}
+
+[data-theme='dark'] .callout--tip {
+  background: #0d1117;
+  color: #f0f6fc;
+}
+
+.callout--warning {
+  border-left-color: #bf8700;
+}
+
+[data-theme='light'] .callout--warning {
+  background: #fff8c5;
+  color: #24292f;
+}
+
+[data-theme='dark'] .callout--warning {
+  background: #1c1b17;
+  color: #f0f6fc;
+}
+
+.callout--danger {
+  border-left-color: #cf222e;
+}
+
+[data-theme='light'] .callout--danger {
+  background: #ffebe9;
+  color: #24292f;
+}
+
+[data-theme='dark'] .callout--danger {
+  background: #1a1a1a;
+  color: #f0f6fc;
+}
+
+.callout--important {
+  border-left-color: #8250df;
+}
+
+[data-theme='light'] .callout--important {
+  background: #fbf0ff;
+  color: #24292f;
+}
+
+[data-theme='dark'] .callout--important {
+  background: #1a1a1a;
+  color: #f0f6fc;
+}
+
+/* Callout Icons */
+.callout::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 1rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+  color: white;
+}
+
+.callout--note::before {
+  content: 'ℹ';
+  background: #0969da;
+}
+
+.callout--tip::before {
+  content: '💡';
+  background: #1a7f37;
+}
+
+.callout--warning::before {
+  content: '⚠';
+  background: #bf8700;
+}
+
+.callout--danger::before {
+  content: '🚨';
+  background: #cf222e;
+}
+
+.callout--important::before {
+  content: '❗';
+  background: #8250df;
+}
+
+/* Callout Titles */
+.callout__title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+}
+
+.callout--note .callout__title {
+  color: #0969da;
+}
+
+.callout--tip .callout__title {
+  color: #1a7f37;
+}
+
+.callout--warning .callout__title {
+  color: #bf8700;
+}
+
+.callout--danger .callout__title {
+  color: #cf222e;
+}
+
+.callout--important .callout__title {
+  color: #8250df;
+}
+
+/* Section Dividers */
+.section-divider {
+  margin: 3rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--ifm-color-emphasis-300), transparent);
+}
+
+.section-divider__content {
+  background: var(--ifm-background-color);
+  padding: 0 2rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-600);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+}
+
+/* Enhanced Tables */
+.enhanced-table {
+  margin: 2rem 0;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.enhanced-table th {
+  background: var(--ifm-color-primary);
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+}
+
+.enhanced-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.enhanced-table tr:nth-child(even) {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.enhanced-table tr:hover {
+  background: var(--ifm-color-emphasis-200);
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge--complete {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.status-badge--in-progress {
+  background: #fff3cd;
+  color: #664d03;
+}
+
+.status-badge--planned {
+  background: #cff4fc;
+  color: #055160;
+}
+
+.status-badge--draft {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Dark mode status badges */
+[data-theme='dark'] .status-badge--complete {
+  background: #0f5132;
+  color: #d1e7dd;
+}
+
+[data-theme='dark'] .status-badge--in-progress {
+  background: #664d03;
+  color: #fff3cd;
+}
+
+[data-theme='dark'] .status-badge--planned {
+  background: #055160;
+  color: #cff4fc;
+}
+
+[data-theme='dark'] .status-badge--draft {
+  background: #721c24;
+  color: #f8d7da;
+}
+
+/* Highlight Boxes */
+.highlight-box {
+  background: linear-gradient(135deg, var(--ifm-color-primary-light), var(--ifm-color-primary));
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.highlight-box h3,
+.highlight-box h4 {
+  color: white;
+  margin-top: 0;
+}
+
+.highlight-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* Stats Cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat-card {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card__number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card__label {
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-600);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* Enhanced responsive adjustments */
+@media (max-width: 768px) {
+  .callout {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 8px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-card__number {
+    font-size: 2rem;
+  }
+  
+  .section-divider__content {
+    padding: 0 1rem;
+    font-size: 0.75rem;
+  }
+  
+  .highlight-box {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 0;
+  }
+}
+
+/* Accessibility improvements */
+.callout:focus-within,
+.stat-card:focus-within {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .callout {
+    border-width: 3px;
+  }
+  
+  .stat-card {
+    border-width: 2px;
+  }
+  
+  .section-divider::before {
+    height: 2px;
+  }
+}
