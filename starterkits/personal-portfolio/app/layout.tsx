@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Image from "next/image";
 import { SiteHeader } from "@/components/site-header";
+import { Providers } from "@/components/providers/providers";
 
 const fontsans = Inter({
   variable: "--font-sans",
@@ -29,15 +29,10 @@ export default function RootLayout({
       <body
         className={`${fontsans.variable} ${fontmono.variable} antialiased dark font-sans relative`}
       >
-        <SiteHeader />
-        {children}
-
-        <Image
-          src="/background.png"
-          alt="Background Image"
-          fill
-          className="object-cover -z-10 blur-md"
-        />
+        <Providers>
+          <SiteHeader />
+          {children}
+        </Providers>
       </body>
     </html>
   );
