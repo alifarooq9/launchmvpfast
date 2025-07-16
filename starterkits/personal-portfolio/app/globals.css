@@ -113,7 +113,7 @@
 }
 
 @utility container {
-  @apply max-w-4xl mx-auto px-4 xl:px-6;
+  @apply max-w-3xl mx-auto px-4 xl:px-6;
 }
 
 @utility focus-ring {
