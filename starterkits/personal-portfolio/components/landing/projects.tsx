@@ -16,9 +16,9 @@ const variants: Variants = {
   animate: { opacity: 1, y: 0, filter: "blur(0px)" },
 };
 
-export function SelectedProjects() {
+export function Projects() {
   return (
-    <SectionHeader>
+    <SectionHeader id="projects">
       <SectionHeading
         variants={variants}
         initial="initial"
@@ -26,11 +26,11 @@ export function SelectedProjects() {
         motion
         transition={{ duration: 0.6, ease: "easeOut", delay: 1.2 }}
       >
-        Selected Projects
+        {siteConfig.projects.title}
       </SectionHeading>
       <SectionContent>
         <div className="grid grid-cols-2 gap-4">
-          {siteConfig.selectedProjects.projects.map((project, index) => (
+          {siteConfig.projects.projects.map((project, index) => (
             <ProjectItem key={index} project={project} index={index} />
           ))}
         </div>
@@ -63,7 +63,7 @@ export function ProjectItem({
         autoPlay
         loop
         muted
-        className="rounded-xl border border-border"
+        className="rounded-lg border border-border"
       />
       <div className="flex items-cener gap-2 mt-2">
         <h3 className="font-medium text-balance">{project.title}</h3>

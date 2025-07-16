@@ -14,15 +14,7 @@ type Nav = {
 export const nav: Nav = {
   header: [
     {
-      title: "Projects",
-      href: urls.projects,
-    },
-    {
-      title: "About",
-      href: urls.about,
-    },
-    {
-      title: "Blog",
+      title: "Writings",
       href: urls.blog,
     },
     {

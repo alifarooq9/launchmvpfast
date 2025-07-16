@@ -9,6 +9,12 @@ export type ProjectItem = {
   showStars?: boolean;
 };
 
+export type ExperienceItem = {
+  company: string;
+  position: string;
+  duration: string;
+};
+
 export type SiteConfig = {
   landing: {
     hero: {
@@ -35,9 +41,13 @@ export type SiteConfig = {
       };
     };
   };
-  selectedProjects: {
+  projects: {
     title: string;
     projects: ProjectItem[];
+  };
+  experience?: {
+    title: string;
+    experiences: ExperienceItem[];
   };
 };
 
@@ -62,14 +72,14 @@ export const siteConfig: SiteConfig = {
           href: urls.bookCall,
         },
         secondary: {
-          label: "Browse my projects",
-          href: urls.projects,
+          label: "Read my blog",
+          href: urls.blog,
         },
       },
     },
   },
-  selectedProjects: {
-    title: "Selected Projects",
+  projects: {
+    title: "Projects",
     projects: [
       {
         title: "Launch mvp fast",
@@ -90,6 +100,21 @@ export const siteConfig: SiteConfig = {
         github: "https://github.com/alifarooq9/promptthing",
         livePreview: "https://prompthing.vercel.app/",
         showStars: true,
+      },
+    ],
+  },
+  experience: {
+    title: "Work Experience",
+    experiences: [
+      {
+        company: "Launch MVP Fast",
+        position: "Founder & Developer",
+        duration: "2024 - Present",
+      },
+      {
+        company: "Freelance",
+        position: "Web Developer",
+        duration: "2021 - Present",
       },
     ],
   },
