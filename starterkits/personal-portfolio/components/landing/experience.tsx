@@ -30,7 +30,7 @@ export function Experience() {
           {siteConfig.experience?.experiences.map((item, index) => (
             <m.li
               key={index}
-              className="flex items-center bg-card border-border justify-between gap-4 border rounded-md w-full px-4 py-2.5"
+              className="flex items-center bg-card border-border justify-between gap-4 border rounded-md w-full px-4 py-3"
               variants={variants}
               initial="initial"
               whileInView="animate"
@@ -42,10 +42,12 @@ export function Experience() {
               viewport={{ once: true }}
             >
               <div className="flex flex-col gap-0.5">
-                <h4 className="font-medium text-sm">{item.position}</h4>
-                <p className="text-muted-foreground text-sm">{item.company}</p>
+                <h4 className="font-semibold text-sm">{item.position}</h4>
+                <p className="text-foreground/60 text-sm font-medium">
+                  {item.company}
+                </p>
               </div>
-              <p className="text-muted-foreground text-sm">{item.duration}</p>
+              <p className="text-foreground/50 text-sm">{item.duration}</p>
             </m.li>
           ))}
         </ul>

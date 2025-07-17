@@ -52,6 +52,14 @@ export type SiteConfig = {
   blog?: {
     title: string;
   };
+  connect: {
+    title: string;
+    email: string;
+    socials: {
+      label: string;
+      href: string;
+    }[];
+  };
 };
 
 export const siteConfig: SiteConfig = {
@@ -125,5 +133,27 @@ export const siteConfig: SiteConfig = {
     title: "Writings",
     //blog items will be automatically fetched from the blog directory
     // create a new blog post by adding a .mdx file in the /blog directory
+  },
+  connect: {
+    title: "Connect",
+    email: "alidotm.me@gmail.com",
+    socials: [
+      {
+        label: "Github",
+        href: "https://github.com/alifarooq9",
+      },
+      {
+        label: "Twitter",
+        href: "https://x.com/alifarooqdev",
+      },
+      {
+        label: "Linkedin",
+        href: "https://www.linkedin.com/in/alifarooq9/",
+      },
+      {
+        label: "Bluesky",
+        href: "https://bsky.app/profile/alifarooq9.bsky.social",
+      },
+    ],
   },
 };
