@@ -7,7 +7,7 @@ import { siteConfig } from "@/config/site";
 
 export default function Home() {
   return (
-    <main className="flex items-start gap-20 py-36 flex-col justify-center container">
+    <main className="flex items-start gap-20 pt-36 pb-20 flex-col justify-center container">
       <Hero />
       <Projects />
       {siteConfig.blog && <Blog />}

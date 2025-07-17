@@ -30,7 +30,7 @@ export function Experience() {
           {siteConfig.experience?.experiences.map((item, index) => (
             <m.li
               key={index}
-              className="flex items-center bg-card border-border justify-between gap-4 border rounded-md w-full px-4 py-3"
+              className="flex items-center bg-secondary/90 border-border justify-between gap-4 border rounded-md w-full px-4 py-3"
               variants={variants}
               initial="initial"
               whileInView="animate"

@@ -3,6 +3,7 @@ import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { Providers } from "@/components/providers/providers";
+import { SiteFooter } from "@/components/site-footer";
 
 const fontsans = Inter({
   variable: "--font-sans",
@@ -25,13 +26,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${fontsans.variable} ${fontmono.variable} antialiased dark font-sans relative`}
+        className={`${fontsans.variable} ${fontmono.variable} antialiased font-sans relative`}
       >
         <Providers>
           <SiteHeader />
           {children}
+          <SiteFooter />
         </Providers>
       </body>
     </html>

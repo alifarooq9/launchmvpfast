@@ -81,7 +81,7 @@ export function Blog() {
                 <div
                   className={cn(
                     buttonVariants({ variant: "secondary", size: "lg" }),
-                    "justify-between text-base bg-card h-auto py-2.5 border px-4 flex-1 group-hover:bg-secondary/80 min-w-0 overflow-hidden"
+                    "justify-between bg-secondary/90 text-base h-auto py-2.5 border px-4 flex-1 hover:bg-secondary/60 group-hover:bg-secondary/60 min-w-0 overflow-hidden"
                   )}
                 >
                   <h3 className="break-words flex-1 min-w-0 whitespace-normal">
