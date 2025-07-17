@@ -18,7 +18,7 @@ const variants: Variants = {
 
 export function Projects() {
   return (
-    <SectionHeader id="projects">
+    <SectionHeader>
       <SectionHeading
         variants={variants}
         initial="initial"
@@ -29,7 +29,7 @@ export function Projects() {
         {siteConfig.projects.title}
       </SectionHeading>
       <SectionContent>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {siteConfig.projects.projects.map((project, index) => (
             <ProjectItem key={index} project={project} index={index} />
           ))}

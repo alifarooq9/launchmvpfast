@@ -103,7 +103,7 @@ export const siteConfig: SiteConfig = {
         showStars: true,
       },
       {
-        title: "Prompthing",
+        title: "Promptthing",
         description:
           "A open-source alternative to t3.chat, created it for theo's cloneathon.",
         video:
