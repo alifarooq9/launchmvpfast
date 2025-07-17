@@ -49,6 +49,9 @@ export type SiteConfig = {
     title: string;
     experiences: ExperienceItem[];
   };
+  blog?: {
+    title: string;
+  };
 };
 
 export const siteConfig: SiteConfig = {
@@ -107,7 +110,7 @@ export const siteConfig: SiteConfig = {
     title: "Work Experience",
     experiences: [
       {
-        company: "Launch MVP Fast",
+        company: "Launchmvpfast.com",
         position: "Founder & Developer",
         duration: "2024 - Present",
       },
@@ -117,5 +120,10 @@ export const siteConfig: SiteConfig = {
         duration: "2021 - Present",
       },
     ],
+  },
+  blog: {
+    title: "Writings",
+    //blog items will be automatically fetched from the blog directory
+    // create a new blog post by adding a .mdx file in the /blog directory
   },
 };

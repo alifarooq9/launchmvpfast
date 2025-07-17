@@ -1,3 +1,4 @@
+import { Blog } from "@/components/landing/blog";
 import { Experience } from "@/components/landing/experience";
 import { Hero } from "@/components/landing/hero";
 import { Projects } from "@/components/landing/projects";
@@ -8,6 +9,7 @@ export default function Home() {
     <main className="flex items-start gap-20 py-36 flex-col justify-center container">
       <Hero />
       <Projects />
+      {siteConfig.blog && <Blog />}
       {siteConfig.experience && <Experience />}
     </main>
   );

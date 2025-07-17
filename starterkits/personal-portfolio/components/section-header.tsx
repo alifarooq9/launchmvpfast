@@ -10,7 +10,7 @@ export function SectionHeader({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <section
-      className={cn("flex flex-col items-start gap-8", className)}
+      className={cn("flex flex-col items-start gap-8 w-full", className)}
       {...props}
     >
       {children}
@@ -53,7 +53,7 @@ export function SectionContent({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn("flex flex-col gap-4", className)} {...props}>
+    <div className={cn("flex flex-col gap-4 w-full", className)} {...props}>
       {children}
     </div>
   );

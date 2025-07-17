@@ -8,8 +8,8 @@ import { urls } from "@/config/urls";
 
 export function SiteHeader() {
   return (
-    <header className="flex w-full z-50 items-center justify-center h-16 fixed top-0 left-0 right-0 bg-transparent">
-      <div className="flex items-center w-full container px-2 py-2 justify-between h-14 bg-background border border-border rounded-xl">
+    <header className="flex container w-full z-50 items-center justify-center h-16 fixed top-0 left-0 right-0 bg-transparent">
+      <div className="flex items-center w-full container px-2 py-2 justify-between h-14 bg-background border border-border rounded-lg">
         <Link href="/" className="focus-ring p-1 text-sm font-bold">
           <Image
             src="/logo.png"

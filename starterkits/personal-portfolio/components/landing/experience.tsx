@@ -30,7 +30,7 @@ export function Experience() {
           {siteConfig.experience?.experiences.map((item, index) => (
             <m.li
               key={index}
-              className="flex items-center bg-card justify-between gap-4 border rounded-md w-full p-4"
+              className="flex items-center bg-card border-border justify-between gap-4 border rounded-md w-full px-4 py-2.5"
               variants={variants}
               initial="initial"
               whileInView="animate"
@@ -41,8 +41,8 @@ export function Experience() {
               }}
               viewport={{ once: true }}
             >
-              <div className="flex flex-col gap-1">
-                <h4 className="font-medium">{item.position}</h4>
+              <div className="flex flex-col gap-0.5">
+                <h4 className="font-medium text-sm">{item.position}</h4>
                 <p className="text-muted-foreground text-sm">{item.company}</p>
               </div>
               <p className="text-muted-foreground text-sm">{item.duration}</p>
