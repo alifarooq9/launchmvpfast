@@ -34,7 +34,7 @@ export function SectionHeading({
   if ("motion" in props && props.motion) {
     const { motion, ...motionProps } = props;
     return (
-      <m.h2 className={cn("text-lg font-medium", className)} {...motionProps}>
+      <m.h2 className={cn("text-lg font-semibold", className)} {...motionProps}>
         {children}
       </m.h2>
     );
@@ -44,7 +44,7 @@ export function SectionHeading({
     motion?: false;
   } & React.HTMLAttributes<HTMLHeadingElement>;
   return (
-    <h2 className={cn("text-lg font-medium", className)} {...regularProps}>
+    <h2 className={cn("text-lg font-semibold", className)} {...regularProps}>
       {children}
     </h2>
   );

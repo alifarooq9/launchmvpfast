@@ -170,7 +170,7 @@ export const siteConfig: SiteConfig = {
     ],
   },
   blog: {
-    title: "Blog",
+    title: "Recent Blog",
     //blog items will be automatically fetched from the blog directory
     // create a new blog post by adding a .mdx file in the /blog directory
   },

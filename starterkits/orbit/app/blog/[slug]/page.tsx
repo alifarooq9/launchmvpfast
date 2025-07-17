@@ -3,6 +3,17 @@ import Link from "next/link";
 import { InlineTOC } from "fumadocs-ui/components/inline-toc";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { blog } from "@/lib/source";
+import {
+  PageContainer,
+  PageContent,
+  PageDescription,
+  PageHeader,
+  PageHeading,
+} from "@/components/page-header";
+import { urls } from "@/config/urls";
+import { buttonVariants } from "@/components/ui/button";
+import { ArrowLeftIcon } from "lucide-react";
+import { format } from "date-fns";
 
 export default async function Page(props: {
   params: Promise<{ slug: string }>;
@@ -14,31 +25,46 @@ export default async function Page(props: {
   const Mdx = page.data.body;
 
   return (
-    <>
-      <div className="container rounded-xl border py-12 md:px-8">
-        <h1 className="mb-2 text-3xl font-bold">{page.data.title}</h1>
-        <p className="mb-4 text-fd-muted-foreground">{page.data.description}</p>
-        <Link href="/blog">Back</Link>
-      </div>
-      <article className="container flex flex-col px-4 py-8">
-        <div className="prose min-w-0">
-          <InlineTOC items={page.data.toc} />
-          <Mdx components={defaultMdxComponents} />
+    <PageContainer>
+      <PageHeader>
+        <div className="w-full justify-between flex items-center gap-4">
+          <Link
+            href={urls.blog}
+            className={buttonVariants({ variant: "secondary", size: "sm" })}
+          >
+            <ArrowLeftIcon /> Blog
+          </Link>
+
+          <p className="text-foreground/70 text-sm">
+            {format(new Date(page.data.date), "MMMM dd, yyyy")}
+          </p>
         </div>
-        <div className="flex flex-col gap-4 text-sm">
-          <div>
-            <p className="mb-1 text-fd-muted-foreground">Written by</p>
-            <p className="font-medium">{page.data.author}</p>
+        <PageHeading>{page.data.title}</PageHeading>
+        <PageDescription className="text-wrap">
+          {page.data.description}
+        </PageDescription>
+      </PageHeader>
+      <PageContent>
+        <article>
+          <div className="prose min-w-0">
+            <InlineTOC items={page.data.toc} />
+            <Mdx components={defaultMdxComponents} />
           </div>
-          <div>
-            <p className="mb-1 text-sm text-fd-muted-foreground">At</p>
-            <p className="font-medium">
-              {new Date(page.data.date).toDateString()}
-            </p>
-          </div>
-        </div>
-      </article>
-    </>
+          {/* <div className="flex flex-col gap-4 text-sm">
+            <div>
+              <p className="mb-1 text-fd-muted-foreground">Written by</p>
+              <p className="font-medium">{page.data.author}</p>
+            </div>
+            <div>
+              <p className="mb-1 text-sm text-fd-muted-foreground">At</p>
+              <p className="font-medium">
+                {new Date(page.data.date).toDateString()}
+              </p>
+            </div>
+          </div> */}
+        </article>
+      </PageContent>
+    </PageContainer>
   );
 }
 
