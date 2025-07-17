@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRightIcon } from "lucide-react";
-import { urls } from "@/config/urls";
 import { Separator } from "@/components/ui/separator";
 import { ModeSwitcher } from "@/components/mode-switcher";
 import { siteConfig } from "@/config/site";

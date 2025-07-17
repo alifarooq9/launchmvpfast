@@ -5,6 +5,7 @@ import * as m from "motion/react-m";
 import { TextEffect } from "@/components/ui/text-effect";
 import { Variants } from "motion";
 import { cn } from "@/lib/utils";
+import { PageDescription, PageHeading } from "@/components/page-header";
 
 const variants: Variants = {
   initial: { opacity: 0, y: 20, filter: "blur(12px)" },
@@ -23,12 +24,12 @@ export function Hero() {
       >
         {siteConfig.landing.hero.topLine}
       </TextEffect>
-      <m.h1
+      <PageHeading
+        motion
         variants={variants}
         initial="initial"
         animate="animate"
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-        className="font-semibold text-2xl sm:text-3xl md:text-4xl flex flex-col  leading-normal tracking-tight"
       >
         {siteConfig.landing.hero.h1.type === "multi-line" ? (
           siteConfig.landing.hero.h1.content.map((line, index) => (
@@ -39,16 +40,16 @@ export function Hero() {
             {siteConfig.landing.hero.h1.content}
           </span>
         )}
-      </m.h1>
-      <m.p
+      </PageHeading>
+      <PageDescription
+        motion
         variants={variants}
         initial="initial"
         animate="animate"
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
-        className="text-muted-foreground text-sm sm:text-base font-medium text-balance"
       >
         {siteConfig.landing.hero.description}
-      </m.p>
+      </PageDescription>
       <m.div
         variants={variants}
         initial="initial"
