@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRightIcon } from "lucide-react";
 import { urls } from "@/config/urls";
+import { Separator } from "@/components/ui/separator";
+import { ModeSwitcher } from "@/components/mode-switcher";
 
 export function SiteHeader() {
   return (
@@ -20,7 +22,7 @@ export function SiteHeader() {
           />
         </Link>
 
-        <nav className="flex items-center gap-3">
+        <nav className="flex items-center gap-3 h-full">
           {nav.header.map((item) => (
             <Link
               key={item.title}
@@ -39,6 +41,11 @@ export function SiteHeader() {
               {item.external && <ArrowUpRightIcon />}
             </Link>
           ))}
+          <Separator
+            orientation="vertical"
+            className="data-[orientation=vertical]:h-5"
+          />
+          <ModeSwitcher />
 
           <Link href={urls.bookCall} className={buttonVariants({ size: "sm" })}>
             Book a Call
