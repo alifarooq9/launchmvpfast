@@ -14,7 +14,7 @@ const variants: Variants = {
 
 export function Experience() {
   return (
-    <SectionHeader className="w-full">
+    <SectionHeader>
       <SectionHeading
         motion
         variants={variants}
@@ -25,7 +25,7 @@ export function Experience() {
       >
         {siteConfig.experience?.title}
       </SectionHeading>
-      <SectionContent className="w-full">
+      <SectionContent>
         <ul className="grid grid-cols-1 gap-2 w-full">
           {siteConfig.experience?.experiences.map((item, index) => (
             <m.li

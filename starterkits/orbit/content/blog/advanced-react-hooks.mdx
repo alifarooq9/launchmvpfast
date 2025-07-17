@@ -1,0 +1,314 @@
+---
+title: "Advanced React Hooks: Custom Hooks for Real-World Applications"
+author: "React Master"
+date: 2024-11-03
+---
+
+## Advanced React Hooks: Custom Hooks for Real-World Applications
+
+Custom hooks are one of React's most powerful features for code reuse and abstraction. Let's explore advanced patterns and real-world examples that will elevate your React development.
+
+### useLocalStorage Hook
+
+Persist state to localStorage with automatic synchronization:
+
+```typescript
+import { useState, useEffect } from 'react';
+
+function useLocalStorage<T>(key: string, initialValue: T) {
+  const [storedValue, setStoredValue] = useState<T>(() => {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      console.error(`Error reading localStorage key "${key}":`, error);
+      return initialValue;
+    }
+  });
+
+  const setValue = (value: T | ((val: T) => T)) => {
+    try {
+      const valueToStore = value instanceof Function ? value(storedValue) : value;
+      setStoredValue(valueToStore);
+      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+    } catch (error) {
+      console.error(`Error setting localStorage key "${key}":`, error);
+    }
+  };
+
+  return [storedValue, setValue] as const;
+}
+
+// Usage
+function UserPreferences() {
+  const [theme, setTheme] = useLocalStorage('theme', 'light');
+  const [language, setLanguage] = useLocalStorage('language', 'en');
+
+  return (
+    <div>
+      <select value={theme} onChange={(e) => setTheme(e.target.value)}>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+  );
+}
+```
+
+### useDebounce Hook
+
+Optimize performance by debouncing rapid updates:
+
+```typescript
+import { useState, useEffect } from 'react';
+
+function useDebounce<T>(value: T, delay: number): T {
+  const [debouncedValue, setDebouncedValue] = useState<T>(value);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+}
+
+// Usage in search component
+function SearchComponent() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const debouncedSearchTerm = useDebounce(searchTerm, 300);
+
+  useEffect(() => {
+    if (debouncedSearchTerm) {
+      // Perform API call
+      searchAPI(debouncedSearchTerm);
+    }
+  }, [debouncedSearchTerm]);
+
+  return (
+    <input
+      type="text"
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+      placeholder="Search..."
+    />
+  );
+}
+```
+
+### useIntersectionObserver Hook
+
+Implement lazy loading and infinite scrolling:
+
+```typescript
+import { useEffect, useRef, useState } from 'react';
+
+interface UseIntersectionObserverProps {
+  threshold?: number;
+  root?: Element | null;
+  rootMargin?: string;
+}
+
+function useIntersectionObserver({
+  threshold = 0,
+  root = null,
+  rootMargin = '0%'
+}: UseIntersectionObserverProps = {}) {
+  const [entry, setEntry] = useState<IntersectionObserverEntry>();
+  const [node, setNode] = useState<Element | null>(null);
+
+  const observer = useRef<IntersectionObserver>();
+
+  useEffect(() => {
+    if (observer.current) observer.current.disconnect();
+
+    observer.current = new IntersectionObserver(
+      ([entry]) => setEntry(entry),
+      { threshold, root, rootMargin }
+    );
+
+    const { current: currentObserver } = observer;
+
+    if (node) currentObserver.observe(node);
+
+    return () => currentObserver.disconnect();
+  }, [node, threshold, root, rootMargin]);
+
+  return [setNode, entry] as const;
+}
+
+// Usage for infinite scrolling
+function InfiniteScrollList() {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [setNode, entry] = useIntersectionObserver({
+    threshold: 1
+  });
+
+  useEffect(() => {
+    if (entry?.isIntersecting && !loading) {
+      loadMoreItems();
+    }
+  }, [entry?.isIntersecting, loading]);
+
+  const loadMoreItems = async () => {
+    setLoading(true);
+    const newItems = await fetchMoreItems();
+    setItems(prev => [...prev, ...newItems]);
+    setLoading(false);
+  };
+
+  return (
+    <div>
+      {items.map(item => (
+        <div key={item.id}>{item.content}</div>
+      ))}
+      <div ref={setNode}>
+        {loading && <div>Loading more...</div>}
+      </div>
+    </div>
+  );
+}
+```
+
+### useAsync Hook
+
+Handle async operations with loading and error states:
+
+```typescript
+import { useState, useEffect, useCallback } from 'react';
+
+interface UseAsyncState<T> {
+  data: T | null;
+  loading: boolean;
+  error: Error | null;
+}
+
+function useAsync<T>(
+  asyncFunction: () => Promise<T>,
+  dependencies: any[] = []
+) {
+  const [state, setState] = useState<UseAsyncState<T>>({
+    data: null,
+    loading: true,
+    error: null
+  });
+
+  const execute = useCallback(async () => {
+    setState({ data: null, loading: true, error: null });
+    
+    try {
+      const data = await asyncFunction();
+      setState({ data, loading: false, error: null });
+    } catch (error) {
+      setState({ data: null, loading: false, error: error as Error });
+    }
+  }, dependencies);
+
+  useEffect(() => {
+    execute();
+  }, [execute]);
+
+  return { ...state, refetch: execute };
+}
+
+// Usage
+function UserProfile({ userId }) {
+  const { data: user, loading, error, refetch } = useAsync(
+    () => fetchUser(userId),
+    [userId]
+  );
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
+  return (
+    <div>
+      <h1>{user.name}</h1>
+      <button onClick={refetch}>Refresh</button>
+    </div>
+  );
+}
+```
+
+### useFormValidation Hook
+
+Comprehensive form handling with validation:
+
+```typescript
+import { useState, useCallback } from 'react';
+
+interface ValidationRules {
+  [key: string]: (value: any) => string | null;
+}
+
+function useFormValidation<T extends Record<string, any>>(
+  initialValues: T,
+  validationRules: ValidationRules
+) {
+  const [values, setValues] = useState<T>(initialValues);
+  const [errors, setErrors] = useState<Partial<Record<keyof T, string>>>({});
+  const [touched, setTouched] = useState<Partial<Record<keyof T, boolean>>>({});
+
+  const validate = useCallback((fieldName?: keyof T) => {
+    let newErrors = { ...errors };
+
+    const fieldsToValidate = fieldName ? [fieldName] : Object.keys(validationRules);
+
+    fieldsToValidate.forEach(field => {
+      const rule = validationRules[field as string];
+      if (rule) {
+        const error = rule(values[field as keyof T]);
+        if (error) {
+          newErrors[field as keyof T] = error;
+        } else {
+          delete newErrors[field as keyof T];
+        }
+      }
+    });
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  }, [values, errors, validationRules]);
+
+  const handleChange = (name: keyof T, value: any) => {
+    setValues(prev => ({ ...prev, [name]: value }));
+    if (touched[name]) {
+      validate(name);
+    }
+  };
+
+  const handleBlur = (name: keyof T) => {
+    setTouched(prev => ({ ...prev, [name]: true }));
+    validate(name);
+  };
+
+  const handleSubmit = (onSubmit: (values: T) => void) => {
+    const isValid = validate();
+    setTouched(
+      Object.keys(values).reduce((acc, key) => ({ ...acc, [key]: true }), {})
+    );
+    
+    if (isValid) {
+      onSubmit(values);
+    }
+  };
+
+  return {
+    values,
+    errors,
+    touched,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    isValid: Object.keys(errors).length === 0
+  };
+}
+```
+
+These advanced hooks will supercharge your React applications with reusable, powerful functionality!

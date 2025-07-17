@@ -18,7 +18,12 @@ const variants: Variants = {
   animate: { opacity: 1, y: 0, filter: "blur(0px)" },
 };
 
-const posts = blog.getPages().slice(0, 5);
+const posts = blog
+  .getPages()
+  .sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  )
+  .slice(0, 5);
 
 export function Blog() {
   return (

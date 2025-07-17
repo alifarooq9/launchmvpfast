@@ -1,0 +1,85 @@
+---
+title: "Modern CSS: Advanced Techniques for 2025"
+author: "Jessica Styles"
+date: 2025-05-10
+---
+
+## Modern CSS: Advanced Techniques for 2025
+
+CSS continues to evolve rapidly, bringing new features that make styling more powerful and intuitive. Let's explore the cutting-edge techniques that are defining modern web design.
+
+### Container Queries
+
+Finally, we can style elements based on their container size, not just the viewport:
+
+```css
+.card-container {
+  container-type: inline-size;
+}
+
+@container (min-width: 400px) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+```
+
+### CSS Cascade Layers
+
+Manage CSS specificity with explicit layer ordering:
+
+```css
+@layer base, components, utilities;
+
+@layer base {
+  h1 { font-size: 2rem; }
+}
+
+@layer components {
+  .heading { font-size: 1.5rem; }
+}
+```
+
+### New Color Functions
+
+Advanced color manipulation with modern CSS:
+
+```css
+:root {
+  --primary: oklch(0.7 0.15 180);
+  --accent: color-mix(in oklch, var(--primary), white 20%);
+}
+```
+
+### CSS Subgrid
+
+Create more flexible layouts with subgrid:
+
+```css
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.subgrid-item {
+  display: grid;
+  grid-template-columns: subgrid;
+}
+```
+
+### View Transitions API
+
+Smooth page transitions with CSS:
+
+```css
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: fade-out 0.3s ease-out;
+}
+```
+
+These modern CSS features are transforming how we approach styling and layout in 2025!

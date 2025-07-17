@@ -1,0 +1,95 @@
+---
+title: "Web Performance Optimization: Core Web Vitals Mastery Guide"
+author: "Performance Pete"
+date: 2025-09-14
+---
+
+## Web Performance Optimization: Core Web Vitals Mastery Guide
+
+Core Web Vitals have become crucial ranking factors for SEO and user experience. This comprehensive guide will help you master the three key metrics and achieve perfect scores.
+
+### Understanding Core Web Vitals
+
+The three essential metrics that define user experience:
+
+1. **Largest Contentful Paint (LCP)** - Loading performance
+2. **First Input Delay (FID)** - Interactivity
+3. **Cumulative Layout Shift (CLS)** - Visual stability
+
+### Optimizing LCP (< 2.5 seconds)
+
+**Image Optimization:**
+```html
+<img
+  src="hero.webp"
+  alt="Hero image"
+  width="800"
+  height="600"
+  loading="eager"
+  fetchpriority="high"
+/>
+```
+
+**Critical Resource Preloading:**
+```html
+<link rel="preload" href="/fonts/main.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/api/critical-data" as="fetch" crossorigin>
+```
+
+### Improving FID (< 100ms)
+
+**Code Splitting and Lazy Loading:**
+```javascript
+const HeavyComponent = lazy(() => import('./HeavyComponent'));
+
+// Use React.startTransition for non-urgent updates
+startTransition(() => {
+  setFilteredData(expensiveFilter(data));
+});
+```
+
+**Web Workers for Heavy Computations:**
+```javascript
+// worker.js
+self.onmessage = function(e) {
+  const result = heavyCalculation(e.data);
+  self.postMessage(result);
+};
+
+// main.js
+const worker = new Worker('worker.js');
+worker.postMessage(largeDataset);
+```
+
+### Minimizing CLS (< 0.1)
+
+**Reserve Space for Dynamic Content:**
+```css
+.image-container {
+  aspect-ratio: 16 / 9;
+  background: #f0f0f0;
+}
+
+.dynamic-content {
+  min-height: 200px; /* Reserve space */
+}
+```
+
+### Monitoring and Tools
+
+- **Lighthouse CI** for automated testing
+- **Real User Monitoring (RUM)** for production insights
+- **Chrome DevTools** for debugging
+- **PageSpeed Insights** for detailed analysis
+
+### Quick Wins Checklist
+
+✅ Optimize images with modern formats (WebP, AVIF)
+✅ Implement proper caching strategies
+✅ Use CDN for static assets
+✅ Minimize JavaScript bundles
+✅ Preload critical resources
+✅ Eliminate render-blocking resources
+✅ Use CSS containment for better layout performance
+
+Mastering Core Web Vitals is essential for modern web development success!

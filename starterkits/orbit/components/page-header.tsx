@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import type { HTMLMotionProps } from "motion/react";
 import * as m from "motion/react-m";
 
-export function PageHeader({
+export function PageContainer({
   className,
   children,
   ...props
@@ -17,6 +17,24 @@ export function PageHeader({
     >
       {children}
     </main>
+  );
+}
+
+export function PageHeader({
+  className,
+  children,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <section
+      className={cn(
+        "flex flex-col items-start gap-5 sm:gap-8 w-full",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </section>
   );
 }
 

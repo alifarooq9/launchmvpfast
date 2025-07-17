@@ -5,7 +5,11 @@ import * as m from "motion/react-m";
 import { TextEffect } from "@/components/ui/text-effect";
 import { Variants } from "motion";
 import { cn } from "@/lib/utils";
-import { PageDescription, PageHeading } from "@/components/page-header";
+import {
+  PageDescription,
+  PageHeader,
+  PageHeading,
+} from "@/components/page-header";
 
 const variants: Variants = {
   initial: { opacity: 0, y: 20, filter: "blur(12px)" },
@@ -14,7 +18,7 @@ const variants: Variants = {
 
 export function Hero() {
   return (
-    <section className="flex flex-col items-start gap-5 sm:gap-8">
+    <PageHeader>
       <TextEffect
         variants={variants}
         className="text-base sm:text-lg"
@@ -73,6 +77,6 @@ export function Hero() {
           {siteConfig.landing.hero.actions.secondary.label}
         </Link>
       </m.div>
-    </section>
+    </PageHeader>
   );
 }
