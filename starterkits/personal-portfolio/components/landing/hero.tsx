@@ -13,7 +13,7 @@ const variants: Variants = {
 
 export function Hero() {
   return (
-    <section className="flex flex-col items-start gap-8">
+    <section className="flex flex-col items-start gap-5 sm:gap-8">
       <TextEffect
         variants={variants}
         className="text-base sm:text-lg"
