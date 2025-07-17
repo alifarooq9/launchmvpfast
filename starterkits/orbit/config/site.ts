@@ -15,6 +15,12 @@ export type ExperienceItem = {
   duration: string;
 };
 
+export type NavItem = {
+  title: string;
+  href: string;
+  external?: boolean;
+};
+
 export type SiteConfig = {
   landing: {
     hero: {
@@ -60,9 +66,43 @@ export type SiteConfig = {
       href: string;
     }[];
   };
+  header: {
+    logoImage: string;
+    nav: NavItem[];
+    button: {
+      label: string;
+      href: string;
+    };
+  };
+  footer: {
+    copyright: string;
+  };
 };
 
 export const siteConfig: SiteConfig = {
+  header: {
+    logoImage: "/logo.png",
+    nav: [
+      {
+        title: "Writings",
+        href: urls.blog,
+      },
+      {
+        title: "Code",
+        href: urls.github,
+        external: true,
+      },
+      {
+        title: "Follow",
+        href: urls.x,
+        external: true,
+      },
+    ],
+    button: {
+      label: "Book a Call",
+      href: urls.bookCall,
+    },
+  },
   landing: {
     hero: {
       topLine: "👋 Hi there, I'm Ali. nice to meet you...",
@@ -155,5 +195,8 @@ export const siteConfig: SiteConfig = {
         href: "https://bsky.app/profile/alifarooq9.bsky.social",
       },
     ],
+  },
+  footer: {
+    copyright: "© 2025 Orbit - launchmvpfast.com",
   },
 };
