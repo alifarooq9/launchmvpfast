@@ -118,7 +118,9 @@ export function CommandMenu({ ...props }: DialogProps) {
                                     onSelect={() => {
                                         runCommand(() => {
                                             setType('blocks')
-                                            router.push(group.buttonUrl)
+                                            router.push(
+                                                urls.app.starterkits.base
+                                            )
                                         })
                                     }}
                                 >
