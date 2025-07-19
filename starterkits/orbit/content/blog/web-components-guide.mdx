@@ -1,0 +1,330 @@
+---
+title: "Web Components: The Native Way to Build Reusable UI Elements"
+author: "Component Creator"
+date: 2023-12-05
+description: "Learn to build reusable, encapsulated UI elements with native Web Components using Custom Elements, Shadow DOM, and HTML Templates. Framework-agnostic components for the modern web."
+---
+
+## Web Components: The Native Way to Build Reusable UI Elements
+
+Web Components provide a native browser standard for creating reusable, encapsulated HTML elements. As browser support has matured, they've become a powerful alternative to framework-specific components.
+
+### Understanding Web Components
+
+Web Components consist of three main technologies:
+- **Custom Elements**: Define new HTML elements
+- **Shadow DOM**: Encapsulated DOM and styling
+- **HTML Templates**: Reusable markup patterns
+
+### Creating Your First Custom Element
+
+```javascript
+class UserCard extends HTMLElement {
+  constructor() {
+    super();
+    
+    // Create shadow root for encapsulation
+    this.attachShadow({ mode: 'open' });
+    
+    // Set up the component
+    this.render();
+  }
+  
+  // Define observed attributes
+  static get observedAttributes() {
+    return ['name', 'email', 'avatar'];
+  }
+  
+  // React to attribute changes
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (oldValue !== newValue) {
+      this.render();
+    }
+  }
+  
+  render() {
+    const name = this.getAttribute('name') || 'Unknown';
+    const email = this.getAttribute('email') || '';
+    const avatar = this.getAttribute('avatar') || '/default-avatar.png';
+    
+    this.shadowRoot.innerHTML = `
+      <style>
+        :host {
+          display: block;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          padding: 16px;
+          max-width: 300px;
+          font-family: Arial, sans-serif;
+        }
+        
+        .avatar {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 12px;
+        }
+        
+        .name {
+          font-size: 18px;
+          font-weight: bold;
+          margin: 0 0 4px 0;
+          color: #333;
+        }
+        
+        .email {
+          color: #666;
+          margin: 0;
+          font-size: 14px;
+        }
+      </style>
+      
+      <img class="avatar" src="${avatar}" alt="${name}" />
+      <h3 class="name">${name}</h3>
+      <p class="email">${email}</p>
+    `;
+  }
+}
+
+// Register the custom element
+customElements.define('user-card', UserCard);
+```
+
+### Using the Custom Element
+
+```html
+<!-- Simple usage -->
+<user-card 
+  name="John Doe" 
+  email="john@example.com"
+  avatar="/john-avatar.jpg">
+</user-card>
+
+<!-- Dynamic usage with JavaScript -->
+<script>
+  const userCard = document.createElement('user-card');
+  userCard.setAttribute('name', 'Jane Smith');
+  userCard.setAttribute('email', 'jane@example.com');
+  document.body.appendChild(userCard);
+</script>
+```
+
+### Advanced Web Component with Events
+
+```javascript
+class TodoItem extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.render();
+    this.addEventListeners();
+  }
+  
+  static get observedAttributes() {
+    return ['text', 'completed'];
+  }
+  
+  attributeChangedCallback() {
+    this.render();
+  }
+  
+  addEventListeners() {
+    const checkbox = this.shadowRoot.querySelector('.checkbox');
+    const deleteBtn = this.shadowRoot.querySelector('.delete');
+    
+    checkbox.addEventListener('change', () => {
+      const completed = checkbox.checked;
+      this.setAttribute('completed', completed);
+      
+      // Dispatch custom event
+      this.dispatchEvent(new CustomEvent('todo-toggle', {
+        bubbles: true,
+        detail: {
+          text: this.getAttribute('text'),
+          completed
+        }
+      }));
+    });
+    
+    deleteBtn.addEventListener('click', () => {
+      this.dispatchEvent(new CustomEvent('todo-delete', {
+        bubbles: true,
+        detail: {
+          text: this.getAttribute('text')
+        }
+      }));
+    });
+  }
+  
+  render() {
+    const text = this.getAttribute('text') || '';
+    const completed = this.getAttribute('completed') === 'true';
+    
+    this.shadowRoot.innerHTML = `
+      <style>
+        :host {
+          display: flex;
+          align-items: center;
+          padding: 8px 12px;
+          border-bottom: 1px solid #eee;
+          gap: 12px;
+        }
+        
+        :host([completed="true"]) .text {
+          text-decoration: line-through;
+          color: #999;
+        }
+        
+        .checkbox {
+          margin: 0;
+        }
+        
+        .text {
+          flex: 1;
+          margin: 0;
+        }
+        
+        .delete {
+          background: #ff4444;
+          color: white;
+          border: none;
+          padding: 4px 8px;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+        .delete:hover {
+          background: #cc0000;
+        }
+      </style>
+      
+      <input type="checkbox" class="checkbox" ${completed ? 'checked' : ''} />
+      <p class="text">${text}</p>
+      <button class="delete">Delete</button>
+    `;
+    
+    this.addEventListeners();
+  }
+}
+
+customElements.define('todo-item', TodoItem);
+```
+
+### Using HTML Templates
+
+```html
+<template id="card-template">
+  <style>
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    
+    .content {
+      color: #666;
+    }
+  </style>
+  
+  <div class="card">
+    <div class="title">
+      <slot name="title">Default Title</slot>
+    </div>
+    <div class="content">
+      <slot name="content">Default content</slot>
+    </div>
+  </div>
+</template>
+
+<script>
+class SimpleCard extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    
+    const template = document.getElementById('card-template');
+    const templateContent = template.content;
+    
+    this.shadowRoot.appendChild(templateContent.cloneNode(true));
+  }
+}
+
+customElements.define('simple-card', SimpleCard);
+</script>
+
+<!-- Usage with slots -->
+<simple-card>
+  <span slot="title">My Card Title</span>
+  <div slot="content">
+    <p>This is the card content with <strong>HTML</strong>!</p>
+  </div>
+</simple-card>
+```
+
+### Lifecycle Callbacks
+
+```javascript
+class LifecycleDemo extends HTMLElement {
+  constructor() {
+    super();
+    console.log('Constructor called');
+    this.attachShadow({ mode: 'open' });
+  }
+  
+  connectedCallback() {
+    console.log('Element added to DOM');
+    this.shadowRoot.innerHTML = `
+      <p>Component is now connected!</p>
+    `;
+  }
+  
+  disconnectedCallback() {
+    console.log('Element removed from DOM');
+    // Cleanup: remove event listeners, intervals, etc.
+  }
+  
+  adoptedCallback() {
+    console.log('Element moved to new document');
+  }
+  
+  attributeChangedCallback(name, oldValue, newValue) {
+    console.log(`Attribute ${name} changed from ${oldValue} to ${newValue}`);
+  }
+}
+
+customElements.define('lifecycle-demo', LifecycleDemo);
+```
+
+### Benefits of Web Components
+
+- **Framework Agnostic**: Works with any or no framework
+- **Native Browser Support**: No additional runtime needed
+- **Encapsulation**: Scoped CSS and DOM
+- **Reusability**: Use across different projects and frameworks
+- **Standards-Based**: Built on web standards
+
+### Browser Support and Polyfills
+
+```javascript
+// Feature detection
+if ('customElements' in window && 'attachShadow' in Element.prototype) {
+  // Native support available
+  console.log('Web Components supported natively');
+} else {
+  // Load polyfills
+  const script = document.createElement('script');
+  script.src = 'https://unpkg.com/@webcomponents/webcomponentsjs@2/webcomponents-loader.js';
+  document.head.appendChild(script);
+}
+```
+
+Web Components represent the future of truly portable, reusable UI components on the web!

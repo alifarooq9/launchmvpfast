@@ -1,3 +1,4 @@
+import CloneButton from '@/components/clone-button'
 import { techStackIcons } from '@/components/tech-stack-icons'
 import { buttonVariants } from '@/components/ui/button'
 import { Starterkit, starterkits } from '@/config/registry/starterkits'
@@ -8,7 +9,7 @@ import Link from 'next/link'
 export default function StarterkitsTable() {
     return (
         <section className="container">
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 gap-20">
                 {starterkits.map((starterkit, index) => (
                     <StarterkitsTableItem
                         key={starterkit.id + index}
@@ -26,11 +27,11 @@ export function StarterkitsTableItem({
     starterkit: Starterkit
 }) {
     return (
-        <div className="grid w-full grid-cols-2 gap-8">
+        <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2">
             <div className="flex flex-col justify-center gap-4">
                 <p>
-                    <strong className="text-muted-foreground font-semibold">
-                        Starter-kit
+                    <strong className="text-muted-foreground font-medium">
+                        {starterkit.topLine}
                     </strong>
                 </p>
                 <h2 className="text-2xl font-semibold">{starterkit.name}</h2>
@@ -49,12 +50,9 @@ export function StarterkitsTableItem({
                     ))}
                 </ul>
                 <div className="flex flex-col gap-2 sm:flex-row">
-                    <Link
-                        href={starterkit.buttonUrl}
-                        className={buttonVariants({ className: 'w-fit' })}
-                    >
-                        {starterkit.buttonText}
-                    </Link>
+                    <CloneButton cloneCommand={starterkit.cloneCmd}>
+                        Clone
+                    </CloneButton>
                     <Link
                         href={starterkit.preview}
                         className={buttonVariants({

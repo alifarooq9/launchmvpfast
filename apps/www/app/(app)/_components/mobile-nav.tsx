@@ -52,7 +52,7 @@ export function MobileNav() {
                 align="start"
                 side="bottom"
                 alignOffset={-16}
-                sideOffset={14}
+                sideOffset={0}
             >
                 <div className="flex flex-col gap-12 overflow-auto px-6 py-6">
                     <div className="flex flex-col gap-4">

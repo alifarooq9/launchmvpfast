@@ -32,7 +32,10 @@ function flow({ colors }: { colors: string[] }) {
 
 export function Banner() {
     return (
-        <div className="bg-background relative flex h-12 w-full items-center justify-center gap-2 text-center text-sm font-semibold">
+        <Link
+            href={urls.app.earlyAccess}
+            className="bg-background relative container flex h-12 w-full items-center justify-center gap-2 text-center text-sm font-semibold"
+        >
             {flow({
                 colors: [
                     'rgba(255,255,255, 0.5)',
@@ -48,15 +51,9 @@ export function Banner() {
             <div className="z-20 flex items-center justify-center gap-1.5">
                 <p>
                     More components, starterkits, and blocks are coming soon! —
-                </p>
-
-                <Link
-                    href={urls.app.earlyAccess}
-                    className="focus-ring hover:underline hover:underline-offset-2"
-                >
                     Get early access
-                </Link>
+                </p>
             </div>
-        </div>
+        </Link>
     )
 }

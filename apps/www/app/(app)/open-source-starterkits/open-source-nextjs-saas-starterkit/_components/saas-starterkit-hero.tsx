@@ -7,7 +7,7 @@ import {
 } from '@/app/(app)/_components/page-header'
 import CloneButton from '@/components/clone-button'
 import { buttonVariants } from '@/components/ui/button'
-import { cloneCmd } from '@/config/clone-cmd'
+import { cloneCmds } from '@/config/clone-cmd'
 import { urls } from '@/config/urls'
 import { ArrowRightIcon } from 'lucide-react'
 import Image from 'next/image'
@@ -54,7 +54,7 @@ export default function SaasStarterkitHero() {
                 </Link>
                 <CloneButton
                     size="lg"
-                    cloneCommand={cloneCmd.starterkits.saasNextjs.base}
+                    cloneCommand={cloneCmds.starterkits.saasNextjs.default}
                 >
                     Clone StarterKit
                 </CloneButton>

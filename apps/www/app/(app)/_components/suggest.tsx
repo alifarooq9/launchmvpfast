@@ -23,7 +23,7 @@ export function Suggest({
             )}
             {...props}
         >
-            <h2 className="text-center text-2xl font-semibold tracking-tight">
+            <h2 className="text-center text-2xl font-semibold tracking-tight text-balance">
                 {title}
             </h2>
             <Link
