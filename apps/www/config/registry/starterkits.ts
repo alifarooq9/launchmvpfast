@@ -1,3 +1,4 @@
+import { cloneCmds } from '@/config/clone-cmd'
 import { urls } from '@/config/urls'
 
 export type Starterkit = {
@@ -6,9 +7,9 @@ export type Starterkit = {
     description: string
     techStack: string[]
     imageUrl: string
-    buttonText: string
-    buttonUrl: string
     preview: string
+    cloneCmd: string
+    topLine: string
 }
 
 export const starterkits: Starterkit[] = [
@@ -28,8 +29,19 @@ export const starterkits: Starterkit[] = [
             'typescript',
         ],
         imageUrl: '/starterkits/saas-v1/landing.png',
-        buttonText: 'Get Starter-kit - (Free)',
-        buttonUrl: urls.app.starterkits.saasNextjs.base,
         preview: urls.app.starterkits.saasNextjs.preview,
+        cloneCmd: cloneCmds.starterkits.saasNextjs.default,
+        topLine: 'SaaS Starterkit',
+    },
+    {
+        id: 'orbit',
+        name: 'Orbit',
+        description:
+            'Modern personal portfolio template with clean design, responsive layout, and smooth animations to showcase your work and skills.',
+        techStack: ['nextJs', 'shadcnui', 'tailwindcss', 'typescript'],
+        imageUrl: '/starterkits/orbit/landing.png',
+        preview: urls.app.starterkits.orbit.preview,
+        cloneCmd: cloneCmds.starterkits.orbit.default,
+        topLine: 'Personal Portfolio Starterkit',
     },
 ]

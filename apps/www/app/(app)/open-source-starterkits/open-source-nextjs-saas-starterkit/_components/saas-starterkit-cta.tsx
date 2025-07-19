@@ -1,6 +1,6 @@
 import CloneButton from '@/components/clone-button'
 import { Ripple } from '@/components/ui/ripple'
-import { cloneCmd } from '@/config/clone-cmd'
+import { cloneCmds } from '@/config/clone-cmd'
 
 export function SaasStarterkitCta() {
     return (
@@ -32,7 +32,7 @@ export function SaasStarterkitCta() {
                 <div className="pt-8">
                     <CloneButton
                         size="lg"
-                        cloneCommand={cloneCmd.starterkits.saasNextjs.base}
+                        cloneCommand={cloneCmds.starterkits.saasNextjs.default}
                     >
                         Clone StarterKit
                     </CloneButton>

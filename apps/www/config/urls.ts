@@ -9,6 +9,9 @@ export const urls = {
                 base: '/open-source-starterkits/open-source-nextjs-saas-starterkit',
                 preview: 'https://saas.launchmvpfast.com',
             },
+            orbit: {
+                preview: 'https://orbit.launchmvpfast.com',
+            },
         },
         blocks: '/blocks',
         pricing: '/pricing',
