@@ -1,4 +1,5 @@
 import { urls } from "@/config/urls";
+import { Metadata } from "next";
 
 export type ProjectItem = {
   title: string;
@@ -22,6 +23,7 @@ export type NavItem = {
 };
 
 export type SiteConfig = {
+  metadata: Metadata;
   landing: {
     hero: {
       topLine: string;
@@ -80,6 +82,35 @@ export type SiteConfig = {
 };
 
 export const siteConfig: SiteConfig = {
+  metadata: {
+    title: "I Create MVPs Fast - Ali Farooq",
+    description:
+      "I am a full stack developer with over 3+ years of experience in building web applications, specializing in rapid MVP development. I leverage modern technologies to create scalable and efficient solutions.",
+    keywords: [
+      "Ali Farooq",
+      "Full Stack Developer",
+      "Portfolio",
+      "Web Developer",
+      "React",
+      "Next.js",
+      "TypeScript",
+    ],
+    authors: [{ name: "Ali Farooq" }],
+    creator: "Ali Farooq",
+    openGraph: {
+      title: "Ali Farooq - Full Stack Developer",
+      description:
+        "Personal portfolio showcasing my projects and expertise in full stack development.",
+      type: "website",
+      locale: "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Ali Farooq - Full Stack Developer",
+      description:
+        "Personal portfolio showcasing my projects and expertise in full stack development.",
+    },
+  },
   header: {
     logoImage: "/logo.png",
     nav: [
