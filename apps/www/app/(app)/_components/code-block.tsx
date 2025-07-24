@@ -22,7 +22,7 @@ import React, { Fragment, JSX } from 'react'
 import { jsx, jsxs } from 'react/jsx-runtime'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import { cn, convertRegistryPaths } from '@/lib/utils'
 import { urls } from '@/config/urls'
 import {
     Select,
@@ -276,10 +276,11 @@ function CopyButton({
 }
 
 function CodeBlockContent({ code }: { code: string }) {
+    const convertedCode = convertRegistryPaths(code)
     const [nodes, setNodes] = React.useState<JSX.Element | null>(null)
     React.useLayoutEffect(() => {
-        void highlight(code, 'tsx').then(setNodes)
-    }, [code])
+        void highlight(convertedCode, 'tsx').then(setNodes)
+    }, [convertedCode])
 
     return nodes ? (
         <div className="[&_pre]:bg-accent! [&_code]:font-mono [&_code]:text-[13px] [&_pre]:max-h-[450px] [&_pre]:overflow-auto [&_pre]:rounded-md [&_pre]:p-4 [&_pre]:leading-snug">

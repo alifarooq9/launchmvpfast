@@ -91,6 +91,21 @@ export const blocks: ComponentsType = {
                 },
             ],
         },
+        {
+            id: 'navbar',
+            name: 'Navbar',
+            image: {
+                dark: '/registry/blocks/auth-dark.svg',
+                light: '/registry/blocks/auth-light.svg',
+            },
+            blocks: [
+                {
+                    id: 'navbar-01',
+                    name: 'Navbar 01',
+                    path: 'default/blocks/navbar/navbar-01/navbar-01-preview',
+                },
+            ],
+        },
     ],
 }
 
@@ -101,12 +116,10 @@ export function getBlocksCategories() {
         blocksCount: c.blocks.length,
         image: c.image,
     }))
-
     return categories
 }
 
 export function getBlockCategory(slug: string): Category | undefined {
     const category = blocks.default.find((c) => c.id === slug)
-
     return category ?? undefined
 }

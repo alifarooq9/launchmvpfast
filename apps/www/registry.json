@@ -551,6 +551,18 @@
                     "target": "components/auth/signup.tsx"
                 }
             ]
+        },
+        {
+            "name": "navbar-01",
+            "type": "registry:block",
+            "registryDependencies": ["utils", "navigation-menu", "button"],
+            "files": [
+                {
+                    "path": "registry/default/blocks/navbar/navbar-01/navbar-01.tsx",
+                    "type": "registry:component",
+                    "target": "components/navbar.tsx"
+                }
+            ]
         }
     ]
 }
