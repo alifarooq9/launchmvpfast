@@ -1,4 +1,4 @@
-import Navbar from '@/registry/default/blocks/navbar/navbar-01/navbar-01'
+import Navbar from '@/registry/default/blocks/navbar/navbar-02/navbar'
 
 export default function navbar01Preview() {
     return (

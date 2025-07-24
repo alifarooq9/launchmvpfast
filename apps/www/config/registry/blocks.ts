@@ -102,7 +102,12 @@ export const blocks: ComponentsType = {
                 {
                     id: 'navbar-01',
                     name: 'Navbar 01',
-                    path: 'default/blocks/navbar/navbar-01/navbar-01-preview',
+                    path: 'default/blocks/navbar/navbar-01/navbar-preview',
+                },
+                {
+                    id: 'navbar-02',
+                    name: 'Navbar 02',
+                    path: 'default/blocks/navbar/navbar-02/navbar-preview',
                 },
             ],
         },
