@@ -2,6 +2,7 @@ export type Block = {
     id: string
     name: string
     path: string
+    className?: string
 }
 
 export type Category = {
@@ -102,12 +103,20 @@ export const blocks: ComponentsType = {
                 {
                     id: 'navbar-01',
                     name: 'Navbar 01',
-                    path: 'default/blocks/navbar/navbar-01/navbar-preview',
+                    path: 'default/blocks/navbar/navbar-01',
+                    className: 'py-6',
                 },
                 {
                     id: 'navbar-02',
                     name: 'Navbar 02',
-                    path: 'default/blocks/navbar/navbar-02/navbar-preview',
+                    path: 'default/blocks/navbar/navbar-02',
+                    className: 'py-6',
+                },
+                {
+                    id: 'navbar-03',
+                    name: 'Navbar 03',
+                    path: 'default/blocks/navbar/navbar-03',
+                    className: 'py-6',
                 },
             ],
         },

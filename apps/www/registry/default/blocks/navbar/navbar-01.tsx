@@ -6,20 +6,23 @@ import {
     NavigationMenuList,
 } from '@/registry/default/ui/navigation-menu'
 import { cn } from '@/lib/utils'
+// import Link from 'next/link'
 
 // Sample navigation links, you can replace these with your actual links
 const navigationLinks = [
-    { href: '#', label: 'Home' },
-    { href: '#', label: 'Features' },
+    { href: '#', label: 'Products' },
     { href: '#', label: 'Pricing' },
+    { href: '#', label: 'Docs' },
     { href: '#', label: 'About' },
 ]
 
 export default function Navbar() {
+    const Link = 'a' // if using Next.js remove this line. you can use the Link component from 'next/link'
+
     return (
-        <header className="container mx-auto flex h-14 items-center justify-between gap-6">
-            <div className="flex items-center justify-start">
-                <a
+        <header className="container mx-auto flex h-14 items-center justify-between gap-4">
+            <div className="flex flex-1 items-center justify-start">
+                <Link
                     href="#"
                     className={cn(
                         buttonVariants({ variant: 'ghost', size: 'icon' }),
@@ -40,7 +43,7 @@ export default function Navbar() {
                             fill="currentColor"
                         />
                     </svg>
-                </a>
+                </Link>
             </div>
 
             <NavigationMenu className="max-md:hidden">
@@ -48,10 +51,11 @@ export default function Navbar() {
                     {navigationLinks.map((link, index) => (
                         <NavigationMenuItem key={index}>
                             <NavigationMenuLink
+                                asChild
                                 href={link.href}
-                                className="text-muted-foreground hover:text-primary py-1.5 font-medium"
+                                className="hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 py-1.5 font-medium"
                             >
-                                {link.label}
+                                <Link>{link.label}</Link>
                             </NavigationMenuLink>
                         </NavigationMenuItem>
                     ))}
@@ -59,17 +63,17 @@ export default function Navbar() {
             </NavigationMenu>
 
             <div className="flex flex-1 items-center justify-end gap-2">
-                <a
+                <Link
                     href="#"
                     className={cn(
                         buttonVariants({ variant: 'secondary', size: 'sm' })
                     )}
                 >
                     Sign-in
-                </a>
-                <a href="#" className={cn(buttonVariants({ size: 'sm' }))}>
+                </Link>
+                <Link href="#" className={cn(buttonVariants({ size: 'sm' }))}>
                     Get Started
-                </a>
+                </Link>
             </div>
         </header>
     )

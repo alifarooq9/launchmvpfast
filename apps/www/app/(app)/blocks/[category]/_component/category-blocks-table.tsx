@@ -101,10 +101,12 @@ function BlockItem({ block, category }: { block: Block; category: Category }) {
                 </div>
             </div>
 
-            <ComponentLoaderClient
-                key={`${block.id}-${refreshKey}`}
-                component={block}
-            />
+            <div className={block.className}>
+                <ComponentLoaderClient
+                    key={`${block.id}-${refreshKey}`}
+                    component={block}
+                />
+            </div>
         </div>
     )
 }

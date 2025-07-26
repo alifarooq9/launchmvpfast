@@ -4,6 +4,18 @@
     "homepage": "https://launchmvpfast.com",
     "items": [
         {
+            "name": "use-is-mac",
+            "type": "registry:hook",
+            "title": "useIsMac",
+            "description": "A custom hook to detect if the user is on a Mac",
+            "files": [
+                {
+                    "path": "registry/default/hooks/use-is-mac.ts",
+                    "type": "registry:hook"
+                }
+            ]
+        },
+        {
             "name": "prompt-input-01",
             "type": "registry:component",
             "title": "Prompt Input 01",
@@ -558,7 +570,7 @@
             "registryDependencies": ["utils", "navigation-menu", "button"],
             "files": [
                 {
-                    "path": "registry/default/blocks/navbar/navbar-01/navbar.tsx",
+                    "path": "registry/default/blocks/navbar/navbar-01.tsx",
                     "type": "registry:component",
                     "target": "components/navbar.tsx"
                 }
@@ -570,9 +582,38 @@
             "registryDependencies": ["utils", "navigation-menu", "button"],
             "files": [
                 {
-                    "path": "registry/default/blocks/navbar/navbar-02/navbar.tsx",
+                    "path": "registry/default/blocks/navbar/navbar-02.tsx",
                     "type": "registry:component",
                     "target": "components/navbar.tsx"
+                }
+            ]
+        },
+        {
+            "name": "navbar-03",
+            "type": "registry:block",
+            "registryDependencies": [
+                "utils",
+                "navigation-menu",
+                "button",
+                "http://localhost:3000/r/use-is-mac.json",
+                "separator"
+            ],
+            "dependencies": ["next-themes"],
+            "files": [
+                {
+                    "path": "registry/default/blocks/navbar/navbar-03.tsx",
+                    "type": "registry:component",
+                    "target": "components/navbar.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/navbar/search.tsx",
+                    "type": "registry:component",
+                    "target": "components/search.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/navbar/mode-switcher.tsx",
+                    "type": "registry:component",
+                    "target": "components/mode-switcher.tsx"
                 }
             ]
         }
