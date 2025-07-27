@@ -129,7 +129,7 @@ export function Hero() {
                             })
                         )}
                     >
-                        What us to build?
+                        Want Us to Build?
                     </Link>
                 </m.div>
             </PageActions>
