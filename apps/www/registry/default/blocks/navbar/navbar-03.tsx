@@ -1,4 +1,4 @@
-import { Button, buttonVariants } from '@/registry/default/ui/button'
+import { buttonVariants } from '@/registry/default/ui/button'
 import {
     NavigationMenu,
     NavigationMenuItem,
@@ -50,13 +50,13 @@ export default function Navbar() {
                 </Link>
 
                 <NavigationMenu className="max-md:hidden">
-                    <NavigationMenuList className="gap-2">
+                    <NavigationMenuList>
                         {navigationLinks.map((link, index) => (
                             <NavigationMenuItem key={index}>
                                 <NavigationMenuLink
                                     asChild
                                     href={link.href}
-                                    className="hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 py-1.5 font-medium"
+                                    className="hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 h-8 rounded-md px-3 py-1.5 font-medium"
                                 >
                                     <Link>{link.label}</Link>
                                 </NavigationMenuLink>

@@ -32,7 +32,7 @@ function BlockItem({ block, category }: { block: Block; category: Category }) {
     }
 
     return (
-        <div key={block.id} className="overflow-hidden rounded-xl border">
+        <div key={block.id} className="rounded-xl border">
             <div className="flex flex-col items-start justify-between gap-4 border-b p-4 sm:flex-row sm:items-center">
                 <h2 className="font-semibold tracking-tight sm:text-lg">
                     {block.name}

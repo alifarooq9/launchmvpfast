@@ -19,7 +19,7 @@ export function ComponentLoaderClient({
                     return <>{Loading}</>
                 }
                 return (
-                    <div className="text-muted-foreground flex h-full min-h-96 w-full items-center justify-center text-sm">
+                    <div className="text-muted-foreground flex h-full w-full items-center justify-center p-6 text-sm">
                         Loading...
                     </div>
                 )

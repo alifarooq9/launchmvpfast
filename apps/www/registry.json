@@ -616,6 +616,18 @@
                     "target": "components/mode-switcher.tsx"
                 }
             ]
+        },
+        {
+            "name": "navbar-04",
+            "type": "registry:block",
+            "registryDependencies": ["utils", "navigation-menu", "button"],
+            "files": [
+                {
+                    "path": "registry/default/blocks/navbar/navbar-04.tsx",
+                    "type": "registry:component",
+                    "target": "components/navbar.tsx"
+                }
+            ]
         }
     ]
 }

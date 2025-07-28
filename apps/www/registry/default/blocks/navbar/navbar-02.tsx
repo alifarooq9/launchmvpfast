@@ -47,13 +47,13 @@ export default function Navbar() {
             </div>
 
             <NavigationMenu className="max-md:hidden">
-                <NavigationMenuList className="gap-2">
+                <NavigationMenuList>
                     {navigationLinks.map((link, index) => (
                         <NavigationMenuItem key={index}>
                             <NavigationMenuLink
                                 href={link.href}
                                 asChild
-                                className="hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 py-1.5 font-medium"
+                                className="hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md px-3 py-1.5 font-medium"
                             >
                                 <Link>{link.label}</Link>
                             </NavigationMenuLink>
