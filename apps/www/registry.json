@@ -638,7 +638,9 @@
                 "button",
                 "popover",
                 "command",
-                "https://launchmvpfast.com/r/user-profile-dropdown.json"
+                "https://launchmvpfast.com/r/user-profile-dropdown.json",
+                "separator",
+                "http://localhost:3000/r/use-is-mac.json"
             ],
             "dependencies": ["lucide-react"],
             "files": [
@@ -651,6 +653,11 @@
                     "path": "registry/default/blocks/navbar/team-switcher.tsx",
                     "type": "registry:component",
                     "target": "components/team-switcher.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/navbar/search.tsx",
+                    "type": "registry:component",
+                    "target": "components/search.tsx"
                 }
             ]
         }

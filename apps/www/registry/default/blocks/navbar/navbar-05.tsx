@@ -2,13 +2,14 @@ import { buttonVariants } from '@/registry/default/ui/button'
 import {
     NavigationMenu,
     NavigationMenuItem,
-    NavigationMenuLink,
     NavigationMenuList,
 } from '@/registry/default/ui/navigation-menu'
+import { Separator } from '@/registry/default/ui/separator'
 import { cn } from '@/lib/utils'
-import { SlashIcon } from 'lucide-react'
+import { BellIcon, BookOpenIcon, SlashIcon } from 'lucide-react'
 import UserProfileDropdown from './user-profile-dropdown'
 import { TeamSwitcher } from './team-switcher'
+import { Search } from './search'
 // import Link from 'next/link'
 
 // Sample navigation links, you can replace these with your actual links
@@ -26,7 +27,7 @@ export default function Navbar() {
     const Link = 'a' // if using Next.js remove this line. you can use the Link component from 'next/link'
 
     return (
-        <header className="border-border mt-4 flex w-full flex-col items-center justify-between gap-2.5 border-b px-4 xl:px-6">
+        <header className="border-border mt-4 flex w-full flex-col items-center justify-between gap-3 border-b px-4 xl:px-6">
             <div className="flex w-full items-center justify-between gap-4">
                 <div className="flex flex-1 items-center justify-start gap-2">
                     <Link
@@ -57,8 +58,48 @@ export default function Navbar() {
                     <TeamSwitcher />
                 </div>
 
-                <div className="flex flex-1 items-center justify-end gap-2">
-                    <UserProfileDropdown align="end" size={6} />
+                <div className="flex flex-1 items-center justify-end gap-4">
+                    <Search />
+
+                    <Separator
+                        orientation="vertical"
+                        className="data-[orientation=vertical]:h-5"
+                    />
+
+                    <div className="flex items-center gap-1.5">
+                        <Link
+                            href="#"
+                            className={cn(
+                                buttonVariants({
+                                    variant: 'outline',
+                                    size: 'icon',
+                                }),
+                                'size-8'
+                            )}
+                        >
+                            <BellIcon />
+                        </Link>
+
+                        <Link
+                            href="#"
+                            className={cn(
+                                buttonVariants({
+                                    variant: 'outline',
+                                    size: 'icon',
+                                }),
+                                'size-8'
+                            )}
+                        >
+                            <BookOpenIcon />
+                        </Link>
+                    </div>
+
+                    <Separator
+                        orientation="vertical"
+                        className="data-[orientation=vertical]:h-5"
+                    />
+
+                    <UserProfileDropdown align="end" size={8} />
                 </div>
             </div>
 
@@ -67,14 +108,13 @@ export default function Navbar() {
                     <NavigationMenuList>
                         {navigationLinks.map((link, index) => (
                             <NavigationMenuItem key={index}>
-                                <NavigationMenuLink
-                                    asChild
+                                <Link
                                     href={link.href}
                                     data-active={link.active}
-                                    className="text-foreground/60 data-[active=true]:hover:bg-accent hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-md p-2 px-3 py-1.5 text-sm font-normal transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 data-[active=true]:relative data-[active=true]:bg-transparent data-[active=true]:before:absolute data-[active=true]:before:right-0 data-[active=true]:before:bottom-[-0.375rem] data-[active=true]:before:left-0 data-[active=true]:before:border-b-2 data-[active=true]:before:border-current data-[active=true]:before:content-[''] [&_svg:not([class*='size-'])]:size-4"
+                                    className="text-foreground/60 data-[active=true]:text-accent-foreground data-[active=true]:hover:bg-accent hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground data-[active=true]:before:border-accent-foreground flex flex-col gap-1 rounded-md p-2 px-3 py-1.5 text-sm font-normal transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 data-[active=true]:relative data-[active=true]:bg-transparent data-[active=true]:before:absolute data-[active=true]:before:right-0 data-[active=true]:before:bottom-[-0.375rem] data-[active=true]:before:left-0 data-[active=true]:before:border-b-2 data-[active=true]:before:content-[''] [&_svg:not([class*='size-'])]:size-4"
                                 >
-                                    <Link>{link.label}</Link>
-                                </NavigationMenuLink>
+                                    {link.label}
+                                </Link>
                             </NavigationMenuItem>
                         ))}
                     </NavigationMenuList>
