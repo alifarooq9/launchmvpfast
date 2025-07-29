@@ -126,8 +126,8 @@ const navigationLinks = [
             },
         ],
     },
-    { href: '#', label: 'Pricing' },
-    { href: '#', label: 'Docs' },
+    { href: '#', label: 'Pricing', active: false },
+    { href: '#', label: 'Docs', active: false },
 ]
 
 export default function Navbar() {
@@ -140,7 +140,7 @@ export default function Navbar() {
                     href="#"
                     className={cn(
                         buttonVariants({ variant: 'ghost', size: 'icon' }),
-                        "[&_svg:not([class*='size-'])]:size-6"
+                        "dark:hover:bg-accent text-accent-foreground [&_svg:not([class*='size-'])]:size-6"
                     )}
                 >
                     <svg
@@ -166,30 +166,30 @@ export default function Navbar() {
                         if (link.categories && link.categories?.length > 0) {
                             return (
                                 <NavigationMenuItem key={index}>
-                                    <NavigationMenuTrigger className="hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 h-8 px-3 py-1.5 font-medium">
+                                    <NavigationMenuTrigger className="h-8 rounded-md px-3 py-1.5 font-medium">
                                         {link.label}
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent
                                         className={cn(
-                                            'z-50 gap-2 p-4 md:w-[400px]',
+                                            'z-50 p-2.5 md:w-[400px]',
+                                            `columns-${link.gridCols || 1} gap-4`,
                                             link.gridCols === 1 &&
                                                 'lg:w-[400px]',
                                             link.gridCols === 2 &&
                                                 'lg:w-[500px]',
                                             (link.gridCols || 1) >= 3 &&
-                                                'lg:w-[600px]',
-                                            `columns-${link.gridCols || 1}`
+                                                'lg:w-[600px]'
                                         )}
                                     >
                                         {link.categories.map((category) => (
                                             <div
                                                 key={category.id}
-                                                className="break-inside-avoid"
+                                                className="mb-4 break-inside-avoid"
                                             >
-                                                <h3 className="text-foreground/70 mb-2 px-2 text-sm font-light">
+                                                <h3 className="text-foreground/70 mb-3 px-2 text-sm font-light">
                                                     {category.name}
                                                 </h3>
-                                                <ul>
+                                                <ul className="grid gap-1">
                                                     {category.items.map(
                                                         (item) => (
                                                             <ListItem
@@ -218,7 +218,8 @@ export default function Navbar() {
                                 <NavigationMenuLink
                                     href={link.href}
                                     asChild
-                                    className="hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md px-3 py-1.5 font-medium"
+                                    data-active={link.active}
+                                    className="rounded-md px-3 py-1.5 font-medium"
                                 >
                                     <Link>{link.label}</Link>
                                 </NavigationMenuLink>
@@ -256,7 +257,7 @@ function ListItem({
     return (
         <li {...props}>
             <NavigationMenuLink asChild>
-                <Link href={href} className="p-3">
+                <Link href={href}>
                     <div className="text-sm leading-none font-medium">
                         {title}
                     </div>

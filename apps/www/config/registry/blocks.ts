@@ -124,6 +124,12 @@ export const blocks: ComponentsType = {
                     path: 'default/blocks/navbar/navbar-04',
                     className: 'py-6',
                 },
+                {
+                    id: 'navbar-05',
+                    name: 'Navbar 05',
+                    path: 'default/blocks/navbar/navbar-05',
+                    className: 'py-6',
+                },
             ],
         },
     ],

@@ -628,6 +628,31 @@
                     "target": "components/navbar.tsx"
                 }
             ]
+        },
+        {
+            "name": "navbar-05",
+            "type": "registry:block",
+            "registryDependencies": [
+                "utils",
+                "navigation-menu",
+                "button",
+                "popover",
+                "command",
+                "https://launchmvpfast.com/r/user-profile-dropdown.json"
+            ],
+            "dependencies": ["lucide-react"],
+            "files": [
+                {
+                    "path": "registry/default/blocks/navbar/navbar-05.tsx",
+                    "type": "registry:component",
+                    "target": "components/navbar.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/navbar/team-switcher.tsx",
+                    "type": "registry:component",
+                    "target": "components/team-switcher.tsx"
+                }
+            ]
         }
     ]
 }

@@ -30,10 +30,12 @@ import { Badge } from '@/components/ui/badge'
 import { Select, SelectContent, SelectItem } from '@/components/ui/select'
 import { SelectTrigger } from '@radix-ui/react-select'
 import React from 'react'
+import { cn } from '@/lib/utils'
 
 type UserProfileDropdownProps = {
     align?: 'start' | 'end' | 'center'
     side?: 'top' | 'right' | 'bottom' | 'left'
+    size?: number
 }
 
 type Item = {
@@ -175,6 +177,7 @@ const dummyAccounts = [
 export default function UserProfileDropdown({
     align = 'start',
     side = 'bottom',
+    size = 8,
 }: UserProfileDropdownProps) {
     const [open, setOpen] = React.useState(false)
 
@@ -193,7 +196,7 @@ export default function UserProfileDropdown({
     return (
         <DropdownMenu open={open} onOpenChange={setOpen}>
             <DropdownMenuTrigger className="focus-visible:border-ring focus-visible:ring-ring/50 ring-ring/40 rounded-full p-0.5 ring-2 transition-all outline-none focus-visible:ring-[3px]">
-                <Avatar className="cursor-pointer">
+                <Avatar className={cn('cursor-pointer', `size-${size}`)}>
                     <AvatarImage
                         src={selectedAccountData?.imageUrl}
                         alt={`@${selectedAccountData?.name}`}

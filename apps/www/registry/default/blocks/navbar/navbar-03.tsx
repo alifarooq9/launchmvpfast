@@ -14,7 +14,7 @@ import { ModeSwitcher } from './mode-switcher'
 // Sample navigation links, you can replace these with your actual links
 const navigationLinks = [
     { href: '#', label: 'Docs' },
-    { href: '#', label: 'Components' },
+    { href: '#', label: 'Components', active: true },
     { href: '#', label: 'Blocks' },
     { href: '#', label: 'Starterkits' },
     { href: '#', label: 'Pricing' },
@@ -30,7 +30,7 @@ export default function Navbar() {
                     href="#"
                     className={cn(
                         buttonVariants({ variant: 'ghost', size: 'icon' }),
-                        "[&_svg:not([class*='size-'])]:size-6"
+                        "dark:hover:bg-accent text-accent-foreground [&_svg:not([class*='size-'])]:size-6"
                     )}
                 >
                     <svg
@@ -56,7 +56,8 @@ export default function Navbar() {
                                 <NavigationMenuLink
                                     asChild
                                     href={link.href}
-                                    className="hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 h-8 rounded-md px-3 py-1.5 font-medium"
+                                    data-active={link.active}
+                                    className="rounded-md px-3 py-1.5 font-medium"
                                 >
                                     <Link>{link.label}</Link>
                                 </NavigationMenuLink>
