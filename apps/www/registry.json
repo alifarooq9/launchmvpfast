@@ -595,7 +595,7 @@
                 "utils",
                 "navigation-menu",
                 "button",
-                "http://localhost:3000/r/use-is-mac.json",
+                "https://launchmvpfast.com/r/use-is-mac.json",
                 "separator"
             ],
             "dependencies": ["next-themes"],
@@ -640,7 +640,7 @@
                 "command",
                 "https://launchmvpfast.com/r/user-profile-dropdown.json",
                 "separator",
-                "http://localhost:3000/r/use-is-mac.json"
+                "https://launchmvpfast.com/r/use-is-mac.json"
             ],
             "dependencies": ["lucide-react"],
             "files": [
@@ -658,6 +658,18 @@
                     "path": "registry/default/blocks/navbar/search.tsx",
                     "type": "registry:component",
                     "target": "components/search.tsx"
+                }
+            ]
+        },
+        {
+            "name": "navbar-06",
+            "type": "registry:block",
+            "registryDependencies": ["utils", "navigation-menu", "button"],
+            "files": [
+                {
+                    "path": "registry/default/blocks/navbar/navbar-06.tsx",
+                    "type": "registry:component",
+                    "target": "components/navbar.tsx"
                 }
             ]
         }
