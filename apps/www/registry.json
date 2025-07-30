@@ -760,7 +760,7 @@
             "dependencies": ["lucide-react"],
             "files": [
                 {
-                    "path": "registry/default/blocks/navbar/navbar-05.tsx",
+                    "path": "registry/default/blocks/navbar/navbar-10.tsx",
                     "type": "registry:component",
                     "target": "components/navbar.tsx"
                 }
