@@ -701,6 +701,31 @@
                     "target": "components/mode-switcher.tsx"
                 }
             ]
+        },
+        {
+            "name": "navbar-08",
+            "type": "registry:block",
+            "registryDependencies": [
+                "utils",
+                "button",
+                "https://launchmvpfast.com/r/use-is-mac.json",
+                "separator",
+                "label",
+                "switch"
+            ],
+            "dependencies": ["lucide-react"],
+            "files": [
+                {
+                    "path": "registry/default/blocks/navbar/navbar-08.tsx",
+                    "type": "registry:component",
+                    "target": "components/navbar.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/navbar/search.tsx",
+                    "type": "registry:component",
+                    "target": "components/search.tsx"
+                }
+            ]
         }
     ]
 }
