@@ -726,6 +726,25 @@
                     "target": "components/search.tsx"
                 }
             ]
+        },
+        {
+            "name": "navbar-09",
+            "type": "registry:block",
+            "registryDependencies": [
+                "utils",
+                "navigation-menu",
+                "button",
+                "separator",
+                "select"
+            ],
+            "dependencies": ["lucide-react"],
+            "files": [
+                {
+                    "path": "registry/default/blocks/navbar/navbar-09.tsx",
+                    "type": "registry:component",
+                    "target": "components/navbar.tsx"
+                }
+            ]
         }
     ]
 }

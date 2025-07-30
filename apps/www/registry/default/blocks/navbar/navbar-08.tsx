@@ -7,15 +7,6 @@ import { Label } from '@/registry/default/ui/label'
 import { BellIcon, PlusCircleIcon, SettingsIcon } from 'lucide-react'
 // import Link from 'next/link'
 
-// Sample navigation links, you can replace these with your actual links
-const navigationLinks = [
-    { href: '#', label: 'Docs' },
-    { href: '#', label: 'Components', active: true },
-    { href: '#', label: 'Blocks' },
-    { href: '#', label: 'Starterkits' },
-    { href: '#', label: 'Pricing' },
-]
-
 export default function Navbar() {
     const Link = 'a' // if using Next.js remove this line. you can use the Link component from 'next/link'
 
