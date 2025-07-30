@@ -672,6 +672,35 @@
                     "target": "components/navbar.tsx"
                 }
             ]
+        },
+        {
+            "name": "navbar-07",
+            "type": "registry:block",
+            "registryDependencies": [
+                "utils",
+                "navigation-menu",
+                "button",
+                "https://launchmvpfast.com/r/use-is-mac.json",
+                "separator"
+            ],
+            "dependencies": ["next-themes"],
+            "files": [
+                {
+                    "path": "registry/default/blocks/navbar/navbar-07.tsx",
+                    "type": "registry:component",
+                    "target": "components/navbar.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/navbar/search.tsx",
+                    "type": "registry:component",
+                    "target": "components/search.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/navbar/mode-switcher.tsx",
+                    "type": "registry:component",
+                    "target": "components/mode-switcher.tsx"
+                }
+            ]
         }
     ]
 }

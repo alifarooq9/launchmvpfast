@@ -107,7 +107,7 @@ export default function Navbar() {
                 <NavigationMenu className="max-md:hidden">
                     <NavigationMenuList>
                         {navigationLinks.map((link, index) => (
-                            <NavigationMenuItem key={index}>
+                            <NavigationMenuItem key={index} asChild>
                                 <Link
                                     href={link.href}
                                     data-active={link.active}
