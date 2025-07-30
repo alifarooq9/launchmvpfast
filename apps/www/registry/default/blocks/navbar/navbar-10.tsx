@@ -176,6 +176,7 @@ export default function Navbar() {
                         )}
                     >
                         <InfoIcon />
+                        <span className="sr-only">Info</span>
                     </Link>
 
                     <Separator
