@@ -745,6 +745,26 @@
                     "target": "components/navbar.tsx"
                 }
             ]
+        },
+        {
+            "name": "navbar-10",
+            "type": "registry:block",
+            "registryDependencies": [
+                "utils",
+                "navigation-menu",
+                "button",
+                "https://launchmvpfast.com/r/user-profile-dropdown.json",
+                "separator",
+                "select"
+            ],
+            "dependencies": ["lucide-react"],
+            "files": [
+                {
+                    "path": "registry/default/blocks/navbar/navbar-05.tsx",
+                    "type": "registry:component",
+                    "target": "components/navbar.tsx"
+                }
+            ]
         }
     ]
 }
