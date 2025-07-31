@@ -646,12 +646,22 @@
         {
             "name": "navbar-04",
             "type": "registry:block",
-            "registryDependencies": ["utils", "navigation-menu", "button"],
+            "registryDependencies": [
+                "utils",
+                "navigation-menu",
+                "button",
+                "popover"
+            ],
             "files": [
                 {
                     "path": "registry/default/blocks/navbar/navbar-04.tsx",
                     "type": "registry:component",
                     "target": "components/navbar.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/navbar/mobile-nav.tsx",
+                    "type": "registry:component",
+                    "target": "components/mobile-nav.tsx"
                 }
             ]
         },

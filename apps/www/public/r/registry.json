@@ -567,24 +567,44 @@
         {
             "name": "navbar-01",
             "type": "registry:block",
-            "registryDependencies": ["utils", "navigation-menu", "button"],
+            "registryDependencies": [
+                "utils",
+                "navigation-menu",
+                "button",
+                "popover"
+            ],
             "files": [
                 {
                     "path": "registry/default/blocks/navbar/navbar-01.tsx",
                     "type": "registry:component",
                     "target": "components/navbar.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/navbar/mobile-nav.tsx",
+                    "type": "registry:component",
+                    "target": "components/mobile-nav.tsx"
                 }
             ]
         },
         {
             "name": "navbar-02",
             "type": "registry:block",
-            "registryDependencies": ["utils", "navigation-menu", "button"],
+            "registryDependencies": [
+                "utils",
+                "navigation-menu",
+                "button",
+                "popover"
+            ],
             "files": [
                 {
                     "path": "registry/default/blocks/navbar/navbar-02.tsx",
                     "type": "registry:component",
                     "target": "components/navbar.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/navbar/mobile-nav.tsx",
+                    "type": "registry:component",
+                    "target": "components/mobile-nav.tsx"
                 }
             ]
         },
@@ -596,7 +616,8 @@
                 "navigation-menu",
                 "button",
                 "https://launchmvpfast.com/r/use-is-mac.json",
-                "separator"
+                "separator",
+                "popover"
             ],
             "dependencies": ["next-themes"],
             "files": [
@@ -614,6 +635,11 @@
                     "path": "registry/default/blocks/navbar/mode-switcher.tsx",
                     "type": "registry:component",
                     "target": "components/mode-switcher.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/navbar/mobile-nav.tsx",
+                    "type": "registry:component",
+                    "target": "components/mobile-nav.tsx"
                 }
             ]
         },

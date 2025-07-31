@@ -8,134 +8,189 @@ import {
     NavigationMenuTrigger,
 } from '@/registry/default/ui/navigation-menu'
 import { cn } from '@/lib/utils'
+import { MobileNav } from './mobile-nav'
 // import Link from 'next/link'
 
 // Sample navigation links, you can replace these with your actual links
-const navigationLinks = [
+const starterkits = [
     {
+        title: 'Orbit',
+        description: 'Personal portfolio starter template',
         href: '#',
-        label: 'Products',
-        gridCols: 3,
-        categories: [
-            {
-                name: 'Starterkits',
-                id: 'starterkits',
-                items: [
-                    {
-                        title: 'Orbit',
-                        description: 'Personal portfolio starter template',
-                        href: '#',
-                    },
-                    {
-                        title: 'SaaS',
-                        description: 'Complete SaaS application starter',
-                        href: '#',
-                    },
-                ],
-            },
-            {
-                name: 'Components',
-                id: 'components',
-                items: [
-                    {
-                        title: 'Input',
-                        description: 'Form input components',
-                        href: '#',
-                    },
-                    {
-                        title: 'Dropdown Menu',
-                        description: 'Interactive dropdown menus',
-                        href: '#',
-                    },
-                    {
-                        title: 'View all',
-                        description: 'Browse all components',
-                        href: '#',
-                    },
-                ],
-            },
-            {
-                name: 'Blocks',
-                id: 'blocks',
-                items: [
-                    {
-                        title: 'Hero Section',
-                        description: 'Landing page hero blocks',
-                        href: '#',
-                    },
-                    {
-                        title: 'Navbars',
-                        description: 'Navigation bar components',
-                        href: '#',
-                    },
-                    {
-                        title: 'Sign-in and Sign-up',
-                        description: 'Authentication form blocks',
-                        href: '#',
-                    },
-                ],
-            },
-        ],
     },
     {
+        title: 'SaaS',
+        description: 'Complete SaaS application starter',
         href: '#',
-        label: 'Resources',
-        gridCols: 2,
-        categories: [
-            {
-                name: 'Learning',
-                id: 'learning',
-                items: [
-                    {
-                        title: 'Documentation',
-                        description: 'Complete guides and API reference',
-                        href: '#',
-                    },
-                    {
-                        title: 'Tutorials',
-                        description: 'Step-by-step learning materials',
-                        href: '#',
-                    },
-                    {
-                        title: 'Blog',
-                        description: 'Latest news and insights',
-                        href: '#',
-                    },
-                ],
-            },
-            {
-                name: 'Support',
-                id: 'support',
-                items: [
-                    {
-                        title: 'Community',
-                        description: 'Join our developer community',
-                        href: '#',
-                    },
-                    {
-                        title: 'Help Center',
-                        description: 'Find answers to common questions',
-                        href: '#',
-                    },
-                    {
-                        title: 'Contact',
-                        description: 'Get in touch with our team',
-                        href: '#',
-                    },
-                ],
-            },
-        ],
     },
-    { href: '#', label: 'Pricing', active: false },
-    { href: '#', label: 'Docs', active: false },
 ]
+const components = [
+    {
+        title: 'Input',
+        description: 'Form input components',
+        href: '#',
+    },
+    {
+        title: 'Dropdown Menu',
+        description: 'Interactive dropdown menus',
+        href: '#',
+    },
+    {
+        title: 'View all',
+        description: 'Browse all components',
+        href: '#',
+    },
+]
+const blocks = [
+    {
+        title: 'Hero Section',
+        description: 'Landing page hero blocks',
+        href: '#',
+    },
+    {
+        title: 'Navbars',
+        description: 'Navigation bar components',
+        href: '#',
+    },
+    {
+        title: 'Sign-in and Sign-up',
+        description: 'Authentication form blocks',
+        href: '#',
+    },
+]
+const learning = [
+    {
+        title: 'Documentation',
+        description: 'Complete guides and API reference',
+        href: '#',
+    },
+    {
+        title: 'Tutorials',
+        description: 'Step-by-step learning materials',
+        href: '#',
+    },
+    {
+        title: 'Blog',
+        description: 'Latest news and insights',
+        href: '#',
+    },
+]
+const support = [
+    {
+        title: 'Community',
+        description: 'Join our developer community',
+        href: '#',
+    },
+    {
+        title: 'Help Center',
+        description: 'Find answers to common questions',
+        href: '#',
+    },
+    {
+        title: 'Contact',
+        description: 'Get in touch with our team',
+        href: '#',
+    },
+]
+
+const navigationLinks = {
+    mobile: [
+        {
+            name: 'Main',
+            items: [
+                { href: '#', label: 'Docs' },
+                { href: '#', label: 'Pricing' },
+            ],
+        },
+        {
+            name: 'Starterkits',
+            items: starterkits.map((item) => ({
+                href: item.href,
+                label: item.title,
+            })),
+        },
+        {
+            name: 'Components',
+            items: components.map((item) => ({
+                href: item.href,
+                label: item.title,
+            })),
+        },
+        {
+            name: 'Blocks',
+            items: blocks.map((item) => ({
+                href: item.href,
+                label: item.title,
+            })),
+        },
+        {
+            name: 'Learning',
+            items: learning.map((item) => ({
+                href: item.href,
+                label: item.title,
+            })),
+        },
+        {
+            name: 'Support',
+            items: support.map((item) => ({
+                href: item.href,
+                label: item.title,
+            })),
+        },
+    ],
+    desktop: [
+        {
+            href: '#',
+            label: 'Products',
+            gridCols: 3,
+            categories: [
+                {
+                    name: 'Starterkits',
+                    id: 'starterkits',
+                    items: starterkits,
+                },
+                {
+                    name: 'Components',
+                    id: 'components',
+                    items: components,
+                },
+                {
+                    name: 'Blocks',
+                    id: 'blocks',
+                    items: blocks,
+                },
+            ],
+        },
+        {
+            href: '#',
+            label: 'Resources',
+            gridCols: 2,
+            categories: [
+                {
+                    name: 'Learning',
+                    id: 'learning',
+                    items: learning,
+                },
+                {
+                    name: 'Support',
+                    id: 'support',
+                    items: support,
+                },
+            ],
+        },
+        { href: '#', label: 'Pricing', active: false },
+        { href: '#', label: 'Docs', active: false },
+    ],
+}
 
 export default function Navbar() {
     const Link = 'a' // if using Next.js remove this line. you can use the Link component from 'next/link'
 
     return (
         <header className="container mx-auto flex h-14 items-center justify-between gap-4">
-            <div className="flex items-center justify-start">
+            <div className="flex items-center justify-start gap-2">
+                <MobileNav nav={navigationLinks.mobile} />
+
                 <Link
                     href="#"
                     className={cn(
@@ -162,7 +217,7 @@ export default function Navbar() {
 
             <NavigationMenu className="max-md:hidden" viewport={false}>
                 <NavigationMenuList>
-                    {navigationLinks.map((link, index) => {
+                    {navigationLinks.desktop.map((link, index) => {
                         if (link.categories && link.categories?.length > 0) {
                             return (
                                 <NavigationMenuItem key={index}>
@@ -171,20 +226,22 @@ export default function Navbar() {
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent
                                         className={cn(
-                                            'z-50 p-2.5 md:w-[400px]',
-                                            `columns-${link.gridCols || 1} gap-4`,
+                                            'z-50 p-3 pb-0 md:w-[400px]',
                                             link.gridCols === 1 &&
-                                                'lg:w-[400px]',
+                                                'columns-1 lg:w-[400px]',
                                             link.gridCols === 2 &&
-                                                'lg:w-[500px]',
-                                            (link.gridCols || 1) >= 3 &&
-                                                'lg:w-[600px]'
+                                                'columns-2 gap-4 lg:w-[500px]',
+                                            link.gridCols === 3 &&
+                                                'columns-3 gap-4 lg:w-[600px]',
+                                            link.gridCols &&
+                                                link.gridCols > 3 &&
+                                                `columns-${link.gridCols} gap-4 lg:w-[600px]`
                                         )}
                                     >
                                         {link.categories.map((category) => (
                                             <div
                                                 key={category.id}
-                                                className="mb-4 break-inside-avoid"
+                                                className="mb-3 break-inside-avoid"
                                             >
                                                 <h3 className="text-foreground/70 mb-3 px-2 text-sm font-light">
                                                     {category.name}
