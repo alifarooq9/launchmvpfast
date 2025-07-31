@@ -54,6 +54,7 @@
         "react-dom": "^19.1.0",
         "react-hook-form": "^7.60.0",
         "react-phone-number-input": "^3.4.12",
+        "react-resizable-panels": "^3.0.4",
         "react-textarea-autosize": "^8.5.9",
         "resend": "^4.6.0",
         "shadcn": "2.9.3",

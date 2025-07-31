@@ -6,6 +6,7 @@ import { getBlockCategory, getBlocksCategories } from '@/config/registry/blocks'
 import { siteConfig } from '@/config/site'
 import { urls } from '@/config/urls'
 import { notFound } from 'next/navigation'
+import React from 'react'
 
 export async function generateMetadata({
     params,
@@ -52,8 +53,12 @@ type BlocksCategoryProps = {
     params: Promise<{ category: string }>
 }
 
+const getCachedCategory = React.cache(async (categoryId: string) => {
+    return getBlockCategory(categoryId)
+})
+
 export default async function BlocksCategory({ params }: BlocksCategoryProps) {
-    const category = getBlockCategory((await params).category)
+    const category = await getCachedCategory((await params).category)
 
     if (!category) {
         return notFound()

@@ -3,6 +3,10 @@ import { getBlockCategory, getBlocksCategories } from '@/config/registry/blocks'
 import { siteConfig } from '@/config/site'
 import { notFound } from 'next/navigation'
 
+export const revalidate = false
+export const dynamic = 'force-static'
+export const dynamicParams = false
+
 export async function generateMetadata({
     params,
 }: {

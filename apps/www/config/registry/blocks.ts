@@ -2,7 +2,10 @@ export type Block = {
     id: string
     name: string
     path: string
-    className?: string
+    meta?: {
+        className?: string
+        iframeHeight?: string
+    }
 }
 
 export type Category = {
@@ -104,61 +107,81 @@ export const blocks: ComponentsType = {
                     id: 'navbar-01',
                     name: 'Navbar 01',
                     path: 'default/blocks/navbar/navbar-01',
-                    className: 'py-6',
+                    meta: {
+                        iframeHeight: '450',
+                    },
                 },
                 {
                     id: 'navbar-02',
                     name: 'Navbar 02',
                     path: 'default/blocks/navbar/navbar-02',
-                    className: 'py-6',
+                    meta: {
+                        iframeHeight: '450',
+                    },
                 },
                 {
                     id: 'navbar-03',
                     name: 'Navbar 03',
                     path: 'default/blocks/navbar/navbar-03',
-                    className: 'py-6',
+                    meta: {
+                        iframeHeight: '450',
+                    },
                 },
                 {
                     id: 'navbar-04',
                     name: 'Navbar 04',
                     path: 'default/blocks/navbar/navbar-04',
-                    className: 'py-6',
+                    meta: {
+                        iframeHeight: '450',
+                    },
                 },
                 {
                     id: 'navbar-05',
                     name: 'Navbar 05',
                     path: 'default/blocks/navbar/navbar-05',
-                    className: 'py-6',
+                    meta: {
+                        iframeHeight: '450',
+                    },
                 },
                 {
                     id: 'navbar-06',
                     name: 'Navbar 06',
                     path: 'default/blocks/navbar/navbar-06',
-                    className: 'py-6',
+                    meta: {
+                        iframeHeight: '450',
+                    },
                 },
                 {
                     id: 'navbar-07',
                     name: 'Navbar 07',
                     path: 'default/blocks/navbar/navbar-07',
-                    className: 'py-6',
+                    meta: {
+                        iframeHeight: '450',
+                    },
                 },
                 {
                     id: 'navbar-08',
                     name: 'Navbar 08',
                     path: 'default/blocks/navbar/navbar-08',
-                    className: 'py-6',
+                    meta: {
+                        iframeHeight: '450',
+                    },
                 },
                 {
                     id: 'navbar-09',
                     name: 'Navbar 09',
                     path: 'default/blocks/navbar/navbar-09',
-                    className: 'py-6',
+                    meta: {
+                        iframeHeight: '450',
+                    },
                 },
                 {
                     id: 'navbar-10',
                     name: 'Navbar 10',
                     path: 'default/blocks/navbar/navbar-10',
-                    className: 'py-6',
+                    meta: {
+                        iframeHeight: '450',
+                    },
                 },
             ],
         },

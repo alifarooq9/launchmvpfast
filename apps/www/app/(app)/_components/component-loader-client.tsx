@@ -11,9 +11,17 @@ export function ComponentLoaderClient({
     Loading?: React.ReactNode
 }) {
     const Component = dynamic(
-        () => import(`@/registry/${component.path}`).catch(() => () => null),
+        async () => {
+            const mod = await import(`@/registry/${component.path}`)
+            const exportName =
+                Object.keys(mod).find(
+                    (key) =>
+                        typeof mod[key] === 'function' ||
+                        typeof mod[key] === 'object'
+                ) || component.name
+            return { default: mod.default || mod[exportName] }
+        },
         {
-            ssr: false,
             loading: () => {
                 if (Loading) {
                     return <>{Loading}</>
