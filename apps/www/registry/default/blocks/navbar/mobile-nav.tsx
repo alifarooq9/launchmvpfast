@@ -1,14 +1,14 @@
 'use client'
 
-import Link, { LinkProps } from 'next/link'
 import React from 'react'
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from '@/components/ui/popover'
-import { Button } from '@/components/ui/button'
+} from '@/registry/default/ui/popover'
+import { Button } from '@/registry/default/ui/button'
 import { cn } from '@/lib/utils'
+// import Link from 'next/link'
 
 type MobileNavProps = {
     nav: {
@@ -21,6 +21,8 @@ type MobileNavProps = {
 }
 
 export function MobileNav({ nav }: MobileNavProps) {
+    const Link = 'a' // if using Next.js remove this line. you can use the Link component from 'next/link'
+
     const [open, setOpen] = React.useState(false)
 
     return (
@@ -67,13 +69,14 @@ export function MobileNav({ nav }: MobileNavProps) {
                             </p>
                             <div className="flex flex-col gap-3">
                                 {category.items.map((item, index) => (
-                                    <MobileLink
+                                    <Link
                                         key={index}
                                         href={item.href as string}
-                                        onOpenChange={setOpen}
+                                        className="text-2xl font-medium"
+                                        onClick={() => setOpen(false)}
                                     >
                                         {item.label}
-                                    </MobileLink>
+                                    </Link>
                                 ))}
                             </div>
                         </div>
@@ -81,32 +84,5 @@ export function MobileNav({ nav }: MobileNavProps) {
                 </div>
             </PopoverContent>
         </Popover>
-    )
-}
-
-function MobileLink({
-    href,
-    onOpenChange,
-    className,
-    children,
-    ...props
-}: LinkProps & {
-    onOpenChange?: (open: boolean) => void
-    children: React.ReactNode
-    className?: string
-}) {
-    return (
-        <Link
-            href={href}
-            className={cn('text-2xl font-medium', className)}
-            onClick={() => {
-                if (onOpenChange) {
-                    onOpenChange(false)
-                }
-            }}
-            {...props}
-        >
-            {children}
-        </Link>
     )
 }

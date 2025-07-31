@@ -4,41 +4,12 @@
   "type": "registry:component",
   "title": "Input with Prefix",
   "description": "A component for inputting text with a prefix",
-  "dependencies": [
-    "clsx",
-    "tailwind-merge",
-    "@radix-ui/react-label"
-  ],
   "files": [
     {
       "path": "registry/default/components/input/input-with-prefix.tsx",
       "content": "import { Input } from '@/components/ui/input'\r\nimport { Label } from '@/components/ui/label'\r\nimport { useId } from 'react'\r\n\r\nexport default function InputWithPrefix() {\r\n    const id = useId()\r\n    const prefix = 'https://'\r\n\r\n    return (\r\n        <div className=\"flex w-full max-w-4/5 flex-col gap-2\">\r\n            <Label htmlFor={id}>Input with prefix</Label>\r\n\r\n            <div className=\"flex items-center\">\r\n                <span className=\"border-input dark:bg-input/30 text-muted-foreground flex h-9 items-center justify-center rounded-md rounded-r-none border border-r-0 bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] md:text-sm\">\r\n                    {prefix}\r\n                </span>\r\n\r\n                <Input\r\n                    placeholder=\"launchmvpfast.com\"\r\n                    id={id}\r\n                    className=\"rounded-l-none\"\r\n                />\r\n            </div>\r\n        </div>\r\n    )\r\n}\r\n",
       "type": "registry:component",
       "target": "components/input-with-prefix.tsx"
-    },
-    {
-      "path": "registry\\default\\components\\input\\input-with-prefix.tsx",
-      "content": "import { Input } from '@/components/ui/input'\r\nimport { Label } from '@/components/ui/label'\r\nimport { useId } from 'react'\r\n\r\nexport default function InputWithPrefix() {\r\n    const id = useId()\r\n    const prefix = 'https://'\r\n\r\n    return (\r\n        <div className=\"flex w-full max-w-4/5 flex-col gap-2\">\r\n            <Label htmlFor={id}>Input with prefix</Label>\r\n\r\n            <div className=\"flex items-center\">\r\n                <span className=\"border-input dark:bg-input/30 text-muted-foreground flex h-9 items-center justify-center rounded-md rounded-r-none border border-r-0 bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] md:text-sm\">\r\n                    {prefix}\r\n                </span>\r\n\r\n                <Input\r\n                    placeholder=\"launchmvpfast.com\"\r\n                    id={id}\r\n                    className=\"rounded-l-none\"\r\n                />\r\n            </div>\r\n        </div>\r\n    )\r\n}\r\n",
-      "type": "registry:component",
-      "target": ""
-    },
-    {
-      "path": "components\\ui\\input.tsx",
-      "content": "import * as React from 'react'\r\n\r\nimport { cn } from '@/lib/utils'\r\n\r\nfunction Input({ className, type, ...props }: React.ComponentProps<'input'>) {\r\n    return (\r\n        <input\r\n            type={type}\r\n            data-slot=\"input\"\r\n            className={cn(\r\n                'file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',\r\n                'focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',\r\n                'aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',\r\n                className\r\n            )}\r\n            {...props}\r\n        />\r\n    )\r\n}\r\n\r\nexport { Input }\r\n",
-      "type": "registry:ui",
-      "target": ""
-    },
-    {
-      "path": "components\\ui\\label.tsx",
-      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport * as LabelPrimitive from \"@radix-ui/react-label\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nfunction Label({\r\n  className,\r\n  ...props\r\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\r\n  return (\r\n    <LabelPrimitive.Root\r\n      data-slot=\"label\"\r\n      className={cn(\r\n        \"flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50\",\r\n        className\r\n      )}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nexport { Label }\r\n",
-      "type": "registry:ui",
-      "target": ""
-    },
-    {
-      "path": "lib\\utils.ts",
-      "content": "import { clsx, type ClassValue } from 'clsx'\r\nimport { twMerge } from 'tailwind-merge'\r\n\r\nexport function cn(...inputs: ClassValue[]) {\r\n    return twMerge(clsx(inputs))\r\n}\r\n\r\nexport const convertRegistryPaths = (content: string): string => {\r\n    return content\r\n        .replace(/@\\/registry\\/default\\/ui/g, '@/components/ui')\r\n        .replace(/@\\/registry\\/default\\/hooks/g, '@/hooks')\r\n        .replace(/@\\/registry\\/default\\/lib/g, '@/lib')\r\n}\r\n",
-      "type": "registry:lib",
-      "target": ""
     }
   ]
 }

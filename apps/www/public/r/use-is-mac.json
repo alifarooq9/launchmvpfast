@@ -4,18 +4,11 @@
   "type": "registry:hook",
   "title": "useIsMac",
   "description": "A custom hook to detect if the user is on a Mac",
-  "dependencies": [],
   "files": [
     {
       "path": "registry/default/hooks/use-is-mac.ts",
       "content": "import { useEffect, useState } from 'react'\r\n\r\nexport function useIsMac() {\r\n    const [isMac, setIsMac] = useState(true)\r\n\r\n    useEffect(() => {\r\n        setIsMac(navigator.platform.toUpperCase().includes('MAC'))\r\n    }, [])\r\n\r\n    return isMac\r\n}\r\n",
       "type": "registry:hook"
-    },
-    {
-      "path": "registry\\default\\hooks\\use-is-mac.ts",
-      "content": "import { useEffect, useState } from 'react'\r\n\r\nexport function useIsMac() {\r\n    const [isMac, setIsMac] = useState(true)\r\n\r\n    useEffect(() => {\r\n        setIsMac(navigator.platform.toUpperCase().includes('MAC'))\r\n    }, [])\r\n\r\n    return isMac\r\n}\r\n",
-      "type": "registry:hook",
-      "target": ""
     }
   ]
 }

@@ -21,15 +21,6 @@ const navigationLinks = [
             { href: '#', label: 'About' },
         ],
     },
-    {
-        name: 'Main',
-        items: [
-            { href: '#', label: 'Products', active: true },
-            { href: '#', label: 'Pricing' },
-            { href: '#', label: 'Docs' },
-            { href: '#', label: 'About' },
-        ],
-    },
 ]
 
 export default function Navbar() {
