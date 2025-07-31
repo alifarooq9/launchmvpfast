@@ -122,7 +122,7 @@ function BlockViewerView() {
 }
 
 function BlockViewerMobileView() {
-    const { block, category, iframeKey } = useBlockViewer()
+    const { block } = useBlockViewer()
 
     return (
         <div
@@ -137,7 +137,7 @@ function BlockViewerMobileView() {
 }
 
 function BlockViewerToolbar() {
-    const { block, category, resizablePanelRef, iframeKey, setiframeKey } =
+    const { block, category, resizablePanelRef, setiframeKey } =
         useBlockViewer()
 
     return (

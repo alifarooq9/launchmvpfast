@@ -4,12 +4,43 @@
   "type": "registry:component",
   "title": "OTP with No Spaces",
   "description": "A component for inputting OTP codes without spaces",
+  "dependencies": [
+    "input-otp",
+    "lucide-react",
+    "clsx",
+    "tailwind-merge",
+    "@radix-ui/react-label"
+  ],
   "files": [
     {
       "path": "registry/default/components/input/otp-with-no-spaces.tsx",
       "content": "import {\r\n    InputOTP,\r\n    InputOTPGroup,\r\n    InputOTPSlot,\r\n} from '@/components/ui/input-otp'\r\nimport { Label } from '@/components/ui/label'\r\n\r\n// Change the inputLength to the desired number of slots\r\nconst inputLength = 6\r\n\r\nexport default function OtpWithNoSpaces() {\r\n    return (\r\n        <div className=\"flex w-full max-w-4/5 flex-col gap-2\">\r\n            <Label>OTP without spaces</Label>\r\n\r\n            <InputOTP maxLength={inputLength} inputMode=\"numeric\">\r\n                <InputOTPGroup>\r\n                    {Array.from({ length: inputLength }, (_, index) => (\r\n                        <InputOTPSlot key={index} index={index} />\r\n                    ))}\r\n                </InputOTPGroup>\r\n            </InputOTP>\r\n\r\n            <p className=\"text-muted-foreground text-sm\">\r\n                Built with{' '}\r\n                <a\r\n                    target=\"_blank\"\r\n                    href=\"https://input-otp.rodz.dev/\"\r\n                    className=\"underline underline-offset-3\"\r\n                >\r\n                    input-otp\r\n                </a>{' '}\r\n            </p>\r\n        </div>\r\n    )\r\n}\r\n",
       "type": "registry:component",
       "target": "components/otp-with-no-spaces.tsx"
+    },
+    {
+      "path": "registry\\default\\components\\input\\otp-with-no-spaces.tsx",
+      "content": "import {\r\n    InputOTP,\r\n    InputOTPGroup,\r\n    InputOTPSlot,\r\n} from '@/components/ui/input-otp'\r\nimport { Label } from '@/components/ui/label'\r\n\r\n// Change the inputLength to the desired number of slots\r\nconst inputLength = 6\r\n\r\nexport default function OtpWithNoSpaces() {\r\n    return (\r\n        <div className=\"flex w-full max-w-4/5 flex-col gap-2\">\r\n            <Label>OTP without spaces</Label>\r\n\r\n            <InputOTP maxLength={inputLength} inputMode=\"numeric\">\r\n                <InputOTPGroup>\r\n                    {Array.from({ length: inputLength }, (_, index) => (\r\n                        <InputOTPSlot key={index} index={index} />\r\n                    ))}\r\n                </InputOTPGroup>\r\n            </InputOTP>\r\n\r\n            <p className=\"text-muted-foreground text-sm\">\r\n                Built with{' '}\r\n                <a\r\n                    target=\"_blank\"\r\n                    href=\"https://input-otp.rodz.dev/\"\r\n                    className=\"underline underline-offset-3\"\r\n                >\r\n                    input-otp\r\n                </a>{' '}\r\n            </p>\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:component",
+      "target": ""
+    },
+    {
+      "path": "components\\ui\\input-otp.tsx",
+      "content": "'use client'\r\n\r\nimport * as React from 'react'\r\nimport { OTPInput, OTPInputContext } from 'input-otp'\r\nimport { MinusIcon } from 'lucide-react'\r\n\r\nimport { cn } from '@/lib/utils'\r\n\r\nfunction InputOTP({\r\n    className,\r\n    containerClassName,\r\n    ...props\r\n}: React.ComponentProps<typeof OTPInput> & {\r\n    containerClassName?: string\r\n}) {\r\n    return (\r\n        <OTPInput\r\n            data-slot=\"input-otp\"\r\n            containerClassName={cn(\r\n                'flex items-center gap-2 has-disabled:opacity-50',\r\n                containerClassName\r\n            )}\r\n            className={cn('disabled:cursor-not-allowed', className)}\r\n            {...props}\r\n        />\r\n    )\r\n}\r\n\r\nfunction InputOTPGroup({ className, ...props }: React.ComponentProps<'div'>) {\r\n    return (\r\n        <div\r\n            data-slot=\"input-otp-group\"\r\n            className={cn('flex items-center', className)}\r\n            {...props}\r\n        />\r\n    )\r\n}\r\n\r\nfunction InputOTPSlot({\r\n    index,\r\n    className,\r\n    ...props\r\n}: React.ComponentProps<'div'> & {\r\n    index: number\r\n}) {\r\n    const inputOTPContext = React.useContext(OTPInputContext)\r\n    const { char, hasFakeCaret, isActive } = inputOTPContext?.slots[index] ?? {}\r\n\r\n    return (\r\n        <div\r\n            data-slot=\"input-otp-slot\"\r\n            data-active={isActive}\r\n            className={cn(\r\n                'data-[active=true]:border-ring data-[active=true]:ring-ring/50 data-[active=true]:aria-invalid:ring-destructive/20 dark:data-[active=true]:aria-invalid:ring-destructive/40 aria-invalid:border-destructive data-[active=true]:aria-invalid:border-destructive dark:bg-input/30 border-input relative flex h-9 w-9 items-center justify-center border-y border-r text-sm shadow-xs transition-all outline-none first:rounded-l-md first:border-l last:rounded-r-md data-[active=true]:z-10 data-[active=true]:ring-[3px]',\r\n                className\r\n            )}\r\n            {...props}\r\n        >\r\n            {char}\r\n            {hasFakeCaret && (\r\n                <div className=\"pointer-events-none absolute inset-0 flex items-center justify-center\">\r\n                    <div className=\"animate-caret-blink bg-foreground h-4 w-px duration-1000\" />\r\n                </div>\r\n            )}\r\n        </div>\r\n    )\r\n}\r\n\r\nfunction InputOTPSeparator({ ...props }: React.ComponentProps<'div'>) {\r\n    return (\r\n        <div data-slot=\"input-otp-separator\" role=\"separator\" {...props}>\r\n            <MinusIcon />\r\n        </div>\r\n    )\r\n}\r\n\r\nexport { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator }\r\n",
+      "type": "registry:ui",
+      "target": ""
+    },
+    {
+      "path": "components\\ui\\label.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport * as LabelPrimitive from \"@radix-ui/react-label\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nfunction Label({\r\n  className,\r\n  ...props\r\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\r\n  return (\r\n    <LabelPrimitive.Root\r\n      data-slot=\"label\"\r\n      className={cn(\r\n        \"flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50\",\r\n        className\r\n      )}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nexport { Label }\r\n",
+      "type": "registry:ui",
+      "target": ""
+    },
+    {
+      "path": "lib\\utils.ts",
+      "content": "import { clsx, type ClassValue } from 'clsx'\r\nimport { twMerge } from 'tailwind-merge'\r\n\r\nexport function cn(...inputs: ClassValue[]) {\r\n    return twMerge(clsx(inputs))\r\n}\r\n\r\nexport const convertRegistryPaths = (content: string): string => {\r\n    return content\r\n        .replace(/@\\/registry\\/default\\/ui/g, '@/components/ui')\r\n        .replace(/@\\/registry\\/default\\/hooks/g, '@/hooks')\r\n        .replace(/@\\/registry\\/default\\/lib/g, '@/lib')\r\n}\r\n",
+      "type": "registry:lib",
+      "target": ""
     }
   ]
 }
