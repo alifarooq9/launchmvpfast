@@ -9,15 +9,21 @@ import { cn } from '@/lib/utils'
 import { Search } from './search'
 import { Separator } from '@/registry/default/ui/separator'
 import { ModeSwitcher } from './mode-switcher'
+import { MobileNav } from './mobile-nav'
 // import Link from 'next/link'
 
 // Sample navigation links, you can replace these with your actual links
+// you can add more categories it will be rendered in mobile nav, but only the first one will be rendered in desktop nav
 const navigationLinks = [
-    { href: '#', label: 'Docs' },
-    { href: '#', label: 'Components', active: true },
-    { href: '#', label: 'Blocks' },
-    { href: '#', label: 'Starterkits' },
-    { href: '#', label: 'Pricing' },
+    {
+        name: 'Main',
+        items: [
+            { href: '#', label: 'Products', active: true },
+            { href: '#', label: 'Pricing' },
+            { href: '#', label: 'Docs' },
+            { href: '#', label: 'About' },
+        ],
+    },
 ]
 
 export default function Navbar() {
@@ -25,7 +31,9 @@ export default function Navbar() {
 
     return (
         <header className="container mx-auto flex h-14 items-center justify-between gap-4">
-            <div className="flex flex-1 items-center justify-start gap-4">
+            <div className="flex flex-1 items-center justify-start gap-2 md:gap-4">
+                <MobileNav nav={navigationLinks} />
+
                 <Link
                     href="#"
                     className={cn(
@@ -51,7 +59,7 @@ export default function Navbar() {
 
                 <NavigationMenu className="max-md:hidden">
                     <NavigationMenuList>
-                        {navigationLinks.map((link, index) => (
+                        {navigationLinks[0].items.map((link, index) => (
                             <NavigationMenuItem key={index}>
                                 <NavigationMenuLink
                                     asChild
@@ -68,11 +76,11 @@ export default function Navbar() {
             </div>
 
             <div className="flex items-center justify-end gap-2">
-                <Search className="mr-2" />
+                <Search className="mr-2 hidden sm:flex" />
 
                 <Separator
                     orientation="vertical"
-                    className="data-[orientation=vertical]:h-5"
+                    className="hidden data-[orientation=vertical]:h-5 sm:flex"
                 />
 
                 <Link
