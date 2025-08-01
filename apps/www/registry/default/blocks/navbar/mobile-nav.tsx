@@ -59,7 +59,7 @@ export function MobileNav({ nav }: MobileNavProps) {
                 align="start"
                 side="bottom"
                 alignOffset={-16}
-                sideOffset={0}
+                sideOffset={4}
             >
                 <div className="flex flex-col gap-12 overflow-auto px-6 py-6">
                     {nav.map((category, index) => (

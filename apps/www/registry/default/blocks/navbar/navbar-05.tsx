@@ -10,17 +10,31 @@ import { BellIcon, BookOpenIcon, SlashIcon } from 'lucide-react'
 import UserProfileDropdown from './user-profile-dropdown'
 import { TeamSwitcher } from './team-switcher'
 import { Search } from './search'
+import { MobileNav } from './mobile-nav'
 // import Link from 'next/link'
 
 // Sample navigation links, you can replace these with your actual links
 const navigationLinks = [
-    { href: '#', label: 'Overview', active: true },
-    { href: '#', label: 'Integrations' },
-    { href: '#', label: 'Deployments' },
-    { href: '#', label: 'Domains' },
-    { href: '#', label: 'Usage' },
-    { href: '#', label: 'Storage' },
-    { href: '#', label: 'Settings' },
+    {
+        name: 'Main',
+        items: [
+            { href: '#', label: 'Overview', active: true },
+            { href: '#', label: 'Integrations' },
+            { href: '#', label: 'Deployments' },
+            { href: '#', label: 'Domains' },
+            { href: '#', label: 'Usage' },
+            { href: '#', label: 'Storage' },
+            { href: '#', label: 'Settings' },
+        ],
+    },
+    {
+        name: 'Support',
+        items: [
+            { href: '#', label: 'Documentation' },
+            { href: '#', label: 'Community' },
+            { href: '#', label: 'Contact Us' },
+        ],
+    },
 ]
 
 export default function Navbar() {
@@ -34,7 +48,7 @@ export default function Navbar() {
                         href="#"
                         className={cn(
                             buttonVariants({ variant: 'ghost', size: 'icon' }),
-                            "dark:hover:bg-accent text-accent-foreground [&_svg:not([class*='size-'])]:size-6"
+                            "dark:hover:bg-accent text-accent-foreground hidden md:flex [&_svg:not([class*='size-'])]:size-6"
                         )}
                     >
                         <svg
@@ -53,20 +67,22 @@ export default function Navbar() {
                         </svg>
                     </Link>
 
-                    <SlashIcon className="text-muted size-4 -rotate-[20deg]" />
+                    <SlashIcon className="text-muted hidden size-4 -rotate-[20deg] md:flex" />
+
+                    <MobileNav nav={navigationLinks} />
 
                     <TeamSwitcher />
                 </div>
 
-                <div className="flex flex-1 items-center justify-end gap-4">
-                    <Search />
+                <div className="flex items-center justify-end gap-4 md:flex-1">
+                    <Search className="hidden md:flex" />
 
                     <Separator
                         orientation="vertical"
-                        className="data-[orientation=vertical]:h-5"
+                        className="hidden data-[orientation=vertical]:h-5 md:flex"
                     />
 
-                    <div className="flex items-center gap-1.5">
+                    <div className="hidden items-center gap-1.5 sm:flex">
                         <Link
                             href="#"
                             className={cn(
@@ -96,7 +112,7 @@ export default function Navbar() {
 
                     <Separator
                         orientation="vertical"
-                        className="data-[orientation=vertical]:h-5"
+                        className="hidden data-[orientation=vertical]:h-5 sm:flex"
                     />
 
                     <UserProfileDropdown align="end" size={8} />
@@ -106,7 +122,7 @@ export default function Navbar() {
             <div className="flex w-full items-center justify-start pb-1.5">
                 <NavigationMenu className="max-md:hidden">
                     <NavigationMenuList>
-                        {navigationLinks.map((link, index) => (
+                        {navigationLinks[0].items.map((link, index) => (
                             <NavigationMenuItem key={index} asChild>
                                 <Link
                                     href={link.href}

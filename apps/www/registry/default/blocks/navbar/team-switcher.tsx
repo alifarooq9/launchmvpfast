@@ -42,7 +42,7 @@ export function TeamSwitcher() {
                     role="combobox"
                     aria-expanded={open}
                     className={cn(
-                        "dark:hover:bg-accent max-w-[180px] cursor-pointer justify-start px-2 has-[>svg]:px-2 [&_svg:not([class*='size-'])]:size-3"
+                        "dark:hover:bg-accent max-w-[140px] cursor-pointer justify-start px-2 has-[>svg]:px-2 sm:max-w-[180px] [&_svg:not([class*='size-'])]:size-3"
                     )}
                 >
                     <div className="size-5 shrink-0 rounded-full bg-white" />
