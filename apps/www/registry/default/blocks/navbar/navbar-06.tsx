@@ -6,14 +6,21 @@ import {
     NavigationMenuList,
 } from '@/registry/default/ui/navigation-menu'
 import { cn } from '@/lib/utils'
+import { MobileNav } from './mobile-nav'
 // import Link from 'next/link'
 
 // Sample navigation links, you can replace these with your actual links
+// you can add more categories it will be rendered in mobile nav, but only the first one will be rendered in desktop nav
 const navigationLinks = [
-    { href: '#', label: 'Products', active: true },
-    { href: '#', label: 'Pricing' },
-    { href: '#', label: 'Docs' },
-    { href: '#', label: 'About' },
+    {
+        name: 'Main',
+        items: [
+            { href: '#', label: 'Products', active: true },
+            { href: '#', label: 'Pricing' },
+            { href: '#', label: 'Docs' },
+            { href: '#', label: 'About' },
+        ],
+    },
 ]
 
 export default function Navbar() {
@@ -21,10 +28,10 @@ export default function Navbar() {
 
     return (
         <header className="container mx-auto flex h-14 items-center justify-between gap-4">
-            <div className="flex flex-1 items-center justify-start">
-                <NavigationMenu className="max-md:hidden">
+            <div className="flex flex-1 items-center justify-start max-md:hidden">
+                <NavigationMenu>
                     <NavigationMenuList>
-                        {navigationLinks.map((link, index) => (
+                        {navigationLinks[0].items.map((link, index) => (
                             <NavigationMenuItem key={index}>
                                 <NavigationMenuLink
                                     asChild
@@ -41,6 +48,8 @@ export default function Navbar() {
             </div>
 
             <div className="flex items-center justify-center">
+                <MobileNav nav={navigationLinks} />
+
                 <Link
                     href="#"
                     className={cn(
