@@ -12,7 +12,7 @@ import { MobileNav } from './mobile-nav'
 // you can add more categories it will be rendered in mobile nav
 const navigationLinks = [
     {
-        name: 'Main',
+        name: 'Menu',
         items: [
             { href: '#', label: 'Products', active: true },
             { href: '#', label: 'Docs' },

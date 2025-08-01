@@ -16,7 +16,7 @@ import { MobileNav } from './mobile-nav'
 // Sample navigation links, you can replace these with your actual links
 const navigationLinks = [
     {
-        name: 'Main',
+        name: 'Menu',
         items: [
             { href: '#', label: 'Overview', active: true },
             { href: '#', label: 'Integrations' },

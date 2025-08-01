@@ -96,7 +96,7 @@ const support = [
 const navigationLinks = {
     mobile: [
         {
-            name: 'Main',
+            name: 'Menu',
             items: [
                 { href: '#', label: 'Docs' },
                 { href: '#', label: 'Pricing' },

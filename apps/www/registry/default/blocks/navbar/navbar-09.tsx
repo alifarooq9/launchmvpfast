@@ -19,15 +19,28 @@ import {
 import { cn } from '@/lib/utils'
 import { HandbagIcon, SearchIcon } from 'lucide-react'
 import { SelectTrigger } from '@radix-ui/react-select'
-
+import { MobileNav } from './mobile-nav'
 // import Link from 'next/link'
 
 // Sample navigation links, you can replace these with your actual links
+// you can add more categories it will be rendered in mobile nav, but only the first one will be rendered in desktop nav
 const navigationLinks = [
-    { href: '#', label: 'Men', active: true },
-    { href: '#', label: 'Women' },
-    { href: '#', label: 'Kids' },
-    { href: '#', label: 'Store' },
+    {
+        name: 'Menu',
+        items: [
+            { href: '#', label: 'Men', active: true },
+            { href: '#', label: 'Women' },
+            { href: '#', label: 'Kids' },
+            { href: '#', label: 'Store' },
+        ],
+    },
+    {
+        name: 'Account',
+        items: [
+            { href: '#', label: 'Sign In' },
+            { href: '#', label: 'Create Account' },
+        ],
+    },
 ]
 
 const currencies = [
@@ -56,7 +69,9 @@ export default function Navbar() {
                 Get free delivery on orders over $100
             </p>
 
-            <div className="bg-background flex h-16 items-center justify-between gap-4 border-b px-4 xl:px-6">
+            <div className="bg-background flex h-16 items-center justify-between gap-2 border-b px-4 md:gap-4 xl:px-6">
+                <MobileNav nav={navigationLinks} />
+
                 <Link
                     href="#"
                     className={cn(
@@ -82,7 +97,7 @@ export default function Navbar() {
 
                 <NavigationMenu className="max-md:hidden">
                     <NavigationMenuList>
-                        {navigationLinks.map((link, index) => (
+                        {navigationLinks[0].items.map((link, index) => (
                             <NavigationMenuItem key={index}>
                                 <NavigationMenuLink
                                     href={link.href}
@@ -102,7 +117,7 @@ export default function Navbar() {
                         href="#"
                         className={cn(
                             buttonVariants({ variant: 'ghost', size: 'sm' }),
-                            'h-8 cursor-pointer'
+                            'hidden h-8 cursor-pointer md:flex'
                         )}
                     >
                         Sign-in
@@ -110,14 +125,14 @@ export default function Navbar() {
 
                     <Separator
                         orientation="vertical"
-                        className="data-[orientation=vertical]:h-5"
+                        className="hidden data-[orientation=vertical]:h-5 md:flex"
                     />
 
                     <Link
                         href="#"
                         className={cn(
                             buttonVariants({ variant: 'ghost', size: 'sm' }),
-                            'h-8 cursor-pointer'
+                            'hidden h-8 cursor-pointer md:flex'
                         )}
                     >
                         Create Account
@@ -125,7 +140,7 @@ export default function Navbar() {
 
                     <Separator
                         orientation="vertical"
-                        className="data-[orientation=vertical]:h-5"
+                        className="hidden data-[orientation=vertical]:h-5 md:flex"
                     />
 
                     <Select
@@ -142,7 +157,9 @@ export default function Navbar() {
                             )}
                         >
                             <span>{selectCurrencyItem?.flag}</span>
-                            <span>{selectCurrencyItem?.name}</span>
+                            <span className="hidden md:flex">
+                                {selectCurrencyItem?.name}
+                            </span>
                         </SelectTrigger>
                         <SelectContent align="center">
                             <SelectGroup>

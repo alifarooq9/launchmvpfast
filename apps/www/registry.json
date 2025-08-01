@@ -798,7 +798,8 @@
                 "navigation-menu",
                 "button",
                 "separator",
-                "select"
+                "select",
+                "popover"
             ],
             "dependencies": ["lucide-react"],
             "files": [
@@ -806,6 +807,11 @@
                     "path": "registry/default/blocks/navbar/navbar-09.tsx",
                     "type": "registry:component",
                     "target": "components/navbar.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/navbar/mobile-nav.tsx",
+                    "type": "registry:component",
+                    "target": "components/mobile-nav.tsx"
                 }
             ]
         },
