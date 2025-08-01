@@ -9,15 +9,21 @@ import { cn } from '@/lib/utils'
 import { Search } from './search'
 import { Separator } from '@/registry/default/ui/separator'
 import { ModeSwitcher } from './mode-switcher'
+import { MobileNav } from './mobile-nav'
 // import Link from 'next/link'
 
 // Sample navigation links, you can replace these with your actual links
 const navigationLinks = [
-    { href: '#', label: 'Docs' },
-    { href: '#', label: 'Components', active: true },
-    { href: '#', label: 'Blocks' },
-    { href: '#', label: 'Starterkits' },
-    { href: '#', label: 'Pricing' },
+    {
+        name: 'Main',
+        items: [
+            { href: '#', label: 'Docs' },
+            { href: '#', label: 'Components', active: true },
+            { href: '#', label: 'Blocks' },
+            { href: '#', label: 'Starterkits' },
+            { href: '#', label: 'Pricing' },
+        ],
+    },
 ]
 
 export default function Navbar() {
@@ -25,7 +31,9 @@ export default function Navbar() {
 
     return (
         <header className="container mx-auto flex h-14 items-center justify-between gap-4">
-            <div className="flex flex-1 items-center justify-start gap-4">
+            <div className="flex items-center justify-start gap-4 md:flex-1">
+                <MobileNav nav={navigationLinks} />
+
                 <Link
                     href="#"
                     className={cn(
@@ -49,13 +57,13 @@ export default function Navbar() {
                     </svg>
                 </Link>
 
-                <Search className="mr-2" />
+                <Search className="mr-2 hidden md:flex" />
             </div>
 
             <div className="flex items-center justify-end gap-2">
                 <NavigationMenu className="max-md:hidden">
                     <NavigationMenuList>
-                        {navigationLinks.map((link, index) => (
+                        {navigationLinks[0].items.map((link, index) => (
                             <NavigationMenuItem key={index}>
                                 <NavigationMenuLink
                                     asChild
@@ -72,7 +80,7 @@ export default function Navbar() {
 
                 <Separator
                     orientation="vertical"
-                    className="data-[orientation=vertical]:h-5"
+                    className="hidden data-[orientation=vertical]:h-5 md:flex"
                 />
 
                 <Link

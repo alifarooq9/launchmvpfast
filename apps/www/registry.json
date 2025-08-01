@@ -732,7 +732,8 @@
                 "navigation-menu",
                 "button",
                 "https://launchmvpfast.com/r/use-is-mac.json",
-                "separator"
+                "separator",
+                "popover"
             ],
             "dependencies": ["next-themes"],
             "files": [
@@ -750,6 +751,11 @@
                     "path": "registry/default/blocks/navbar/mode-switcher.tsx",
                     "type": "registry:component",
                     "target": "components/mode-switcher.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/navbar/mobile-nav.tsx",
+                    "type": "registry:component",
+                    "target": "components/mobile-nav.tsx"
                 }
             ]
         },
