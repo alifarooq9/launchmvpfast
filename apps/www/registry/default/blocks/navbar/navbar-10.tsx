@@ -25,15 +25,29 @@ import {
 } from 'lucide-react'
 import { SelectTrigger } from '@radix-ui/react-select'
 import UserProfileDropdown from './user-profile-dropdown'
+import { MobileNav } from './mobile-nav'
 
 // import Link from 'next/link'
 
 // Sample navigation links, you can replace these with your actual links
+// you can add more categories it will be rendered in mobile nav, but only the first one will be rendered in desktop nav
 const navigationLinks = [
-    { href: '#', label: 'Men', active: true },
-    { href: '#', label: 'Women' },
-    { href: '#', label: 'Kids' },
-    { href: '#', label: 'Store' },
+    {
+        name: 'Menu',
+        items: [
+            { href: '#', label: 'Men', active: true },
+            { href: '#', label: 'Women' },
+            { href: '#', label: 'Kids' },
+            { href: '#', label: 'Store' },
+        ],
+    },
+    {
+        name: 'Account',
+        items: [
+            { href: '#', label: 'Sign In' },
+            { href: '#', label: 'Create Account' },
+        ],
+    },
 ]
 
 const currencies = [
@@ -59,7 +73,7 @@ export default function Navbar() {
     return (
         <header className="mx-auto w-full">
             <div className="bg-primary text-primary-foreground flex h-8 items-center justify-center px-4 text-sm font-medium xl:px-6">
-                <div className="flex flex-1 items-center justify-start">
+                <div className="hidden flex-1 items-center justify-start md:flex">
                     <Select
                         value={selectedCurrency}
                         onValueChange={setSelectedCurrency}
@@ -96,7 +110,7 @@ export default function Navbar() {
                 <div>
                     <p>Get free delivery on orders over $100</p>
                 </div>
-                <div className="flex flex-1 items-center justify-end gap-2">
+                <div className="hidden flex-1 items-center justify-end gap-2 md:flex">
                     <Link
                         href="#"
                         className={cn(
@@ -125,7 +139,9 @@ export default function Navbar() {
             </div>
 
             <div className="bg-background flex h-16 items-center justify-between gap-4 border-b px-4 xl:px-6">
-                <div className="flex items-center justify-start">
+                <div className="flex items-center justify-start gap-2">
+                    <MobileNav nav={navigationLinks} />
+
                     <Link
                         href="#"
                         className={cn(
@@ -152,7 +168,7 @@ export default function Navbar() {
 
                 <NavigationMenu className="max-md:hidden">
                     <NavigationMenuList>
-                        {navigationLinks.map((link, index) => (
+                        {navigationLinks[0].items.map((link, index) => (
                             <NavigationMenuItem key={index}>
                                 <NavigationMenuLink
                                     href={link.href}
@@ -172,7 +188,7 @@ export default function Navbar() {
                         href="#"
                         className={cn(
                             buttonVariants({ variant: 'ghost', size: 'sm' }),
-                            'size-8 cursor-pointer'
+                            'hidden size-8 cursor-pointer md:flex'
                         )}
                     >
                         <InfoIcon />
@@ -181,7 +197,7 @@ export default function Navbar() {
 
                     <Separator
                         orientation="vertical"
-                        className="data-[orientation=vertical]:h-5"
+                        className="hidden data-[orientation=vertical]:h-5 md:flex"
                     />
 
                     {/* search button, create your own search button dialog. or copy it from launchmvpfast components */}
