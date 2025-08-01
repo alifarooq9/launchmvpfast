@@ -32,7 +32,7 @@ export function MobileNav({ nav }: MobileNavProps) {
                     variant="ghost"
                     size="icon"
                     className={cn(
-                        'extend-touch-target block touch-manipulation items-center justify-start gap-2.5 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 active:bg-transparent md:hidden dark:hover:bg-transparent'
+                        'extend-touch-target block size-8 touch-manipulation items-center justify-start gap-2.5 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 active:bg-transparent md:hidden dark:hover:bg-transparent'
                     )}
                 >
                     <div className="relative flex items-center justify-center">

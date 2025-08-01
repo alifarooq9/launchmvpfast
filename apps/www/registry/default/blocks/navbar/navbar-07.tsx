@@ -31,7 +31,7 @@ export default function Navbar() {
 
     return (
         <header className="container mx-auto flex h-14 items-center justify-between gap-4">
-            <div className="flex items-center justify-start gap-4 md:flex-1">
+            <div className="flex items-center justify-start gap-2 md:flex-1 md:gap-4">
                 <MobileNav nav={navigationLinks} />
 
                 <Link

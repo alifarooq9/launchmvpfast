@@ -47,7 +47,7 @@ export default function Navbar() {
                 </NavigationMenu>
             </div>
 
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center gap-2">
                 <MobileNav nav={navigationLinks} />
 
                 <Link

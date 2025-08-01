@@ -768,7 +768,8 @@
                 "https://launchmvpfast.com/r/use-is-mac.json",
                 "separator",
                 "label",
-                "switch"
+                "switch",
+                "popover"
             ],
             "dependencies": ["lucide-react"],
             "files": [
@@ -781,6 +782,11 @@
                     "path": "registry/default/blocks/navbar/search.tsx",
                     "type": "registry:component",
                     "target": "components/search.tsx"
+                },
+                {
+                    "path": "registry/default/blocks/navbar/mobile-nav.tsx",
+                    "type": "registry:component",
+                    "target": "components/mobile-nav.tsx"
                 }
             ]
         },

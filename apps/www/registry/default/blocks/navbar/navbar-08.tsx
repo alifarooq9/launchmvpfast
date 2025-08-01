@@ -5,14 +5,31 @@ import { Separator } from '@/registry/default/ui/separator'
 import { Switch } from '@/registry/default/ui/switch'
 import { Label } from '@/registry/default/ui/label'
 import { BellIcon, PlusCircleIcon, SettingsIcon } from 'lucide-react'
+import { MobileNav } from './mobile-nav'
 // import Link from 'next/link'
+
+// Sample navigation links, you can replace these with your actual links
+// you can add more categories it will be rendered in mobile nav
+const navigationLinks = [
+    {
+        name: 'Main',
+        items: [
+            { href: '#', label: 'Products', active: true },
+            { href: '#', label: 'Docs' },
+            { href: '#', label: 'Settings' },
+            { href: '#', label: 'Notifications' },
+        ],
+    },
+]
 
 export default function Navbar() {
     const Link = 'a' // if using Next.js remove this line. you can use the Link component from 'next/link'
 
     return (
         <header className="container mx-auto flex h-14 items-center justify-between gap-4">
-            <div className="flex flex-1 items-center justify-start gap-4">
+            <div className="flex items-center justify-start gap-2 md:flex-1 md:gap-4">
+                <MobileNav nav={navigationLinks} />
+
                 <Link
                     href="#"
                     className={cn(
@@ -36,27 +53,30 @@ export default function Navbar() {
                     </svg>
                 </Link>
 
-                <Search className="mr-2" />
+                <Search className="mr-2 hidden md:flex" />
             </div>
 
             <nav className="flex items-center justify-end gap-2">
                 <div className="flex items-center space-x-2">
                     <Switch id="test-mode" className="cursor-pointer" />
-                    <Label htmlFor="test-mode" className="cursor-pointer">
+                    <Label
+                        htmlFor="test-mode"
+                        className="hidden cursor-pointer sm:flex"
+                    >
                         Test Mode
                     </Label>
                 </div>
 
                 <Separator
                     orientation="vertical"
-                    className="data-[orientation=vertical]:h-5"
+                    className="hidden data-[orientation=vertical]:h-5 sm:flex"
                 />
 
                 <Link
                     href="#"
                     className={cn(
                         buttonVariants({ variant: 'ghost', size: 'sm' }),
-                        'size-8 cursor-pointer'
+                        'hidden size-8 cursor-pointer sm:flex'
                     )}
                 >
                     <BellIcon />
@@ -64,14 +84,14 @@ export default function Navbar() {
 
                 <Separator
                     orientation="vertical"
-                    className="data-[orientation=vertical]:h-5"
+                    className="hidden data-[orientation=vertical]:h-5 sm:flex"
                 />
 
                 <Link
                     href="#"
                     className={cn(
                         buttonVariants({ variant: 'ghost', size: 'sm' }),
-                        'size-8 cursor-pointer'
+                        'hidden size-8 cursor-pointer sm:flex'
                     )}
                 >
                     <SettingsIcon />
