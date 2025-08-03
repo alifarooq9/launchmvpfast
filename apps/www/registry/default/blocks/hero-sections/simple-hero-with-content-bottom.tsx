@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '@/registry/default/ui/button'
 import { motion as m } from 'motion/react'
 
 export default function Hero() {

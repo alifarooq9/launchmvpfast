@@ -371,12 +371,18 @@
             "type": "registry:block",
             "title": "Center with image hero",
             "description": "A centered layout with an image and content",
-            "registryDependencies": ["utils"],
+            "registryDependencies": ["utils", "button"],
+            "dependencies": ["next-themes", "motion"],
             "files": [
                 {
                     "path": "registry/default/blocks/hero-sections/center-with-image-hero.tsx",
                     "type": "registry:component",
                     "target": "components/hero.tsx"
+                },
+                {
+                    "path": "registry/default/ui/particles.tsx",
+                    "type": "registry:ui",
+                    "target": "components/ui/particles.tsx"
                 }
             ],
             "css": {
@@ -410,62 +416,20 @@
             }
         },
         {
-            "name": "center-content-hero",
-            "type": "registry:block",
-            "title": "Center Content",
-            "description": "A centered hero section with content",
-            "registryDependencies": ["utils"],
-            "files": [
-                {
-                    "path": "registry/default/blocks/hero-sections/center-content-hero/hero.tsx",
-                    "type": "registry:component",
-                    "target": "components/hero.tsx"
-                },
-                {
-                    "path": "registry/default/blocks/hero-sections/center-content-hero/header.tsx",
-                    "type": "registry:component",
-                    "target": "components/header.tsx"
-                }
-            ]
-        },
-        {
-            "name": "content-on-side-hero",
-            "type": "registry:block",
-            "title": "Content on Side Hero",
-            "description": "A hero section with content on the side",
-            "files": [
-                {
-                    "path": "registry/default/blocks/hero-sections/content-on-side-hero.tsx",
-                    "type": "registry:component",
-                    "target": "components/hero.tsx"
-                }
-            ]
-        },
-        {
             "name": "ai-builder-hero",
             "type": "registry:block",
             "title": "AI Builder Hero",
             "description": "A hero section designed for AI builder applications",
+            "registryDependencies": [
+                "utils",
+                "https://launchmvpfast.com/r/prompt-input-02.json"
+            ],
+            "dependencies": ["motion"],
             "files": [
                 {
-                    "path": "registry/default/blocks/hero-sections/ai-builder-hero/hero.tsx",
+                    "path": "registry/default/blocks/hero-sections/ai-builder-hero.tsx",
                     "type": "registry:component",
                     "target": "components/hero.tsx"
-                },
-                {
-                    "path": "registry/default/blocks/hero-sections/ai-builder-hero/header.tsx",
-                    "type": "registry:component",
-                    "target": "components/header.tsx"
-                },
-                {
-                    "path": "registry/default/blocks/hero-sections/ai-builder-hero/line.tsx",
-                    "type": "registry:ui",
-                    "target": "components/ui/line.tsx"
-                },
-                {
-                    "path": "registry/default/components/input/prompt-input-02.tsx",
-                    "type": "registry:component",
-                    "target": "components/prompt-input-02.tsx"
                 }
             ],
             "css": {
@@ -490,7 +454,8 @@
             "type": "registry:block",
             "title": "Simple Hero with Content Bottom",
             "description": "A simple hero section with content at the bottom",
-            "registryDependencies": ["utils"],
+            "registryDependencies": ["utils", "button"],
+            "dependencies": ["motion"],
             "files": [
                 {
                     "path": "registry/default/blocks/hero-sections/simple-hero-with-content-bottom.tsx",

@@ -1,8 +1,7 @@
 'use client'
 
-import Line from '@/registry/default/blocks/hero-sections/ai-builder-hero/line'
-import Header from '@/registry/default/blocks/hero-sections/ai-builder-hero/header'
-import PromptInput02 from '@/registry/default/components/input/prompt-input-02'
+import { cn } from '@/lib/utils'
+import PromptInput02 from './prompt-input-02'
 import { motion as m, Variants } from 'motion/react'
 
 const quickPrompts = [
@@ -48,9 +47,6 @@ const variants = {
 export default function Hero() {
     return (
         <div className="flex min-h-svh w-full flex-col">
-            {/* header */}
-            <Header />
-
             {/* hero section */}
             <section className="flex h-full flex-1 flex-col items-center justify-center border-x">
                 <div className="container-line-wrapper h-36" />
@@ -115,13 +111,13 @@ function StarterTemplate() {
 
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {templates.map((template, index) => (
-                    <m.button
+                    <m.div
                         initial="hidden"
                         animate="visible"
                         custom={5 + index}
                         variants={variants as Variants}
-                        key={template.title}
-                        className="border-border bg-card hover:bg-card/50 flex flex-col items-start rounded-lg border p-4 transition-all"
+                        key={template.title + index}
+                        className="border-border bg-card hover:bg-card/50 flex flex-col items-start rounded-lg border p-4 transition-colors"
                     >
                         <template.icon className="size-6" />
                         <h3 className="mt-3 text-left text-sm font-medium">
@@ -130,10 +126,19 @@ function StarterTemplate() {
                         <p className="text-muted-foreground mt-1 text-left text-sm">
                             {template.description}
                         </p>
-                    </m.button>
+                    </m.div>
                 ))}
             </div>
         </div>
+    )
+}
+
+function Line({ className, ...props }: React.ComponentProps<'div'>) {
+    return (
+        <span
+            className={cn('border-border relative w-full border-t', className)}
+            {...props}
+        />
     )
 }
 

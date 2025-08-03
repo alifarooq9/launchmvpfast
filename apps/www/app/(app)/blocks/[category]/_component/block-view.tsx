@@ -142,7 +142,7 @@ function BlockViewerToolbar() {
 
     return (
         <div className="flex flex-row items-center justify-between gap-4 p-4">
-            <h2 className="font-semibold tracking-tight sm:text-base">
+            <h2 className="leading-tight font-semibold tracking-tight sm:text-base">
                 {block.name}
             </h2>
 
