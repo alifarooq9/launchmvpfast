@@ -469,6 +469,8 @@
             "type": "registry:block",
             "title": "Center Signin Card with Email Only",
             "description": "A centered sign-in card with email input only",
+            "registryDependencies": ["form", "button", "input", "card"],
+            "dependencies": ["lucide-react"],
             "files": [
                 {
                     "path": "registry/default/blocks/signin-signup/center-signin-card-with-email-only.tsx",
@@ -482,6 +484,8 @@
             "type": "registry:block",
             "title": "Center Signin Card",
             "description": "A centered sign-in card with email and password inputs",
+            "registryDependencies": ["form", "button", "input", "card"],
+            "dependencies": ["lucide-react"],
             "files": [
                 {
                     "path": "registry/default/blocks/signin-signup/center-signin-card.tsx",
@@ -495,6 +499,8 @@
             "type": "registry:block",
             "title": "Center Signup Card",
             "description": "A centered sign-up card with email and password inputs",
+            "registryDependencies": ["form", "button", "input", "card"],
+            "dependencies": ["lucide-react"],
             "files": [
                 {
                     "path": "registry/default/blocks/signin-signup/center-signup-card.tsx",
@@ -508,6 +514,8 @@
             "type": "registry:block",
             "title": "Simple Signin",
             "description": "A simple sign-in form with email and password inputs",
+            "registryDependencies": ["form", "button", "input"],
+            "dependencies": ["lucide-react"],
             "files": [
                 {
                     "path": "registry/default/blocks/signin-signup/simple-signin.tsx",
@@ -521,6 +529,8 @@
             "type": "registry:block",
             "title": "Simple Signup",
             "description": "A simple sign-up form with email and password inputs",
+            "registryDependencies": ["form", "button", "input"],
+            "dependencies": ["lucide-react"],
             "files": [
                 {
                     "path": "registry/default/blocks/signin-signup/simple-signup.tsx",

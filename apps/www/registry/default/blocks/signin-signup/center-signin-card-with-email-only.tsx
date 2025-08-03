@@ -1,8 +1,13 @@
 'use client'
 
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
+import {
+    Card,
+    CardContent,
+    CardFooter,
+    CardHeader,
+} from '@/registry/default/ui/card'
 import { z } from 'zod'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/registry/default/ui/button'
 import {
     Form,
     FormControl,
@@ -11,8 +16,8 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
+} from '@/registry/default/ui/form'
+import { Input } from '@/registry/default/ui/input'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { MailIcon } from 'lucide-react'
