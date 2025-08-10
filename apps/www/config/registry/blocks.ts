@@ -2,6 +2,10 @@ export type Block = {
     id: string
     name: string
     path: string
+    meta?: {
+        className?: string
+        iframeHeight?: string
+    }
 }
 
 export type Category = {
@@ -34,21 +38,10 @@ export const blocks: ComponentsType = {
                     path: 'default/blocks/hero-sections/center-with-image-hero',
                 },
                 {
-                    id: 'center-content-hero',
-                    name: 'Center Content',
-                    path: 'default/blocks/hero-sections/center-content-hero/hero',
-                },
-                {
                     id: 'ai-builder-hero',
                     name: 'AI Builder Hero',
-                    path: 'default/blocks/hero-sections/ai-builder-hero/hero',
+                    path: 'default/blocks/hero-sections/ai-builder-hero',
                 },
-                {
-                    id: 'content-on-side-hero',
-                    name: 'Content on Side',
-                    path: 'default/blocks/hero-sections/content-on-side-hero',
-                },
-
                 {
                     id: 'simple-hero-with-content-bottom',
                     name: 'Simple with Content Bottom',
@@ -91,6 +84,96 @@ export const blocks: ComponentsType = {
                 },
             ],
         },
+        {
+            id: 'navbar',
+            name: 'Navbar',
+            image: {
+                dark: '/registry/blocks/navbar-dark.svg',
+                light: '/registry/blocks/navbar-light.svg',
+            },
+            blocks: [
+                {
+                    id: 'navbar-01',
+                    name: 'Navbar 01',
+                    path: 'default/blocks/navbar/navbar-01',
+                    meta: {
+                        iframeHeight: '450',
+                    },
+                },
+                {
+                    id: 'navbar-02',
+                    name: 'Navbar 02',
+                    path: 'default/blocks/navbar/navbar-02',
+                    meta: {
+                        iframeHeight: '450',
+                    },
+                },
+                {
+                    id: 'navbar-03',
+                    name: 'Navbar 03',
+                    path: 'default/blocks/navbar/navbar-03',
+                    meta: {
+                        iframeHeight: '450',
+                    },
+                },
+                {
+                    id: 'navbar-04',
+                    name: 'Navbar 04',
+                    path: 'default/blocks/navbar/navbar-04',
+                    meta: {
+                        iframeHeight: '450',
+                    },
+                },
+                {
+                    id: 'navbar-05',
+                    name: 'Navbar 05',
+                    path: 'default/blocks/navbar/navbar-05',
+                    meta: {
+                        iframeHeight: '450',
+                    },
+                },
+                {
+                    id: 'navbar-06',
+                    name: 'Navbar 06',
+                    path: 'default/blocks/navbar/navbar-06',
+                    meta: {
+                        iframeHeight: '450',
+                    },
+                },
+                {
+                    id: 'navbar-07',
+                    name: 'Navbar 07',
+                    path: 'default/blocks/navbar/navbar-07',
+                    meta: {
+                        iframeHeight: '450',
+                    },
+                },
+                {
+                    id: 'navbar-08',
+                    name: 'Navbar 08',
+                    path: 'default/blocks/navbar/navbar-08',
+                    meta: {
+                        iframeHeight: '450',
+                    },
+                },
+                {
+                    id: 'navbar-09',
+                    name: 'Navbar 09',
+                    path: 'default/blocks/navbar/navbar-09',
+                    meta: {
+                        iframeHeight: '450',
+                    },
+                },
+                {
+                    id: 'navbar-10',
+                    name: 'Navbar 10',
+                    path: 'default/blocks/navbar/navbar-10',
+                    meta: {
+                        iframeHeight: '450',
+                    },
+                },
+            ],
+        },
     ],
 }
 
@@ -101,12 +184,10 @@ export function getBlocksCategories() {
         blocksCount: c.blocks.length,
         image: c.image,
     }))
-
     return categories
 }
 
 export function getBlockCategory(slug: string): Category | undefined {
     const category = blocks.default.find((c) => c.id === slug)
-
     return category ?? undefined
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
+import { Button } from '@/registry/default/ui/button'
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -8,8 +8,8 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { Input } from '@/components/ui/input'
+} from '@/registry/default/ui/dropdown-menu'
+import { Input } from '@/registry/default/ui/input'
 import { cn } from '@/lib/utils'
 import { ChevronDownIcon, PlusIcon, XIcon } from 'lucide-react'
 import {
@@ -18,12 +18,12 @@ import {
     FormField,
     FormItem,
     FormMessage,
-} from '@/components/ui/form'
+} from '@/registry/default/ui/form'
 import React from 'react'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Badge } from '@/components/ui/badge'
+import { Badge } from '@/registry/default/ui/badge'
 
 const defaultTags = [
     {

@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
+import { Button } from '@/registry/default/ui/button'
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -10,7 +10,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuShortcut,
     DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from '@/registry/default/ui/dropdown-menu'
 import { cn } from '@/lib/utils'
 import {
     EllipsisIcon,

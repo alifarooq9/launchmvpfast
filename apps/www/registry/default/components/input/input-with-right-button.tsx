@@ -1,7 +1,7 @@
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
+import { Input } from '@/registry/default/ui/input'
+import { Button } from '@/registry/default/ui/button'
 import { CornerRightUpIcon } from 'lucide-react'
-import { Label } from '@/components/ui/label'
+import { Label } from '@/registry/default/ui/label'
 import { useId } from 'react'
 
 export default function InputWithRightButton() {

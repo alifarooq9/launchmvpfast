@@ -180,7 +180,7 @@ const BlocksItem = memo(function BlocksItem({
                                     <Link
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        href={`${urls.app.blocksRegistry}/${block.category}/${block.id}`}
+                                        href={`${urls.app.blocksView}/${block.category}/${block.id}`}
                                         className={cn(
                                             buttonVariants({
                                                 variant: 'secondary',

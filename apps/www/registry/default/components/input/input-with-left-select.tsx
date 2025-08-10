@@ -1,12 +1,12 @@
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
+import { Input } from '@/registry/default/ui/input'
+import { Label } from '@/registry/default/ui/label'
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from '@/components/ui/select'
+} from '@/registry/default/ui/select'
 import { useId } from 'react'
 
 const prefixKeys = {

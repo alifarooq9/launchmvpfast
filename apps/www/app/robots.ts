@@ -26,7 +26,7 @@ export default function robots(): MetadataRoute.Robots {
                     ...blocks.default.flatMap((category) =>
                         category.blocks.map(
                             (block) =>
-                                `${urls.app.blocksRegistry}/${category.id}/${block.id}`
+                                `${urls.app.blocksView}/${category.id}/${block.id}`
                         )
                     ),
                 ],

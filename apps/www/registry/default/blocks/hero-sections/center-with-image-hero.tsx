@@ -1,5 +1,5 @@
-import { Particles } from '@/components/ui/particles'
-import { rainbowButtonVariants } from '@/components/ui/rainbow-button'
+import { Particles } from '@/registry/default/ui/particles'
+import { buttonVariants } from '@/registry/default/ui/button'
 import { cn } from '@/lib/utils'
 import { ArrowRightIcon } from 'lucide-react'
 import { motion as m } from 'motion/react'
@@ -127,14 +127,13 @@ export default function Hero() {
                         delay: 0.5,
                         ease: 'easeOut',
                     }}
+                    className="mt-6"
                 >
                     <a
                         href="#"
                         className={cn(
-                            rainbowButtonVariants({
+                            buttonVariants({
                                 size: 'lg',
-                                className:
-                                    'mt-6 h-12 w-fit min-w-3xs gap-1 text-base',
                             })
                         )}
                     >
@@ -144,7 +143,7 @@ export default function Hero() {
                 </m.div>
             </div>
 
-            <div className="relative mt-24 flex w-full max-w-7xl">
+            <div className="relative mt-14 flex w-full max-w-7xl">
                 <m.div
                     animate={{
                         transform: 'translateY(0)',

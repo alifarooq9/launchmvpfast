@@ -1,18 +1,16 @@
 'use client'
 
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { z } from 'zod'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/registry/default/ui/button'
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
     FormMessage,
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
+} from '@/registry/default/ui/form'
+import { Input } from '@/registry/default/ui/input'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { EyeIcon, EyeOffIcon, LockIcon, MailIcon } from 'lucide-react'

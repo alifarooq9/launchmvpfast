@@ -3,8 +3,8 @@ import {
     InputOTPGroup,
     InputOTPSeparator,
     InputOTPSlot,
-} from '@/components/ui/input-otp'
-import { Label } from '@/components/ui/label'
+} from '@/registry/default/ui/input-otp'
+import { Label } from '@/registry/default/ui/label'
 
 // Change the inputLength to the desired number of slots
 const inputLength = [3, 3]

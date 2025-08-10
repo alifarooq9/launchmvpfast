@@ -1,5 +1,5 @@
 import { CodeBlock } from '@/app/(app)/_components/code-block'
-import { ComponentLoaderServer } from '@/app/(app)/_components/component-loader-server'
+import { ComponentLoaderClient } from '@/app/(app)/_components/component-loader-client'
 import { OpenInV0 } from '@/app/(app)/_components/open-in-v0'
 import { Category } from '@/config/registry/components'
 import { cn } from '@/lib/utils'
@@ -40,7 +40,7 @@ export function CategoryComponentsTable({
                                 <CodeBlock component={component} />
                             </div>
                             <div className="flex h-full w-full items-center justify-center">
-                                <ComponentLoaderServer component={component} />
+                                <ComponentLoaderClient component={component} />
                             </div>
                         </div>
                     )
