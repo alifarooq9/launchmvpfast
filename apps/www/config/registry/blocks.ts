@@ -88,8 +88,8 @@ export const blocks: ComponentsType = {
             id: 'navbar',
             name: 'Navbar',
             image: {
-                dark: '/registry/blocks/auth-dark.svg',
-                light: '/registry/blocks/auth-light.svg',
+                dark: '/registry/blocks/navbar-dark.svg',
+                light: '/registry/blocks/navbar-light.svg',
             },
             blocks: [
                 {
