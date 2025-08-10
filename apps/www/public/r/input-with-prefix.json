@@ -4,10 +4,14 @@
   "type": "registry:component",
   "title": "Input with Prefix",
   "description": "A component for inputting text with a prefix",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
   "files": [
     {
       "path": "registry/default/components/input/input-with-prefix.tsx",
-      "content": "import { Input } from '@/components/ui/input'\r\nimport { Label } from '@/components/ui/label'\r\nimport { useId } from 'react'\r\n\r\nexport default function InputWithPrefix() {\r\n    const id = useId()\r\n    const prefix = 'https://'\r\n\r\n    return (\r\n        <div className=\"flex w-full max-w-4/5 flex-col gap-2\">\r\n            <Label htmlFor={id}>Input with prefix</Label>\r\n\r\n            <div className=\"flex items-center\">\r\n                <span className=\"border-input dark:bg-input/30 text-muted-foreground flex h-9 items-center justify-center rounded-md rounded-r-none border border-r-0 bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] md:text-sm\">\r\n                    {prefix}\r\n                </span>\r\n\r\n                <Input\r\n                    placeholder=\"launchmvpfast.com\"\r\n                    id={id}\r\n                    className=\"rounded-l-none\"\r\n                />\r\n            </div>\r\n        </div>\r\n    )\r\n}\r\n",
+      "content": "import { Input } from '@/registry/default/ui/input'\r\nimport { Label } from '@/registry/default/ui/label'\r\nimport { useId } from 'react'\r\n\r\nexport default function InputWithPrefix() {\r\n    const id = useId()\r\n    const prefix = 'https://'\r\n\r\n    return (\r\n        <div className=\"flex w-full max-w-4/5 flex-col gap-2\">\r\n            <Label htmlFor={id}>Input with prefix</Label>\r\n\r\n            <div className=\"flex items-center\">\r\n                <span className=\"border-input dark:bg-input/30 text-muted-foreground flex h-9 items-center justify-center rounded-md rounded-r-none border border-r-0 bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] md:text-sm\">\r\n                    {prefix}\r\n                </span>\r\n\r\n                <Input\r\n                    placeholder=\"launchmvpfast.com\"\r\n                    id={id}\r\n                    className=\"rounded-l-none\"\r\n                />\r\n            </div>\r\n        </div>\r\n    )\r\n}\r\n",
       "type": "registry:component",
       "target": "components/input-with-prefix.tsx"
     }

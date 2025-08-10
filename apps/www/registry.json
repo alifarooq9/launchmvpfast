@@ -20,6 +20,13 @@
             "type": "registry:component",
             "title": "Prompt Input 01",
             "description": "A first component for inputting ai prompts",
+            "registryDependencies": [
+                "button",
+                "dropdown-menu",
+                "tooltip",
+                "toggle",
+                "utils"
+            ],
             "dependencies": ["react-textarea-autosize", "lucide-react"],
             "files": [
                 {
@@ -35,6 +42,14 @@
             "title": "Prompt Input 02",
             "description": "A second component for inputting ai prompts",
             "dependencies": ["react-textarea-autosize", "lucide-react"],
+            "registryDependencies": [
+                "button",
+                "dropdown-menu",
+                "tooltip",
+                "toggle",
+                "select",
+                "utils"
+            ],
             "files": [
                 {
                     "path": "registry/default/components/input/prompt-input-02.tsx",
@@ -48,6 +63,7 @@
             "type": "registry:component",
             "title": "OTP with No Spaces",
             "description": "A component for inputting OTP codes without spaces",
+            "registryDependencies": ["input-otp", "label"],
             "files": [
                 {
                     "path": "registry/default/components/input/otp-with-no-spaces.tsx",
@@ -61,6 +77,7 @@
             "type": "registry:component",
             "title": "OTP with Spaces",
             "description": "A component for inputting OTP codes with spaces",
+            "registryDependencies": ["input-otp", "label"],
             "files": [
                 {
                     "path": "registry/default/components/input/otp-with-spaces.tsx",
@@ -74,6 +91,7 @@
             "type": "registry:component",
             "title": "OTP with Seperator",
             "description": "A component for inputting OTP codes with a custom separator",
+            "registryDependencies": ["input-otp", "label"],
             "files": [
                 {
                     "path": "registry/default/components/input/otp-with-seperator.tsx",
@@ -87,6 +105,7 @@
             "type": "registry:component",
             "title": "OTP with Numbers Only",
             "description": "A component for inputting OTP codes with numbers only",
+            "registryDependencies": ["input-otp", "label"],
             "files": [
                 {
                     "path": "registry/default/components/input/otp-with-numbers-only.tsx",
@@ -100,6 +119,7 @@
             "type": "registry:component",
             "title": "Input with Animated Label",
             "description": "A component for inputting text with an animated label",
+            "registryDependencies": ["input", "label"],
             "files": [
                 {
                     "path": "registry/default/components/input/input-with-animated-label.tsx",
@@ -113,6 +133,7 @@
             "type": "registry:component",
             "title": "Input with Animated Inset Label",
             "description": "A component for inputting text with an animated inset label",
+            "registryDependencies": ["utils", "label"],
             "files": [
                 {
                     "path": "registry/default/components/input/input-with-animated-inset-label.tsx",
@@ -127,6 +148,7 @@
             "title": "Phone Number Input",
             "description": "A component for inputting phone numbers",
             "dependencies": ["react-phone-number-input", "lucide-react"],
+            "registryDependencies": ["select", "input", "label", "utils"],
             "files": [
                 {
                     "path": "registry/default/components/input/phone-number-input.tsx",
@@ -141,6 +163,7 @@
             "title": "Input with Right Button",
             "description": "A component for inputting text with a button on the right",
             "dependencies": ["lucide-react"],
+            "registryDependencies": ["input", "button", "label"],
             "files": [
                 {
                     "path": "registry/default/components/input/input-with-right-button.tsx",
@@ -154,6 +177,7 @@
             "type": "registry:component",
             "title": "Input with Left Select",
             "description": "A component for inputting text with a select on the left",
+            "registryDependencies": ["select", "input", "label"],
             "files": [
                 {
                     "path": "registry/default/components/input/input-with-left-select.tsx",
@@ -167,6 +191,7 @@
             "type": "registry:component",
             "title": "Input with Right Select",
             "description": "A component for inputting text with a select on the right",
+            "registryDependencies": ["select", "input", "label"],
             "files": [
                 {
                     "path": "registry/default/components/input/input-with-right-select.tsx",
@@ -181,6 +206,7 @@
             "title": "Password Input",
             "description": "A component for inputting passwords",
             "dependencies": ["lucide-react"],
+            "registryDependencies": ["input", "button", "label"],
             "files": [
                 {
                     "path": "registry/default/components/input/password-input.tsx",
@@ -195,6 +221,7 @@
             "title": "Copy Input",
             "description": "A component for inputting text with a copy button",
             "dependencies": ["lucide-react"],
+            "registryDependencies": ["input", "button", "label"],
             "files": [
                 {
                     "path": "registry/default/components/input/copy-input.tsx",
@@ -209,6 +236,7 @@
             "title": "Search Input",
             "description": "A component for inputting search queries",
             "dependencies": ["lucide-react"],
+            "registryDependencies": ["input", "button", "label"],
             "files": [
                 {
                     "path": "registry/default/components/input/search-input.tsx",
@@ -222,6 +250,7 @@
             "type": "registry:component",
             "title": "Input with Prefix",
             "description": "A component for inputting text with a prefix",
+            "registryDependencies": ["input", "label"],
             "files": [
                 {
                     "path": "registry/default/components/input/input-with-prefix.tsx",
@@ -235,6 +264,7 @@
             "type": "registry:component",
             "title": "Input with Suffix",
             "description": "A component for inputting text with a suffix",
+            "registryDependencies": ["input", "label"],
             "files": [
                 {
                     "path": "registry/default/components/input/input-with-suffix.tsx",
@@ -249,6 +279,7 @@
             "title": "Input with Left and Right Buttons",
             "description": "A component for inputting text with buttons on both sides",
             "dependencies": ["lucide-react"],
+            "registryDependencies": ["input", "button", "label"],
             "files": [
                 {
                     "path": "registry/default/components/input/input-with-left-right-buttons.tsx",
@@ -267,6 +298,7 @@
                 "@zootools/email-spell-checker",
                 "use-debounce"
             ],
+            "registryDependencies": ["input", "label"],
             "files": [
                 {
                     "path": "registry/default/components/input/input-with-email-spell-checker.tsx",

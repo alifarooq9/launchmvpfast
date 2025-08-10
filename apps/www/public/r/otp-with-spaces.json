@@ -4,10 +4,14 @@
   "type": "registry:component",
   "title": "OTP with Spaces",
   "description": "A component for inputting OTP codes with spaces",
+  "registryDependencies": [
+    "input-otp",
+    "label"
+  ],
   "files": [
     {
       "path": "registry/default/components/input/otp-with-spaces.tsx",
-      "content": "import {\r\n    InputOTP,\r\n    InputOTPGroup,\r\n    InputOTPSlot,\r\n} from '@/components/ui/input-otp'\r\nimport { Label } from '@/components/ui/label'\r\n\r\n// Change the inputLength to the desired number of slots\r\nconst inputLength = 6\r\n\r\nexport default function OtpWithSpaces() {\r\n    return (\r\n        <div className=\"flex w-full max-w-4/5 flex-col gap-2\">\r\n            <Label>OTP with spaces</Label>\r\n\r\n            <InputOTP maxLength={inputLength}>\r\n                <InputOTPGroup className=\"gap-1\">\r\n                    {Array.from({ length: inputLength }, (_, index) => (\r\n                        <InputOTPSlot\r\n                            key={index}\r\n                            index={index}\r\n                            className=\"rounded-md border\"\r\n                        />\r\n                    ))}\r\n                </InputOTPGroup>\r\n            </InputOTP>\r\n\r\n            <p className=\"text-muted-foreground text-sm\">\r\n                Built with{' '}\r\n                <a\r\n                    target=\"_blank\"\r\n                    href=\"https://input-otp.rodz.dev/\"\r\n                    className=\"underline underline-offset-3\"\r\n                >\r\n                    input-otp\r\n                </a>{' '}\r\n            </p>\r\n        </div>\r\n    )\r\n}\r\n",
+      "content": "import {\r\n    InputOTP,\r\n    InputOTPGroup,\r\n    InputOTPSlot,\r\n} from '@/registry/default/ui/input-otp'\r\nimport { Label } from '@/registry/default/ui/label'\r\n\r\n// Change the inputLength to the desired number of slots\r\nconst inputLength = 6\r\n\r\nexport default function OtpWithSpaces() {\r\n    return (\r\n        <div className=\"flex w-full max-w-4/5 flex-col gap-2\">\r\n            <Label>OTP with spaces</Label>\r\n\r\n            <InputOTP maxLength={inputLength}>\r\n                <InputOTPGroup className=\"gap-1\">\r\n                    {Array.from({ length: inputLength }, (_, index) => (\r\n                        <InputOTPSlot\r\n                            key={index}\r\n                            index={index}\r\n                            className=\"rounded-md border\"\r\n                        />\r\n                    ))}\r\n                </InputOTPGroup>\r\n            </InputOTP>\r\n\r\n            <p className=\"text-muted-foreground text-sm\">\r\n                Built with{' '}\r\n                <a\r\n                    target=\"_blank\"\r\n                    href=\"https://input-otp.rodz.dev/\"\r\n                    className=\"underline underline-offset-3\"\r\n                >\r\n                    input-otp\r\n                </a>{' '}\r\n            </p>\r\n        </div>\r\n    )\r\n}\r\n",
       "type": "registry:component",
       "target": "components/otp-with-spaces.tsx"
     }

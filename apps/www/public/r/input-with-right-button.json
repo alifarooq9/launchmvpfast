@@ -7,10 +7,15 @@
   "dependencies": [
     "lucide-react"
   ],
+  "registryDependencies": [
+    "input",
+    "button",
+    "label"
+  ],
   "files": [
     {
       "path": "registry/default/components/input/input-with-right-button.tsx",
-      "content": "import { Input } from '@/components/ui/input'\r\nimport { Button } from '@/components/ui/button'\r\nimport { CornerRightUpIcon } from 'lucide-react'\r\nimport { Label } from '@/components/ui/label'\r\nimport { useId } from 'react'\r\n\r\nexport default function InputWithRightButton() {\r\n    const id = useId()\r\n\r\n    return (\r\n        <div className=\"flex w-full max-w-4/5 flex-col gap-2\">\r\n            <Label htmlFor={id}>Input with right button</Label>\r\n\r\n            <div className=\"flex items-center\">\r\n                <Input id={id} placeholder=\"Email\" className=\"rounded-r-none\" />\r\n                <Button\r\n                    variant=\"outline\"\r\n                    className=\"dark:bg-input/30 cursor-pointer rounded-l-none border-l-0 bg-transparent\"\r\n                >\r\n                    <CornerRightUpIcon className=\"h-4 w-4\" />\r\n                </Button>\r\n            </div>\r\n        </div>\r\n    )\r\n}\r\n",
+      "content": "import { Input } from '@/registry/default/ui/input'\r\nimport { Button } from '@/registry/default/ui/button'\r\nimport { CornerRightUpIcon } from 'lucide-react'\r\nimport { Label } from '@/registry/default/ui/label'\r\nimport { useId } from 'react'\r\n\r\nexport default function InputWithRightButton() {\r\n    const id = useId()\r\n\r\n    return (\r\n        <div className=\"flex w-full max-w-4/5 flex-col gap-2\">\r\n            <Label htmlFor={id}>Input with right button</Label>\r\n\r\n            <div className=\"flex items-center\">\r\n                <Input id={id} placeholder=\"Email\" className=\"rounded-r-none\" />\r\n                <Button\r\n                    variant=\"outline\"\r\n                    className=\"dark:bg-input/30 cursor-pointer rounded-l-none border-l-0 bg-transparent\"\r\n                >\r\n                    <CornerRightUpIcon className=\"h-4 w-4\" />\r\n                </Button>\r\n            </div>\r\n        </div>\r\n    )\r\n}\r\n",
       "type": "registry:component",
       "target": "components/input-with-right-button.tsx"
     }

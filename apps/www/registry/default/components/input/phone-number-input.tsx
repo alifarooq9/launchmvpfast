@@ -13,11 +13,11 @@ import {
     SelectContent,
     SelectItem,
     SelectTrigger,
-} from '@/components/ui/select'
-import { Input } from '@/components/ui/input'
+} from '@/registry/default/ui/select'
+import { Input } from '@/registry/default/ui/input'
 import flags from 'react-phone-number-input/flags'
 import { PhoneIcon } from 'lucide-react'
-import { Label } from '@/components/ui/label'
+import { Label } from '@/registry/default/ui/label'
 
 export default function PhoneNumberInput() {
     const [value, setValue] = React.useState('')

@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
+import { Button } from '@/registry/default/ui/button'
 import { cn } from '@/lib/utils'
 import {
     ArrowUpIcon,
@@ -16,16 +16,16 @@ import {
     DropdownMenuItem,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from '@/registry/default/ui/dropdown-menu'
 import {
     Tooltip,
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,
-} from '@/components/ui/tooltip'
+} from '@/registry/default/ui/tooltip'
 import React from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
-import { Toggle } from '@/components/ui/toggle'
+import { Toggle } from '@/registry/default/ui/toggle'
 
 export default function PromptInput01() {
     const [message, setMessage] = React.useState<string>('')
