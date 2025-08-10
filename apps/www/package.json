@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "next dev --turbopack",
-        "build": "shadcn registry:build && next build",
+        "build": "shadcn build && next build",
         "start": "next start",
         "lint": "next lint",
         "db:push": "drizzle-kit push:pg",
