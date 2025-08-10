@@ -1,15 +1,12 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
+import { Button } from '@/registry/default/ui/button'
 import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
     DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from '@/registry/default/ui/dropdown-menu'
 import { ChevronDownIcon, GitForkIcon } from 'lucide-react'
 import React from 'react'
 

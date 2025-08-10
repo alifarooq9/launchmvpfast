@@ -312,6 +312,14 @@
             "type": "registry:component",
             "title": "User Profile Dropdown",
             "description": "A dropdown menu for user profile actions",
+            "registryDependencies": [
+                "dropdown-menu",
+                "avatar",
+                "badge",
+                "select",
+                "utils"
+            ],
+            "dependencies": ["lucide-react"],
             "files": [
                 {
                     "path": "registry/default/components/dropdown-menu/user-profile-dropdown.tsx",
@@ -325,6 +333,8 @@
             "type": "registry:component",
             "title": "Action Dropdown",
             "description": "A dropdown menu for various actions",
+            "registryDependencies": ["dropdown-menu", "button", "utils"],
+            "dependencies": ["lucide-react"],
             "files": [
                 {
                     "path": "registry/default/components/dropdown-menu/action-dropdown.tsx",
@@ -338,6 +348,8 @@
             "type": "registry:component",
             "title": "Button Dropdown",
             "description": "A dropdown menu for buttons",
+            "registryDependencies": ["dropdown-menu", "button"],
+            "dependencies": ["lucide-react"],
             "files": [
                 {
                     "path": "registry/default/components/dropdown-menu/button-dropdown.tsx",
@@ -351,6 +363,14 @@
             "type": "registry:component",
             "title": "Tag Dropdown",
             "description": "A dropdown menu for tags",
+            "registryDependencies": [
+                "dropdown-menu",
+                "input",
+                "form",
+                "utils",
+                "button"
+            ],
+            "dependencies": ["lucide-react"],
             "files": [
                 {
                     "path": "registry/default/components/dropdown-menu/tag-dropdown.tsx",
@@ -364,6 +384,15 @@
             "type": "registry:component",
             "title": "Multiple Tags Dropdown",
             "description": "A dropdown menu for selecting multiple tags",
+            "registryDependencies": [
+                "dropdown-menu",
+                "input",
+                "form",
+                "utils",
+                "button",
+                "badge"
+            ],
+            "dependencies": ["lucide-react"],
             "files": [
                 {
                     "path": "registry/default/components/dropdown-menu/multiple-tags-dropdown.tsx",
@@ -377,6 +406,15 @@
             "type": "registry:component",
             "title": "Rich Dropdown",
             "description": "A dropdown menu with rich content",
+            "registryDependencies": [
+                "dropdown-menu",
+                "button",
+                "select",
+                "switch",
+                "utils",
+                "label"
+            ],
+            "dependencies": ["lucide-react", "next-themes"],
             "files": [
                 {
                     "path": "registry/default/components/dropdown-menu/rich-dropdown.tsx",
@@ -390,6 +428,8 @@
             "type": "registry:component",
             "title": "Action with Loading Dropdown",
             "description": "A dropdown menu for actions with loading state",
+            "registryDependencies": ["dropdown-menu", "button"],
+            "dependencies": ["lucide-react", "@tanstack/react-query"],
             "files": [
                 {
                     "path": "registry/default/components/dropdown-menu/action-with-loading-dropdown.tsx",

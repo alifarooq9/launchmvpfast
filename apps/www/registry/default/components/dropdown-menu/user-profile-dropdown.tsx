@@ -7,8 +7,8 @@ import {
     DropdownMenuSeparator,
     DropdownMenuShortcut,
     DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+} from '@/registry/default/ui/dropdown-menu'
+import { Avatar, AvatarFallback, AvatarImage } from '@/registry/default/ui/avatar'
 import {
     BellRingIcon,
     BoltIcon,
@@ -26,8 +26,8 @@ import {
     UserRoundIcon,
 } from 'lucide-react'
 import { DropdownMenuGroup } from '@radix-ui/react-dropdown-menu'
-import { Badge } from '@/components/ui/badge'
-import { Select, SelectContent, SelectItem } from '@/components/ui/select'
+import { Badge } from '@/registry/default/ui/badge'
+import { Select, SelectContent, SelectItem } from '@/registry/default/ui/select'
 import { SelectTrigger } from '@radix-ui/react-select'
 import React from 'react'
 import { cn } from '@/lib/utils'

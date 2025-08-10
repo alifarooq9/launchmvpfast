@@ -1,15 +1,15 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
+import { Button } from '@/registry/default/ui/button'
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from '@/registry/default/ui/dropdown-menu'
 import { DropdownMenuItem as RadixDropdownMenuItem } from '@radix-ui/react-dropdown-menu'
-import { Label } from '@/components/ui/label'
+import { Label } from '@/registry/default/ui/label'
 import {
     ArrowDownAZIcon,
     ArrowUpAZIcon,
@@ -22,8 +22,8 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from '@/components/ui/select'
-import { Switch } from '@/components/ui/switch'
+} from '@/registry/default/ui/select'
+import { Switch } from '@/registry/default/ui/switch'
 import React from 'react'
 import { useTheme } from 'next-themes'
 
